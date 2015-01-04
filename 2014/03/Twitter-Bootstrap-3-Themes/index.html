@@ -1,0 +1,58 @@
+<html>
+<head>
+  <title>Twitter Bootstrap Themes | JPtacek</title>
+    <style>
+    <link  rel="stylesheet" href="/styles/site.css" />
+    </style>
+</head>
+<body>
+ <img src="/images/logo.gif" />
+    <h1>Twitter Bootstrap Themes</h1>
+    <p>With a name like Ptacek, you would of course, have to know I am half-Irish. So, to celebrate, we are going to wrap
+up a St Patrick&#39;s Day theme for the blog today (3/17/14). You may be saying to yourself, how could I spend so much time and effort totally
+retheming the blog to support a relatively minor holiday on the calendar? Easy! Twitter Bootstrap themes!</p>
+<p>Twitter Bootstrap, is obviously, a very popular web CSS framework. It enables web developers, without a lot of CSS expereince to
+quickly create responsive sites that look decent out of the box. One of the interesting things you can do with version 3 of
+Twitter Bootstrap is quickly  update your site easily using themes.</p>
+<p>With Twitter Bootstrap, there are two ways you can do things. Option 1 is to download the minified files. This will result in three
+separate files, <code>bootstrap.min.css</code> , <code>bootstrap-theme.min.css</code> and <code>bootstrap.min.js</code>, which
+is used in conjunction with jQuery. The theme elements are then contained in the <code>bootstrap-theme.min.css</code> file.</p>
+<p>The second approach you can use is to download the source files and compile the CSS yourself. This is done by downloading
+<a href="http://lesscss.org/">LESS</a> files and using your favorite LESS compiler to generate CSS. There are also SASS files for the
+ Ruby fans of the world. With the LESS approach,
+there are separate files for theming, a <code>variable.less</code> file and a bootstrap theme file. This is the approach I use for this site
+and most projects I start. Within the main <code>site.css</code> LESS file I import the theme files</p>
+<pre><code class="lang-xml">@import &quot;bootstrapTheme/bootswatch.less&quot;;
+@import &quot;bootstrapTheme/variables-bootswatch.less&quot;;
+</code></pre>
+<p>The reason I like using the LESS approach rather than just downloading the minified CSS files is the theme part is a bit more
+isolated. I can keep all the theme content, which I really think of as the &quot;skin&quot; for a Bootstrap site, in two separate files.
+This enables new versions of Bootstrap to be downloaded without loosing other CSS changes and to quickly swap them out, like we
+are doing here for St. Patrick&#39;s Day.</p>
+<p>It should be noted, that out of the box, Twitter Bootstrap ships with a default theme, a theme that makes the site look like
+Twitter Bootstrap 2.x. There is quite a growing community for creating themes for bootstrap (it&#39;s not WordPress type size,
+that would just be crazy talk). Example sites include <a href="https://wrapbootstrap.com/">WrapBootstrap.com</a>, <a href="http://bootstraptor.com/">Bootstraptor</a>
+and the one I tend to gravitate to, <a href="http://bootswatch.com/">Bootswatch</a>.</p>
+<p>To update your site UI you just simply download either minified CSS files and swap them out, or two LESS files and then reference
+them in your site. Since I use LESS, I download the LESS files, rename them to a theme name, which allows me to keep my original,
+and then update my <code>site.css.less</code>. I called the St Patrick&#39;s Day theme shamrock and my references are now</p>
+<pre><code class="lang-xml">@import &quot;bootstrapTheme/shamrock-bootswatch.less&quot;;
+@import &quot;bootstrapTheme/shamrock-variables.less&quot;;
+</code></pre>
+<p>Viola, a save and a publish later we have a total site look! It is like <a href="http://www.csszengarden.com/">CSSZenGarden</a> for
+mortals.</p>
+<p> <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules" /></p>
+<p>You can find the St Patrick&#39;s Day theme I downloaded from Bootswatch <a href="http://bootswatch.com/shamrock/">here</a>. Obviously,
+ since this is just for a short time, there are some UI things that would need to be redone on the site, but we will
+ be back to our regularly scheduled programming soon!</p>
+<p>Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother&#39;s side. My Uncle <a href="http://en.wikipedia.org/wiki/Tom_Durkin">Tom Durkin</a>, a somewhat famous horse
+race announcer who <a href="http://www.nytimes.com/2011/04/28/sports/28durkin.html?version=&amp;action=click&amp;adxnnl=1&amp;region=searchResults#0&amp;module=Search&amp;url=http://query.nytimes.com/search/sitesearch/#/tom+durkin/&amp;pagewanted=all&amp;adxnnlx=1395057931-WaqX7ynUlBWydjqQznsZ1w">used to call</a> the Kentucky Derby and other Triple Crown races on television, would often get flown over
+to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
+Like a Pirate Day</p>
+<iframe width="420" height="315" src="//www.youtube.com/embed/nf0wQzq9Yzg" frameborder="0" allowfullscreen></iframe>
+
+
+<p>Happy St. Patrick&#39;s Day!</p>
+
+</body>
+</html>
