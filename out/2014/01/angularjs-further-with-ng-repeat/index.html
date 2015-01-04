@@ -1,0 +1,330 @@
+<html>
+<head>
+  <title>AngularJS - More with ng-repeat | JPtacek</title>
+    <style>
+    <style >html.wait {
+	cursor: wait !important;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}</style><link  rel="stylesheet" href="/styles/site.css" />
+    </style>
+</head>
+<body>
+ <img src="/images/logo.gif" />
+    <h1>AngularJS - More with ng-repeat</h1>
+    <style>
+        .tableOdd {
+            background-color: green;
+        }
+        .tableEven {
+            background-color: gold;
+        }
+    </style>
+
+<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the fourth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li>AngularJS - More with NG-Repeat</li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In this post, we are going to dig a bit deeper into ng-repeat and discover a few things.</p>
+<p>To level set, we have a controller called chemistryApp.js. This creates our AngularJS application</p>
+<p><em>chemistryApp.js</em></p>
+<pre><code class="lang-javascript">var chemistryApp = angular.module(&#39;chemistryApp&#39;, []);
+</code></pre>
+<p>and a controller that references are json file of chemistry data and sets it to a scope variable</p>
+<p><em>chemistryController.js</em></p>
+<pre><code class="lang-javascript">chemistryApp.controller(&#39;chemCtrl&#39;,
+    function chemCtrl($scope) {
+        $scope.periodic = perioicData;
+    }
+);
+</code></pre>
+<p>First up, instead of creating an unordered list, we are going to create a table. This is done by putting the
+<code>ng-repeat</code> directive on a <code>&lt;tr&gt;</code> tag. For example</p>
+<pre><code class="lang-xml"> &lt;tr data-ng-repeat=&quot;element in periodic.elements &quot;&gt;
+</code></pre>
+<p>Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
+each element, and then display things like the atomic number, atomic weight, etc. Tying this with our <code>ng-repeat</code>
+ directove and
+our table markup becomes</p>
+<pre><code class="lang-xml">&lt;table class=&quot;table table-striped table-bordered table-hover table-condensed&quot;&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Atomic Number&lt;/th&gt;&lt;th&gt;Weight&lt;/th&gt;&lt;th&gt;Phase&lt;/th&gt;&lt;th&gt;Ionization Energy&lt;/th&gt;&lt;th&gt;Melting Point&lt;/th&gt;&lt;th&gt;Boiling&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr data-ng-repeat=&quot;element in periodic.elements &quot;&gt;
+                &lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/{{element.name}}&quot; Title=&quot;Wikipedia article on {{element.name}}&quot; target=&quot;_top&quot;&gt;{{element.name}}&lt;/a&gt;&lt;/td&gt;
+                &lt;td&gt;{{element.atomicNumber}}&lt;/td&gt;
+                &lt;td&gt;{{element.atomicWeight}}&lt;/td&gt;
+                &lt;td&gt;{{element.phase}}&lt;/td&gt;
+                &lt;td&gt;{{element.ionization}}&lt;/td&gt;
+                &lt;td&gt;{{element.melting}}&lt;/td&gt;
+                &lt;td&gt;{{element.boiling}}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+</code></pre>
+<p>We now have a list of the Chemical elements in a table.</p>
+<div id='appContainer' ng-app="chemistryApp">
+ <div id="periodicTable0"  ng-controller="chemCtrl" >
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements ">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>We can also, just like in our previous example, bind a filter to an input box and search for a chemical element
+by name and have it filter the list automatically.</p>
+<pre><code class="lang-xml">   &lt;div id=&quot;periodicTable&quot;  data-ng-controller=&quot;chemCtrl&quot; &gt;
+        &lt;input type=&quot;text&quot; data-ng-model=&quot;elementNameOnlyTable&quot;/&gt;
+        &lt;table class=&quot;table table-striped table-bordered table-hover table-condensed&quot;&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Atomic Number&lt;/th&gt;&lt;th&gt;Weight&lt;/th&gt;&lt;th&gt;Phase&lt;/th&gt;&lt;th&gt;Ionization Energy&lt;/th&gt;&lt;th&gt;Melting Point&lt;/th&gt;&lt;th&gt;Boiling&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr data-ng-repeat=&quot;element in periodic.elements | filter:{name:elementNameOnlyTable}&quot;&gt;
+                &lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/{{element.name}}&quot; Title=&quot;Wikipedia article on {{element.name}}&quot; target=&quot;_top&quot;&gt;{{element.name}}&lt;/a&gt;&lt;/td&gt;
+                &lt;td&gt;{{element.atomicNumber}}&lt;/td&gt;
+                &lt;td&gt;{{element.atomicWeight}}&lt;/td&gt;
+                &lt;td&gt;{{element.phase}}&lt;/td&gt;
+                &lt;td&gt;{{element.ionization}}&lt;/td&gt;
+                &lt;td&gt;{{element.melting}}&lt;/td&gt;
+                &lt;td&gt;{{element.boiling}}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+</code></pre>
+ <div id="periodicTable"  ng-controller="chemCtrl" >
+    <form id="frm1">
+    <input type="text" ng-model="elementNameOnlyTable"/>
+    <table class="table table-striped table-bordered table-hover table-condensed">
+        <tr>
+            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+        </tr>
+        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable}">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+            <td>{{element.atomicNumber}}</td>
+            <td>{{element.atomicWeight}}</td>
+            <td>{{element.phase}}</td>
+            <td>{{element.ionization}}</td>
+            <td>{{element.melting}}</td>
+            <td>{{element.boiling}}</td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+
+<p>The ng-repeat also has some intrinsic variable definitions. One is <code>$index</code> which is the current key of the element
+of the loop you are on.</p>
+ <div id="periodicTable1"  ng-controller="chemCtrl" >
+        <input type="text" ng-model="elementNameOnlyTable2"/>
+        <table class="table table-striped table-bordered table-hover table-condensed">
+            <tr>
+                <th>Name</th><th>$Index</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable2}">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{$index}}</td>
+                <td>{{element.atomicNumber}}</td>
+                <td>{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+
+<p>It is interesting to note that the index is for the values you are filtering on too. So if you were to type Aluminum
+you will see it becomes the zero element, instead of Hydrogen.</p>
+<p>Angular also has  directives like <code>ng-hide</code>,
+<code>ng-show</code> and <code>ng-class</code> along with a <a href="http://docs.angularjs.org/guide/directive">plethora of other attributes</a>.</p>
+<p>We can use these in conjunctions with <code>$index</code>. This is really the key step along the journey in thinking the &quot;Angular way&quot;.
+You don&#39;t want to update the dom via javascript, but use Angular to control what is displayed
+on your page. As an example of this, let&#39;s say we want to hide
+every other element in the list. We could do something like</p>
+<pre><code class="lang-xml"> &lt;tr data-ng-repeat=&quot;element in periodic.elements&quot; data-ng-hide=&quot;$index%2&quot;&gt;
+</code></pre>
+<div id="periodicTable2"  ng-controller="chemCtrl" >
+    <table class="table ">
+        <tr>
+            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+        </tr>
+        <tr ng-repeat="element in periodic.elements" ng-hide="$index%2">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+            <td>{{element.atomicNumber}}</td>
+            <td >{{element.atomicWeight}}</td>
+            <td>{{element.phase}}</td>
+            <td>{{element.ionization}}</td>
+            <td>{{element.melting}}</td>
+            <td>{{element.boiling}}</td>
+         </tr>
+     </table>
+</div>
+
+<p>We can also perform some Crimes Against web design. For example, nothing is uglier than wrapping your table in
+Green Bay Packer colors of Green and Gold. So I can add CSS elements like</p>
+<pre><code class="lang-xml">&lt;style&gt;
+        .tableOdd {
+            background-color: green;
+        }
+        .tableEven {
+            background-color: gold;
+        }
+    &lt;/style&gt;
+</code></pre>
+<p>Then we can use the <code>ng-class</code> on the <code>&lt;tr&gt;</code> we are binding to in order to make even/odd rows change colors.</p>
+<pre><code class="lang-xml">&lt;tr data-ng-repeat=&quot;element in periodic.elements&quot; data-ng-class=&quot;{tableEven: !($index%2), tableOdd: ($index%2)}&quot;&gt;
+</code></pre>
+<p>It doesn&#39;t look pretty, and there are MUCH better ways to do this, but it gives you an example of how to
+think the &quot;Angular way&quot;</p>
+ <div id="periodicTable3"  ng-controller="chemCtrl" >
+        <table class="table ">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements" ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">
+                <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td >{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>Last, we can also do fun things like sort by using select lists to quickly filter data. For example, we create a
+dropdown list for both the element phase</p>
+<pre><code class="lang-xml"> &lt;select data-ng-model=&quot;elementPhase&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;All&lt;/option&gt;
+            &lt;option value=&quot;Gas&quot;&gt;Gas&lt;/option&gt;
+            &lt;option value=&quot;Solid&quot;&gt;Solid&lt;/option&gt;
+            &lt;option value=&quot;Liquid&quot;&gt;Liquid&lt;/option&gt;
+            &lt;option value=&quot;Synthetic&quot;&gt;Synthetic&lt;/option&gt;
+        &lt;/select&gt;
+</code></pre>
+<p>and an ordering criteria</p>
+<pre><code class="lang-xml">&lt;select data-ng-model=&quot;elementOrder&quot;&gt;
+            &lt;option value=&quot;name&quot; selected&gt;Name (ascending)&lt;/option&gt;
+            &lt;option value=&quot;-name&quot;&gt;Name (descending)&lt;/option&gt;
+            &lt;option value=&quot;melting&quot;&gt;Melting Point (asc)&lt;/option&gt;
+            &lt;option value=&quot;-melting&quot;&gt;Melting Point (desc)&lt;/option&gt;
+        &lt;/select&gt;
+</code></pre>
+<p>We can then use the <code>ng-filter</code> and <code>ng-order</code> directives to filter and sort our table. Further, we can
+combine with our text box for searching by name and chain them together.</p>
+<pre><code class="lang-xml"> &lt;tr data-ng-repeat=&quot;element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder&quot;&gt;
+</code></pre>
+<p>Ultimately, our HTML looks like</p>
+<pre><code class="lang-xml">&lt;div id=&quot;periodicTable5&quot;  data-ng-controller=&quot;chemCtrl&quot; &gt;
+        Element Name:&lt;input type=&quot;text&quot; data-ng-model=&quot;elementName&quot;/&gt;
+        &amp;nbsp;State:
+        &lt;select data-ng-model=&quot;elementPhase&quot;&gt;
+            &lt;option value=&quot;&quot;&gt;All&lt;/option&gt;
+            &lt;option value=&quot;Gas&quot;&gt;Gas&lt;/option&gt;
+            &lt;option value=&quot;Solid&quot;&gt;Solid&lt;/option&gt;
+            &lt;option value=&quot;Liquid&quot;&gt;Liquid&lt;/option&gt;
+            &lt;option value=&quot;Synthetic&quot;&gt;Synthetic&lt;/option&gt;
+        &lt;/select&gt;
+        &amp;nbsp;Order:
+        &lt;select data-ng-model=&quot;elementOrder&quot;&gt;
+            &lt;option value=&quot;name&quot; selected&gt;Name (ascending)&lt;/option&gt;
+            &lt;option value=&quot;-name&quot;&gt;Name (descending)&lt;/option&gt;
+            &lt;option value=&quot;melting&quot;&gt;Melting Point (asc)&lt;/option&gt;
+            &lt;option value=&quot;-melting&quot;&gt;Melting Point (desc)&lt;/option&gt;
+        &lt;/select&gt;
+
+        &lt;table class=&quot;table &quot;&gt;
+            &lt;tr&gt;
+                &lt;th&gt;Name&lt;/th&gt;&lt;th&gt;Atomic Number&lt;/th&gt;&lt;th&gt;Weight&lt;/th&gt;&lt;th&gt;Phase&lt;/th&gt;&lt;th&gt;Ionization Energy&lt;/th&gt;&lt;th&gt;Melting Point&lt;/th&gt;&lt;th&gt;Boiling&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;tr data-ng-repeat=&quot;element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder&quot;&gt;
+            &lt;td&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/{{element.name}}&quot; Title=&quot;Wikipedia article on {{element.name}}&quot; target=&quot;_top&quot;&gt;{{element.name}}&lt;/a&gt;&lt;/td&gt;
+                &lt;td&gt;{{element.atomicNumber}}&lt;/td&gt;
+                &lt;td &gt;{{element.atomicWeight}}&lt;/td&gt;
+                &lt;td&gt;{{element.phase}}&lt;/td&gt;
+                &lt;td&gt;{{element.ionization}}&lt;/td&gt;
+                &lt;td&gt;{{element.melting}}&lt;/td&gt;
+                &lt;td&gt;{{element.boiling}}&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+</code></pre>
+<div id="periodicTable5"  ng-controller="chemCtrl" >
+        Element Name:<input type="text" ng-model="elementName"/>
+        &nbsp;State:
+        <select ng-model="elementPhase">
+            <option value="">All</option>
+            <option value="Gas">Gas</option>
+            <option value="Solid">Solid</option>
+            <option value="Liquid">Liquid</option>
+            <option value="Synthetic">Synthetic</option>
+        </select>
+        &nbsp;Order:
+        <select ng-model="elementOrder">
+            <option value="name" selected>Name (ascending)</option>
+            <option value="-name">Name (descending)</option>
+            <option value="melting">Melting Point (asc)</option>
+            <option value="-melting">Melting Point (desc)</option>
+        </select>
+
+        <table class="table ">
+            <tr>
+                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
+            </tr>
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder">
+            <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+                <td>{{element.atomicNumber}}</td>
+                <td >{{element.atomicWeight}}</td>
+                <td>{{element.phase}}</td>
+                <td>{{element.ionization}}</td>
+                <td>{{element.melting}}</td>
+                <td>{{element.boiling}}</td>
+            </tr>
+        </table>
+    </div>
+
+<p>The interesting thing to note about this too is that this page is pretty heavy. It has many tables with the
+Periodic elements. However, by using client side code, we download all of the elements only once when we get
+our JavaScript file. The client side functionality does the page building, helping the page load quicker.</p>
+<p>For those of you who have been web coding for a while, these few number of lines to have all of this client side
+functionality is magic. Seriously, magic.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
+</div>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js"></script>
+ <script type="text/javascript" src="/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js"></script></p>
+
+</body>
+</html>

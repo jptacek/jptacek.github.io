@@ -1,0 +1,13 @@
+<html>
+<head>
+  <title><%= @getPreparedTitle() %></title>
+    <style>
+    <%- @getBlock("styles").add(["/styles/site.css"]).toHTML() %>
+    </style>
+</head>
+<body>
+ <img src="/images/logo.gif" />
+    <h1><%= @document.title %></h1>
+    <%- @content %>
+</body>
+</html>

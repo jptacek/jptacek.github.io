@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title><%= @document.title %> | Foo</title>
+    <style>
+    <%- @getBlock("styles").add(["/styles/site.css"]).toHTML() %>
+    </style>
+</head>
+<body>
+ <img src="/images/logo.gif" />
+ <ul>
+   <% for page in @getCollection("pages").toJSON(): %>
+   <li class="<%= if page.id is @document.id then 'active' else 'inactive' %>">
+     <a href="<%= page.url %>">
+       <%= page.title %>
+     </a>
+   </li>
+   <% end %>
+ </ul>
+ <h1><%= @document.title %></h1>
+
+    <%- @content %>
+</body>
+</html>
