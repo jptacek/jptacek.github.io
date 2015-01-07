@@ -88,18 +88,13 @@
         </div>
     </div>
 </div>
-/index.13/ <br/> Foo<br/>
-function () { [native code] }<br/>foo.5
-function () { [native code] } <br/> Foo2<br/>
- <br/> Foo3<br/>
- <br/> Foo4<br/>
 
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
     <article class="post">
     
-    <h1><a href='/2013/04/29/index/'>Being You – Setting Up WordPress on Azure Websites</a></h1>
+    <h1><a href='/2013/04/being-you-setting-up-wordpress-on-azure-websites/'>Being You – Setting Up WordPress on Azure Websites</a></h1>
     
         <div class="post-date">Apr 28th, 2013</div>
 
@@ -109,31 +104,31 @@ function () { [native code] } <br/> Foo2<br/>
 <p>So, what do we need to do?</p>
 <p>First things first, you need to sign up for a windows azure account and a 90-day Free Trial. This will require you to provide a mobile phone, for verification purposes, and a credit card, which you only need if you exceed the limits for the free trial, which only happens if you remove the spending limit.</p>
 <p>Go to <a href="http://www.windowsazure.com">http://www.windowsazure.com</a> and click Free Trial. You </p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet1.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet1.png" alt=""></p>
 <p>You free trial contains up to 10 Web Sites and Mobile services, a SQL database, 35 GB of strogae and 750 hours of small compute hours. This will essentially allow you to create a blog a Azure shared instance for free. Click the next arrow (right by two).</p>
 <p>You will be asked to verify your account via a SMS message to your phone. Step three will ask you to setup a credit card information, after which, your Azure subscription is being setup</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet2.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet2.png" alt=""></p>
 <p>Now that your Azure account is setup, you can start creating web sites, virtual machines, storage, etc. We are going to create a blog site, which is a web site. </p>
 <p>Jump to the Azure Management portal </p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet3.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet3.png" alt=""></p>
 <p>And click the new button in the bottom left. </p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet4.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet4.png" alt=""></p>
 <p>Click Web Site and chose From Gallery</p>
 <p>Azure provide a lot of &quot;starter&quot; sites in it&#39;s Gallery. It can range from DotNetNukeSites, Drupal sites, Wiki sites, eCommerce engines, etc. We are interested in creating blog. Select that and you can see there are a myriad of blog types to choose from</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet5.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet5.png" alt=""></p>
 <p>We are going to use WordPress, a very popular blogging engine based on PHP. Once you find Wordpress, highlight it and click the next button.</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet6.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet6.png" alt=""></p>
 <p>All Azure Websites are on the domain azurewebsites.net. You will need to select a unique name for your website. In this case, we will use TheEndless.azurewebsites.net for our URL. </p>
 <p>Next, WordPress relies on MySql for their back end database, so we will need to create one. The good news is, Azure takes care of all of that for you. Last, you will need to pick a geographic region for your site to be hosted. You want it to be close to where the majority of your users will be. The North Central US datacenter, which is located in Chicago, fits the bill for us.</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet7.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet7.png" alt=""></p>
 <p>aWe provide a unique name to the databse and approve the ClearDb legal terms. ClearDb has partnered with Microsoft on their MySql implementation. Once you click the checkbox, it will provision up your Azure Website. This process will take a few minutes.</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet8.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet8.png" alt=""></p>
 <p>Once the site is provisioned you can click on the link and you will be taken to the WordPress configuration site to finalize creation of your blog.</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet9.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet9.png" alt=""></p>
 <p>Here, you will provide a site for your title, we are going to go with The Endless. Next, you will setup a username for your site. DO NOT use admin, change it to something different. In my case, I will use my name. You will provide an email address for the site and finally a privacy check box. You DO want to check this, as it will enable search engines to find your site. That is, after all, the whole purpose of being you <span style="font-family:Wingdings">J</span> After entering in this information, choose Install Wordpress. It will run for a second, and then you can login.</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet10.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet10.png" alt=""></p>
 <p>You now have your blog up and running!</p>
-<p><img src="/2013/04/29/index/042913_1148_BeingYouSet11.png" alt=""></p>
+<p><img src="/2013/04/being-you-setting-up-wordpress-on-azure-websites/042913_1148_BeingYouSet11.png" alt=""></p>
 <p>In our next part, we will explore WordPress.</p>
 
     </div>
@@ -149,26 +144,26 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Being You – Setting Up WordPress on Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/04/29/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Being You – Setting Up WordPress on Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/04/being-you-setting-up-wordpress-on-azure-websites/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/29/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/being-you-setting-up-wordpress-on-azure-websites/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/29/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/being-you-setting-up-wordpress-on-azure-websites/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/04/28/index/'>Fox Valley Day of .NET 2013</a></h1>
+    <h1><a href='/2013/04/fox-valley-day-of-net-2013/'>Fox Valley Day of .NET 2013</a></h1>
     
         <div class="post-date">Apr 27th, 2013</div>
 
     <div class="post-content">
         <p>I am honored to be speaking at the Fox Valley .NET User Groups Day of .NET this year. The Fox Valley Day of .NET is a GREAT event. Every year, they have speakers from all around come and present on topics that will challenge you and make you that much of a better developer when you leave.</p>
 <p>This year&#39;s event is held at the UW Fox Valley on Saturday May 4<sup>th</sup> from 8 AM to 5 PM. </p>
-<p><img src="/2013/04/28/index/042813_1530_FoxValleyDa1.png" alt=""></p>
+<p><img src="/2013/04/fox-valley-day-of-net-2013/042813_1530_FoxValleyDa1.png" alt=""></p>
 <p>You can see the whole lineup at <a href="http://dayofdotnet.fvnug.org/">http://dayofdotnet.fvnug.org/</a>. The downside to the day is so may of the presentations overlap. Some great talks!</p>
 <p>I usually try and speak every year at the Day of .NET. The only year I did not speak, I won an Xbox, so that worked out pretty well!</p>
 <p>Here are past presentations</p>
@@ -193,19 +188,19 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Fox Valley Day of .NET 2013' class="twitter-share-button" data-url="http://jptacek.com/2013/04/28/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Fox Valley Day of .NET 2013' class="twitter-share-button" data-url="http://jptacek.com/2013/04/fox-valley-day-of-net-2013/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/28/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/fox-valley-day-of-net-2013/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/fox-valley-day-of-net-2013/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/04/18/index/'>Outlook.Com Email Aliases</a></h1>
+    <h1><a href='/2013/04/outlook-com-email-aliases/'>Outlook.Com Email Aliases</a></h1>
     
         <div class="post-date">Apr 17th, 2013</div>
 
@@ -217,10 +212,10 @@ function () { [native code] } <br/> Foo2<br/>
 <p>The one problem with this is there are some sites I trust with my email address more than others. I know some sites are going to spam me than others and are more likely to &quot;share&quot; my email address. For example, once Tickemaster gets your email, everyone has your email. Some sites you visit require you to have an email address to access content, and you have no idea what you are getting yourself into. With Gmail, I have used the + trick, which allows you to create a disposable email address that will automatically come to your account. For example, if your email address is <a href="mailto:me@gmail.com">me@gmail.com</a>, you can use your address name and a plus(+) sign, <a href="mailto:me+SpamingNewsletter@gmail.com">me+SpamingNewsletter@gmail.com</a> and email will go to your original address. I usually end up forgetting these over time. The other thing is, you are not fooling anyone. Even if you use <a href="mailto:me+SpammingNewsletter@gmail.com">me+SpammingNewsletter@gmail.com</a>, people know your email address is <a href="mailto:me@gmail.com">me@gmail.com</a>.</p>
 <p>So this is where Outlook.com email alias feature comes in, and it&#39;s awesome. </p>
 <p>First, to create an alias, go to the Gear icon and choose Mail Settings. From there, under account, choose Create an Outlook alias.</p>
-<p><img src="/2013/04/18/index/041813_1008_OutlookComE1.png" alt=""></p>
+<p><img src="/2013/04/outlook-com-email-aliases/041813_1008_OutlookComE1.png" alt=""></p>
 <p>You can choose to create an address from any of Microsoft&#39;s current email domains; Live, Hotmail and Outlook.</p>
 <p>Type in your new email alias and then you are given the option to create a new folder where all of your email gets moved when it is sent to the alias or you can send it to your inbox</p>
-<p><img src="/2013/04/18/index/041813_1008_OutlookComE2.png" alt=""></p>
+<p><img src="/2013/04/outlook-com-email-aliases/041813_1008_OutlookComE2.png" alt=""></p>
 <p>Now you have a new email address associated with your default outlook.com account. </p>
 <p>Here is what I find so great about this. </p>
 <p>First, you can create multiple aliases, up to five a year, associated with your account. Personally, I have created two separate outlook.com aliases. One, I use for the Internet I trust. For example, my Facebook, Netflix, Linked accounts, etc. They all have been, or are in the process of getting migrated to an Outlook alias. I have a second alias, for the Internet I don&#39;t trust. These are things like Ticketmaster, or mailing lists. Essentially, anyone I am afraid of sending me spam. I can then log into my default outlook.com account, and see emails to both of those aliases and they are in folders.</p>
@@ -241,13 +236,13 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Outlook.Com Email Aliases' class="twitter-share-button" data-url="http://jptacek.com/2013/04/18/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Outlook.Com Email Aliases' class="twitter-share-button" data-url="http://jptacek.com/2013/04/outlook-com-email-aliases/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/18/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/04/outlook-com-email-aliases/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/18/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/04/outlook-com-email-aliases/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

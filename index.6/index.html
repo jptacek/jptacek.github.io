@@ -88,18 +88,13 @@
         </div>
     </div>
 </div>
-/index.6/ <br/> Foo<br/>
-function () { [native code] }<br/>foo.5
-function () { [native code] } <br/> Foo2<br/>
- <br/> Foo3<br/>
- <br/> Foo4<br/>
 
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
     <article class="post">
     
-    <h1><a href='/2014/01/24/index/'>AngularJS - Image Binding in AngularJS with Lou Reed</a></h1>
+    <h1><a href='/2014/01/angularjs-lou-reed/'>AngularJS - Image Binding in AngularJS with Lou Reed</a></h1>
     
         <div class="post-date">Jan 23rd, 2014</div>
 
@@ -108,7 +103,7 @@ function () { [native code] } <br/> Foo2<br/>
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
  Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="/2014/01/24/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p><img src="/2014/01/angularjs-lou-reed/angularLogo.png" alt="AngularJS Logo"></p>
 <p>This is the fifth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
 to help us understand the framework. The others posts are</p>
 <ol>
@@ -135,13 +130,13 @@ My boss, <a href="https://twitter.com/tvanhammond">Tim VanHammond</a> still hold
 I played Lou Reed&#39;s the Possum song without headphones when he was in the office we shared.
 The reality is, I probably spent WAY too
 much time listening to Lou Reed and Velvet Underground music when I was a teenager. So, having said all that, soon
-after Lou Reed died, I was doing a <a href="/2014/01/24/index//2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
+after Lou Reed died, I was doing a <a href="/2014/01/angularjs-lou-reed//2013/11/fvnug-presentation-nov-2013/">presentation</a> at the
 <a href="http://newdug.org/">NorthEast Wisconsin Developer UserGroup</a> (aka, NEWDUG and
 yes it is a lot to type) and I thought it would be fun to have a little Lou Reed shout out. Since the talk
 was about AngularJS, it of course had an Angular flavor. So we did a little Lou Reed segue, and talked about
 binding images using AngularJS. Most important and of interest to you dear reader, is
 how I found out a way to deal with missing images!</p>
-<p><img src="/2014/01/24/index/Lou_Reed.jpg" alt="Lou Reed"></p>
+<p><img src="/2014/01/angularjs-lou-reed/Lou_Reed.jpg" alt="Lou Reed"></p>
 <p>Instead of using chemistry data, we used Lou data. This data was a JSON object of record releases. Lou put out
 a lot of albums, and we are loading images, so to keep things quick, we are just doing the first few releases.
 One of our Lou
@@ -170,7 +165,7 @@ for us!</p>
             <td>{{album.releaseDate|date}}</td>
             <td>{{album.producer}}</td>
             <td>{{album.label}}</td>
-            <td><img src="/2014/01/24/index/{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
+            <td><img src="/2014/01/angularjs-lou-reed/{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;"></td>
         </tr>
     </table>
    </div>
@@ -183,7 +178,7 @@ a JSON date object to a filter and have it format, <code>{{album.releaseDate|dat
 filter at the <a href="http://docs.angularjs.org/api/ng.filter:date#!">AngularJS</a> site.</p>
 <p>The second thing to notice is we are using a <code>src</code> attribute in our <code>img</code> tag. Things are loading fine, but if
 you look at the page load, you will actually see a 404 error that happens.</p>
-<p><img src="/2014/01/24/index/404Error.png" alt="404 Error on image Get"></p>
+<p><img src="/2014/01/angularjs-lou-reed/404Error.png" alt="404 Error on image Get"></p>
 <p>This is because the AngularJS functionality is executed AFTER the page loads. We are still making the get request
 that the <code>src</code> attribute had identified because we have yet to get into the javscript
 processing on the page. With <code>src</code> attributes and <code>href</code> tags you that reference
@@ -203,7 +198,7 @@ is now</p>
             <td>{{album.releaseDate|date}}</td>
             <td>{{album.producer}}</td>
             <td>{{album.label}}</td>
-            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/24/index/undefined"></td>
+            <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/angularjs-lou-reed/undefined"></td>
         </tr>
     </table>
 </div>
@@ -222,7 +217,7 @@ second controller where we change the image for Metal Machine Music and Transfor
 
 We now are receiving missing image links in our page. This is NOT use friendly
 
-<img src="/2014/01/24/index/LouCover404.png" alt="404 Error on Album Cover">
+<img src="/2014/01/angularjs-lou-reed/LouCover404.png" alt="404 Error on Album Cover">
 
 You can see the example below
 
@@ -238,7 +233,7 @@ You can see the example below
                 <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
                 <td>{{album.producer}}</td>
                 <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/24/index/undefined"></td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" src="/2014/01/angularjs-lou-reed/undefined"></td>
             </tr>
         </table>
     </div>
@@ -264,7 +259,7 @@ onerror by placing a default placeholder image for missing images.</p>
                 <td>{{album.releaseDate| date:&#39;medium&#39;}}</td>
                 <td>{{album.producer}}</td>
                 <td>{{album.label}}</td>
-                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="/2014/01/24/index/undefined"></td>
+                <td><img ng-src="{{album.image}}" alt="{{album.album}} Cover Image" width="300px;" height="300px;" onerror="this.src=&apos;/2014/01/angularjs-lou-reed/Lou_Reed.jpg&apos;" src="/2014/01/angularjs-lou-reed/undefined"></td>
             </tr>
         </table>
     </div>
@@ -291,19 +286,19 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Image Binding in AngularJS with Lou Reed' class="twitter-share-button" data-url="http://jptacek.com/2014/01/24/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - Image Binding in AngularJS with Lou Reed' class="twitter-share-button" data-url="http://jptacek.com/2014/01/angularjs-lou-reed/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/24/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/angularjs-lou-reed/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/24/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/angularjs-lou-reed/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/01/23/index/'>AngularJS - More with ng-repeat</a></h1>
+    <h1><a href='/2014/01/angularjs-further-with-ng-repeat/'>AngularJS - More with ng-repeat</a></h1>
     
         <div class="post-date">Jan 22nd, 2014</div>
 
@@ -321,7 +316,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
  HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
  Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="/2014/01/23/index/angularLogo.png" alt="AngularJS Logo"></p>
+<p><img src="/2014/01/angularjs-further-with-ng-repeat/angularLogo.png" alt="AngularJS Logo"></p>
 <p>This is the fourth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
 to help us understand the framework. The others posts are</p>
 <ol>
@@ -635,19 +630,19 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - More with ng-repeat' class="twitter-share-button" data-url="http://jptacek.com/2014/01/23/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='AngularJS - More with ng-repeat' class="twitter-share-button" data-url="http://jptacek.com/2014/01/angularjs-further-with-ng-repeat/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/23/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/angularjs-further-with-ng-repeat/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/23/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/angularjs-further-with-ng-repeat/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2014/01/21/index/'>GitHub Repository Not Found - Case Issue?</a></h1>
+    <h1><a href='/2014/01/git-repository-not-found/'>GitHub Repository Not Found - Case Issue?</a></h1>
     
         <div class="post-date">Jan 20th, 2014</div>
 
@@ -671,7 +666,7 @@ the repository locally and how GitHub may be handling it on the backend today.</
 fatal: repository <span class="hljs-string">'http://github.com/jptacek/JPTACEK.com.git/'</span> not found
 </code></pre>
 <p>You can see the message below</p>
-<p><img src="/2014/01/21/index/repoNotFound.png" alt="GitHub Error"></p>
+<p><img src="/2014/01/git-repository-not-found/repoNotFound.png" alt="GitHub Error"></p>
 <p>Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm. Other
 repositories I had on GitHub I was able to commit and push changes to. The only thing I could think was that
 the case was different on my local origin in comparison to the backend GitHub repository.</p>
@@ -682,7 +677,7 @@ same as my repository on GitHub.</p>
 <p>After this, I was then able to commit changes without issue in all the different client apps as well as the command
 line.</p>
 <p>as shown in the following screen shot</p>
-<p> <img src="/2014/01/21/index/repoFound.png" alt="Repo found"></p>
+<p> <img src="/2014/01/git-repository-not-found/repoFound.png" alt="Repo found"></p>
 <p>It strikes me as pretty odd that GitHub would suddenly stop working because of a case issue between my local dev
 machine, which has been working fine for many months, and the GitHub server. However, that appears to be the case in this instance.</p>
 <p>Pretty much just documenting this for my future self :)</p>
@@ -700,13 +695,13 @@ machine, which has been working fine for many months, and the GitHub server. How
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='GitHub Repository Not Found - Case Issue?' class="twitter-share-button" data-url="http://jptacek.com/2014/01/21/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='GitHub Repository Not Found - Case Issue?' class="twitter-share-button" data-url="http://jptacek.com/2014/01/git-repository-not-found/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/21/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/01/git-repository-not-found/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/21/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/01/git-repository-not-found/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

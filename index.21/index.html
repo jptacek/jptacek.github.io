@@ -88,18 +88,13 @@
         </div>
     </div>
 </div>
-/index.21/ <br/> Foo<br/>
-function () { [native code] }<br/>foo.5
-function () { [native code] } <br/> Foo2<br/>
- <br/> Foo3<br/>
- <br/> Foo4<br/>
 
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
     <article class="post">
     
-    <h1><a href='/2011/12/21/index/'>Tips for Working With International Clients</a></h1>
+    <h1><a href='/2011/12/tips-for-working-with-international-clients/'>Tips for Working With International Clients</a></h1>
     
         <div class="post-date">Dec 20th, 2011</div>
 
@@ -135,19 +130,19 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Tips for Working With International Clients' class="twitter-share-button" data-url="http://jptacek.com/2011/12/21/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Tips for Working With International Clients' class="twitter-share-button" data-url="http://jptacek.com/2011/12/tips-for-working-with-international-clients/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/12/21/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/12/tips-for-working-with-international-clients/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/12/21/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/12/tips-for-working-with-international-clients/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2011/09/29/index/'>Observations From Microsoft's Build Conference</a></h1>
+    <h1><a href='/2011/09/observations-from-microsofts-build-conference/'>Observations From Microsoft's Build Conference</a></h1>
     
         <div class="post-date">Sep 28th, 2011</div>
 
@@ -156,11 +151,11 @@ function () { [native code] } <br/> Foo2<br/>
 Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
 <p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
 <p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
-<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen1.jpg"><img src="/2011/09/29/index/Win8screen1-300x169.jpg" alt="" title="Win8screen1"></a></p>
+<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen1.jpg"><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen1-300x169.jpg" alt="" title="Win8screen1"></a></p>
 <p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
 <p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
 <p>The diagram below outlines the various options for creating applications on Windows 8.</p>
-<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen2.jpg"><img src="/2011/09/29/index/Win8screen2-300x169.jpg" alt="" title="Win8screen2"></a></p>
+<p><a href="http://www.jptacek.com/wp-content/uploads/2012/10/Win8screen2.jpg"><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen2-300x169.jpg" alt="" title="Win8screen2"></a></p>
 <p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
 <p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
 <p><strong>Quick Hits</strong>
@@ -190,19 +185,19 @@ So, what does it all mean? At the end of day, at least for now, not a whole lot!
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Observations From Microsoft's Build Conference' class="twitter-share-button" data-url="http://jptacek.com/2011/09/29/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Observations From Microsoft's Build Conference' class="twitter-share-button" data-url="http://jptacek.com/2011/09/observations-from-microsofts-build-conference/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/09/29/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/09/observations-from-microsofts-build-conference/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/09/29/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/09/observations-from-microsofts-build-conference/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2011/06/28/index/'>HTML 5: A Little History</a></h1>
+    <h1><a href='/2011/06/html-5-a-little-history/'>HTML 5: A Little History</a></h1>
     
         <div class="post-date">Jun 27th, 2011</div>
 
@@ -240,13 +235,13 @@ So, what does it all mean? At the end of day, at least for now, not a whole lot!
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='HTML 5: A Little History' class="twitter-share-button" data-url="http://jptacek.com/2011/06/28/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='HTML 5: A Little History' class="twitter-share-button" data-url="http://jptacek.com/2011/06/html-5-a-little-history/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/28/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2011/06/html-5-a-little-history/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/28/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2011/06/html-5-a-little-history/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 

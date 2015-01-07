@@ -88,18 +88,13 @@
         </div>
     </div>
 </div>
-/index.15/ <br/> Foo<br/>
-function () { [native code] }<br/>foo.5
-function () { [native code] } <br/> Foo2<br/>
- <br/> Foo3<br/>
- <br/> Foo4<br/>
 
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
     <article class="post">
     
-    <h1><a href='/2013/03/05/index/'>Automatic Builds and Deploys to Azure Websites</a></h1>
+    <h1><a href='/2013/03/automatic-builds-and-deploys-to-azure-websites/'>Automatic Builds and Deploys to Azure Websites</a></h1>
     
         <div class="post-date">Mar 4th, 2013</div>
 
@@ -109,37 +104,37 @@ function () { [native code] } <br/> Foo2<br/>
 <p>The good news is setting this up with Azure websites is trivial. Let&#39;s walk through the process.</p>
 <p>For this post, we will automatically deploy a MVC project in Visual Studio hosted in the cloud version of TFS to an Azure website. The first step is to create a TFS account in the cloud if you have yet to do so. You can do this at <a href="https://tfs.visualstudio.com">https://tfs.visualstudio.com</a>. The good news is for individuals and small companies or development shops, this is free. Microsoft allows for up to five users for TFS cloud hosted project. Teams that are bigger than that can also use TFS, but will have to migrate to a paid version down the road. As of this time (March 2013) pricing has yet to be announced.</p>
 <p>Click the Sign up for free link after signing into TFS preview. You will then be asked to create a URL for your TFS project</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu1.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu1.png" alt=""></p>
 <p>Click create account and you are then take to the Project screen. From here you can either create a Team Project or a Team Project with Git support.</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu2.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu2.png" alt=""></p>
 <p>We will create a New Team Project</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu3.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu3.png" alt=""></p>
 <p>A few seconds later, a Team Project is created. </p>
 <p>You can now connect to this TFS site from Visual Studio. To do that, go to the Team menu and select Connect to Team Foundation server</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu4.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu4.png" alt=""></p>
 <p>Click the Add button and type in the URL that you just created, in our example, CodeMoneky.VisualStudio.com (I realize typo, the original URL was taken...)</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu5.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu5.png" alt=""></p>
 <p>You will be prompted to sign in with your Microsoft account. You can then create your project and check it an as you as you normally would. Add the solution to source control</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu6.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu6.png" alt=""></p>
 <p>And check in your code</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu7.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu7.png" alt=""></p>
 <p>Now you have gone through the process of adding your code to TFS. The next step is to get the automatic build and deploy working. That is the easy part!</p>
 <p>Log into the Azure Management console and create a new Azure website by clicking the new button in the bottom right</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu8.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu8.png" alt=""></p>
 <p>Choose custom create from the options</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu9.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu9.png" alt=""></p>
 <p>Create a URL for your site and make sure Publish from source control is checked. By default it is not</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu10.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu10.png" alt=""></p>
 <p>Click the source code repository of your choice, our example will be TFS. </p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu11.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu11.png" alt=""></p>
 <p>Independent of the back end (TFS, Git), we will authorize the account. For TFS, click the Authorize Now link</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu12.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu12.png" alt=""></p>
 <p>It will then show a list of projects hosted in TFS, we just choose the project to deploy.</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu13.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu13.png" alt=""></p>
 <p>It then creates the project. We wait a few minutes, if we have not waited long enough we see a screen like this</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu14.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu14.png" alt=""></p>
 <p>And after we are done, the default MVC template project.</p>
-<p><img src="/2013/03/05/index/030513_1127_AutomaticBu15.png" alt=""></p>
+<p><img src="/2013/03/automatic-builds-and-deploys-to-azure-websites/030513_1127_AutomaticBu15.png" alt=""></p>
 <p>The best part, now whenever solution changes are checked in by you, or project team members, they are automatically deployed from TFS to your Azure website. This functionality is the same for other source code repositories.</p>
 <p>As you can see, Azure websites integration with source control systems like Git and TFS make the automation of your build process sleek and simple. It is a great opportunities for small companies and startups to have best practices in place as well as the ability to quickly see code changes and updates. Check it out!</p>
 
@@ -156,19 +151,19 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Automatic Builds and Deploys to Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/03/05/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Automatic Builds and Deploys to Azure Websites' class="twitter-share-button" data-url="http://jptacek.com/2013/03/automatic-builds-and-deploys-to-azure-websites/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/03/05/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/03/automatic-builds-and-deploys-to-azure-websites/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/03/05/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/03/automatic-builds-and-deploys-to-azure-websites/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/02/27/index/'>Being John Ptacek – Configuring Wordpress for Authorship Markup</a></h1>
+    <h1><a href='/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/'>Being John Ptacek – Configuring Wordpress for Authorship Markup</a></h1>
     
         <div class="post-date">Feb 26th, 2013</div>
 
@@ -182,11 +177,11 @@ function () { [native code] } <br/> Foo2<br/>
 <p>For more on this, Forbes recently published an <a href="http://www.forbes.com/sites/johnhall/2013/02/26/6-reasons-why-googles-author-tags-are-important-to-leaders/?ss=strategies-solutions">article</a> about why business should be using Google author tags.</p>
 <p>So what are the steps to do this for your site? There are several sites that explain this. Google has a nice <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=2539557">introduction</a> as well as the Scott Hanselman <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a>. </p>
 <p>The first step is to identify to Google that you contribute to a site. This is done by going to your Google+ profile at <a href="http://profiles.google.com/me">http://profiles.google.com/me</a> and clicking Edit Profile.</p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt1.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt1.png" alt=""></p>
 <p>Click Add a custom link and link to your blog. I blog a lot for at <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>, where I work, so I included a contributor link there. I also blog on my personal site. You will notice that each link has multiple links. This is a result of adding the link manually for each site as well as doing a corresponding email verification. So we have finished part one, letting Google know where we are creating content.</p>
 <p>The next step is to update Wordpress to have posts link back my author profile with the author tag. For my profile, the url is <a href="https://plus.google.com/117170075977212738060?rel=author">https://plus.google.com/117170075977212738060?rel=author</a>. You will want to change the really long number to be your profile ID. </p>
 <p></p><p>I did this in several ways. First, on the main site I have a list of links for things like Twitter and LinkedIn. I included a link to Google+ here also</p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt2.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt2.png" alt=""></p>
 <p>Next, I update footer.php template for Wordpress to have a link back to the Google Profile. This will ensure each page on the site is identified. Last, the header.php section was updated with a Meta tag </p>
 <p><span style="font-family:Arial; font-size:10pt"><span style="color:#a31515"><link<></link<>
             <span style="color:red">rel<span style="color:blue">=&quot;author&quot;</span> href<span style="color:blue">=&quot;<a href="https://plus.google.com/117170075977212738060?rel=me">https://plus.google.com/117170075977212738060?rel=me</a>&quot;</span>
@@ -195,17 +190,17 @@ function () { [native code] } <br/> Foo2<br/>
 <p>Last, is to add a link to the content.php identifying the author of the article that links back to your Google Profile</p>
 <p>By <a href="https://plus.google.com/117170075977212738060?rel=author">John Ptacek</a></p>
 <p>Okay, we have setup a bunch of links. How do we know if it works? Google has a Structured Data Testing tool that will tell you. If you go to <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a> you can check your blog and see if Google recognizes the markup.</p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt3.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt3.png" alt=""></p>
 <p>You also notice that there is an email verification. This is another way to ensure your links are set. This is the reason two links appear for each site I was a contributor to in my Google Plus profile. I added each URL manually, and then as another level of verification, I verified an email address for each site.</p>
 <p>What is the end result? When I search Google for content, my picture is now appearing in the search results</p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt4.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt4.png" alt=""></p>
 <p>Posts I have a written now appear with a picture next to my name. You can also see that there are several hyperlinks in the search results. </p>
 <p>The first, the byline (by John Ptacek) links to my Google+ profile.</p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt5.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt5.png" alt=""></p>
 <p>The second, More by John Ptacek, </p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt6.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt6.png" alt=""></p>
 <p>displays articles I have written as well as author information as you can see <a href="http://www.google.com/#hl=en&amp;tbs=ppl_ids:--117170075977212738060-%2Cppl_nps%3AJohn+Ptacek%2Cppl_aut%3A1&amp;sclient=psy-ab&amp;dq=&amp;q=John+Ptacek&amp;oq=John+Ptacek&amp;gs_l=serp.3...31815.31815.0.32252.0.0.0.0.0.0.0.0..0.0.les%3B..0.0...1c.1.5.psy-ab.xk3_MinTqHs&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;fp=95c9c19312d4e19&amp;biw=1478&amp;bih=757">here</a></p>
-<p><img src="/2013/02/27/index/022713_1235_BeingJohnPt7.png" alt=""></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt7.png" alt=""></p>
 <p>As you can see, it is relatively easy to start identifying content you have created and having increased visibility in page results.</p>
 <p>As organizations embrace thought leadership, this is a great tool to ensure your employees and their content continues to be discoverable!</p>
 
@@ -222,19 +217,19 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Being John Ptacek – Configuring Wordpress for Authorship Markup' class="twitter-share-button" data-url="http://jptacek.com/2013/02/27/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Being John Ptacek – Configuring Wordpress for Authorship Markup' class="twitter-share-button" data-url="http://jptacek.com/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/27/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/27/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
     <article class="post">
     
-    <h1><a href='/2013/02/22/index/'>Skyline Annual Retreat</a></h1>
+    <h1><a href='/2013/02/2371/'>Skyline Annual Retreat</a></h1>
     
         <div class="post-date">Feb 21st, 2013</div>
 
@@ -244,11 +239,11 @@ function () { [native code] } <br/> Foo2<br/>
 <p>Previous years have been in Sister Bay, WI, where we took up two different resorts. As our company grows, especially our Milwaukee office, we moved the event further south in Door County to Egg Harbor so we could have all associates at a single location.</p>
 <p>So what makes our Annual Retreat such a great event? Let&#39;s talk about a few of the ways company get-togethers can help any group grow the strength of their organization:</p>
 <h2 id="family-fun">Family Fun</h2>
-<p>Here is a picture of my kids and their friends as we headed on the road. <img src="/2013/02/22/index/022213_1452_1.jpg" alt=""></p>
+<p>Here is a picture of my kids and their friends as we headed on the road. <img src="/2013/02/2371/022213_1452_1.jpg" alt=""></p>
 <p>As you can see, they are an excited group. The Skyline team that puts together the Annual Retreat makes sure that there are events going on throughout the weekend for families. Some of those events are kid friendly, some of those events are spouse friendly, and some of them are even teenager friendly. </p>
 <p>Friday night starts off with a dinner where associates and their families have the opportunity to get together and socialize. The team I am part of, has associates working out of Madison, Milwaukee, Appleton and Green Bay, and we are pretty evenly distributed. The dinner and social aspects of the weekend are one of the few times each year we are all in the same place and get to have fun together.</p>
 <p>On Saturday, we have an overview of the business and how things are going for the company and where we are going. Associates are encouraged to invite their spouses/significant others to join the meeting and learn about the company. With so many new associates joining each year, it is a great way to introduce the organization to our associates&#39; families. For new associates, it really drives home what makes Skyline different from other consulting and tech companies in the Midwest. </p>
-<p><img src="/2013/02/22/index/022213_1452_2.jpg" alt=""></p>
+<p><img src="/2013/02/2371/022213_1452_2.jpg" alt=""></p>
 <h2 id="fun-events">Fun Events</h2>
 <p>Organizationally, Skyline is also committed to making a fun work environment. We even have a Director of Fun, who organizes events throughout the year. Door County is littered with events for associates and/or their families to attend. A small example of them:</p>
 <ul>
@@ -270,13 +265,13 @@ function () { [native code] } <br/> Foo2<br/>
 </li>
 </ul>
 <p>As you can see from some of these pictures, a good time is had by all!</p>
-<p><img src="/2013/02/22/index/022213_1452_3.jpg" alt=""><img src="/2013/02/22/index/022213_1452_4.jpg" alt=""><img src="/2013/02/22/index/022213_1452_5.jpg" alt=""><img src="/2013/02/22/index/022213_1452_6.jpg" alt=""></p>
-<p><img src="/2013/02/22/index/022213_1452_7.jpg" alt=""></p>
+<p><img src="/2013/02/2371/022213_1452_3.jpg" alt=""><img src="/2013/02/2371/022213_1452_4.jpg" alt=""><img src="/2013/02/2371/022213_1452_5.jpg" alt=""><img src="/2013/02/2371/022213_1452_6.jpg" alt=""></p>
+<p><img src="/2013/02/2371/022213_1452_7.jpg" alt=""></p>
 <h2 id="associate-recognition">Associate Recognition</h2>
 <p>Another big highlight during our Annual Retreat are the associate recognition awards. In the state of Wisconsin, Skyline has more certifications than any other Microsoft partner. Below is a picture of all the associates who received certifications in the last year. </p>
-<p><img src="/2013/02/22/index/022213_1452_8.jpg" alt=""></p>
+<p><img src="/2013/02/2371/022213_1452_8.jpg" alt=""></p>
 <p>This is one example of an award during the weekend. Skyline has always made it a point of recognizing associates who contribute to our organization. These awards have become one of the highlights of the annual retreat. One of the best parts is recognizing the people who do good work in front of their spouse/significant as well as their peers. </p>
-<p><img src="/2013/02/22/index/022213_1452_9.jpg" alt=""></p>
+<p><img src="/2013/02/2371/022213_1452_9.jpg" alt=""></p>
 <h2 id="highlights-for-making-a-great-company-event">Highlights for making a great company event</h2>
 <ul>
 <li><p>Make it family friendly</p>
@@ -306,13 +301,13 @@ function () { [native code] } <br/> Foo2<br/>
 
     <div id='socialTags'>
     <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='Skyline Annual Retreat' class="twitter-share-button" data-url="http://jptacek.com/2013/02/22/index/">Tweet</a>
+		<a href="https://twitter.com/share" data-text='Skyline Annual Retreat' class="twitter-share-button" data-url="http://jptacek.com/2013/02/2371/">Tweet</a>
     <!-- Google+. -->
     <div class="g-plusone" data-size="medium"></div>
     <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/22/index/" ></script>&nbsp;
+    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2013/02/2371/" ></script>&nbsp;
     <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/22/index/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
+    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2013/02/2371/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
     </div>
 </article>
 
