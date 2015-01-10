@@ -19,7 +19,7 @@
     <title>Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance - JPtacek.com | Musings on code and who knows what 3ls3</title>
     <meta name="author" content="John Ptacek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/feed/" rel="alternate" title="Jptacek.com" type="application/atom+xml">
+    <link href="/feed/index.xml" rel="alternate" title="Jptacek.com" type="application/atom+xml">
     <link href="/favicon.ico?v=2" rel="shortcut icon">
 
     <!-- Bootstrap -->
@@ -70,7 +70,7 @@
                     <li><a href="/about/">About</a></li>
                 
                 <li class="hidden-xs">
-                    <a href="/feed/" class="rss"><span class="icon icon-feed"></span></a>
+                    <a href="/feed/index.xml" class="rss"><span class="icon icon-feed"></span></a>
                     <a href="http://twitter.com/jptacek" class="twitter"><span class="icon icon-twitter"></span></a>
                     <a href="https://plus.google.com/+johnptacek" class="googleplus"><span class="icon icon-google-plus"></span></a>
                     <a href="https://linkedin.com/in/johnptacek" class="linkedin"><span class="icon icon-linkedin"></span></a>
@@ -99,7 +99,7 @@
     <div class="post-content">
         <p>In honor of <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>, we thought it would be fun to calculate Pi and talk about performance differences between C# and C++. There is some math coming your way (yeah Math!), but feel free to skip to the end for a discussion on performance.</p>
 <p>So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by</p>
-<pre class="highlight"><code class="hljs markdown">[<span class="hljs-link_label">![pi1</span>](<span class="hljs-link_url">http://www.jptacek.com/wp-content/uploads/2013/03/pi1.jpg</span>)](<span class="hljs-link_url">pi1.jpg</span>)
+<pre class="highlight"><code class="hljs markdown">![<span class="hljs-link_label">p1</span>](<span class="hljs-link_url">pi1.jpg</span>)
 </code></pre><p>Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! </p>
 <p>We have written two programs to calculate π, one in C# and one in C++. They are both syntactically similar and use the same algorithm. We tried to get as close to an apples comparison as we could, but in comparing two different languages, we did our best, you are still comparing an apple to an orange.</p>
 <p>So, what did we see? We calculated π to 15 decimal points, 3.141592653589793 for those of you keeping track at home. Both programs took almost 100 million iterations to converge, 99,995,330 to be exact. We ran each of the programs 10 times to get an average as shown in the following table</p>
