@@ -3,7 +3,7 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="http://www.jptacek.com/feed/" rel="self"/>
     <link href="http://www.jptacek.com"/>
-    <updated>2015-01-13T12:36:06.438Z</updated>
+    <updated>2015-01-13T12:40:41.795Z</updated>
     <id>http://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
@@ -158,15 +158,15 @@ as part of their <a href="http://www.skylinetechnologies.com/Blog/Article/2586/1
 <p>This is the tenth (I know, right!!?!!?!) in a series of posts on AngularJS where we are using Chemistry data from the periodic table
 to help us understand the framework. The others posts are</p>
 <ol>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2013/10/angularjs-introduction/index.html.md">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives//2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
 <li>AngularJS - Further with Directives</li>
 </ol>
 <blockquote>
