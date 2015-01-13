@@ -2,8 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url> <loc>http://www.jptacek.com/2011/03/developing-with-microsofts-azure-platform/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2011/04/sharepoint-search-think-outside-the-search-box/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://www.jptacek.com/2011/04/create-interactive-user-experiences-quickly-and-easily-with-silverlight-pivot-viewer/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2011/04/microsofts-deep-zoom-technology-allows-for-powerful-user-experience/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.jptacek.com/2011/04/create-interactive-user-experiences-quickly-and-easily-with-silverlight-pivot-viewer/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2011/05/mobile-apps-provide-the-finishing-touches-to-the-appleton-compassion-project/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/2011/06/comparing-asp-net-mvc-and-web-forms/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -117,9 +117,9 @@
 <url> <loc>http://www.jptacek.com/tags/silverlight/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/skyline-technologies/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/deep-zoom/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>http://www.jptacek.com/tags/mobile/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/search/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/sharepoint/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>http://www.jptacek.com/tags/mobile/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/razor/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/webmatrix/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>http://www.jptacek.com/tags/mvc/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
