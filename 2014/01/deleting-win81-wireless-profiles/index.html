@@ -33,7 +33,7 @@
     <script src="/scripts/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="generator" content="DocPad v6.68.1" />
+    <meta name="generator" content="DocPad v6.69.2" />
     
 <script src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
@@ -116,19 +116,19 @@ I have used PowerShell to enumerate all of the profiles and delete them, except 
 how to do things to interact with GitHub. So in that vain, I wrote a PowerShell script to delete all but the first
 wireless profile I created.</p>
 <p>So here is the PowerShell script</p>
-<pre class="highlight"><code class="hljs lasso"><span class="hljs-variable">$profile</span> <span class="hljs-subst">=</span> <span class="hljs-string">"Network Name"</span>
-<span class="hljs-variable">$total</span> <span class="hljs-subst">=</span> <span class="hljs-number">32</span>
-<span class="hljs-variable">$count</span> <span class="hljs-subst">=</span> <span class="hljs-number">2</span>
-Start<span class="hljs-attribute">-Transcript</span>
+<pre class="highlight"><code class="hljs powershell"><span class="hljs-variable">$profile</span> = <span class="hljs-string">"Network Name"</span>
+<span class="hljs-variable">$total</span> = <span class="hljs-number">32</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-number">2</span>
+<span class="hljs-built_in">Start-Transcript</span>
 netsh wlan show profiles
 <span class="hljs-keyword">do</span> {
- <span class="hljs-variable">$profile</span> <span class="hljs-subst">=</span> <span class="hljs-variable">$profile</span> <span class="hljs-subst">+</span> <span class="hljs-string">" "</span> <span class="hljs-subst">+</span><span class="hljs-variable">$count</span>
- <span class="hljs-variable">$execCommand</span> <span class="hljs-subst">=</span> <span class="hljs-string">"netsh wlan delete profile name="</span><span class="hljs-string">"$profile"</span><span class="hljs-string">""</span>
- Write<span class="hljs-attribute">-Host</span>(<span class="hljs-variable">$execCommand</span>)
- Invoke<span class="hljs-attribute">-Expression</span> <span class="hljs-variable">$execCommand</span>
- <span class="hljs-variable">$count</span><span class="hljs-subst">++</span>
+ <span class="hljs-variable">$profile</span> = <span class="hljs-variable">$profile</span> + <span class="hljs-string">" "</span> +<span class="hljs-variable">$count</span>
+ <span class="hljs-variable">$execCommand</span> = <span class="hljs-string">"netsh wlan delete profile name="</span><span class="hljs-string">"<span class="hljs-variable">$profile</span>"</span><span class="hljs-string">""</span>
+ <span class="hljs-built_in">Write-Host</span>(<span class="hljs-variable">$execCommand</span>)
+ <span class="hljs-built_in">Invoke-Expression</span> <span class="hljs-variable">$execCommand</span>
+ <span class="hljs-variable">$count</span>++
 }
-<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> <span class="hljs-attribute">-le</span> <span class="hljs-variable">$total</span>)
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> <span class="hljs-operator">-le</span> <span class="hljs-variable">$total</span>)
 </code></pre>
 <p>Also, as part of more command line, I have created a small GitHub repository to save scripts I create. Mostly so
 I can grab them when I am other machines. Feel free to have at em</p>

@@ -3,13 +3,126 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="http://www.jptacek.com/feed/" rel="self"/>
     <link href="http://www.jptacek.com"/>
-    <updated>2015-01-14T11:28:52.922Z</updated>
+    <updated>2015-01-15T12:24:47.251Z</updated>
     <id>http://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>Hosting a DocPad Site on GitHub Pages</title>
+        <link href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/"/>
+        <updated>2015-01-16T06:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2015-01-16,/2015/01/moving-docpad-to-github-pages/</id>
+        <content type="html"><![CDATA[<p>I am a fan, a HUGE fan, of Microsoft&#39;s <a href="http://azure.microsoft.com/">Azure</a> platform, especially their Azure Websites.
+This blog, <a href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/jptacek.com">jptacek.com</a> has been hosted
+on Azure for several iterations. First as a blog on WordPress, and later, as a blog being generated using
+<a href="https://docpad.org/">DocPad</a>. Feel
+free to follow my <a href="http://jptacek.com/tags/wordpress/">Wordpress</a> and <a href="http://jptacek.com/tags/docpad/">DocPad</a>
+adventures. Further, when I speak at events, I often say the subtitle of my talk should be
+&quot;Azure, a love story&quot;. It is awesome and it
+is a great tool for developers.</p>
+<p>The only thing that causes me a slight measure of discomfort is that it costs actual money to host my blog on Azure.
+I am fine paying money, especially
+for things I think are awesome, like Azure. However, my site, after migrating to DocPad is pretty stupid, it is just
+static HTML. Having a server for that can be a bit of overkill.</p>
+<p>Enter <a href="http://www.github.com">GitHub</a>.</p>
+<p><img src="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/githubpages.jpg" alt="GitHub pages"></p>
+<p>They have a platform for serving up static HTML. I think the thing that first
+time I had a seed planted was a <a href="http://haacked.com/archive/2013/12/02/dr-jekyll-and-mr-haack/">blog post</a>
+that <a href="https://twitter.com/Haacked">Phil Haack</a> did about moving his personal blog
+to GitHub Pages. In it, he steals a
+tweet from <a href="https://twitter.com/holman">Zach Holman</a>, one of his GitHub colleagues.</p>
+<blockquote>
+<p>@haacked the ops team gets paged when <a href="http://zachholman.com">http://zachholman.com</a> is down. You still have a lot to learn, buddy</p>
+</blockquote>
+<p>I thought that was a pretty good line. I also realize it is the same thing Microsoft does on their cloud platform, but
+it DID inspire me to dig a bit more into GitHub pages. At the time I looked, it was pretty focused on Jekyll, which
+I shied away from it based on its Ruby background (more info about my decision
+<a href="http://jptacek.com/2013/12/saying-hello-to-docpad/">here</a> ). A year later though, I have gotten a bit more
+comfortable with DocPad, and have a workflow to get my pages published to GitHub Pages.</p>
+<p>What are GitHub Pages? They are public webpages that are hosted on GitHub&#39;s infrastructure. They do NOT support
+HTTPS, so you won&#39;t want to host eCommerce sites on it. However, for blogs and other public content they work great.
+You can use Jekyll, which is a Ruby based static site generator. It is similar to DocPad. One benefit of using Jekyll
+with GitHub pages though is that you can check in your posts into your GitHub repository and it will automatically
+generate the site for you.</p>
+<p>There are two types of GitHub pages, User/Organization and Project sites. This blog, <a href="http://jptacek.com">JPtacek.com</a>
+is a User site. For User/Organization pages, GitHub will take content committed to the repository <em>username</em>.github.io,
+where <em>username</em> is a user&#39;s GitHub account. For me, this essentially means I check in my content to a the GitHub repository
+<a href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a>. HTML content checked into this repository is then
+automatically deployed to a static site at the URL <a href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://jptacek.github.io</a>. You can find out
+more about this at GitHubs site <a href="https://pages.github.com/">https://pages.github.com/</a>.</p>
+<p>It is worth noting that GitHub Pages User/Organization pages get checked into the master branch of the repository.
+GitHub project sites, which are for, wait for it....., projects, are a bit different. One of those differences is that
+they have content checked into the GHPages branch of the project.</p>
+<p>So far, so good. However, the site has been living at a specific domain for a while, which I would really like to
+continue to use. Of course, GitHub pages also supports custom domain names for a site. Instructions are
+<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">available</a> online. Essentially though,
+it is pretty slick and quick to do. You check in a single file called CNAME (all caps) into your <em>username</em>.github.io
+repository. This file should be in the root of your repository and have the URL of the site, in my case, www.jptacek.com,
+without any http:// in front. After committing your changes you can click settings in your repository</p>
+<p><img src="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/settings1.png" alt="Click settings"></p>
+<p>and you can then verify the URL is set</p>
+<p><img src="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/settings2.png" alt="Verify"></p>
+<p>We have GitHub all set to serve up our requests, but now we need to actually do some work with DNS to do that. I use
+<a href="https://dnsimple.com/">DNSimmple</a> to manage my DNS. Part of the neat things about DNSimple is they keep it simple :).
+There is a template setup for you to enable GitHub pages already present. It will add an Alias record for you and
+you are on your way</p>
+<p><img src="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/dnSimple.png" alt="DNSimple"></p>
+<p>So we have a site ready to go and it is live on the Internet, but we need content! Previously, through the magic of
+Azure, I would check in my blog content as a markdown file, Azure would read the check ins from my GitHub repository,
+download appropriate NPM pacakges, compile my markdown to static HTML and publish a site. All pretty cool. That is gone
+now. So instead of having the cloud compile my markdown, I am now doing it all local. This is the main negative for me
+about moving to GitHub pages, but sometimes freedom has a cost :)</p>
+<p>Since I will be dealing with two GitHub repositories, I reworked my workflow a bit. My site, and all of it&#39;s content
+and DocPad assets lives in GitHub at <a href="https://github.com/jptacek/JPtacek.com">https://github.com/jptacek/JPtacek.com</a>
+and my static blog content, needs to be in
+<a href="https://github.com/jptacek/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> to get published to
+GitHub Pages. What I have done is reworked a couple of things with DocPad to support this. Previously, I had
+my repository checked out locally to a directory called JPtacek.com. What I have done is keep this as the root
+directory and created two subdirectories within there. The first directory, BlogSource, is the DocPad repository which
+will be responsible for generating my static content from markdown files. I cloned my GitHub
+<a href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/JPtacek.com">https://github.com/jptacek/JPtacek.com</a> repository here. The second directory, ghpages, is where
+I cloned the <a href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository.</p>
+<p><img src="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/directory.png" alt="Direcotry"></p>
+<p>The next step is to be able to generate the content locally so I can psu my static content from my local drvie
+to the <a href="http://www.jptacek.com/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository. This was done by updating my
+DocPad environment a bit. In the DocPad configuration file, <code>docpad.coffee</code>, I created two environment, one
+for local development, the default way I had been using DocPad previously before, and a second for static. The
+static environment is what I use when I want to publish a new blog post. The main thing to note is the configuration setting for
+<code>outPath</code>, which points up a directory level from where my DocPad environment is (the <code>BlogSource</code>) directory and
+publishes files to the (<code>ghpages</code>) directory.</p>
+<p>I can run this command by typing <code>docpad -e static generate</code>. After running DocPad and generating the static
+content I am a commit and a push away from an updated website!</p>
+<pre class="highlight"><code class="hljs javascript">#docpad -e static generate
+  environments:
+    static:
+      outPath: <span class="hljs-string">'../ghpages'</span>
+      collections:   posts: -&gt;
+        @getCollection(<span class="hljs-string">"html"</span>).findAllLive({layout: <span class="hljs-string">'post'</span>},[{date:-<span class="hljs-number">1</span>}])
+    development:
+      outPath: <span class="hljs-string">'.out'</span>
+      collections:
+        posts: -&gt;
+          @getCollection(<span class="hljs-string">'documents'</span>).findAllLive({layout: {<span class="hljs-string">'$in'</span> : [<span class="hljs-string">'post'</span>, <span class="hljs-string">'drafts'</span>]}}, [layout: <span class="hljs-number">1</span>,  date: -<span class="hljs-number">1</span>])
+</code></pre>
+<p>So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn&#39;t too painful. I am now saving $10-15
+a month. This will translate to more coffee. A high level overview about the pros and cons.</p>
+<p>Pros about GitHub Pages</p>
+<ul>
+<li>Free! Azure was costing from $10-$15/month</li>
+<li>Bypass some CPU usage limits on Azure</li>
+</ul>
+<p>Cons about GitHub Pages</p>
+<ul>
+<li>Cannot automatically build sites from Git commits</li>
+<li>No IPV6 support (issue with Azure Websites currently)</li>
+<li>No SSL support</li>
+</ul>
+]]></content>
+    </entry>
     
     <entry>
         <title>MS Dev Podcast Show - December 19, 2014</title>
@@ -200,19 +313,19 @@ similarly as you do in jQuery, and since jQuery is already wrapped, you don&#39;
 <code>$</code> for access.</p>
 <p>In our example, we are going to use the <code>link</code> function to manipulate the DOM. First, let us take a look
 at the JavaScript</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
     <span class="hljs-keyword">return</span> {
         restrict: <span class="hljs-string">'E'</span>,
         templateUrl: <span class="hljs-string">'./template/periodic-template.html'</span>,
-        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> {</span>
-            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> </span>{
+            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
                 <span class="hljs-comment">// Change state</span>
-                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
                     scope.fullElement = !(scope.fullElement);
                 });
 
             });
-            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
                 elem.css(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'pointer'</span>);
             });
 
@@ -385,7 +498,7 @@ to explore Angular. In keeping with that theme, we are going to create a simple 
 data in its own &quot;HTML&quot; tag called <code>periodicchartelement</code>. Cool things are starting to happen here people!</p>
 <p>So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
 <code>module.directive</code> API. Within here, we can setup a small template. Our JavaScript would look something like</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> {
       template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
     };
@@ -403,7 +516,7 @@ indicate the DOM element we are creating from the following options</p>
 <p>There is also the ability creative directives tied to HTML comments with <code>restrict:M</code>. The restrict keyword
 can also be combined together to in a manner such as <code>ACM</code>, indicating the directive applies to attributes, classes, 
 and comments.</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> {        
     restrict: <span class="hljs-string">'E'</span>,
       template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
@@ -433,7 +546,7 @@ Based on our <a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services
 <p>With that in place, let&#39;s create a directive that will allow us to display an element from the periodic table.</p>
 <p>The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang 
 the directive off of our module and call it <code>`periodicchartelement</code></p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
     <span class="hljs-keyword">return</span> {
         restrict: <span class="hljs-string">'E'</span>,
         templateUrl: <span class="hljs-string">'/2014/06/angularJS-intro-to-directives/template/periodic-template.html'</span>,
@@ -459,7 +572,7 @@ of cssType.</p>
 </code></pre>
 <p>Our CSS type is then a function that determines the CSS class based on the type of element and is defined in our
 service, <code>chemistryService.js</code></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> {</span>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> </span>{
         <span class="hljs-keyword">var</span> cssClass = <span class="hljs-string">''</span>;
         elementType = elementType.toLowerCase();
         cssClass = elementType;
@@ -590,15 +703,15 @@ logic many, many times. To minimize this, I have written a helper application th
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
+chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
         <span class="hljs-keyword">return</span> element.name;
     };
 });
 
 <span class="hljs-comment">//</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-{</span>
+</span>{
     ...
     $scope.nameFromService = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
 }
@@ -607,9 +720,9 @@ chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span 
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
       <span class="hljs-keyword">return</span> {
-            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
+            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
                <span class="hljs-keyword">return</span> element.name;
             }
         }
@@ -617,7 +730,7 @@ chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span 
 
 <span class="hljs-comment">//</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-{</span>
+</span>{
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
 }
@@ -628,7 +741,7 @@ it. We showed this above, but just to be sure, by passing <code>chemistryService
 available within the
 controller scope</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-{</span>
+</span>{
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
 }
@@ -641,15 +754,15 @@ using the Periodic Data, which he kindly let me steal.</p>
 electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
 based on the difference determine the type of bond.</p>
 <p>Our service then looks like</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
-    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> {</span>
+    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> </span>{
 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(element1.electronegativity - element2.electronegativity);
 
     };
 
-    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> {</span>
+    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> </span>{
 
         <span class="hljs-keyword">if</span> (difference &gt; <span class="hljs-number">2.0</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-string">'Ionic Bond'</span>;
@@ -666,11 +779,11 @@ based on the difference determine the type of bond.</p>
 since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
 consume the service when we have two elements selected.</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemServiceCtrl'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> {</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> </span>{
 
         $scope.elements = periodicData.elements;
 
-        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
+        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
             <span class="hljs-keyword">if</span> ($scope.selectedElement1 &amp;&amp; $scope.selectedElement2) {
 
@@ -806,32 +919,6 @@ in attendance.</p>
 <p>The code for my demo is available on <a href="http://www.github.com">GitHub</a> at <a href="https://github.com/jptacek/Wi-Ineta-AngularJS">https://github.com/jptacek/Wi-Ineta-AngularJS</a></p>
 <p>As always, feel free to reach out to me via email or on twitter.</p>
 <p>To those of you who attended, thanks much!</p>
-]]></content>
-    </entry>
-    
-    <entry>
-        <title>Build 2014 - Day One Highlights</title>
-        <link href="http://www.jptacek.com/2014/04/Build2014-Day1-Highlights/"/>
-        <updated>2014-04-02T05:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2014-04-02,/2014/04/Build2014-Day1-Highlights/</id>
-        <content type="html"><![CDATA[<p>Today, April 2 2014,  is the first day of Microsoft’s Build conference, a developer focused conference from Microsoft. The Build conference is usually a big day for Microsoft as they talk through their development stack, tools and strategy. Today’s keynote was no exception.</p>
-<p>Skyline has a contingent of our team out in San Francisco and we thought we would provide a quick overview of some of the highlights. You are going to be able to find a lot more in depth information at various tech new sites, but we thought we would hit on high points for our customers before we hop to another session.</p>
-<p><img src="http://www.jptacek.com/2014/04/Build2014-Day1-Highlights/build1.jpg" alt="Build"></p>
-<p>First, this morning’s main focus was the announcement of Windows Phone 8.1 and some of its new features. Microsoft has worked hard at integrating in features that Enterprise users will find valuable, including the ability to automatically add users to an organization and set policies and controls around what users can do. This includes the ability to wipe a user’s phone after they leave the organization. There was also announcements of integration with VPN software, secure email, etc. Windows Phone 8.1 sows Microsoft has focused on strengthening their platform for Enterprises.</p>
-<p>While that is of interest to enterprises, the biggest announcements were focused for end users. Microsoft had a couple of places they need to play catch up; specifically a notification center and speech enabled assistants.</p>
-<p>Microsoft introduced their version of the notification center called Action Center. It allows users to set different area for display in the notification center such as VPN, Airplane mode, etc. It also enables developers to integrate their application into the notification. This is been long awaited feature for Windows Phone and Microsoft looks like they have a solid offering here.</p>
-<p>Microsoft also introduced their version of Siri, called Cortana. The name comes from a character in their Halo series of games for the Xbox. It is refreshing, and Cortana even joked, to see the program wasn’t named Microsoft Speech Notification Center for Windows Phone 8.1 Update 3. During the keynote Microsoft really drove home how Cortana was the first “digital assistant” for mobile phones. Microsoft has really spent a good deal of time talking with personal assistants to see how they work with their customers. They have worked hard to bring personalization into the platform, such as your work and home locations, family members, etc. While it is difficult to say without actually using, it looks like Microsoft may have leapfrogged competitors like Siri and Google now with their speech assistant, especially with the ability to integrate with other applications like Facebook and Twitter.</p>
-<p><img src="http://www.jptacek.com/2014/04/Build2014-Day1-Highlights/build2.jpg" alt="Build Crowd"></p>
-<p>There was also a number of features announced that really improve the Windows Phone platform. An improved calendar, themes for the lock screen, better Skype integration, etc. All in all, Microsoft has made strides in making Windows Phone a more compelling platform for users. You can find out a LOT more information at the <a href="http://blogs.windows.com/windows_phone/b/windowsphone/archive/2014/04/02/cortana-yes-and-many-many-other-great-features-coming-in-windows-phone-8-1.aspx">Windows Phone Blog</a>.</p>
-<p>There was also the introduction of Windows 8.1 Update 1 (yeah, I don’t know who names these things either). Update 1 enables more mouse functionality in desktop mode for users. The title bar now appears in Windows Store apps and the task bar will also display when running Windows metro apps. The search and power button are also more prominently displayed for desktop users. It appears a lot of the new features are to enable desktop users to be even more productive. We will all find out soon enough, downloads start on Tuesday April 8.</p>
-<p>From a developer standpoint, the most interesting announcement of morning was Universal Applications. This will enable you write an application that will hit both Xbox One, Windows Phone and Windows. The functionality looks pretty interesting and will definitely be something to pay attention to. Microsoft demoed creating the Kahn Academy app by taking a single base of shared code, and then making UI updates to hit both the Windows phone and Xbox One. Users can even have a single UI without worrying about creating custom for each version. VERY COOL.</p>
-<p>From a single platform standpoint, there is also integration of the Windows Phone and Windows store. If you buy Angry Birds Star Wars in the consolidated store, you also have the ability to download for Windows.</p>
-<p>Fresh off the announcement and release of Office for the iPad, Microsoft showed off the Windows Store version of PowerPoint, with the same functionality running on both the Windows Phone and the Windows version of the application. Microsoft is promising full fidelity across the desktop, Windows Phone and Windows Store version. No release information was shared.</p>
-<p>Microsoft also announced that they were open sourcing their WinJS platform. The library will be available on GitHub and enable developers to create applications that run not only on the Windows stack of devices, but also on Android and iOS.</p>
-<p><img src="http://www.jptacek.com/2014/04/Build2014-Day1-Highlights/build3.jpg" alt="AngularJS talk line"></p>
-<p>There was a host of other information in the nearly three hour keynote that is available across Internet news sites. At the end of the day though, I think the message Microsoft and their CEO Satya Nadala are saying are pretty obvious. Microsoft is moving beyond just Windows and they are simplifying their development platform to reach more devices. The new version of Windows Phone and Windows show they are listening to their customers and end users by simplifying and consolidating their Windows platforms while branching out to other vendors. They communicated a vision for enabling success for developers, enterprises and users using Microsoft tools and languages.</p>
-<p>Another big keynote tomorrow! On to the next session.</p>
-<p>This post originally appeard at <a href="http://www.skylinetechnologies.com/Blog/Article/2464/Build-2014-Observations-Day-1.aspx">Skyline Technologies</a></p>
 ]]></content>
     </entry>
     

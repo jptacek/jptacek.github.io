@@ -33,7 +33,7 @@
     <script src="/scripts/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="generator" content="DocPad v6.68.1" />
+    <meta name="generator" content="DocPad v6.69.2" />
     
 <script src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
@@ -142,7 +142,7 @@ to explore Angular. In keeping with that theme, we are going to create a simple 
 data in its own &quot;HTML&quot; tag called <code>periodicchartelement</code>. Cool things are starting to happen here people!</p>
 <p>So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
 <code>module.directive</code> API. Within here, we can setup a small template. Our JavaScript would look something like</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> {
       template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
     };
@@ -160,7 +160,7 @@ indicate the DOM element we are creating from the following options</p>
 <p>There is also the ability creative directives tied to HTML comments with <code>restrict:M</code>. The restrict keyword
 can also be combined together to in a manner such as <code>ACM</code>, indicating the directive applies to attributes, classes, 
 and comments.</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
     <span class="hljs-keyword">return</span> {        
     restrict: <span class="hljs-string">'E'</span>,
       template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
@@ -190,7 +190,7 @@ Based on our <a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services
 <p>With that in place, let&#39;s create a directive that will allow us to display an element from the periodic table.</p>
 <p>The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang 
 the directive off of our module and call it <code>`periodicchartelement</code></p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
     <span class="hljs-keyword">return</span> {
         restrict: <span class="hljs-string">'E'</span>,
         templateUrl: <span class="hljs-string">'/2014/06/angularJS-intro-to-directives/template/periodic-template.html'</span>,
@@ -216,7 +216,7 @@ of cssType.</p>
 </code></pre>
 <p>Our CSS type is then a function that determines the CSS class based on the type of element and is defined in our
 service, <code>chemistryService.js</code></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> {</span>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> </span>{
         <span class="hljs-keyword">var</span> cssClass = <span class="hljs-string">''</span>;
         elementType = elementType.toLowerCase();
         cssClass = elementType;

@@ -33,7 +33,7 @@
     <script src="/scripts/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="generator" content="DocPad v6.68.1" />
+    <meta name="generator" content="DocPad v6.69.2" />
     
 <script src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
@@ -147,19 +147,19 @@ similarly as you do in jQuery, and since jQuery is already wrapped, you don&#39;
 <code>$</code> for access.</p>
 <p>In our example, we are going to use the <code>link</code> function to manipulate the DOM. First, let us take a look
 at the JavaScript</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
     <span class="hljs-keyword">return</span> {
         restrict: <span class="hljs-string">'E'</span>,
         templateUrl: <span class="hljs-string">'./template/periodic-template.html'</span>,
-        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> {</span>
-            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> </span>{
+            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
                 <span class="hljs-comment">// Change state</span>
-                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
                     scope.fullElement = !(scope.fullElement);
                 });
 
             });
-            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
                 elem.css(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'pointer'</span>);
             });
 
