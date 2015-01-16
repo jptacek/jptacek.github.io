@@ -3,7 +3,7 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="http://www.jptacek.com/feed/" rel="self"/>
     <link href="http://www.jptacek.com"/>
-    <updated>2015-01-16T11:32:29.299Z</updated>
+    <updated>2015-01-16T12:36:33.236Z</updated>
     <id>http://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
@@ -75,7 +75,7 @@ you are on your way</p>
 Azure, I would check in my blog content as a markdown file, Azure would read the check ins from my GitHub repository,
 download appropriate NPM pacakges, compile my markdown to static HTML and publish a site. All pretty cool. That is gone
 now. So instead of having the cloud compile my markdown, I am now doing it all local. This is the main negative for me
-about moving to GitHub pages, but sometimes freedom has a cost :)</p>
+about moving to GitHub pages, but sometimes freedom has a cost :).</p>
 <p>Since I will be dealing with two GitHub repositories, I reworked my workflow a bit. My site, and all of it&#39;s content
 and DocPad assets lives in GitHub at <a href="https://github.com/jptacek/JPtacek.com">https://github.com/jptacek/JPtacek.com</a>
 and my static blog content, needs to be in
