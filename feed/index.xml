@@ -3,7 +3,7 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="http://www.jptacek.com/feed/" rel="self"/>
     <link href="http://www.jptacek.com"/>
-    <updated>2015-01-16T12:36:33.236Z</updated>
+    <updated>2015-01-16T15:20:22.807Z</updated>
     <id>http://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
@@ -314,19 +314,19 @@ similarly as you do in jQuery, and since jQuery is already wrapped, you don&#39;
 <code>$</code> for access.</p>
 <p>In our example, we are going to use the <code>link</code> function to manipulate the DOM. First, let us take a look
 at the JavaScript</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
     <span class="hljs-keyword">return</span> {
         restrict: <span class="hljs-string">'E'</span>,
         templateUrl: <span class="hljs-string">'./template/periodic-template.html'</span>,
-        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> </span>{
-            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> {</span>
+            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
                 <span class="hljs-comment">// Change state</span>
-                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
                     scope.fullElement = !(scope.fullElement);
                 });
 
             });
-            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
                 elem.css(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'pointer'</span>);
             });
 
@@ -440,7 +440,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <entry>
         <title>2014 That Conference</title>
         <link href="http://www.jptacek.com/2014/08/2014-that-conference-presentation/"/>
-        <updated>2014-08-12T05:00:00.000Z</updated>
+        <updated>2014-08-12T06:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-08-12,/2014/08/2014-that-conference-presentation/</id>
         <content type="html"><![CDATA[<p>Thanks to everyone wbo attended my That Conference talk this year. I enjoyed the conversations about the talk during and 
 throughout the day.</p>
@@ -452,7 +452,7 @@ throughout the day.</p>
     <entry>
         <title>AngularJS - Introduction to Directives</title>
         <link href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/"/>
-        <updated>2014-06-03T05:00:00.000Z</updated>
+        <updated>2014-06-03T06:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-06-03,/2014/06/angularJS-intro-to-directives/</id>
         <content type="html"><![CDATA[<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
@@ -499,7 +499,7 @@ to explore Angular. In keeping with that theme, we are going to create a simple 
 data in its own &quot;HTML&quot; tag called <code>periodicchartelement</code>. Cool things are starting to happen here people!</p>
 <p>So how do we do this? First, similar to controllers, directives are defined on the module for our application via the 
 <code>module.directive</code> API. Within here, we can setup a small template. Our JavaScript would look something like</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> {
       template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
     };
@@ -517,7 +517,7 @@ indicate the DOM element we are creating from the following options</p>
 <p>There is also the ability creative directives tied to HTML comments with <code>restrict:M</code>. The restrict keyword
 can also be combined together to in a manner such as <code>ACM</code>, indicating the directive applies to attributes, classes, 
 and comments.</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
     <span class="hljs-keyword">return</span> {        
     restrict: <span class="hljs-string">'E'</span>,
       template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
@@ -547,7 +547,7 @@ Based on our <a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services
 <p>With that in place, let&#39;s create a directive that will allow us to display an element from the periodic table.</p>
 <p>The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang 
 the directive off of our module and call it <code>`periodicchartelement</code></p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
     <span class="hljs-keyword">return</span> {
         restrict: <span class="hljs-string">'E'</span>,
         templateUrl: <span class="hljs-string">'/2014/06/angularJS-intro-to-directives/template/periodic-template.html'</span>,
@@ -573,7 +573,7 @@ of cssType.</p>
 </code></pre>
 <p>Our CSS type is then a function that determines the CSS class based on the type of element and is defined in our
 service, <code>chemistryService.js</code></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> </span>{
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> {</span>
         <span class="hljs-keyword">var</span> cssClass = <span class="hljs-string">''</span>;
         elementType = elementType.toLowerCase();
         cssClass = elementType;
@@ -655,7 +655,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <entry>
         <title>AngularJS - Introduction to Services</title>
         <link href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/"/>
-        <updated>2014-05-19T05:00:00.000Z</updated>
+        <updated>2014-05-19T06:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-05-19,/2014/05/angularJS-Intro-To-Services/</id>
         <content type="html"><![CDATA[<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
@@ -704,15 +704,15 @@ logic many, many times. To minimize this, I have written a helper application th
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
+chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
         <span class="hljs-keyword">return</span> element.name;
     };
 });
 
 <span class="hljs-comment">//</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-</span>{
+{</span>
     ...
     $scope.nameFromService = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
 }
@@ -721,9 +721,9 @@ chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span 
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
       <span class="hljs-keyword">return</span> {
-            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
+            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
                <span class="hljs-keyword">return</span> element.name;
             }
         }
@@ -731,7 +731,7 @@ chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span 
 
 <span class="hljs-comment">//</span>
 <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-</span>{
+{</span>
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
 }
@@ -742,7 +742,7 @@ it. We showed this above, but just to be sure, by passing <code>chemistryService
 available within the
 controller scope</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-</span>{
+{</span>
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
 }
@@ -755,15 +755,15 @@ using the Periodic Data, which he kindly let me steal.</p>
 electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
 based on the difference determine the type of bond.</p>
 <p>Our service then looks like</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
 
-    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> </span>{
+    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> {</span>
 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(element1.electronegativity - element2.electronegativity);
 
     };
 
-    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> </span>{
+    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> {</span>
 
         <span class="hljs-keyword">if</span> (difference &gt; <span class="hljs-number">2.0</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-string">'Ionic Bond'</span>;
@@ -780,11 +780,11 @@ based on the difference determine the type of bond.</p>
 since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
 consume the service when we have two elements selected.</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemServiceCtrl'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> {</span>
 
         $scope.elements = periodicData.elements;
 
-        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
 
             <span class="hljs-keyword">if</span> ($scope.selectedElement1 &amp;&amp; $scope.selectedElement2) {
 
@@ -853,7 +853,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <entry>
         <title>That Conference - Ways To Hack Your Day to Better Health</title>
         <link href="http://www.jptacek.com/2014/05/thatConference-ways-to-hack-your-day-to-better-health/"/>
-        <updated>2014-05-18T05:00:00.000Z</updated>
+        <updated>2014-05-18T06:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-05-18,/2014/05/thatConference-ways-to-hack-your-day-to-better-health/</id>
         <content type="html"><![CDATA[<p>I am honored to be speaking this year at That Conference. That Conference is a conference with national speakers held every
 year in the Wisconsin Dells at the <a href="http://www.kalahariresorts.com/wisconsin">Kalahari Resort</a>. It is very high on the awesome scale,
@@ -889,7 +889,7 @@ do to keep healthy during the day? Feel free to sound off in the Disqus comments
     <entry>
         <title>Madison .NET User Group - May 2014</title>
         <link href="http://www.jptacek.com/2014/05/maddotnet-ug-presentation/"/>
-        <updated>2014-05-08T05:00:00.000Z</updated>
+        <updated>2014-05-08T06:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-05-08,/2014/05/maddotnet-ug-presentation/</id>
         <content type="html"><![CDATA[<p>Thanks to everyone who came out to my <a href="http://www.meetup.com/MADdotNET/">Madison .NET User Group</a> presentation on AngularJS on May 7th,
 2014.</p>
@@ -908,7 +908,7 @@ interested in learning more about DocPad, here is a post where I talked about mo
     <entry>
         <title>Milwaukee .NET User Group Presentation - April 2014</title>
         <link href="http://www.jptacek.com/2014/04/milwaukee-ug-presentation/"/>
-        <updated>2014-04-10T05:00:00.000Z</updated>
+        <updated>2014-04-10T06:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-04-10,/2014/04/milwaukee-ug-presentation/</id>
         <content type="html"><![CDATA[<p>Thanks to everyone who came out to my <a href="http://wi-ineta.org/">Milwaukee .NET User Group</a> presentation on AngularJS this week
 (April 8, 2014).

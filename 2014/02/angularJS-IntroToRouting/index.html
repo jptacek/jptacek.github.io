@@ -24,7 +24,7 @@
     <script src="/scripts/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="generator" content="DocPad v6.69.2" />
+    <meta name="generator" content="DocPad v6.68.1" />
     
 <script src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
@@ -158,7 +158,7 @@ to a detail view.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
 
 <span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, [<span class="hljs-string">'ngRoute'</span>]).
-    config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span> </span>{
+    config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span> {</span>
         $routeProvider
             .when(<span class="hljs-string">'/'</span>, {
                 templateUrl:<span class="hljs-string">'templates/chemList.html'</span>,
@@ -177,11 +177,11 @@ a view to our page markup for Angular to inject our template into. That is as si
 </code></pre>
 <p>Our controllers and templates are very similar to what we have done before. Our controller class is now</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemListCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
         $scope.periodic = periodicData;
     }
 ).controller(<span class="hljs-string">'chemItemCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope, $log,$routeParams)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope, $log,$routeParams)</span> {</span>
         <span class="hljs-keyword">var</span> elementNumber  = $routeParams.atomicNumber;
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;periodicData.elements.length;i++) {
             <span class="hljs-keyword">if</span> (periodicData.elements[i].atomicNumber == elementNumber) {
@@ -243,8 +243,8 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <p>Currently, I am reading <a href="http://www.amazon.com/Revival-A-Novel-Stephen-King/dp/1476770387">Revival</a>
         by Stephen King</p>
     <p>
-        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
-        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
         <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
         <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
         <a href="http://plus.google.com/+JohnPtacek">Google+</a>

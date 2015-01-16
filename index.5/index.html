@@ -24,7 +24,7 @@
     <script src="/scripts/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="generator" content="DocPad v6.69.2" />
+    <meta name="generator" content="DocPad v6.68.1" />
     
 <script src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
@@ -239,7 +239,7 @@ to a detail view.</p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
 
 <span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, [<span class="hljs-string">'ngRoute'</span>]).
-    config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span> </span>{
+    config(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($routeProvider)</span> {</span>
         $routeProvider
             .when(<span class="hljs-string">'/'</span>, {
                 templateUrl:<span class="hljs-string">'templates/chemList.html'</span>,
@@ -258,11 +258,11 @@ a view to our page markup for Angular to inject our template into. That is as si
 </code></pre>
 <p>Our controllers and templates are very similar to what we have done before. Our controller class is now</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemListCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
         $scope.periodic = periodicData;
     }
 ).controller(<span class="hljs-string">'chemItemCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope, $log,$routeParams)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope, $log,$routeParams)</span> {</span>
         <span class="hljs-keyword">var</span> elementNumber  = $routeParams.atomicNumber;
         <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i=<span class="hljs-number">0</span>;i&lt;periodicData.elements.length;i++) {
             <span class="hljs-keyword">if</span> (periodicData.elements[i].atomicNumber == elementNumber) {
@@ -405,7 +405,7 @@ by dynamically setting the template. In our last post, we had committed crimes a
 <p>We can do something similar here by having a second template get loaded by our page. To do this, we update our
 controller to have an array of templates, and choose which one we want, in this case, an ugly  Gold.</p>
 <pre class="highlight"><code class="hljs javascript">controller(<span class="hljs-string">'chemTemplateCtrl2'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
         $scope.periodic = perioicData;
 
         $scope.templates =
@@ -498,7 +498,7 @@ in the page. We can easily create a function in our controller to set if we are 
 a subset based on the selected template. You can see this in the <code>displayAll</code> function in the final version
 of our controller</p>
 <pre class="highlight"><code class="hljs javascript">controller(<span class="hljs-string">'chemTemplateCtrl3'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> {</span>
         $scope.periodic = perioicData;
 
         $scope.templates =
@@ -507,7 +507,7 @@ of our controller</p>
                 , { name: <span class="hljs-string">'template3.html'</span>, url: <span class="hljs-string">'js/templates/element3.html'</span>}];
         $scope.templateSelect = $scope.templates[<span class="hljs-number">0</span>];
 
-        $scope.displayAll =  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        $scope.displayAll =  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">if</span> ($scope.templateSelect.name == $scope.templates[<span class="hljs-number">2</span>].name) {
                 <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
             }
@@ -579,8 +579,8 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <p>Currently, I am reading <a href="http://www.amazon.com/Revival-A-Novel-Stephen-King/dp/1476770387">Revival</a>
         by Stephen King</p>
     <p>
-        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
-        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
         <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
         <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
         <a href="http://plus.google.com/+JohnPtacek">Google+</a>

@@ -24,7 +24,7 @@
     <script src="/scripts/vendor/respond.min.js"></script>
     <![endif]-->
 
-    <meta name="generator" content="DocPad v6.69.2" />
+    <meta name="generator" content="DocPad v6.68.1" />
     
 <script src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
@@ -209,7 +209,7 @@ So the question is why... Well here is my reasoning</p>
 <p>To setup our controller, we create a controller with a callback such as</p>
 <p>_christmasController.js</p>
 <pre class="highlight"><code class="hljs javascript">christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> {</span>
 
 );
 </code></pre>
@@ -302,7 +302,7 @@ So for the following markup, the <span style="font-family:Courier New">ng-model=
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
 
 christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">christmasController</span><span class="hljs-params">($scope)</span> {</span>
         <span class="hljs-comment">// http://www.irishmirror.ie/female/family/how-much-would-cost-presents-2851366</span>
         <span class="hljs-comment">// http://www.usatoday.com/story/money/business/2012/11/26/12-days-of-christmas-107k/1726807/</span>
         <span class="hljs-comment">//one</span>
@@ -341,56 +341,56 @@ christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
         <span class="hljs-comment">// twelve drummers drumming</span>
         $scope.drummer = <span class="hljs-number">231.33</span>;
 
-        $scope.day1 =  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day1 =  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.pearTree) +  <span class="hljs-built_in">parseFloat</span>($scope.partridge);
 
         };
 
-        $scope.day2 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day2 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.turtleDove) * <span class="hljs-number">2</span>;
         };
 
-        $scope.day3 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day3 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.frenchHen) * <span class="hljs-number">3</span>;
         };
 
-        $scope.day4 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day4 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.callingBird) * <span class="hljs-number">4</span>;
         };
 
-        $scope.day5 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day5 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.goldRing) * <span class="hljs-number">5</span>;
         };
 
-        $scope.day6 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day6 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.geese) * <span class="hljs-number">6</span>;
         };
 
-        $scope.day7 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day7 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.swan) * <span class="hljs-number">7</span>;
         };
 
-        $scope.day8 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day8 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.milkingMaid) * <span class="hljs-number">8</span>;
         };
 
-        $scope.day9 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day9 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.dancingLady) * <span class="hljs-number">9</span>;
         };
 
-        $scope.day10 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day10 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.lord) * <span class="hljs-number">10</span>;
         };
 
-        $scope.day11 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day11 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.piper) * <span class="hljs-number">11</span>;
         };
 
-        $scope.day12 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.day12 = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span> <span class="hljs-built_in">parseFloat</span>($scope.drummer) * <span class="hljs-number">12</span>;
         };
 
-        $scope.totalCostChristmas = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+        $scope.totalCostChristmas = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
             <span class="hljs-keyword">return</span>  <span class="hljs-number">12</span>* $scope.day1() + <span class="hljs-number">11</span>* $scope.day2() + <span class="hljs-number">10</span>*  $scope.day3() +  <span class="hljs-number">9</span> * $scope.day4()+ <span class="hljs-number">8</span> * $scope.day5()+ <span class="hljs-number">7</span>* $scope.day6() +
                 <span class="hljs-number">6</span> * $scope.day7() +  <span class="hljs-number">5</span>* $scope.day8() +  <span class="hljs-number">4</span>* $scope.day9() + <span class="hljs-number">3</span>* $scope.day10() +  <span class="hljs-number">2</span>* $scope.day11() +  $scope.day12();
         };
@@ -504,8 +504,8 @@ christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
     <p>Currently, I am reading <a href="http://www.amazon.com/Revival-A-Novel-Stephen-King/dp/1476770387">Revival</a>
         by Stephen King</p>
     <p>
-        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
-        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
         <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
         <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
         <a href="http://plus.google.com/+JohnPtacek">Google+</a>
