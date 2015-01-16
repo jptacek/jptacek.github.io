@@ -168,13 +168,13 @@ will be responsible for generating my static content from markdown files. I clon
 <a href="/2015/01/moving-docpad-to-github-pages/JPtacek.com">https://github.com/jptacek/JPtacek.com</a> repository here. The second directory, ghpages, is where
 I cloned the <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository.</p>
 <p><img src="/2015/01/moving-docpad-to-github-pages/directory.png" alt="Direcotry"></p>
-<p>The next step is to be able to generate the content locally so I can psu my static content from my local drvie
+<p>The next step is to be able to generate the content locally so I can push my static content from my local drive
 to the <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository. This was done by updating my
-DocPad environment a bit. In the DocPad configuration file, <code>docpad.coffee</code>, I created two environment, one
+DocPad environment a bit. In the DocPad configuration file, <code>docpad.coffee</code>, I created two environments, one
 for local development, the default way I had been using DocPad previously before, and a second for static. The
 static environment is what I use when I want to publish a new blog post. The main thing to note is the configuration setting for
 <code>outPath</code>, which points up a directory level from where my DocPad environment is (the <code>BlogSource</code>) directory and
-publishes files to the (<code>ghpages</code>) directory.</p>
+publishes files to the github.io directory(<code>ghpages</code>).</p>
 <p>I can run this command by typing <code>docpad -e static generate</code>. After running DocPad and generating the static
 content I am a commit and a push away from an updated website!</p>
 <pre class="highlight"><code class="hljs javascript">#docpad -e static generate
@@ -190,7 +190,8 @@ content I am a commit and a push away from an updated website!</p>
           @getCollection(<span class="hljs-string">'documents'</span>).findAllLive({layout: {<span class="hljs-string">'$in'</span> : [<span class="hljs-string">'post'</span>, <span class="hljs-string">'drafts'</span>]}}, [layout: <span class="hljs-number">1</span>,  date: -<span class="hljs-number">1</span>])
 </code></pre>
 <p>So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn&#39;t too painful. I am now saving $10-15
-a month. This will translate to more coffee. A high level overview about the pros and cons.</p>
+a month. This will translate to more coffee.</p>
+<p>A high level overview about the pros and cons.</p>
 <p>Pros about GitHub Pages</p>
 <ul>
 <li>Free! Azure was costing from $10-$15/month</li>
