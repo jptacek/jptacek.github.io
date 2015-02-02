@@ -3,7 +3,7 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="http://www.jptacek.com/feed/" rel="self"/>
     <link href="http://www.jptacek.com"/>
-    <updated>2015-01-16T15:20:22.807Z</updated>
+    <updated>2015-02-02T11:50:36.757Z</updated>
     <id>http://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
@@ -440,7 +440,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <entry>
         <title>2014 That Conference</title>
         <link href="http://www.jptacek.com/2014/08/2014-that-conference-presentation/"/>
-        <updated>2014-08-12T06:00:00.000Z</updated>
+        <updated>2014-08-12T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-08-12,/2014/08/2014-that-conference-presentation/</id>
         <content type="html"><![CDATA[<p>Thanks to everyone wbo attended my That Conference talk this year. I enjoyed the conversations about the talk during and 
 throughout the day.</p>
@@ -452,7 +452,7 @@ throughout the day.</p>
     <entry>
         <title>AngularJS - Introduction to Directives</title>
         <link href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/"/>
-        <updated>2014-06-03T06:00:00.000Z</updated>
+        <updated>2014-06-03T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-06-03,/2014/06/angularJS-intro-to-directives/</id>
         <content type="html"><![CDATA[<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
@@ -655,7 +655,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <entry>
         <title>AngularJS - Introduction to Services</title>
         <link href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/"/>
-        <updated>2014-05-19T06:00:00.000Z</updated>
+        <updated>2014-05-19T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-05-19,/2014/05/angularJS-Intro-To-Services/</id>
         <content type="html"><![CDATA[<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
 <a href="http://www.google.com">Google</a>. The focus of Angular is building complex
@@ -853,7 +853,7 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     <entry>
         <title>That Conference - Ways To Hack Your Day to Better Health</title>
         <link href="http://www.jptacek.com/2014/05/thatConference-ways-to-hack-your-day-to-better-health/"/>
-        <updated>2014-05-18T06:00:00.000Z</updated>
+        <updated>2014-05-18T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-05-18,/2014/05/thatConference-ways-to-hack-your-day-to-better-health/</id>
         <content type="html"><![CDATA[<p>I am honored to be speaking this year at That Conference. That Conference is a conference with national speakers held every
 year in the Wisconsin Dells at the <a href="http://www.kalahariresorts.com/wisconsin">Kalahari Resort</a>. It is very high on the awesome scale,
@@ -889,7 +889,7 @@ do to keep healthy during the day? Feel free to sound off in the Disqus comments
     <entry>
         <title>Madison .NET User Group - May 2014</title>
         <link href="http://www.jptacek.com/2014/05/maddotnet-ug-presentation/"/>
-        <updated>2014-05-08T06:00:00.000Z</updated>
+        <updated>2014-05-08T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-05-08,/2014/05/maddotnet-ug-presentation/</id>
         <content type="html"><![CDATA[<p>Thanks to everyone who came out to my <a href="http://www.meetup.com/MADdotNET/">Madison .NET User Group</a> presentation on AngularJS on May 7th,
 2014.</p>
@@ -908,7 +908,7 @@ interested in learning more about DocPad, here is a post where I talked about mo
     <entry>
         <title>Milwaukee .NET User Group Presentation - April 2014</title>
         <link href="http://www.jptacek.com/2014/04/milwaukee-ug-presentation/"/>
-        <updated>2014-04-10T06:00:00.000Z</updated>
+        <updated>2014-04-10T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2014-04-10,/2014/04/milwaukee-ug-presentation/</id>
         <content type="html"><![CDATA[<p>Thanks to everyone who came out to my <a href="http://wi-ineta.org/">Milwaukee .NET User Group</a> presentation on AngularJS this week
 (April 8, 2014).

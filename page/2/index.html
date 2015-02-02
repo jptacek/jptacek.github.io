@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
-<html lang="en-US"  xmlns:fb="http://www.facebook.com/2008/fbml"  xmlns:og="http://opengraphprotocol.org/schema/">
-<!--<![endif]-->
 <head>
     <!-- Meta -->
     <meta charset="utf-8"/>
@@ -94,6 +85,197 @@
             
     <article class="post">
     
+    <h1><a href='/2014/12/angularJS-further-with-directives/'>AngularJS - Further with Directives</a></h1>
+    
+        <div class="post-date">Dec 10th, 2014</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2014/12/angularJS-further-with-directives/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the tenth (I know, right!!?!!?!) in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li>AngularJS - Further with Directives</li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>Previously, we took an introductory look at directives. This time we will go a bit deeper.</p>
+<p>In our previous example, we displayed data from the periodic table, specifically, the atomic weight, atomic number
+and element name. Our data source, has a lot more information, such as boiling and melting points, density, etc. In
+this example, we will expand the directive by enabling a click event to display expanded data about the selected element.</p>
+<p>The first thing to mention is scope. Scope, as we have already seen, is the magical tool that Angular uses to 
+communicate between your view and services, etc. By default, a directive does not get a new child scope, but
+uses the parent scope. So, in our case, when the directive is inside a controller, it will use the 
+controller&#39;s scope.</p>
+<p>To get access to the scope, we can use the <code>link</code> function. The <code>link</code> function gets called every time the 
+element gets bound to the data in the <code>$scope</code> object. In general, <code>link</code> is used to manipulate the Document
+Object Model (DOM),
+either by adding event listeners or updating the DOM.</p>
+<p>The link function takes three arguments:</p>
+<ul>
+<li><code>scope</code> - Scope gets passed to the directive. This is generally the scope of the calling controller</li>
+<li><code>elem</code> - The element on which the directive is derived. In our case, it will be the template markup for
+the chemical element</li>
+<li><code>attrs</code> - Attributes associated with our element</li>
+</ul>
+<p>It is worth noting that AngularJS ships with jQLite, which is a subset of the full 
+<a href="http://jquery.com/">jQuery</a> library. If you are using full
+jQuery within your web app, then that will be used instead. All of that to say this, you access DOM elements 
+similarly as you do in jQuery, and since jQuery is already wrapped, you don&#39;t need to use your old school
+<code>$</code> for access.</p>
+<p>In our example, we are going to use the <code>link</code> function to manipulate the DOM. First, let us take a look
+at the JavaScript</p>
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicChartElement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> {</span>;
+    <span class="hljs-keyword">return</span> {
+        restrict: <span class="hljs-string">'E'</span>,
+        templateUrl: <span class="hljs-string">'./template/periodic-template.html'</span>,
+        link: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(scope, elem, attrs)</span> {</span>
+            elem.bind(<span class="hljs-string">'click'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                <span class="hljs-comment">// Change state</span>
+                scope.$apply(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
+                    scope.fullElement = !(scope.fullElement);
+                });
+
+            });
+            elem.bind(<span class="hljs-string">'mouseover'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+                elem.css(<span class="hljs-string">'cursor'</span>, <span class="hljs-string">'pointer'</span>);
+            });
+
+        },
+        scope:{
+            element:<span class="hljs-string">'='</span>
+        }
+
+    }
+
+});
+</code></pre>
+<p>With the exception of adding the link function, things are pretty similar to before. The link function does several 
+pieces of functionality that are worth nothing though.</p>
+<p>First, we bind a click event to our chemical element. When
+that click event is called, we update a boolean variable on our scope, which is our parent scope from the calling 
+controller and set it to the opposite. Second, we also bind a mouseover event to manipulate our CSS to change the 
+ cursor to a pointer. As you can see, this is an elegant way to add event behavior to our directive.</p>
+<p>Our template has now also been updated. The boolean scope variable that we update on the click event, 
+<code>fullElement</code> is used to show one of two different
+HTML &quot;paths&quot; in our template, one shows a small subset of data, the other a larger subset of data from the periodic 
+table. </p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicCell {{element.cssForDisplay}}'</span> <span class="hljs-attribute">data-ng-hide</span>=<span class="hljs-value">"fullElement"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicNumber"</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicWeight"</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicSymbol"</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"centerElementDisplay"</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicPop {{element.cssForDisplay}}'</span>  <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"fullElement"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicNumberPop"</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicWeightPop"</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicSymbolPop"</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"density"</span>&gt;</span>{{element.density || '-'}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"meltingPoint"</span>&gt;</span>{{element.melting + 273.15|number:2}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"boilingPoint"</span>&gt;</span>{{element.boiling + 273.15|number:2}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"elecConfig"</span>&gt;</span>{{element.elecconfig }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"elctroNeg"</span>&gt;</span>{{element.electronegativity}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"centerElementDisplayPop"</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>It is also worth talking a bit about scope in directives. As we mentioned earlier, by default, you are binding to the parent scope of the controller.
+In many instances this will work well, but if you want to display your directive more than once on a page, you would need a 
+controller for each directive. That is no good. </p>
+<p>AngularJS introduces the ability to create an isolated scope, which is what we are doing in our example. This allows us
+to use our directive multiple times on the same page. There are binding options in setting up the directive variables that we should
+briefly touch on.</p>
+<p>The various options for
+setting up variables in the directive scope are:</p>
+<ul>
+<li><code>=</code> - Set up two way binding between the parent scope and our isolated scope</li>
+<li><code>@</code> - Set up one way binding between the parent scope adn the isolate scope</li>
+<li><code>&amp;</code> - Allows to bind to parent scope functions</li>
+</ul>
+<p>Dan Wahlin has done an outstanding job on his blog of digging in deeper into directives and scope. His articles are at</p>
+<ol>
+<li><a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-i-the-fundamentals">Creating Custom AngularJS Directives Part I – The Fundamentals</a></li>
+<li><a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-2-isolate-scope">Creating Custom AngularJS Directives Part 2 – Isolate Scope</a></li>
+<li><a href="http://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-3-isolate-scope-and-function-parameters">Creating Custom AngularJS Directives Part 3 - Isolate Scope and Function Parameters</a></li>
+<li><a href="https://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-4-transclusion-and-restriction">Creating Custom AngularJS Directives Part 4 - Transclusion and Restriction</a></li>
+<li><a href="https://weblogs.asp.net/dwahlin/creating-custom-angularjs-directives-part-7-%E2%80%93-creating-a-unique-value-directive-using-asyncvalidators">Creating Custom AngularJS Directives Part 7 – Creating a Unique Value Directive using $asyncValidators</a></li>
+</ol>
+<p>Parts 5 and 6 should be coming too.</p>
+<p>We also have updated our page to show multiple elements to demonstrate a single directive interacting with unique scope. It
+is not very robust, so picking items at the end, aka Curium, will cause some issues.</p>
+<div id="app" ng-app="chemistryApp">
+    <div id="controller" ng-controller="chemistryController">
+
+        <div class="row">
+            <select ng-model="periodicElement" ng-options="e.name for e in elements" ng-click="updateController(periodicElement)"></select><br>
+        </div>
+        <div class="row">
+            &nbsp;
+        </div>
+        <div class="row">
+            &nbsp;
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <periodic-chart-element element="periodicElement"></periodic-chart-element>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <periodic-chart-element element="elements[periodicElement.atomicNumber]"></periodic-chart-element>
+            </div>
+            <div class="col-md-2">
+                &nbsp;
+            </div>
+            <div class="col-md-2">
+                <periodic-chart-element element="elements[periodicElement.atomicNumber+1]"></periodic-chart-element>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p><br></p>
+<p>So to recap, with directives we have created our HTML markup element <code>periodic-chart-element</code> where we can put multiple elements
+onto a single page by updating our directive to use its own version of scope.</p>
+<p>It has been several months since my last Angular blog post. More are coming. I have a plan for all of this, ultimately we
+will create an application that is the periodic table, done AngularJS style.</p>
+<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
+as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>.</p>
+<p>Thanks for reading!</p>
+<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryController.js"></script>
+<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryService.js"></script>
+<script type="text/javascript" src="/2014/12/angularJS-further-with-directives/js/chemistryDirective.js"></script>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2014/08/2014-that-conference-presentation/'>2014 That Conference</a></h1>
     
         <div class="post-date">Aug 12th, 2014</div>
@@ -115,16 +297,6 @@ throughout the day.</p>
     By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
     <p>&nbsp;</p>
 
-    <div id='socialTags'>
-    <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='2014 That Conference' class="twitter-share-button" data-url="http://jptacek.com/2014/08/2014-that-conference-presentation/">Tweet</a>
-    <!-- Google+. -->
-    <div class="g-plusone" data-size="medium"></div>
-    <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/08/2014-that-conference-presentation/" ></script>&nbsp;
-    <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/08/2014-that-conference-presentation/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
-    </div>
 </article>
 
     <article class="post">
@@ -341,237 +513,6 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
     By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
     <p>&nbsp;</p>
 
-    <div id='socialTags'>
-    <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Introduction to Directives' class="twitter-share-button" data-url="http://jptacek.com/2014/06/angularJS-intro-to-directives/">Tweet</a>
-    <!-- Google+. -->
-    <div class="g-plusone" data-size="medium"></div>
-    <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/06/angularJS-intro-to-directives/" ></script>&nbsp;
-    <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/06/angularJS-intro-to-directives/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
-    </div>
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2014/05/angularJS-Intro-To-Services/'>AngularJS - Introduction to Services</a></h1>
-    
-        <div class="post-date">May 19th, 2014</div>
-
-    <div class="post-content">
-        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="/2014/05/angularJS-Intro-To-Services/angularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the eight in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li>AngularJS - Introduction to Services</li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>In AngularJS, when we want to create common code to be shared across our application, we create services. In the Angular world,
-the controller is the traffic cop, which directs data to your view for binding. Logic for retrieving that data falls to a
-service.</p>
-<p>Services are stateless object that have shared functions that can be used in multiple controllers or views. The functions on
-services are also available throughout; they can be accessed in directives, controllers, filters, etc.</p>
-<p>For an example of a real world service that I have used in the past…. When creating a select list in HTML for an AngularJS
-application, you usually have an ID associated with a selected element from the list. Often you will
-display all the properties of the JSON object. In JavaScript, to find this element, you need to loop through all
-the elements in an array until you get a match on the key.  Depending on the size of your application, you end up writing this
-logic many, many times. To minimize this, I have written a helper application that creates an array that allows for
- an element to be accessed by a key value, thus reducing the need for repetitive array looping.</p>
-<p>Generally, there are two ways to create services within your application. The most common is to use <code>module.service</code> within
- your application. The second is <code>module.factory</code>. There are a couple of other ways, but we will skip those. AngularJS
- services are really singleton objects. The object from services are then available across your application via dependency
- injection, which we will look at soon.</p>
-<p> The main difference between the two service creation methods is how they are used. The <code>module.service</code> approach creates an
- instance of a function. A good use case for this approach is the generic array lookup function mentioned above. The
- <code>module.factory</code> approach is that the returned value is returned by invoking a function reference. This essentially allows you
- to treat the service like a class that you can new to make new instances.</p>
-<p>The syntax for <code>module.service</code> is</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
-
-<span class="hljs-comment">//</span>
-chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
-        <span class="hljs-keyword">return</span> element.name;
-    };
-});
-
-<span class="hljs-comment">//</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-{</span>
-    ...
-    $scope.nameFromService = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
-}
-</code></pre>
-<p>The syntax for <code>module.factory</code> is</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
-
-<span class="hljs-comment">//</span>
-chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span>{</span>
-      <span class="hljs-keyword">return</span> {
-            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span>{</span>
-               <span class="hljs-keyword">return</span> element.name;
-            }
-        }
-    });
-
-<span class="hljs-comment">//</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-{</span>
-    ...
-    $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
-}
-</code></pre>
-<p>Once we create our service, we want to be able to use this within our application. This is done via the magical gremlins
-that drive the Dependency Injection model in AngularJS. We just pass the service name to our controller when we instantiate
-it. We showed this above, but just to be sure, by passing <code>chemistryService</code> to the controller, it is service is
-available within the
-controller scope</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
-{</span>
-    ...
-    $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
-}
-</code></pre>
-<p>Let&#39;s look at a more advanced scenario. I am pretty much stealing this demo from my
-<a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>
-colleague <a href="https://twitter.com/bmahloch">Brian Mahloch</a>. Brian came up with a great demo for demonstrating services
-using the Periodic Data, which he kindly let me steal.</p>
-<p>What we are going to do is determine the type of bonds two elements would make, based on the differences in their
-electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
-based on the difference determine the type of bond.</p>
-<p>Our service then looks like</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-
-    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> {</span>
-
-        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(element1.electronegativity - element2.electronegativity);
-
-    };
-
-    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> {</span>
-
-        <span class="hljs-keyword">if</span> (difference &gt; <span class="hljs-number">2.0</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">'Ionic Bond'</span>;
-        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (difference &gt;= <span class="hljs-number">0.5</span> &lt; <span class="hljs-number">1.6</span>) {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">'Polar Covalent Bond'</span>;
-        } <span class="hljs-keyword">else</span> {
-            <span class="hljs-keyword">return</span> <span class="hljs-string">'NonPolar Covalent Bond'</span>;
-        }
-
-    };
-});
-</code></pre>
-<p>Our controller creation then gets updated so that we are injecting the service into the parameter list. Next,
-since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
-consume the service when we have two elements selected.</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemServiceCtrl'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> {</span>
-
-        $scope.elements = periodicData.elements;
-
-        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> {</span>
-
-            <span class="hljs-keyword">if</span> ($scope.selectedElement1 &amp;&amp; $scope.selectedElement2) {
-
-                $scope.currentBondDifference = chemistryService.calculateElectronegativityDifference($scope.selectedElement1, $scope.selectedElement2);
-                $scope.currentBondType = chemistryService.convertElectronegativityDifferenceToName($scope.currentBondDifference);
-
-            }
-
-        };
-
-        <span class="hljs-comment">/* private methods */</span>
-
-    }]
-);
-</code></pre>
-<p>Tying it all together, we have something like this.</p>
-<div id="app" ng-app="chemistryApp">
-<form name="submitForm" class="form-horizontal" ng-controller="chemServiceCtrl">
-                <div class="form-group" style="margin-top:14px;">
-                    <div class="control-label col-md-2">
-                        Element 1:
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-control" ng-model="selectedElement1" ng-options="e.name for e in elements | orderBy:[&apos;name&apos;]" ng-change="calculateBondPolarity()"></select>
-                    </div>
-                    <div class="control-label col-md-2">
-                        Element 2:
-                    </div>
-                    <div class="col-md-4">
-                        <select class="form-control" ng-model="selectedElement2" ng-options="e.name for e in elements  | orderBy:[&apos;name&apos;]" ng-change="calculateBondPolarity()"></select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6" style="text-align:center;" ng-show="selectedElement1">
-                        You have selected:<br>
-                        <strong>{{selectedElement1.name}}</strong><br>
-                        Electronegativity:<br>
-                        <strong>{{selectedElement1.electronegativity}}</strong>
-                    </div>
-                    <div class="col-md-6" style="text-align:center;" ng-show="selectedElement2">
-                        You have selected:<br>
-                        <strong>{{selectedElement2.name}}</strong><br>
-                        Electronegativity:<br>
-                        <strong>{{selectedElement2.electronegativity}}</strong>
-                    </div>
-                </div>
-                        <div class="row rounded-group-box" ng-show="selectedElement1 &amp;&amp; selectedElement2">
-                            <div class="col-md-12" style="text-align:center;">
-                                <strong>{{selectedElement1.name}}</strong> + <strong>{{selectedElement2.name}}</strong> = <strong>{{currentBondType}}</strong><br><br>
-                                <small>With a electronegativity difference of {{currentBondDifference | number:2}} {{selectedElement1.name}} and {{selectedElement2.name}} would form a {{currentBondType}}</small>
-                            </div>
-                        </div>
-
-<p></p></form>
-</div><p></p>
-<p>We can now start to see how AngularJS provides a platform for creating web applications. With services, we are able to
-encapsulate logic and use it within multiple controllers in our application.</p>
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>.</p>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryController.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistryService.js"></script>
-<script type="text/javascript" src="/2014/05/angularJS-Intro-To-Services/js/chemistry.js"></script>
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-    <div id='socialTags'>
-    <!-- Twitter -->
-		<a href="https://twitter.com/share" data-text='AngularJS - Introduction to Services' class="twitter-share-button" data-url="http://jptacek.com/2014/05/angularJS-Intro-To-Services/">Tweet</a>
-    <!-- Google+. -->
-    <div class="g-plusone" data-size="medium"></div>
-    <!-- LinkedIn -->
-    <script type="in/share" data-counter="right" data-url="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/" ></script>&nbsp;
-    <!-- Facebook -->
-    <fb:like send="false" width="450" show_faces="false"  data-href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/" style="span{overflow:visible !important; width:450px !important; margin-right:-375px;"} data-layout="button_count"/>
-    </div>
 </article>
 
 
@@ -591,11 +532,11 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
         I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
-    <p>Currently, I am reading <a href="http://www.amazon.com/Revival-A-Novel-Stephen-King/dp/1476770387">Revival</a>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Wolves-Calla-Dark-Tower-Book/dp/141651693X">Wolves of Calla, The Dark Tower, Book 5</a>
         by Stephen King</p>
     <p>
-        <a href="http://twitter.com/jptacek">@jptacek</a> &#8226;
-        <a href="httpƒs://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
         <a href="http://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
         <a href="http://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
         <a href="http://plus.google.com/+JohnPtacek">Google+</a>
@@ -617,30 +558,6 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
 <script src="/scripts/vendor/highlight.pack.js"></script>
 <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/coffee-script/1.6.3/coffee-script.min.js"></script>-->
 <script src="/scripts/site.js"></script>
-
-
-<!-- social scripts-->
-<!-- G+ reference-->
-<!-- Place this tag after the last +1 button tag. -->
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
-<script type="text/javascript" src="http://platform.linkedin.com/in.js"></script>
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=142672925873397";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 
 <script type="text/javascript">
     var _gaq = _gaq || [];
