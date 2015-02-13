@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Redirect</title>
-		<meta http-equiv="REFRESH" content="0;url=/2014/02/angularJS-templates/js/templates/element2/">
-		<link rel="canonical" href="/2014/02/angularJS-templates/js/templates/element2/" />
-	</head>
-	<body>
-		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href="/2014/02/angularJS-templates/js/templates/element2/">click here</a>.
-	</body>
-</html>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}"><a href="http://en.wikipedia.org/wiki/{{element.name}}" Title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">{{element.atomicNumber}}</td>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">{{element.atomicWeight}}</td>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">{{element.phase}}</td>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">{{element.melting}}</td>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">{{element.boiling}}</td>
+<td ng-class="{tableEven: !($index%2), tableOdd: ($index%2)}">{{element.ionization}} </td>
