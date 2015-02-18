@@ -26,8 +26,10 @@
 
     <meta name="generator" content="DocPad v6.68.1" />
     
-<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular-animate.min.js"></script>
+
 
     <!-- MS Live tile tag -->
     <meta name="application-name" content="JPtacek.Com"/>
@@ -85,6 +87,141 @@
             
     <article class="post">
     
+    <h1><a href='/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/'>WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly</a></h1>
+    
+        <div class="post-date">Jun 6th, 2011</div>
+
+    <div class="post-content">
+        <p>As our work on the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a> was wrapping up, Skyline took over ownership of the database that runs the site from the School District so we could easily make corrections and additions without having to download a new version of the database each night. Now that we &quot;owned&quot; the database, we realized we needed a way to maintain and manage it. For this we used Microsoft&#39;s new tool, <a href="http://www.asp.net/WebMatrix">WebMatrix</a>.</p>
+<p>Right about now you are asking yourself, really, another programming tool? An excellent question. WebMatrix is a response from Microsoft to Ruby on Rails and PHP. The benefit these development stacks is that they can generally be used to implement data driven sites relatively quickly and, until now, Microsoft didn&#39;t have a tool that allowed that.</p>
+<p>While the .NET stack is a great development platform, it doesn&#39;t always allow for quick website development. As developers we tend to over-engineer sites, especially the ones that only need to be a couple of pages. We create a data layer, we create a business layer, and then we create a UI layer. These are, of course, industry best practices, but they are industry best practices for sites that are going to scale. If you&#39;re building a site for a couple of users who just want to see a list of their child&#39;s soccer games, this is definitely over engineering. WebMatrix is Microsoft&#39;s answer to that.</p>
+<p>WebMatrix harkens back to the days of Classic ASP. It contains code logic in a single page, including the SQL statement. You can then render your page using Microsoft&#39;s new <a href="http://www.computerworld.com/s/article/9178910/Microsoft_sharpening_Razor_view_engine_for_ASP.Net?source=rss_news">Razor</a>engine.</p>
+<p><strong>Getting Started
+</strong>To get started, <a href="http://www.asp.net/webmatrix">download WebMatrix </a>using Microsoft&#39;s web platform installer. Upon starting up the application you&#39;ll see a nice, simple-to-use page that includes many templates you can use to get started with your development quickly and easily.</p>
+<p><img src="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/WebMatrixScreen.jpg" alt=""></p>
+<p>So, what does the code look like? Truthfully, it&#39;s really simple. Here is the basis of a page we used to create a list of all students participating in the Compassion Project.</p>
+<p>The first thing to realize is the @{ } syntax is part of the Razor view engine. It is the replacement for &lt;%= %&gt; that tells the runtime you are escaping out to do something code like. Essentially, to get our list of data we do three things ... open a database connection, tell it the SQL command, and execute the SQL statement, the same three things we always do. In this case however, those three things are three lines:</p>
+<p>
+@{
+var db=Database.Open(&quot;Dev&quot;);
+var sqlQuery = &quot;select * from ProjectData order by LastName, FirstName&quot;;
+var data = db.Query(sqlQuery);
+}
+
+Next we have to render the output to the page. Again, we rely on the Razor View engine (look for the @ symbol):</p>
+<p></p>
+<p><body></body></p>
+<p><ul>
+@foreach (var row in data) {</ul></p>
+<p><li><a href="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/EditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
+}
+
+
+
+We are essentially saying for each (@foreach is Razor syntax) row in our data set (data is a globally scoped variable on the page), create a link to a key (@ is again the Razor syntax, so @row.PictureNumber tells the page to use the picture number) and create hypertext for the person&#39;s name. That&#39;s it! As you can see from the code snippets above, it takes very few lines to get data from a database.</p>
+<p>The update part is also similar. It is, of course, longer since there is a bit more logic, but notice how all of the syntax is on a single page:</p>
+<p>
+@{
+var id = Request[&quot;ID&quot;];
+var sqlSelect = &quot;select Id, PictureNumber, LastName, FirstName, Grade, HomeSchool, TileLocation,IsNull(DisplayStudentOnline,1) as DisplayStudentOnline,IsNull(FeaturedImage,0) as FeaturedImage,IsNull(FeaturedStatement,0) as FeaturedStatement,Description from ProjectData where PictureNumber=@0&quot;;
+var db=Database.Open(&quot;Dev&quot;);
+var sqlQuery = db.QuerySingle(sqlSelect,id);
+var studentFirstName = sqlQuery.FirstName;
+var studentLastName = sqlQuery.LastName;
+var compassionStatement = sqlQuery.Description;
+var homeSchool = sqlQuery.HomeSchool;
+var tileLocation = sqlQuery.TileLocation;
+var displayOnline = sqlQuery.DisplayStudentOnline;
+var isFeaturedImage = sqlQuery.FeaturedImage;
+var isFeaturedStatement = sqlQuery.FeaturedStatement;
+var pictureID = sqlQuery.PictureNumber;
+var imageUrl = &quot;<a href="http://images.appletoncompassion.org/compassionimagesfull/thumb/">http://images.appletoncompassion.org/compassionimagesfull/thumb/</a>&quot; + @pictureID + &quot;.jpg&quot;;
+var isImageCheck = string.Empty;
+if (isFeaturedImage) {
+isImageCheck = &quot;checked&quot;;
+}
+var isStatementCheck = &quot;&quot;;
+if (isFeaturedStatement) {
+isStatementCheck = &quot;checked&quot;;
+}</p>
+<p>var displayOnlineCheck = &quot;&quot;;
+if (displayOnline) {
+displayOnlineCheck = &quot;checked&quot;;
+}</p>
+<p>var ischeckedonpost = string.Empty;
+if (IsPost) {
+compassionStatement = Request[&quot;statement&quot;];
+tileLocation = Request[&quot;tileLoc&quot;]
+displayOnline = ParseCheckBox(Request[&quot;displayOnline&quot;]);
+isFeaturedImage = ParseCheckBox(Request[&quot;chkFeaturedImage&quot;]);
+isFeaturedStatement = ParseCheckBox(Request[&quot;chkFeaturedStatement&quot;]);
+var sqlUpdate = &quot;Update ProjectData set description = @0, TileLocation=@1, DisplayStudentOnline=@2, FeaturedImage=@3,FeaturedStatement=@4 where pictureNumber=@5&quot;;
+db.Execute(sqlUpdate,compassionStatement,tileLocation,displayOnline,isFeaturedImage,isFeaturedStatement,pictureID);
+Response.Redirect(&quot;Page.cshtml&quot;);</p>
+<p>}
+}</p>
+<p>@functions {
+bool ParseCheckBox(string checkBoxValue) {
+Response.Write(&quot;Value in: &quot; + checkBoxValue +&quot;<br>&quot;);
+bool returnValue = false;
+if (checkBoxValue == &quot;on&quot;) {
+returnValue = true;
+}
+else {
+returnValue = false;
+}
+Response.Write(&quot;Value out: &quot; + returnValue +&quot;<br>&quot;);
+return returnValue;
+}
+}
+&lt;!DOCTYPE html&gt;</p>
+<p><html lang="en"></html></p>
+<p><head></head></p>
+<p><meta charset="utf-8"></p>
+<p><title>Edit Artist</title>
+</p>
+<p><body>
+<a href="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/Page.cshtml">Home Page</a></body></p>
+<p><form action="" method="post"></form></p>
+<p></p><p>Picture Number: @pictureID</p><p></p>
+<p></p><p>First Name: @studentFirstName</p><p></p>
+<p></p><p>Last Name: @studentLastName</p><p></p>
+<p></p><p>Home School: @homeSchool</p><p></p>
+<p></p><p>Tile Location: <input type="text" name="tileLoc" value="@tileLocation"></p><p></p>
+<p></p><p>Statement:</p><p> <textarea id="txtStatement" rows="10" columns="20" style="width:600px" name="statement">@compassionStatement</textarea></p><p></p>
+<p></p><p>Display Student Online <input type="checkbox" name="displayOnline" @displayonlinecheck=""></p><p></p>
+<p></p><p>Featured Art <input type="checkbox" name="chkFeaturedImage" @isimagecheck=""></p><p></p>
+<p></p><p>Featured Statement<input type="checkbox" name="chkFeaturedStatement" @isstatementcheck=""></p>
+<img src="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/@imageUrl"><p></p>
+<p></p><p><input type="submit" value="Save"></p>
+
+
+
+
+<strong>Why Use it?
+</strong>WebMatrix is Microsoft&#39;s response to tools such as Ruby and PHP that generally use inline SQL and allow developers to quickly get sites published. It includes many templates so you can get started quickly, and it will tie into Open Source projects such as Joomla.<p></p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.asp.net/webmatrix">Official WebMatrix Site</a></p>
+<p>WebMatrix Development 101</p>
+<p>&nbsp;</p>
+<p><a href="http://www.amazon.com/Web-Development-using-WebMatrix-ebook/dp/B004I6D676/ref=sr_1_2?ie=UTF8&amp;qid=1305890052&amp;sr=8-2">Web Matrix 101 book</a> - This is a nice little introduction and is only $1 for the Kindle.</p>
+<p>This blog post orginally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=43"> Skyline Technologies</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2011/05/mobile-apps-provide-the-finishing-touches-to-the-appleton-compassion-project/'>Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project</a></h1>
     
         <div class="post-date">May 11th, 2011</div>
@@ -116,93 +253,6 @@ Once a set of features was decided on, we focused on having those pieces display
     
     <div class="post-tags">
         Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2011/04/create-interactive-user-experiences-quickly-and-easily-with-silverlight-pivot-viewer/'>Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer</a></h1>
-    
-        <div class="post-date">Apr 25th, 2011</div>
-
-    <div class="post-content">
-        <p>The Appleton Compassion Project, a recent charity project Skyline has completed, takes advantage of a great tool in the Microsoft toolset that few people know is out there, the Silverlight Pivot Viewer. Unfortunately, Microsoft has quite a few things named Pivot so you may find this confusing. Pivot Viewer is NOT:</p>
-<ul>
-<li>PowerPivot- This is an Excel tool that allows you to manipulate A LOT of data</li>
-<li>Excel Pivot - This is your day to day Excel pivot
-The Silverlight Pivot Viewer IS a tool that allow developers to quickly create an engaging and interactive data driven experience. To get an idea of what I&#39;m talking about, check out the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>.</li>
-</ul>
-<p>This online exhibit contains over 10,000 pieces of art done by students at dozens of different schools. You can see how site visitors can quickly click a school or a grade and narrow down the art that is displayed. Clicking an image will show the student&#39;s compassion statement and other demographic information without having to write any special code.</p>
-<p>So it looks nice, but how do we create something this interactive? The great part is it&#39;s really not too difficult!</p>
-<p>The first thing that needs to be done is create a Deep Zoom file, <a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">which I cover in another blog post</a>, that will provide the images for the viewing experience. An XML file, with the extension of CXML is created and that is the file the Silverlight Pivot Viewer consumes. The important thing to realize is there is NO User Interface code to write. To reiterate... ZERO user interface development is needed. You create the Deep Zoom file, create the CXML file, add the Pivot Viewer control to your Silverlight XAML and you have a HIGHLY interactive user experience.</p>
-<p>The CXML file has four parts to it. The first is a node called Collection, it is the top level node for the XML file.</p>
-<p>Second is a node called Facets. The facets are the categories that are displayed on the left of the screen. In the example above, School, Grade, Art Teacher and Teacher are all facets. The facets are then searchable within the Pivot Viewer. Visitors can type in a school name or use the check box to filter down the data.</p>
-<p>Third is a node for all of the Items. For the Appleton Compassion Project, the items are all the artists who created art work and accompanying compassion statements.</p>
-<p>The last node is the item node, which is the data that is used to populate the Pivot Viewer. The item node has data for each of the defined facets to populate the search experience on the left of the screen. For our example, a given artist would have a School Name, which are then automatically queried to create the list on the example.</p>
-<p>Here&#39;s an example of how the XML would look:</p>
-<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;</p>
-<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Appleton School Compassion Project" schemaversion="1.0" xmlns:p="http://schemas.microsoft.com/livelabs/pivot/collection/2009" xmlns="http://schemas.microsoft.com/collection/metadata/2009">
-
-<facetcategories>
-
-<facetcategory name="School" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Grade" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Art Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Picture Number" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="false" p:isfiltervisible="false"></facetcategory>
-
-<facetcategory name="Tile Location" type="String" p:iswordwheelvisible="false" p:ismetadatavisible="true" p:isfiltervisible="false"></facetcategory>
-
-</facetcategories>
-
-<items imgbase="collection-2521020991055083062.dzc">
-
-<item img="#301" id="3803" href="http://www.appletoncompassion.org/Artist/3803" name="Henry Ptacek">
-
-<description>Artist statement not yet available</description>
-
-<facets>
-
-<facet name="Picture Number"><string value="3803"></string></facet>
-
-<facet name="School"><string value="Franklin Elementary School"></string></facet>
-
-<facet name="Grade"><string value="4"></string></facet>
-
-<facet name="Art Teacher"><string value="Sara Wilda"></string></facet>
-
-<facet name="Teacher"><string value="Louann Graf"></string></facet>
-
-</facets>
-
-</item>
-
-</items>
-
-<p></p></collection>
-As you can see, it&#39;s relatively straight forward XML. There are many things I have not talked about, like the ability to have different types of data, sliders for your data, etc. Check out the links for more information.<p></p>
-<p><strong>Why Use it?
-</strong>The Silverlight Pivot viewer is a great data driven UI experience for end users. The creation process involves creating a Deep Zoom file and some Xml.</p>
-<p><strong>I want to learn more!
-</strong><a href="http://www.silverlight.net/learn/pivotviewer/">Microsoft&#39;s Silverlight Pivot viewer site </a></p>
-<p><a href="http://www.silverlight.net/learn/pivotviewer/collection-xml-schema/">Silverlight Pivot XML Schema information </a></p>
-<p>To Develop with the Silverlight Pivot viewer, you will need the Silverlight 4 SDK as well as the Pivot Viewer Control, which you can <a href="http://www.silverlight.net/learn/pivotviewer/">download here</a>.</p>
-<p>This post originally appeared at Skyline Technologies <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a></p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/pivot-viewer/'>Pivot Viewer</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
@@ -262,7 +312,7 @@ As you can see, it&#39;s relatively straight forward XML. There are many things 
         I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
-    <p>Currently, I am reading <a href="http://www.amazon.com/Revival-A-Novel-Stephen-King/dp/1476770387">Revival</a>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Wolves-Calla-Dark-Tower-Book/dp/141651693X">Wolves of Calla, The Dark Tower, Book 5</a>
         by Stephen King</p>
     <p>
         <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
