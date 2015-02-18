@@ -26,7 +26,7 @@
 
     <meta name="generator" content="DocPad v6.68.1" />
     
-<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-animate.min.js"></script>
 
@@ -85,6 +85,55 @@
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
+    <article class="post">
+    
+    <h1><a href='/2013/02/configuring-dnsimple-for-azure-hosted-domains/'>Configuring DNSimple for Azure Hosted Domains</a></h1>
+    
+        <div class="post-date">Feb 11th, 2013</div>
+
+    <div class="post-content">
+        <p><a href="https://dnsimple.com/">DNSimple</a> is a great service for hosting and configuring DNS for domains you control. It also benefits by not being Go Daddy. I hate Go Daddy. They supported both SOPA and PIPA, run sexist television commercials and I have no love for their elephant killing CEO. Then there is their utterly confusing website, upselling tricks and poor customer service. Don&#39;t use Go Daddy.</p>
+<p>DNSimple allows you to host up to 10 domains for $36 (USD) for the year. You can find pricing information at <a href="https://dnsimple.com/pricing">https://dnsimple.com/pricing</a>. For multiple domains, this is significantly cheaper than Go Daddy.</p>
+<p>Another nice feature of DNSimple is they have templates for many popular sites to configure all of the necessary DNS settings required for hosting. They have templates for Google App pages, Tumblr, Wordpress, etc. While I am a developer and tend to be technical, I get lost pretty quick in the world of DNS configuration. A records, CNAME, MX, etc, etc. The templates help users get up and moving quickly.</p>
+<p>However, they do not have support for Azure hosted websites. It took me a little messing around to get this to work, and finally I have it set correctly.</p>
+<p>First, for this to work. You need to be hosting your website in Shared or Reserved mode. Free mode will not allow for users to have a custom domain name. To do this, log onto the Azure management portal and go to Web sites and choose your domain. Click scale and configure either Shared or Reserved. Shared is going to be MUCH cheaper.</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring1.png" alt=""></p>
+<p>&nbsp;</p>
+<p>You will then want to configure your domain names. This is done by clicking Configure and Manage Domains</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring2.png" alt=""></p>
+<p>&nbsp;</p>
+<p>This will provide a screen for managing custom domains.</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring3.png" alt=""></p>
+<p>The instructions do a good job of telling you what do. You want to have any domain that you want DNS to resolve for added here. In IIS speak, these are the Host headers. You will want one for WWW and another for your TLD, jptacek.com in our case. The issues I ran into was jptacek.com not registering properly and did not redirect to the main site.</p>
+<p>Next, you will need to configure your DNS settings in DNSimple. Go to <a href="http://www.Dnsimple.com">www.Dnsimple.com</a> and login. To configure your DNS, go to Domains, and select the Domain you want to manage</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring4.png" alt=""></p>
+<p>Once in manage, you will want to go the Advanced Editor, which is what to use when a template is not present.</p>
+<p>In here you will add for records, three CNAME records and an A name record. First, add a wildcard CNAME and have it point to your azure hosted website.</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring5.png" alt=""></p>
+<p>Next, as mentioned on the Azure site, you will need a record that will verify you own the DNS. To do that, configure the AWVerify to point to Azure&#39;s service</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring6.png" alt=""></p>
+<p>Next, a third CNAME record for WWW that goes to the Azure site</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring7.png" alt=""></p>
+<p>Last, and this is the area I ran into issues, you need to create an A record for the domain that points to the IP Address provided by Azure. This can be found on the Manage Domain settings. This will ensure that a request to the top level site, jptacek.com, will redirect to your site. Be sure to leave your subdomain blank.</p>
+<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring8.png" alt=""></p>
+<p>&nbsp;</p>
+<p>You may have to wait up to an hour for the changes to take effect. It is also good to flush your DNS to ensure no issues.</p>
+<p>If you are looking for a DNS provider or want to switch from Go Daddy (which is horrible, have we mentioned that), check out DNSimple.com If you want, you can even click on the referral link <a href="https://dnsimple.com/r/b8a105607bde67">https://dnsimple.com/r/b8a105607bde67</a>, and get one month of free hosted DNS. Even better, I would get a free month of free hosted DNS <span style="font-family: Wingdings;">J</span></p>
+<p>&nbsp;</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
     <article class="post">
     
     <h1><a href='/2013/01/the-pace-of-innovation/'>The Pace of Innovation</a></h1>
@@ -237,34 +286,6 @@ This blog post originally appeared at <a href="http://www.skylinetechnologies.co
     
     <div class="post-tags">
         Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2012/10/apple_should_buy_usps/'>A Modest Proposal – Apple Should Buy the US Post Office</a></h1>
-    
-        <div class="post-date">Oct 19th, 2012</div>
-
-    <div class="post-content">
-        <p>The recent iMaps fiasco has taught the world that Apple has some serious catch up to do in the world of maps. There is a bit of a chicken and the egg issue, the more people using the iMaps app, the more data Apple can collect and make iMaps a better app. Instead of waiting for this to happen, Apple should speed up the process and buy the US Post office.</p>
-<p>The USPS operates over 210,000 vehicles and is the largest vehicle fleet in the world. The vast majority of these vehicles are out driving the world every day. If Apple buys the US post office, they could transform these vehicles into data gathering machines. Throw in a GPS and bring the data to Apple and their mapping team to quickly scale and improve iMaps. Next step, throw a camera in the car, ala the Google Car, and get a constantly refreshing street view mode. Google&#39;s Street View cars have driven 5 million miles since hitting the road. The US Post office drives 1.25 BILLION miles a year. Apple for the win! Next up, throw some more sensors onto the cars. For example, weather sensors could capture very local and real time weather data and create the next great Apple app, iWeather.</p>
-<p>Putting sensors onto the USPS fleet is not a new idea, the USPS has <a href="http://www.nytimes.com/2010/12/18/opinion/18ravnitzky.html">even</a> proposed doing this. However, it is a slow moving process, with privacy concerns often being cited. Apple buying the USPS and transforming it to the iPost Office helps alleviate these concerns. By moving the USPS from an old stodgy business to a tech company, privacy concerns quickly disappear. As consumers, we are used to letting the Goggles, Facebooks and Apples of the world collect information about us to make their services more awesome for us.</p>
-<p>Next up, it becomes an advertising niche for Apple. The USPS handled over 170 billion items in 2010. Each one of these becomes an advertising opportunity! Just like Google can put a little advertising onto most of the web pages we visit, iPost Office can put a little ad onto each of the 170 billion mail deliveries they do a year and have a brand new revenue stream.</p>
-<p>Next along the road, Apple can start competing with Amazon. It quickly acquires 30,000 retail locations that it can use to distribute physical goods. Instead of consumers having to wait a few days for the delivery of something from Amazon, or even two days for those customers paying for an Amazon Prime Membership, the iPost Office could deliver things purchased that day! The iPost Office even delivers on Saturdays, putting Amazon at a competitive disadvantage for those customers whom always battle cheap price vs. instant gratification.</p>
-<p>The best part about iPost Office is that everything Apple does is cool. Hipsters would start flocking back to their mailboxes. Apple could create stamps of Apple luminaries like Steve Jobs, Steve Wozniak and Jonathan Ive (post <a href="http://gizmodo.com/5516976/apples-chief-designer-re+designed">redesign</a> of course!). You can quickly imagine people buying these stamps and sending physical letters in the mail again. This could lead to a renaissance of letter writing! Imagine a world where instead of <a href="http://www.amazon.com/The-Letters-John-Cheever/dp/1439164649">The Letters of John Cheever</a> we could have the Collected Letters of <a href="http://daringfireball.net/">John Grueber</a>.</p>
-<p>Okay, so the above is all a little bit <a href="http://en.wikipedia.org/wiki/A_Modest_Proposal">Jonathan Swiftian</a>, but a partnership between the US Post Office and Apple could go a long way to solving the financial issues at the US Post Offices and Apple&#39;s iMaps issue. Of course, in the US iMaps tends to be in much better shape, so throw in a similar partnership with DHL for good measure. Apple could quickly gather data and help resolve their mapping issues. Win-win.</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/apple/'>Apple</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/google/'>Google</a>
     </div>
     
     <br/>

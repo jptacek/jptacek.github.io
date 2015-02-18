@@ -26,7 +26,7 @@
 
     <meta name="generator" content="DocPad v6.68.1" />
     
-<script src="/scripts/vendor/angular.min.js"></script>
+<script type="text/javascript" src="/scripts/vendor/angular.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-route.min.js"></script>
 <script type="text/javascript" src="/scripts/vendor/angular-animate.min.js"></script>
 
@@ -85,6 +85,61 @@
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
+    <article class="post">
+    
+    <h1><a href='/2014/01/git-repository-not-found/'>GitHub Repository Not Found - Case Issue?</a></h1>
+    
+        <div class="post-date">Jan 21st, 2014</div>
+
+    <div class="post-content">
+        <p>This morning, I was pushing a small update to my blog and I received an error that my GitHub repository was unable to
+sync. Usually my workflow goes something like this...</p>
+<ol>
+<li>Commit GitHub changes via <a href="http://www.jetbrains.com/webstorm/">WebStorm</a></li>
+<li>If that doesn&#39;t work, use the GitHub Windows/WPF client <a href="http://windows.github.com/">http://windows.github.com/</a></li>
+<li>Use command line Git</li>
+</ol>
+<p>While I want to get better at 3, 1 is much easier and when I do 2, I am in a hurry. :)</p>
+<p>Ultimately, I am not really sure what happened. My development environment worked fine yesterday when I committed
+changes, but today there were issues. I THINK it may have to do with case differences between when I setup
+the repository locally and how GitHub may be handling it on the backend today.</p>
+<p>When I pushed my commit to the repo with the command</p>
+<pre class="highlight"><code class="hljs bash">git push origin master
+</code></pre>
+<p>The following error was returned</p>
+<pre class="highlight"><code class="hljs bash">remote: Repository not found.
+fatal: repository <span class="hljs-string">'http://github.com/jptacek/JPTACEK.com.git/'</span> not found
+</code></pre>
+<p>You can see the message below</p>
+<p><img src="/2014/01/git-repository-not-found/repoNotFound.png" alt="GitHub Error"></p>
+<p>Again, no changes have been made to the repo. Similar messages appeared in the GitHub client and WebStorm. Other
+repositories I had on GitHub I was able to commit and push changes to. The only thing I could think was that
+the case was different on my local origin in comparison to the backend GitHub repository.</p>
+<p>The fix was simple enough, reset the origin with and change the case of the URL so that it was exactly the
+same as my repository on GitHub.</p>
+<pre class="highlight"><code class="hljs bash"> git remote <span class="hljs-keyword">set</span>-url origin https://github.com/jptacek/JPtacek.com.git
+</code></pre>
+<p>After this, I was then able to commit changes without issue in all the different client apps as well as the command
+line.</p>
+<p>as shown in the following screen shot</p>
+<p> <img src="/2014/01/git-repository-not-found/repoFound.png" alt="Repo found"></p>
+<p>It strikes me as pretty odd that GitHub would suddenly stop working because of a case issue between my local dev
+machine, which has been working fine for many months, and the GitHub server. However, that appears to be the case in this instance.</p>
+<p>Pretty much just documenting this for my future self :)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/github/'>GitHub</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
     <article class="post">
     
     <h1><a href='/2014/01/what-is-yammer/'>What is Yammer... and why should your company use it?</a></h1>
@@ -176,74 +231,6 @@ I can grab them when I am other machines. Feel free to have at em</p>
     
     <div class="post-tags">
         Posted In: <a href='/tags/powershell/'>PowerShell</a>, <a href='/tags/windows8/'>Windows8</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2014/01/chocolately-and-boxstarter/'>Chocolately and BoxStarter</a></h1>
-    
-        <div class="post-date">Jan 1st, 2014</div>
-
-    <div class="post-content">
-        <p>I recently received a new work computer (an <a href="http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX301LA/">Asus i7</a> that
-weighs 2.6 pounds, my old laptop, a Dell M6500 weighed over 8.5 lbs, it is like I am from the future now, but I digress).
-One of the things that I don&#39;t like about getting a new PC is setting up the computer. I am very good about making sure
-all of my files are stored in the cloud (via Skydrive and DropBox) and/or is under source control. I don&#39;t fear losing stuff, it
-is the loss time in restoring my applications and environments that makes me crazy. I always forget to install a utility
-I want. Or the exact moment I NEED to remote desktop is when I remember I forgot to ENABLE remote desktop.</p>
-<p>However, since my last PC install, the world of Windows has changed, and its name is <a href="http://chocolatey.org/">Chocolately</a>.
-Chocolatey is similar to apt-get on Linux, or the NPM package manager for <a href="http://www.nodejs.org">Node</a>. You can, via
-the command line, automatically install all kinds of applications that are available on <a href="http://www.nuget.org/">NuGet</a>.
-For example, to install ReSharprer, fire up a command prompt and type</p>
-<pre class="highlight"><code class="hljs bash">    cinst resharper
-</code></pre>
-<p>and away we go.</p>
-<p>You can find out more at the <a href="http://chocolatey.org/">Chocolately</a> site. Essentially though, you can achieve all of
-this goodness by staring a command prompt and pasting the following</p>
-<pre class="highlight"><code class="hljs bash">    @powershell -NoProfile -ExecutionPolicy unrestricted -Command <span class="hljs-string">"iex ((new-object net.webclient).DownloadString('https://chocolatey.org/install.ps1'))"</span> &amp;&amp; SET PATH=%PATH%;%systemdrive%\chocolatey\bin
-</code></pre>
-<p>So, <a href="http://chocolatey.org/">Chocolately</a> solves problem the first, allowing for command line install of applications.
-When paired with <a href="http://boxstarter.org/">Boxstarter</a> however, it figures out problem the second of installing many different
-applications that require reboots, etc, when you are setting up a new PC. BoxStarter handles reboots and logins
-automatically for the user. You can type one command and be on your way!</p>
-<p><a href="http://boxstarter.org/">Boxstarter</a> also enables me to setup a URL that will have all of the applications that I want
-installed in a single location. For example, I created a Gist file on GitHub with all of the programs I want installed
-when I have a PC.</p>
-<pre class="highlight"><code class="hljs bash">    START http://boxstarter.org/package/nr/url?https://gist.github.com/jptacek/<span class="hljs-number">8099099</span>/raw/f691b3433c09dcd361fca8cc6cfe637ca7521771/boxstarter
-</code></pre>
-<p>You can take a look at the file, but it is pretty basic.</p>
-<p>I setup the Explorer options I want, for example, showing file extensions, and that provides me consistency across my
-installs.</p>
-<p>I then install the bevy of browsers that all web developers want at their disposal. This is followed by setups for Git,
-NodeJS, Text Editor, coding utilities, etc. I even have installation for applications I use specifically at home, for
-example, iTunes (I know, I vomit a little in my mouth each time I use it too).</p>
-<p>Not only can you setup explorer options, but you can also setup your Windows environment! For example, I automatically
-enable Remote Desktop, Setup HyperV and IIS on my development machines. I do this all from a single command and it
-is awesome!</p>
-<p><strong>Update</strong>
-A couple of people have run into issues if you are not using a default browser that does not support Click Once (for example
-Google Chrome). Matt Wrock identifies the workaround in the comments below.</p>
-<blockquote>
-<p>It sounds like your default browser is not click-once enabled. Using START from the command line will invoke the url in your default browser. If that browser is IE or another browser that has a click-once extension, Boxstarter should be invoked. If Firefox or Chrome (or Opera or safari or anything not IE) is your default browser and you had no extension that is &quot;click once&quot; app aware, the behavior you describe sounds normal. Chrome is my default browser but I installed an extension from
-<a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a> that will allow it to work with click once apps like Boxstarter&#39;s web launcher.</p>
-</blockquote>
-<p>Just to reiterate... You need to update your default browser to support click once. Links for</p>
-<ul>
-<li>Google - <a href="https://code.google.com/p/clickonceforchrome/">https://code.google.com/p/clickonceforchrome/</a></li>
-<li>FireFox - <a href="https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/">https://addons.mozilla.org/en-us/firefox/addon/fxclickonce/</a></li>
-</ul>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
