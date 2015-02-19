@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Redirect</title>
-		<meta http-equiv="REFRESH" content="0;url=/2015/02/angularJS-Best-Practices/template/periodic-template/">
-		<link rel="canonical" href="/2015/02/angularJS-Best-Practices/template/periodic-template/" />
-	</head>
-	<body>
-		This page has moved. You will be automatically redirected to its new location. If you aren't forwarded to the new page, <a href="/2015/02/angularJS-Best-Practices/template/periodic-template/">click here</a>.
-	</body>
-</html>
+<div class='periodicCell {{element.cssForDisplay}} periodicCell-animation' data-ng-if="!fullElement">
+    <div class="atomicNumber">{{element.atomicNumber}}</div><div class="atomicWeight">{{element.atomicWeight}}</div>
+    <div class="atomicSymbol">{{element.symbol}}</div>
+    <div class="centerElementDisplay">{{element.name }}</div>
+</div>
+<div class='periodicPop {{element.cssForDisplay}} periodicCell-animation'  data-ng-if="fullElement">
+    <div class="atomicNumberPop">{{element.atomicNumber}}</div>
+    <div class="atomicWeightPop">{{element.atomicWeight}}</div>
+    <div class="atomicSymbolPop">{{element.symbol}}</div>
+    <div class="density">{{element.density || '-'}}</div>
+    <div class="meltingPoint">{{element.melting + 273.15|number:2}}</div>
+    <div class="boilingPoint">{{element.boiling + 273.15|number:2}}</div>
+    <div class="elecConfig">{{element.elecconfig }}</div>
+    <div class="elctroNeg">{{element.electronegativity}}</div>
+    <div class="centerElementDisplayPop">{{element.name }}</div>
+
+</div>
