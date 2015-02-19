@@ -236,8 +236,9 @@ curly braces. It is as simple as</p>
 </div>
 </div>
 
-<p>You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo2-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
+<p><br>
+You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo02-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
 <p>You can download or view the code on Github, <a href="https://github.com/jptacek/AngularPeriodic/">https://github.com/jptacek/AngularPeriodic/</a></p>
 <script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>
@@ -343,7 +344,7 @@ input will then be uppercased.</p>
 <p>&nbsp;</p>
 <div>
     <input type="text" ng-model="displayText3" placeholder="type something">
-    <h3>{{&#39;You typed: &#39; + displayText3.toUpperCase()}}</h3>
+    <h3>You typed: {{ displayText3.toUpperCase()}}</h3>
 </div>
 
 <p>The magic of curly braces continues though. Angular also has the concept of filters for our binding element that we
@@ -367,8 +368,8 @@ Fahrenheit to degrees Celsius and Kelvin.</p>
     <input type="number" ng-model="tempF0" value="0">
     <br>
     <br>
-    <b>Celcius:</b> {{ (((5/9)<em>(tempF0-32))-0.0)|number:2 }}  &amp;degC<br>
-    <b>Kelvin:</b> {{ (((5/9)</em>(tempF0-32))-273.0) |number:2 }} K
+    <b>Celcius:</b> <div>{{ (((5/9)<em>(tempF0-32))-0.0)|number:2 }}</em></div>  &amp;degC<br>
+    <b>Kelvin:</b> {{ (((5/9)(tempF0-32))-273.0) |number:2 }} K
 </div>
 
 <p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>

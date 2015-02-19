@@ -174,7 +174,9 @@ In this instance then element&#39;s name, which is a property on our JSON object
 
 <p>We could also go an easily update our markup to display the atomic weight along with the name by changing our <code>li</code>
  display to</p>
-<pre class="highlight"><code class="hljs xml"> {{element.name}} - {{element.atomicWeight}}
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">li</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span>&gt;</span>{{element.name}} - {{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
 </code></pre>
 <p>Resulting in a new look, where we are appending the atomic weight to the display of the element&#39;s name.</p>
    <div id="elements2" ng-controller="chemCtrl">
