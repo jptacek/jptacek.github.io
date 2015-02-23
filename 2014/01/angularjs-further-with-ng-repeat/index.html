@@ -358,10 +358,11 @@ combine with our text box for searching by name and chain them together.</p>
         <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
+
 <div id="periodicTable5" ng-controller="chemCtrl">
-        Element Name:<input type="text" ng-model="elementName">
+        Element Name:<input type="text" ng-model="elementName5">
         &nbsp;State:
-        <select ng-model="elementPhase">
+        <select ng-model="elementPhase5">
             <option value="">All</option>
             <option value="Gas">Gas</option>
             <option value="Solid">Solid</option>
@@ -369,7 +370,7 @@ combine with our text box for searching by name and chain them together.</p>
             <option value="Synthetic">Synthetic</option>
         </select>
         &nbsp;Order:
-        <select ng-model="elementOrder">
+        <select ng-model="elementOrder5">
             <option value="name" selected>Name (ascending)</option>
             <option value="-name">Name (descending)</option>
             <option value="melting">Melting Point (asc)</option>
@@ -380,7 +381,7 @@ combine with our text box for searching by name and chain them together.</p>
             <tr>
                 <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
             </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder">
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementName5} | filter:{phase:elementPhase5} | orderBy:elementOrder5">
             <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
                 <td>{{element.atomicNumber}}</td>
                 <td>{{element.atomicWeight}}</td>
