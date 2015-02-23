@@ -192,12 +192,12 @@ Fahrenheit to degrees Celsius and Kelvin.</p>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </span></code></pre><p>&nbsp;</p>
 <div id="tempConversion">
-    <b>Temperature (&degF)</b>
+    <b>Temperature (&amp;degF)</b>
     <input type="number" ng-model="tempF0" value="0">
     <br>
     <br>
-    <b>Celsius:</b> {{ ((5/9)*(tempF0-32)) | number:2 }} &degC<br/>
-    <b>Kelvin:</b> {{ (((5/9)*(tempF0-32))-273.0) | number:2 }} K
+    <b>Celcius:</b> <div>{{ (((5/9)<em>(tempF0-32))-0.0)|number:2 }}</em></div>  &amp;degC<br>
+    <b>Kelvin:</b> {{ (((5/9)(tempF0-32))-273.0) |number:2 }} K
 </div>
 
 <p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>
@@ -215,19 +215,18 @@ Fahrenheit to degrees Celsius and Kelvin.</p>
     <input type="number" ng-model="radiusZ" value="0">
     <br>
     <br>
-    <b>Volume:</b> {{ radiusZ * radiusZ | number:3}} <br>
-    <b>Surface area:</b> {{ (4*3.141*radiusZ*radiusZ) | number:3}} <br/>
+    <b>Volume:</b> {{ radiusZ<em>radiusZ | number:3}} <br>
+    <b>Surface area:</b> {{ (4</em>3.141<em>radiusZ</em>radiusZ) | number:3}} <br>
 </div>
 
 
 <p></p></div>
 It is pretty cool that we are able to write these quick little applications without any Javascript. Just by using Angular and it&#39;s built in databinding functionality!<p></p>
 <p>I am still working on a good way to get some Javascript demos into my Wordpress blog. In the interim, you can check them out at an Azure website I created to host these demos, <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a>. Specifically</p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo1/helloworld.html">Hello World</a></p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo1/tempConversion.html">Temperature Conversion</a></p>
-<p><a href="http://angularperiodic.azurewebsites.net/Demo1/spherecalculation.html">Sphere Calculation</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo01-Intro/HelloWorld.html">Hello World</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo01-Intro/tempConversion.html">Temperature Conversion</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo01-Intro/sphereCalculation.html">Sphere Calculation</a></p>
 <p>&nbsp;</p>
-<p><strong>Update:</strong> I have created JSFiddles to embed the code samples. You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action or view the JSFiddles embedded on the page. As always, the code is out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
 
     </div>
 
