@@ -358,11 +358,10 @@ combine with our text box for searching by name and chain them together.</p>
         <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </code></pre>
-
 <div id="periodicTable5" ng-controller="chemCtrl">
-        Element Name:<input type="text" ng-model="elementName5">
+        Element Name:<input type="text" ng-model="elementName">
         &nbsp;State:
-        <select ng-model="elementPhase5">
+        <select ng-model="elementPhase">
             <option value="">All</option>
             <option value="Gas">Gas</option>
             <option value="Solid">Solid</option>
@@ -370,7 +369,7 @@ combine with our text box for searching by name and chain them together.</p>
             <option value="Synthetic">Synthetic</option>
         </select>
         &nbsp;Order:
-        <select ng-model="elementOrder5">
+        <select ng-model="elementOrder">
             <option value="name" selected>Name (ascending)</option>
             <option value="-name">Name (descending)</option>
             <option value="melting">Melting Point (asc)</option>
@@ -381,7 +380,7 @@ combine with our text box for searching by name and chain them together.</p>
             <tr>
                 <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
             </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementName5} | filter:{phase:elementPhase5} | orderBy:elementOrder5">
+            <tr ng-repeat="element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder">
             <td><a href="http://en.wikipedia.org/wiki/{{element.name}}" title="Wikipedia article on {{element.name}}" target="_top">{{element.name}}</a></td>
                 <td>{{element.atomicNumber}}</td>
                 <td>{{element.atomicWeight}}</td>
@@ -423,8 +422,8 @@ as always find the code out on <a href="https://github.com/jptacek/AngularPeriod
         I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
-    <p>Currently, I am reading <a href="http://www.amazon.com/Wolves-Calla-Dark-Tower-Book/dp/141651693X">Wolves of Calla, The Dark Tower, Book 5</a>
-        by Stephen King</p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Einstein-Life-Universe-Walter-Isaacson/dp/0743264738">Einstein: His Life and Universe</a>
+        by Walter Isaacson</p>
     <p>
         <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
         <a href="https://github.com/jptacek">GitHub</a> &#8226;

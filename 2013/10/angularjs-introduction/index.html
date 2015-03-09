@@ -187,7 +187,7 @@ Fahrenheit to degrees Celsius and Kelvin.</p>
     <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"number"</span> <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"tempF"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">0</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Celcius:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ ((5/9)*(<span class="hljs-variable">tempF-</span>32)) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> &amp;degC<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Celcius:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ ((5/9)*(<span class="hljs-variable">tempF-</span>32)) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> &degC<span class="hljs-tag">&lt;<span class="hljs-title">br</span>/&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Kelvin:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> </span><span class="hljs-expression">{{ (((5/9)*(<span class="hljs-variable">tempF-</span>32))<span class="hljs-variable">-</span>273<span class="hljs-variable">.</span>0) |<span class="hljs-variable">number</span>:2 }}</span><span class="xml"> K
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 </span></code></pre><p>&nbsp;</p>
@@ -196,8 +196,8 @@ Fahrenheit to degrees Celsius and Kelvin.</p>
     <input type="number" ng-model="tempF0" value="0">
     <br>
     <br>
-    <b>Celsius:</b>{{((5/9)*(tempF0-32))|number:2}}&degC<br/>
-    <b>Kelvin:</b>{{(((5/9)*(tempF0-32))-273.0)|number:2}}K
+    <b>Celsius: </b>{{((5/9)*(tempF0-32))|number:2}}&degC<br/>
+    <b>Kelvin: </b>{{(((5/9)*(tempF0-32))-273.0)|number:2}}K
 </div>
 
 <p>And just since we are having so much fun, we can use angular to calculate the volume and surface area of a cube</p>
@@ -215,8 +215,8 @@ Fahrenheit to degrees Celsius and Kelvin.</p>
     <input type="number" ng-model="radiusZ" value="0">
     <br>
     <br>
-    <b>Volume:</b>{{radiusZ*radiusZ|number:3}}<br>
-    <b>Surfacearea:</b>{{(4*3.141*radiusZ*radiusZ)|number:3}}<br/>
+    <b>Volume: </b>{{radiusZ*radiusZ|number:3}}<br>
+    <b>Surface Area: </b>{{(4*3.141*radiusZ*radiusZ)|number:3}}<br/>
 </div>
 
 
@@ -246,8 +246,8 @@ It is pretty cool that we are able to write these quick little applications with
         I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
-    <p>Currently, I am reading <a href="http://www.amazon.com/Wolves-Calla-Dark-Tower-Book/dp/141651693X">Wolves of Calla, The Dark Tower, Book 5</a>
-        by Stephen King</p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/Einstein-Life-Universe-Walter-Isaacson/dp/0743264738">Einstein: His Life and Universe</a>
+        by Walter Isaacson</p>
     <p>
         <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
         <a href="https://github.com/jptacek">GitHub</a> &#8226;

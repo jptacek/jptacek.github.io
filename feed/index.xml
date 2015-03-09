@@ -3,13 +3,45 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="http://www.jptacek.com/feed/" rel="self"/>
     <link href="http://www.jptacek.com"/>
-    <updated>2015-02-23T12:05:11.159Z</updated>
+    <updated>2015-03-09T10:56:37.536Z</updated>
     <id>http://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>Introduction to Windows 10</title>
+        <link href="http://www.jptacek.com/2015/02/Windows10-Preview/"/>
+        <updated>2015-02-25T06:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2015-02-25,/2015/02/Windows10-Preview/</id>
+        <content type="html"><![CDATA[<p>Microsoft is currently working on the next major release of Windows, called Windows 10. Currently, Windows 10 is in technical preview mode, with millions of people testing it across the world
+via their <a href="https://insider.windows.com/">Windows Insider Program</a>. I have been part of the Insider Program for a while now and have been through several releases and thought I would share some initial
+impressions of Windows 10.</p>
+<h2 id="start-menu">Start Menu</h2>
+<p>For most users, one of the biggest changes is the Start Menu is back. In Windows 8, the Start Menu was replaced by the Start Screen. Many users found this disconcerting as you moved back and forth between full screen “Windows Modern” and the traditional desktop mode. Microsoft is addressing this heads on by bringing back the start menu. It is also making the start menu more “modern”, by including Microsoft’s innovative Live Tiles in the start menu.</p>
+<p><img src="http://www.jptacek.com/2015/02/Windows10-Preview/startScreen.png" alt="Windows 10 Start Screen"></p>
+<h2 id="cortana">Cortana</h2>
+<p>Microsoft’s Cortana has been a big hit on Windows Phone. It is a voice driven assistant, similar to Google Now or Apple’s Siri. You can click the search icon and “talk” to Cortana and have it perform searches for you. You can even change some settings and say “Hey Cortana” and have it do searches for you.</p>
+<p>Cortana also bills itself as a personal digital assistant. It is able to parse through emails and documents and “learn” about you. So if you have a flight on Delta and you say Hey Cortana, Delta, it will show information about you flight.</p>
+<p>It also knows I like the Chicago Bulls, so it keeps information front and center. It is also nice enough not to mention that Derick Rose is out for the rest of the season, again.</p>
+<p><img src="http://www.jptacek.com/2015/02/Windows10-Preview/cortana1.png" alt="Cortana"></p>
+<p>Again, all of this code is pre-release and may change, but so far Cortana looks like a great feature for Windows 10.</p>
+<h2 id="continuum">Continuum</h2>
+<p>One of the biggest issues many people had with Windows 8 was how the tablet/modern mode was so prevalent and jarring in desktop mode. Microsoft is again addressing, heads on, one of the major Win 8 complaints, by including a new feature called Continuum. Continuum is there to make dual use machines like a Microsoft Surface function even better.</p>
+<p>Users can decide to go to Tablet Mode, either via the Notification Bar and selecting Tablet Mode or by disconnecting/connecting a keyboard and responding to the prompt. This will then put have your apps run full screen making them more touch friendly and applicable to running on a tablet.</p>
+<p><img src="http://www.jptacek.com/2015/02/Windows10-Preview/continuum.png" alt="Continuum"></p>
+<p><img src="http://www.jptacek.com/2015/02/Windows10-Preview/continuum2.png" alt="Continuum"></p>
+<p>When you are running in desktop mode, applications are then windowed, including “Modern” apps. Previously, “Modern” apps would run in full screen mode for all users. This is a pretty significant change from Microsoft and highlights how they are enabling users to be productive if they are in tablet mode or desktop mode.
+<img src="http://www.jptacek.com/2015/02/Windows10-Preview/continuum3.png" alt="Continuum"></p>
+<h2 id="universal-apps">Universal Apps</h2>
+<p>One of the biggest changes under the hood of Windows promises to be Universal Apps. This is a single platform that enables to developers to develop an application for Windows, Windows Phone and the Xbox One. Microsoft is hoping this will reignite developer interest as the multi platform development opens up many new opportunities.</p>
+<h2 id="all-roads-lead-to-build">All Roads Lead to Build</h2>
+<p>Microsoft’s Build Conference at the end of April 2015 promises to have A LOT more information on the new version of Windows, especially for developers. We will all know more soon after that. Windows 10 is supposed to be available in the second half of 2015.</p>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Article/2737/Introduction-to-Windows-10.aspx">Skyline Technologies</a>,</p>
+]]></content>
+    </entry>
     
     <entry>
         <title>AngularJS - Best Practices</title>
@@ -313,7 +345,7 @@ your projects and teams.</p>
 <p>I have created an Azure Website to host all of this code at <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></p>
 <p>The code is also available on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a>
 </p>
-<link href="/2015/02//angularJS-Best-Practices/css/animate.css" rel="stylesheet">
+<link href="/2015/02/angularJS-Best-Practices/css/animate.css" rel="stylesheet">
 
 <script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryApp.js"></script>
 <script type="text/javascript" src="/2015/02/angularJS-Best-Practices/js/chemistryController.js"></script>
@@ -705,7 +737,7 @@ is not very robust, so picking items at the end, aka Curium, will cause some iss
     <div id="controller" ng-controller="chemistryController">
 
         <div class="row">
-            <select ng-model="periodicElement" ng-options="e.name for e in elements" ng-click="updateController(periodicElement)"></select><br>
+            <select ng-model="periodicElement" ng-options="e.name for e in elements"></select><br>
         </div>
         <div class="row">
             &nbsp;
@@ -1193,25 +1225,6 @@ and ideas you can incorporate in your day to make sure you are still slinging co
  have created, give
  me some of your tips! What do you
 do to keep healthy during the day? Feel free to sound off in the Disqus comments below with ideas and discussion!</p>
-]]></content>
-    </entry>
-    
-    <entry>
-        <title>Madison .NET User Group - May 2014</title>
-        <link href="http://www.jptacek.com/2014/05/maddotnet-ug-presentation/"/>
-        <updated>2014-05-08T05:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2014-05-08,/2014/05/maddotnet-ug-presentation/</id>
-        <content type="html"><![CDATA[<p>Thanks to everyone who came out to my <a href="http://www.meetup.com/MADdotNET/">Madison .NET User Group</a> presentation on AngularJS on May 7th,
-2014.</p>
-<p>Had a really nice turnout and the group was great to give a talk to! Engaging, with lots of good questions. They even humored me when
-I went on a brief Lou Reed interlude!</p>
-<p>You can find a copy of my slides on my site <a href="http://www.jptacek.com/2014/05/maddotnet-ug-presentation/AngularJS.pptx">here</a>.</p>
-<p>The code for my demo is available on <a href="http://www.github.com">GitHub</a> at <a href="https://github.com/jptacek/MadDotNet">https://github.com/jptacek/MadDotNet</a> along with
-the slides.</p>
-<p>There are also several blog posts I have written about Angular, <a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a>. Also, for those
-interested in learning more about DocPad, here is a post where I talked about moving over, <a href="http://www.jptacek.com/2013/12/saying-hello-to-docpad/">http://www.jptacek.com/2013/12/saying-hello-to-docpad/</a></p>
-<p>As always, feel free to reach out to me via email (blog -@- jptacek.com) or on twitter, <a href="http://www.twitter.com/jptacek">@jptacek</a>.</p>
-<p>To those of you who attended, thanks much!</p>
 ]]></content>
     </entry>
     
