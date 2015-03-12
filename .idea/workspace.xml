@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caecd013-0dbd-42e0-95d4-aead8c0aa297" name="Default" comment="" />
+    <list default="true" id="caecd013-0dbd-42e0-95d4-aead8c0aa297" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2013/10/angularjs-introducing-ng-repeat/index.html" afterPath="$PROJECT_DIR$/2013/10/angularjs-introducing-ng-repeat/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2013/10/angularjs-introduction/index.html" afterPath="$PROJECT_DIR$/2013/10/angularjs-introduction/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2013/10/introducing-angularjs-controllers/index.html" afterPath="$PROJECT_DIR$/2013/10/introducing-angularjs-controllers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/index.html" afterPath="$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/01/angularjs-lou-reed/index.html" afterPath="$PROJECT_DIR$/2014/01/angularjs-lou-reed/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/02/angularJS-IntroToRouting/index.html" afterPath="$PROJECT_DIR$/2014/02/angularJS-IntroToRouting/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/02/angularJS-templates/index.html" afterPath="$PROJECT_DIR$/2014/02/angularJS-templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/05/angularJS-Intro-To-Services/index.html" afterPath="$PROJECT_DIR$/2014/05/angularJS-Intro-To-Services/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/06/angularJS-intro-to-directives/index.html" afterPath="$PROJECT_DIR$/2014/06/angularJS-intro-to-directives/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2014/12/angularJS-further-with-directives/index.html" afterPath="$PROJECT_DIR$/2014/12/angularJS-further-with-directives/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2015/02/angularJS-Best-Practices/index.html" afterPath="$PROJECT_DIR$/2015/02/angularJS-Best-Practices/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/2015/03/angularJS-CSS-Animation/index.html" afterPath="$PROJECT_DIR$/2015/03/angularJS-CSS-Animation/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/archives/index.html" afterPath="$PROJECT_DIR$/archives/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/11/index.html" afterPath="$PROJECT_DIR$/page/11/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/12/index.html" afterPath="$PROJECT_DIR$/page/12/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/3/index.html" afterPath="$PROJECT_DIR$/page/3/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/4/index.html" afterPath="$PROJECT_DIR$/page/4/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/7/index.html" afterPath="$PROJECT_DIR$/page/7/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/page/8/index.html" afterPath="$PROJECT_DIR$/page/8/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/angularjs/index.html" afterPath="$PROJECT_DIR$/tags/angularjs/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/javascript/index.html" afterPath="$PROJECT_DIR$/tags/javascript/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tags/web/index.html" afterPath="$PROJECT_DIR$/tags/web/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/feed/index.xml" afterPath="$PROJECT_DIR$/feed/index.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sitemap.xml" afterPath="$PROJECT_DIR$/sitemap.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="ghpages.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,8 +64,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2014/01/angularjs-lou-reed/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.16069058" vertical-offset="3096" max-vertical-offset="5882">
-              <caret line="175" column="37" selection-start-line="175" selection-start-column="37" selection-end-line="175" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.29083666" vertical-offset="3130" max-vertical-offset="5916">
+              <caret line="197" column="12" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -47,8 +74,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2013/10/angularjs-introduction/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.0" vertical-offset="3227" max-vertical-offset="5236">
-              <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3261" max-vertical-offset="5270">
+              <caret line="208" column="20" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -57,8 +84,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6018" max-vertical-offset="8228">
-              <caret line="354" column="24" selection-start-line="354" selection-start-column="24" selection-end-line="354" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="6069" max-vertical-offset="8262">
+              <caret line="357" column="24" selection-start-line="357" selection-start-column="24" selection-end-line="357" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -113,8 +140,8 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1845" />
-    <option name="y" value="80" />
+    <option name="x" value="1941" />
+    <option name="y" value="67" />
     <option name="width" value="1933" />
     <option name="height" value="951" />
   </component>
@@ -305,27 +332,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1845" y="80" width="1933" height="951" extended-state="0" />
-    <editor active="false" />
+    <frame x="1941" y="67" width="1933" height="951" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23430079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23430079" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -349,6 +376,62 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2014/01/angularjs-lou-reed/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5882">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2013/10/angularjs-introduction/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3227" max-vertical-offset="5236">
+          <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6018" max-vertical-offset="8228">
+          <caret line="354" column="24" selection-start-line="354" selection-start-column="24" selection-end-line="354" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/js/chemistryApp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="221">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/js/chemistry.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="14569">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/js/chemistryController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
@@ -439,24 +522,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2014/01/angularjs-further-with-ng-repeat/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6018" max-vertical-offset="8228">
-          <caret line="354" column="24" selection-start-line="354" selection-start-column="24" selection-end-line="354" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="6069" max-vertical-offset="8262">
+          <caret line="357" column="24" selection-start-line="357" selection-start-column="24" selection-end-line="357" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2013/10/angularjs-introduction/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.0" vertical-offset="3227" max-vertical-offset="5236">
-          <caret line="206" column="20" selection-start-line="206" selection-start-column="20" selection-end-line="206" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="3261" max-vertical-offset="5270">
+          <caret line="208" column="20" selection-start-line="208" selection-start-column="20" selection-end-line="208" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/2014/01/angularjs-lou-reed/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.16069058" vertical-offset="3096" max-vertical-offset="5882">
-          <caret line="175" column="37" selection-start-line="175" selection-start-column="37" selection-end-line="175" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.29083666" vertical-offset="3130" max-vertical-offset="5916">
+          <caret line="197" column="12" selection-start-line="197" selection-start-column="12" selection-end-line="197" selection-end-column="12" />
           <folding />
         </state>
       </provider>
