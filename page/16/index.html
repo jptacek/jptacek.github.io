@@ -87,44 +87,6 @@
             
     <article class="post">
     
-    <h1><a href='/2013/04/outlook-com-email-aliases/'>Outlook.Com Email Aliases</a></h1>
-    
-        <div class="post-date">Apr 18th, 2013</div>
-
-    <div class="post-content">
-        <p>I have had my Microsoft account migrated from the old Hotmail to the new Outlook.com look for a while now. In general, the new Outlook.com has a MUCH better user interface than the old Hotmail.</p>
-<p>I have also been migrating away from my Gmail account to a different email provider. I have been using Gmail for a LONG time, since 2004. However, some recent privacy snafus on Google&#39;s part and the abandonment of Google Reader inspired me to migrate over. So I have decided to give Outlook.com a try (and don&#39;t worry, I have no illusions about Microsoft and my privacy either<span style="font-family:Wingdings">J</span>)</p>
-<p>Now that I am paying more attention to Outlook I have run across a feature I wasn&#39;t previously aware of, and it is awesome. What feature is that? Outlook.com email aliases.</p>
-<p>First, a quick overview of how I use email. I have personal email, hosted on a Google apps domain. This is what I use for emailing with family and friends. Not being a huge spam fan, I then use my Google Gmail address for all things &quot;Internet&quot;. So for sites like Facebook, LinkedIn or Netflix I sign up using my Gmail address.</p>
-<p>The one problem with this is there are some sites I trust with my email address more than others. I know some sites are going to spam me than others and are more likely to &quot;share&quot; my email address. For example, once Tickemaster gets your email, everyone has your email. Some sites you visit require you to have an email address to access content, and you have no idea what you are getting yourself into. With Gmail, I have used the + trick, which allows you to create a disposable email address that will automatically come to your account. For example, if your email address is <a href="mailto:me@gmail.com">me@gmail.com</a>, you can use your address name and a plus(+) sign, <a href="mailto:me+SpamingNewsletter@gmail.com">me+SpamingNewsletter@gmail.com</a> and email will go to your original address. I usually end up forgetting these over time. The other thing is, you are not fooling anyone. Even if you use <a href="mailto:me+SpammingNewsletter@gmail.com">me+SpammingNewsletter@gmail.com</a>, people know your email address is <a href="mailto:me@gmail.com">me@gmail.com</a>.</p>
-<p>So this is where Outlook.com email alias feature comes in, and it&#39;s awesome. </p>
-<p>First, to create an alias, go to the Gear icon and choose Mail Settings. From there, under account, choose Create an Outlook alias.</p>
-<p><img src="/2013/04/outlook-com-email-aliases/041813_1008_OutlookComE1.png" alt=""></p>
-<p>You can choose to create an address from any of Microsoft&#39;s current email domains; Live, Hotmail and Outlook.</p>
-<p>Type in your new email alias and then you are given the option to create a new folder where all of your email gets moved when it is sent to the alias or you can send it to your inbox</p>
-<p><img src="/2013/04/outlook-com-email-aliases/041813_1008_OutlookComE2.png" alt=""></p>
-<p>Now you have a new email address associated with your default outlook.com account. </p>
-<p>Here is what I find so great about this. </p>
-<p>First, you can create multiple aliases, up to five a year, associated with your account. Personally, I have created two separate outlook.com aliases. One, I use for the Internet I trust. For example, my Facebook, Netflix, Linked accounts, etc. They all have been, or are in the process of getting migrated to an Outlook alias. I have a second alias, for the Internet I don&#39;t trust. These are things like Ticketmaster, or mailing lists. Essentially, anyone I am afraid of sending me spam. I can then log into my default outlook.com account, and see emails to both of those aliases and they are in folders.</p>
-<p>The second thing that I like about the outlook aliases is that you cannot log in with them. So, let&#39;s say LinkedIn gets hacked and my email address is in the hand of a bored script kiddie in the Ukraine. They will not be able to access my account at all because the alias is just for email and NOT account access.</p>
-<p>It appears email aliases have been around for a long while in Outlook/Hotmail, I was just never aware of them. They are a great tool in helping clean up your accounts on the internet, and they add an extra level of security in case one of the sites you access gets hacked and your account is one of them. Check them out!</p>
-<p><strong>Update:</strong> That did not last long... Apparently Microsoft will soon enable the ability to log in via aliases (from <a href="http://blogs.office.com/b/microsoft-outlook/archive/2013/04/17/outlook-com-gets-two-step-verification-sign-in-by-alias-and-new-international-domains.aspx">Outlook.com</a> blog). Hopefully this will be an optional feature.</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/outlook-com/'>Outlook.com</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
     <h1><a href='/2013/04/privacy-html/'>Privacy</a></h1>
     
         <div class="post-date">Apr 13th, 2013</div>
@@ -180,6 +142,234 @@
     
     <div class="post-tags">
         Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/google/'>Google</a>, <a href='/tags/security/'>Security</a>, <a href='/tags/two-factor-authentication/'>Two Factor Authentication</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/03/have_your_pi/'>Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance</a></h1>
+    
+        <div class="post-date">Mar 14th, 2013</div>
+
+    <div class="post-content">
+        <p>In honor of <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>, we thought it would be fun to calculate Pi and talk about performance differences between C# and C++. There is some math coming your way (yeah Math!), but feel free to skip to the end for a discussion on performance.</p>
+<p>So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by</p>
+<pre class="highlight"><code class="hljs markdown">![<span class="hljs-link_label">p1</span>](<span class="hljs-link_url">pi1.jpg</span>)
+</code></pre><p>Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! </p>
+<p>We have written two programs to calculate π, one in C# and one in C++. They are both syntactically similar and use the same algorithm. We tried to get as close to an apples comparison as we could, but in comparing two different languages, we did our best, you are still comparing an apple to an orange.</p>
+<p>So, what did we see? We calculated π to 15 decimal points, 3.141592653589793 for those of you keeping track at home. Both programs took almost 100 million iterations to converge, 99,995,330 to be exact. We ran each of the programs 10 times to get an average as shown in the following table</p>
+<div style="text-align: center"><table style="border-collapse:collapse" border="0"><colgroup><col style="width:102px"><col style="width:102px"><col style="width:66px"></colgroup><tbody valign="top"><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt"><strong>Run</strong></span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt"><strong>C++</strong></span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt"><strong>C#</strong></span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">1</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.384</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.908</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">2</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.299</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.466</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">3</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.3375</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.805</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.18</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.584</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">5</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.523</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.516</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.186</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.518</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">7</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.164</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.492</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">8</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.175</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.351</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">9</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.274</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.56</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">10</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.342</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.589</span>
+</td></tr><tr><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:#444444; font-family:Segoe UI; font-size:9pt">Average</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.29</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.58</span>
+</td></tr></tbody></table></div>
+
+<p>The calculation of π using C++ is 35% faster that it&#39;s corresponding C# code. This is to be expected. Many modern languages such as C# and Java run through a managed runtime. This brings MANY efficiencies to developers. However, the runtime tends to add overhead when it comes to performance. </p>
+<p>The pragmatic folks reading this realize, that the benefits of a managed execution environment and modern language generally outweigh performance gains from a language like C++. There are reasons that C# and Java are used instead of C++ because developers can be more productive. Our example here, using a very slow numerical algorithm and running it for ten million iterations is a stretch for most scenarios. The 2.5 second difference for such an intensive calculation, while relatively large in our example, in the grand scheme of things is not that big of difference.</p>
+<p>So why bring it up? It is important to think through performance more and more in today&#39;s computing environment for two reasons. The first is cost. As more and more organization move to utility based computing with hosted services, such as Amazon Web Services (AWS) and Azure, organization are paying for their compute cost. If you can realize performance gains that reduce CPU cycles that has a direct impact on the bottom line. The second reason is that mobile is taking over the world, and mobile users want more battery life, not less. Fewer CPU cycles on a smartphone or tablet will result in better battery life. </p>
+<p>It will be very rare that most organizations would use C++ or other &quot;closer to the metal&quot; languages for their Line of Business (LOB) applications. The moral of the story though is for intensive processes in cloud hosted or mobile environments, you want to be razor focused on optimizing your code for performance, no matter what language you choose.</p>
+<p>Both code examples are included, so for National Pi day, make a circle, calculate some π, eat some pie and enjoy!</p>
+<p>C++</p>
+
+// LifeOfPi.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void pi( double *pi_value, int *iterations);  
+
+int main ( void )  
+{  
+
+      int iterations = 0;     // number of actual loop iterations in pi 
+      double pi_value = 0;    // computed value of pi 
+
+      clock_t cBegin = (double)clock () ; 
+      pi(&pi_value, &iterations);  
+      printf("   %0.15f with %d iterations\n",  pi_value, iterations);  
+      clock_t cEnd = (double) clock() ; 
+
+      std::cout << float(="" cend="" -="" cbegin="" )="" return="" 0;="" }="" void="" pi(="" double="" *pi_value,="" int="" *iterations)="" {="" i;="" k="1;" realpi="3.141592653589793;" epsilon="0.00000001;" delta="10;" *pi_value="0;" while="" (delta="">epsilon) {
+            *pi_value += pow(-1,(k+1))/(2*k-1);
+            delta = fabs((4* *pi_value)-realPi);
+            k++;
+      }
+      *iterations = k;
+      *pi_value = 4 * *pi_value;
+
+      return; // indicate program ended sucessfully 
+
+} // end fucntion main 
+
+
+<p></p>
+<p>C#</p>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LifeOfPiCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int iterations = 0;
+            double pi_value = 0;
+
+            DateTime startTime = DateTime.Now;
+            pi(out pi_value,out iterations);
+            DateTime endTime = DateTime.Now;
+            Console.WriteLine(pi_value.ToString() + " in " + iterations);
+            TimeSpan diff = endTime.Subtract(startTime);
+            Console.WriteLine(diff.Seconds + "."+diff.Milliseconds);
+        }
+
+        public static void pi(out double pi_value, out int totalIterations)
+        {
+            double realPi = 3.141592653589793;
+            double epsilon = 0.00000001;
+            double delta = 10;
+            int k = 1;
+
+            pi_value = 0;
+            while (delta > epsilon)
+            {
+                pi_value += Math.Pow(-1, (k + 1)) / (2 * k - 1);
+                delta = Math.Abs((4 * pi_value) - realPi);
+                k++;
+            }
+            totalIterations = k;
+            pi_value = 4 * pi_value;
+
+        }
+    }
+} 
+
+
+<p>&nbsp;</p>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=186">Skyline Technologies</a></p>
+</<></iomanip></iostream>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/pi/'>Pi</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
     </div>
     
     <br/>
