@@ -87,6 +87,149 @@
             
     <article class="post">
     
+    <h1><a href='/2011/06/html-5-a-little-history/'>HTML 5: A Little History</a></h1>
+    
+        <div class="post-date">Jun 28th, 2011</div>
+
+    <div class="post-content">
+        <p>HTML 5 is being proposed as a magic potion for all that ails the world of developers. It slices, it dices, it chops and even calls your mom on her birthday when you forget. Let&#39;s jump on the bandwagon!</p>
+<p>To understand HTML 5, first you&#39;ll need a bit of history... HTML is a standard, standards are created by standards bodies, and they can take a while. The HTML standard is created by the World Wide Web Consortium (W3C), with the last HTML standard being <a href="http://www.w3.org/TR/REC-html40-971218/">HTML 4</a>, which was published in December of 1997. At that point, the W3C essentially said HTML is dead, long live HTML, but in the form of XHTML, a break from the previous version of HTML with HTML being recreated as strongly formed XML.</p>
+<p>The introduction of XHTML had one problem though; XHTML &quot;broke&quot; the internet. It didn&#39;t literally break it in the sense that you couldn&#39;t get your White Sox scores from ESPN, but without massive rewrites, it would have. HTML has always been a &quot;forgiving&quot; standard. If I develop an HTML page and have an opening </p><p> tag but not a corresponding closing </p> tag, my page will (most likely) work. XHTML would have resulted in a fatal error. People have estimated that fully implementing the XHMTL specification would have resulted in 99% of HTML pages at the time not rendering properly.<p></p>
+<p>So, our journey to the way back machine brings us to 2004, HTML 4 is the last W3C standard and their work has been focused on XHTML since 1997. During this time, XHTML has NOT taken off in the marketplace. People still want their White Sox scores from ESPN. As a result, browser developers, some web development companies, and some W3C members got together and proposed evolving HTML 4 with new features for modern browsers since a lot had changed in the years since the last standard (2004 -1997 = 73 Internet years). The W3C said they were not interested but the folks who proposed extending HTML WERE interested and went off and created the <a href="http://www.whatwg.org/news/start">Web Hypertext Application Technology (WHAT)</a>working group. So here is the state of the world: the people responsible for the HTML standard are not evolving the HTML standard any more, the folks who implement the HTML standard (the web browser creators, the app tool creators, etc.) want to evolve HTML.</p>
+<p>So the WHAT group went on doing its thing. Their main goal was backward compatibility. They wanted to be able to evolve HTML without breaking the 10 years of web development that came before. One of the more interesting things they did was explicitly identifying HOW to parse HTML so that it would be compatible across all browsers. In some ways, that became a new standard that indicated how all browsers should work.</p>
+<p>They also went on and introduced new features into HTML (without breaking HTML) including new form elements for things like dates. They thought, &quot;Wouldn&#39;t it be swell if browsers natively supported video and audio so we could get rid of things like Flash for streaming video?&quot;, so they added it. They also thought, &quot;Wouldn&#39;t it be awesome if you could animate things directly in the browser?&quot;, so they added a drawing canvas to HTML.</p>
+<p>The industry responded positively to these new ideas and the WHAT group started gaining momentum. During this time the W3C was working on XHTML 2, which none of the browser vendors implemented. I&#39;m not sure what you call a standard that nobody implements, but whatever you call it, it&#39;s pretty useless. It got to the point where in October of 2006, the W3C and the WHAT working group decided to join forces and evolve HTML and create HTML 5.</p>
+<p>Today we are at a point where these two groups are working together to create the HTML 5 standard. The next question is WHEN will there be an HTML 5 standard? It&#39;s going to be a while, maybe as far out as 2022 or later. So is that a problem? The answer is, hopefully not.</p>
+<p>Part of the reason for the long time is that the HTML 4 specification is very vague or even undefined on how things work. If you forget to include your closing paragraph tag, it was up to the browser vendor to figure it out. This leads to different implementations across vendors so things don&#39;t work as expected across all the browsers, something you are no doubt very familiar with. As a first step, sometime in 2012, a candidate recommendation for the HTML 5 standard will be released. At that point, the feature set, already very close to being final, will be official. A good part of the remaining 10 years will be spent on officially documenting how the standard should parse HTML.</p>
+<p>Another, even more important thing, is that the HTML 5 team is working on test suites. The idea is that browser vendors will have to run their browsers against the test suite and not until they hit 100% in a test suite will they be considered to have passed. In a lot of ways, the test suite becomes the standard. In fact, not until two major browser vendors pass the test suite with 100%, will the standard be considered completed. This is part of the reason for the very long elapsed time.</p>
+<p>The other player in this is how HTML 5 works other devices. HTML 5 is or will be supported by all major smart phone vendors as well as tablet vendors, e-readers and most likely a plethora of things not even imagined yet. In fact, some sites, such as the ubiquitous Facebook, are rumored to be developing HTML 5 applications rather than native applications for mobile or tablet vendors. Part of the reason for this is that some of the hardware vendors are requiring essentially a commission on any purchases within a native application. As a result, a lot of sites may be looking to bypass the App Store approach and create <a href="http://www.zdnet.com/blog/facebook/rumor-facebook-to-take-on-apple-with-html5-platform/1612">native HTML 5</a>so they don&#39;t need to worry about giving hardware vendors a percentage of their revenue.</p>
+<p>HTML 5 is a lot of hope and promise. In the past I have called it Java-esque, in the promise of the write once, run everywhere. What is different this time? A couple of things, one is the test suite that browser vendors will need to pass. The other is that there really seems to be a good cross section of the industry that REALLY wants this to work. It&#39;s not often that Apple, Google, Microsoft and other big companies are working towards the same thing. Do they always agree? Of course not! Will it cause problems? It already is. However, the industry is working hard to make this a reality.</p>
+<p>It will be interesting to see how it all plays out. Browsers like Google Chrome are working hard on supporting HTML 5 across many platforms. IE is working towards supporting HTML 5 on the Windows platform using hardware acceleration. You will see differences where HTML 5 rendered using IE which will run much faster and can do more, so that performance issues of other browsers may be a concern. Vice-versa you can have issues where IE is not rendering something the same way Chrome is.</p>
+<p>It&#39;s a long article just discussing the history of HTML 5 with none of the introduction of what HTML 5 is. However, it&#39;s important to understand the history of how we got here, and why the industry thinks this will be important. Next time I&#39;ll actually discuss some of what&#39;s new in HTML 5!</p>
+<p><strong>Why Use it?
+</strong>HTML 5 is going to (soon) be the industry standard for web applications</p>
+<p><strong>I want to learn more!
+</strong><a href="http://www.techrepublic.com/blog/programming-and-development/html-5-editor-ian-hickson-discusses-features-pain-points-adoption-rate-and-more/718">Interview with Ian Hickson discussing HTML 5 adoption rates</a></p>
+<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/HTML_5_History.aspx">http://www.skylinetechnologies.com/blog/Pages/HTML_5_History.aspx</a>)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2011/06/an-introduction-to-the-microsoft-razor-view-engine/'>An Introduction to the Microsoft Razor View Engine</a></h1>
+    
+        <div class="post-date">Jun 24th, 2011</div>
+
+    <div class="post-content">
+        <p>In past blog posts on <a href="http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx">MVC</a> and <a href="http://www.skylinetechnologies.com/blog/Pages/WebMatrix_for_Creating_Small_Sites.aspx">WebMatrix</a>I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
+<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was used and was called the Web Forms view engine.
+ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, people have not liked using the Web Forms View engine. During that time, several other view engines became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, <a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and <a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
+<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for Razor when they introduced it. The most important ones are that Razor be compact, expressive and fluid as well as easy to learn.</p>
+<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. Razor explicitly address this by using the @ keyword to enable script escaping.</p>
+<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
+<p></p><p>Message for the user @message</p>
+In ASP.NET Web Forms, this same line would have been<p></p>
+<p></p><p> Message for the user &lt;%= message %&gt;</p>
+Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:<p></p>
+<p><h3>Teams&lt;/h3&amp;gt</h3></p>
+<p><ul>
+@foreach (var t in teams) {
+<li>@t.Place - @t.Name </li>
+}
+</ul>
+On the screen this would print as follows:</p>
+<p><h3>Teams</h3></p>
+<p><ul></ul></p>
+<p><li>1 - Green Bay Packers</li></p>
+<p><li>2 - Chicago Bears</li></p>
+<p><li>3 - Detroit Lions</li></p>
+<p><li>4 - Minnesota Vikings</li>
+
+Similar syntax with Web Forms:</p>
+<p><h3>Teams</h3></p>
+<p><ul>
+&lt;% foreach (var t in teams) { %&gt;</ul></p>
+<p><li>&lt;%= t.Place%&gt; - &lt;%=t.Name%&gt; </li><li>
+&lt;%}%&gt;
+
+Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</li></p>
+<p>@helper TeamStandings(FootballTeam team) {
+<li>@team.Place - @team.Name </li>
+}
+We could then update the page to call the helper:</p>
+<p><h3>Teams</h3></p>
+<p><ul>
+@foreach (var t in teams) {
+@TeamStandings(t)
+}
+</ul>
+You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><title>Groovy Page</title>
+</p>
+<p><body></body></p>
+<p><div id="groovyMenu"><a href="/2011/06/an-introduction-to-the-microsoft-razor-view-engine//">Home</a></div></p>
+<p><div id="groovyPageBody">
+@RenderBody()
+</div>
+
+Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
+So for a simple view:</p>
+<p>
+{
+@LayoutPage = &quot;_groovySiteLayout.cshtml&quot;;
+}</p>
+<p><h1>Welcome to Groovy</h1></p>
+<p></p><p>Hello world</p>
+Would render the following HTML:<p></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html></html></p>
+<p><head></head></p>
+<p><title>Groovy Page</title>
+</p>
+<p><body></body></p>
+<p><div id="groovyMenu"><a href="/2011/06/an-introduction-to-the-microsoft-razor-view-engine//">Home</a></div></p>
+<p><div id="groovyPageBody"></div></p>
+<p><h1>Welcome to Groovy</h1></p>
+<p></p><p>Hello world</p>
+
+
+There is a lot more to the Razor view engine, this is just a quick introduction, I will be talking about it a lot more in the future.<p></p>
+<p><strong>Why Use it?
+</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
+<p><strong>I want to learn more!
+</strong>• <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx">Microsoft Introduction</a> - This post on Scott Guthrie&#39;s blog is an excellent introduction!
+• <a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a> - Check out the pluralsight videos on the page</p>
+<p>This blog post was originally published at Skyline Technologies (<a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=42">http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=42</a>)</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/razor/'>Razor</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2011/06/comparing-asp-net-mvc-and-web-forms/'>Comparing ASP.NET MVC and Web Forms</a></h1>
     
         <div class="post-date">Jun 10th, 2011</div>
@@ -132,182 +275,6 @@ At the end of the day, both MVC and Web forms are platforms built on ASP.NET and
     
     <div class="post-tags">
         Posted In: <a href='/tags/mvc/'>MVC</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/web-forms/'>Web Forms</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/'>WebMatrix Proves an Excellent Tool for Creating Small Sites Quickly</a></h1>
-    
-        <div class="post-date">Jun 6th, 2011</div>
-
-    <div class="post-content">
-        <p>As our work on the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a> was wrapping up, Skyline took over ownership of the database that runs the site from the School District so we could easily make corrections and additions without having to download a new version of the database each night. Now that we &quot;owned&quot; the database, we realized we needed a way to maintain and manage it. For this we used Microsoft&#39;s new tool, <a href="http://www.asp.net/WebMatrix">WebMatrix</a>.</p>
-<p>Right about now you are asking yourself, really, another programming tool? An excellent question. WebMatrix is a response from Microsoft to Ruby on Rails and PHP. The benefit these development stacks is that they can generally be used to implement data driven sites relatively quickly and, until now, Microsoft didn&#39;t have a tool that allowed that.</p>
-<p>While the .NET stack is a great development platform, it doesn&#39;t always allow for quick website development. As developers we tend to over-engineer sites, especially the ones that only need to be a couple of pages. We create a data layer, we create a business layer, and then we create a UI layer. These are, of course, industry best practices, but they are industry best practices for sites that are going to scale. If you&#39;re building a site for a couple of users who just want to see a list of their child&#39;s soccer games, this is definitely over engineering. WebMatrix is Microsoft&#39;s answer to that.</p>
-<p>WebMatrix harkens back to the days of Classic ASP. It contains code logic in a single page, including the SQL statement. You can then render your page using Microsoft&#39;s new <a href="http://www.computerworld.com/s/article/9178910/Microsoft_sharpening_Razor_view_engine_for_ASP.Net?source=rss_news">Razor</a>engine.</p>
-<p><strong>Getting Started
-</strong>To get started, <a href="http://www.asp.net/webmatrix">download WebMatrix </a>using Microsoft&#39;s web platform installer. Upon starting up the application you&#39;ll see a nice, simple-to-use page that includes many templates you can use to get started with your development quickly and easily.</p>
-<p><img src="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/WebMatrixScreen.jpg" alt=""></p>
-<p>So, what does the code look like? Truthfully, it&#39;s really simple. Here is the basis of a page we used to create a list of all students participating in the Compassion Project.</p>
-<p>The first thing to realize is the @{ } syntax is part of the Razor view engine. It is the replacement for &lt;%= %&gt; that tells the runtime you are escaping out to do something code like. Essentially, to get our list of data we do three things ... open a database connection, tell it the SQL command, and execute the SQL statement, the same three things we always do. In this case however, those three things are three lines:</p>
-<p>
-@{
-var db=Database.Open(&quot;Dev&quot;);
-var sqlQuery = &quot;select * from ProjectData order by LastName, FirstName&quot;;
-var data = db.Query(sqlQuery);
-}
-
-Next we have to render the output to the page. Again, we rely on the Razor View engine (look for the @ symbol):</p>
-<p></p>
-<p><body></body></p>
-<p><ul>
-@foreach (var row in data) {</ul></p>
-<p><li><a href="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/EditArtist.cshtml?id=@row.PictureNumber">@row.PictureNumber</a> @row.LastName @row.FirstName</li>
-}
-
-
-
-We are essentially saying for each (@foreach is Razor syntax) row in our data set (data is a globally scoped variable on the page), create a link to a key (@ is again the Razor syntax, so @row.PictureNumber tells the page to use the picture number) and create hypertext for the person&#39;s name. That&#39;s it! As you can see from the code snippets above, it takes very few lines to get data from a database.</p>
-<p>The update part is also similar. It is, of course, longer since there is a bit more logic, but notice how all of the syntax is on a single page:</p>
-<p>
-@{
-var id = Request[&quot;ID&quot;];
-var sqlSelect = &quot;select Id, PictureNumber, LastName, FirstName, Grade, HomeSchool, TileLocation,IsNull(DisplayStudentOnline,1) as DisplayStudentOnline,IsNull(FeaturedImage,0) as FeaturedImage,IsNull(FeaturedStatement,0) as FeaturedStatement,Description from ProjectData where PictureNumber=@0&quot;;
-var db=Database.Open(&quot;Dev&quot;);
-var sqlQuery = db.QuerySingle(sqlSelect,id);
-var studentFirstName = sqlQuery.FirstName;
-var studentLastName = sqlQuery.LastName;
-var compassionStatement = sqlQuery.Description;
-var homeSchool = sqlQuery.HomeSchool;
-var tileLocation = sqlQuery.TileLocation;
-var displayOnline = sqlQuery.DisplayStudentOnline;
-var isFeaturedImage = sqlQuery.FeaturedImage;
-var isFeaturedStatement = sqlQuery.FeaturedStatement;
-var pictureID = sqlQuery.PictureNumber;
-var imageUrl = &quot;<a href="http://images.appletoncompassion.org/compassionimagesfull/thumb/">http://images.appletoncompassion.org/compassionimagesfull/thumb/</a>&quot; + @pictureID + &quot;.jpg&quot;;
-var isImageCheck = string.Empty;
-if (isFeaturedImage) {
-isImageCheck = &quot;checked&quot;;
-}
-var isStatementCheck = &quot;&quot;;
-if (isFeaturedStatement) {
-isStatementCheck = &quot;checked&quot;;
-}</p>
-<p>var displayOnlineCheck = &quot;&quot;;
-if (displayOnline) {
-displayOnlineCheck = &quot;checked&quot;;
-}</p>
-<p>var ischeckedonpost = string.Empty;
-if (IsPost) {
-compassionStatement = Request[&quot;statement&quot;];
-tileLocation = Request[&quot;tileLoc&quot;]
-displayOnline = ParseCheckBox(Request[&quot;displayOnline&quot;]);
-isFeaturedImage = ParseCheckBox(Request[&quot;chkFeaturedImage&quot;]);
-isFeaturedStatement = ParseCheckBox(Request[&quot;chkFeaturedStatement&quot;]);
-var sqlUpdate = &quot;Update ProjectData set description = @0, TileLocation=@1, DisplayStudentOnline=@2, FeaturedImage=@3,FeaturedStatement=@4 where pictureNumber=@5&quot;;
-db.Execute(sqlUpdate,compassionStatement,tileLocation,displayOnline,isFeaturedImage,isFeaturedStatement,pictureID);
-Response.Redirect(&quot;Page.cshtml&quot;);</p>
-<p>}
-}</p>
-<p>@functions {
-bool ParseCheckBox(string checkBoxValue) {
-Response.Write(&quot;Value in: &quot; + checkBoxValue +&quot;<br>&quot;);
-bool returnValue = false;
-if (checkBoxValue == &quot;on&quot;) {
-returnValue = true;
-}
-else {
-returnValue = false;
-}
-Response.Write(&quot;Value out: &quot; + returnValue +&quot;<br>&quot;);
-return returnValue;
-}
-}
-&lt;!DOCTYPE html&gt;</p>
-<p><html lang="en"></html></p>
-<p><head></head></p>
-<p><meta charset="utf-8"></p>
-<p><title>Edit Artist</title>
-</p>
-<p><body>
-<a href="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/Page.cshtml">Home Page</a></body></p>
-<p><form action="" method="post"></form></p>
-<p></p><p>Picture Number: @pictureID</p><p></p>
-<p></p><p>First Name: @studentFirstName</p><p></p>
-<p></p><p>Last Name: @studentLastName</p><p></p>
-<p></p><p>Home School: @homeSchool</p><p></p>
-<p></p><p>Tile Location: <input type="text" name="tileLoc" value="@tileLocation"></p><p></p>
-<p></p><p>Statement:</p><p> <textarea id="txtStatement" rows="10" columns="20" style="width:600px" name="statement">@compassionStatement</textarea></p><p></p>
-<p></p><p>Display Student Online <input type="checkbox" name="displayOnline" @displayonlinecheck=""></p><p></p>
-<p></p><p>Featured Art <input type="checkbox" name="chkFeaturedImage" @isimagecheck=""></p><p></p>
-<p></p><p>Featured Statement<input type="checkbox" name="chkFeaturedStatement" @isstatementcheck=""></p>
-<img src="/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/@imageUrl"><p></p>
-<p></p><p><input type="submit" value="Save"></p>
-
-
-
-
-<strong>Why Use it?
-</strong>WebMatrix is Microsoft&#39;s response to tools such as Ruby and PHP that generally use inline SQL and allow developers to quickly get sites published. It includes many templates so you can get started quickly, and it will tie into Open Source projects such as Joomla.<p></p>
-<p><strong>I want to learn more!
-</strong><a href="http://www.asp.net/webmatrix">Official WebMatrix Site</a></p>
-<p>WebMatrix Development 101</p>
-<p>&nbsp;</p>
-<p><a href="http://www.amazon.com/Web-Development-using-WebMatrix-ebook/dp/B004I6D676/ref=sr_1_2?ie=UTF8&amp;qid=1305890052&amp;sr=8-2">Web Matrix 101 book</a> - This is a nice little introduction and is only $1 for the Kindle.</p>
-<p>This blog post orginally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=43"> Skyline Technologies</a></p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2011/05/mobile-apps-provide-the-finishing-touches-to-the-appleton-compassion-project/'>Mobile Apps Provide the &quot;Finishing Touches&quot; to the Appleton Compassion Project</a></h1>
-    
-        <div class="post-date">May 11th, 2011</div>
-
-    <div class="post-content">
-        <p>The <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>is a community art project in which all Appleton Area School District students created a 6&quot; x 6&quot; tile depicting their idea of compassion. Each student then wrote a statement about their tile and what compassion means to them. The art and statements can be viewed in the Trout Museum of Art or online at www.appletoncompassion.org. Adding the writing element to the art project has produced some very well rounded, heartfelt depictions of the word &quot;Compassion&quot;.</p>
-<p>The artist statements range all over the board; from moving, to amusing, to first-grader-cute. It quickly became apparent that with the job of physically displaying over 10,000 pieces of Art on the walls of the Trout Museum of Art, that the compassion statements would not be available for display alongside the tiles. Since the writing element was just as important to the project as the art, we knew we needed to come up with a solution to allow museum visitors to read the statements. The answer? Smartphone apps! Skyline created applications for the three major platforms - Android, iPhone and Windows Phone 7 - that museum visitors can install on their mobile phones so they can view artist statements along with the art.</p>
-<p>Since this is the first time that Skyline has created mobile apps for the three major mobile platforms, I thought I&#39;d share how we approached the design of the applications, focusing on what was common between all three. Then, in future blog posts each of the mobile platforms will be discussed from a development standpoint.</p>
-<p>In essence, the goal of the mobile application design, at a high level, focused on two things: One, consistency of functionality within three applications, and two, have the application behave like a native application on the individual mobile phones. Okay, what does this really mean? We sat down as a team and identified the functionality the application should have. For the mobile applications these were the features we wanted:</p>
-<ul>
-<li>Highlight featured art upon entering the app</li>
-<li>By clicking on an image users would be able to view the compassion statement</li>
-<li>Search by student name</li>
-<li>Search by picture number</li>
-<li>Allow users to mark and keep a list of favorites</li>
-<li>Have static text to highlight information about the museum, exhibit, hours, Skyline, etc.
-Once a set of features was decided on, we focused on having those pieces display consistently within the applications, so that featured art was first, favorites was second, and so on. We also wanted to make sure that search was available on each screen across the application. Finally, we attempted to use consistency with the graphics across platforms wherever possible. All of the applications have the same splash screen (featuring Art by Skyline employees) and use the same logo where needed.</li>
-</ul>
-<p>Each developer took these requirements and implemented them within the various mobile platforms so they were consistent for the users of that platform. For example, the iPhone and Windows Phone 7 have very different UI implementations. The iPhone has more of a button-driven menu interface, where the Windows Phone UI utilizes text and swiping as a function of their Metro UI. This results in the search button being at the bottom of the screen for the iPhone application and at the top for the Windows Phone application. Each application has the same functionality, just implemented differently - appropriate for the native platform.</p>
-<p>The last part of the mobile applications is the data services that feed the application. Surprisingly enough, there are only two. The services are REST-based, with the data returned to the client in XML format.</p>
-<p>The first service returns a random set of featured art (<a href="http://www.appletoncompassion.org/rest/FeaturedStatements/12">http://www.appletoncompassion.org/rest/FeaturedStatements/12</a>). With REST, you can provide parameters in the URL, so in the instance the number tells you how many items to return. We have a single object type we used for both of the services to return, so in this instance there is some excess data in the XML stream that would not necessarily be needed, but it made development easier. This REST call is used to return the featured images that greet the user each time they start the application.</p>
-<p>The second service is responsible for searching. Within the application, there are two types of search. The first one is by picture number, so if you are at the exhibit in the museum you can type in a number and see the artist statement that corresponds with the tile. The second is by name, so you can look up a specific child. We were able to implement this search functionality in a single service call, by having the back end service worry about if the search was a number only or if it had text. The service can search by number (<a href="http://www.appletoncompassion.org/rest/search/7158">http://www.appletoncompassion.org/rest/search/7158</a>), last name (<a href="http://www.appletoncompassion.org/rest/search/ptacek">http://www.appletoncompassion.org/rest/search/ptacek</a>) or full name (<a href="http://www.appletoncompassion.org/rest/search/nora ptacek">http://www.appletoncompassion.org/rest/search/nora%20ptacek</a>).</p>
-<p>It&#39;s a small example, but it illustrates the point of trying to encapsulate as much logic is possible in our service calls and not put the burden on the mobile phone. This way if there&#39;s a bug or change that needs to be made in the search functionality, we can update the service call, and not have to go through the lengthy process of updating three mobile applications in their respective mobile stores.</p>
-<p>Watch for future blog posts that discuss each individual platform in more detail.</p>
-<p>This blog post originally appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx">http://www.skylinetechnologies.com/blog/Pages/compassionmobileappdevelopment.aspx</a>)</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
