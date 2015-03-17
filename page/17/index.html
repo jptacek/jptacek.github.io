@@ -87,6 +87,281 @@
             
     <article class="post">
     
+    <h1><a href='/2013/03/setting-up-google-two-factor-authentication/'>Setting up Google Two Factor authentication</a></h1>
+    
+        <div class="post-date">Mar 28th, 2013</div>
+
+    <div class="post-content">
+        <p>My daughter was recently asking me what classes she should take for next year, one of the options was Creative Writing. I told her the choice was easy, Creative Writing, &quot;You can never be too good of a writer&quot;. Similarly for the Internet, you can never be too secure.</p>
+<p>There are LOTS of horror stories out about people who have had their lives severely impacted by people getting access to their account information. Last year, Matt Honan <a href="http://www.wired.com/gadgetlab/2012/08/apple-amazon-mat-honan-hacking/all/">wrote</a> a cautionary tale about how easily someone was able to take over his digital life for Wired. It is well worth reading. If that one was not enough, then you can read another account from James Fallows <a href="http://www.theatlantic.com/magazine/archive/2011/11/hacked/308673/?single_page=true">wrote</a> for the Atlantic.</p>
+<p>First off, you should be doing basic things. Do NOT use the same password for all sites. DO NOT have passwords that exist in the dictionary. DO have special characters, numbers and mixed case in your passwords. That is just plain, Internet common sense though.</p>
+<p>The reality though is, your password is only so good. What everyone should do is setup two factor authentication. Two factor authentication is really &quot;something you know&quot; (your password) and &quot;something you have&quot;, an object like a phone. For enterprise users, this is old hat. The vast majority of large companies require users to have a SecurID card to get access to their network. The card generates a token that changes on a regular internal (60 seconds for example) that user needs to enter when logging in.</p>
+<p>However, in the consumer space, this has been much slower in coming. Several years ago Google introduced two factor authentication. Facebook also has the ability for you to enable a variation of two factor authentication. If the browser is not recognized as one you have used before, it will send a SMS to your phone. Twitter is in the process of enabling two factor authentication after 250,000 user accounts were compromised. Microsoft has SOME variation of it. It will occasionally prompt you with a verification code when making account changes or accessing the device from a non-trusted PC. It is however, not a default option for login, and I have never been able to figure out how it decides to send SMS messages. Microsoft really needs to have this option available for those who want it.</p>
+<p>We are going to step three enabling Google&#39;s two factor authentication, since so many folks have Google accounts.</p>
+<p>To enable Google&#39;s two factor authentication, first, go to your Google Account and click security and find 2-step verification.</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo1.png" alt=""></p>
+<p>For 2-step verification, change the settings form Off to On.</p>
+<p>You will then be prompted for a phone number to use for SMS messages. The phone, along with the accompanying verification code, is the second factor of authentication, it is the thing you have. Type in the mobile phone number</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo2.png" alt=""></p>
+<p>Enter in your phone number and a verification code will be sent to your mobile device. You will then be asked to verify the code</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo3.png" alt=""></p>
+<p>You will then be asked if you want to trust the computer you are on. This will allow you to log in without being prompted with a code very time. This trust usually lasts 30 days.</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo4.png" alt=""></p>
+<p>And then lastly, click confirm</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo5.png" alt=""></p>
+<p>Now, each time you log into your Google account from a non trusted computer, a SMS message will be sent to your phone that will need to enter.</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo6.png" alt=""></p>
+<p>Now, this is a bit cumbersome, I grant you. However, it is almost necessary if you are using Google services for anything remotely important to your non-digital world. Do you have bank account information in Gmail? Then turn on two factor authentication. Do you have send yourself passwords in Gmail? Then turn on two factor authentication. Do you have health information in Gmail? Then turn on two factor authentication. Do you use your Google account as your account name for anything important? Then turn on two factor authentication.</p>
+<p>There are a couple of things to realize. You NEED your cell phone to log into Google services now. If you do not have your cell phone with you, or you are travelling overseas without phone access, then you will not be able to log in to your account. However, Google has several options for you. First, for those on the Android platform they have an app called <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;hl=en">Google Authenticator</a> that will generate the authentication codes for you. Option the second is you can print out a small piece of paper that has a one time, ten digit codes that you can use to get access.</p>
+<p>Second, applications that log into Google services to get access to your mail or contacts via POP or IMAP will no longer work. To work around this, Google allows you to create application specific passwords. These passwords are generated on the screen and then you never see them again. There are steps on how to do this at <a href="http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=185833">http://support.google.com/accounts/bin/answer.py?hl=en&amp;answer=185833</a>. For those using Outlook, Apple Mail, accessing email via phone, this will need to be done. Those of you paying attention at home will realize you are really back to a single password. While this is true, you cannot get access to your account via web browsers. Second, and more importantly, you cannot manage your account with it. You can also revoke access to anyone of these passwords at any time.</p>
+<p>Last, it is good measure to, in Google, Facebook, Twitter, your Microsoft account, anything account you allow to do authorization at other locations, to review what applications you have authorized. So while you are on your account page, review the Connected applications and sites to see who you have authorized to have access, and what level of access to your Google account data.</p>
+<p><img src="/2013/03/setting-up-google-two-factor-authentication/032813_1351_SettingupGo7.png" alt=""></p>
+<p>Personally, I have a Gmail account that I use for my &quot;public&quot; life. It is the address I sign up for things like Facebook with, the email address I use for accessing services I subscribe to, like Netflix, etc. For personal use, I also have a Google Apps domain that I use for personal email with family and friends. Google Apps also support two factor authentication.</p>
+<p>As digital identity becomes more and more integrated into daily lives, it is everyone&#39;s responsibility to ensure they can be secure as possible. Take the steps now where you can, because by the time you should have taken the steps, it will be too late.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/google/'>Google</a>, <a href='/tags/security/'>Security</a>, <a href='/tags/two-factor-authentication/'>Two Factor Authentication</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/03/have_your_pi/'>Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance</a></h1>
+    
+        <div class="post-date">Mar 14th, 2013</div>
+
+    <div class="post-content">
+        <p>In honor of <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>, we thought it would be fun to calculate Pi and talk about performance differences between C# and C++. There is some math coming your way (yeah Math!), but feel free to skip to the end for a discussion on performance.</p>
+<p>So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by</p>
+<pre class="highlight"><code class="hljs markdown">![<span class="hljs-link_label">p1</span>](<span class="hljs-link_url">pi1.jpg</span>)
+</code></pre><p>Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! </p>
+<p>We have written two programs to calculate π, one in C# and one in C++. They are both syntactically similar and use the same algorithm. We tried to get as close to an apples comparison as we could, but in comparing two different languages, we did our best, you are still comparing an apple to an orange.</p>
+<p>So, what did we see? We calculated π to 15 decimal points, 3.141592653589793 for those of you keeping track at home. Both programs took almost 100 million iterations to converge, 99,995,330 to be exact. We ran each of the programs 10 times to get an average as shown in the following table</p>
+<div style="text-align: center"><table style="border-collapse:collapse" border="0"><colgroup><col style="width:102px"><col style="width:102px"><col style="width:66px"></colgroup><tbody valign="top"><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt"><strong>Run</strong></span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt"><strong>C++</strong></span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt"><strong>C#</strong></span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">1</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.384</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.908</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">2</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.299</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.466</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">3</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.3375</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.805</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.18</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.584</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">5</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.523</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.516</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.186</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.518</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">7</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.164</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.492</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">8</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.175</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.351</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">9</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.274</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.56</span>
+</td></tr><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">10</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.342</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.589</span>
+</td></tr><tr><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:#444444; font-family:Segoe UI; font-size:9pt">Average</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">4.29</span>
+</td><td style="padding-left: 7px; padding-right: 7px; border-top:  none; border-left:  none; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
+
+<span style="color:black; font-size:9pt">6.58</span>
+</td></tr></tbody></table></div>
+
+<p>The calculation of π using C++ is 35% faster that it&#39;s corresponding C# code. This is to be expected. Many modern languages such as C# and Java run through a managed runtime. This brings MANY efficiencies to developers. However, the runtime tends to add overhead when it comes to performance. </p>
+<p>The pragmatic folks reading this realize, that the benefits of a managed execution environment and modern language generally outweigh performance gains from a language like C++. There are reasons that C# and Java are used instead of C++ because developers can be more productive. Our example here, using a very slow numerical algorithm and running it for ten million iterations is a stretch for most scenarios. The 2.5 second difference for such an intensive calculation, while relatively large in our example, in the grand scheme of things is not that big of difference.</p>
+<p>So why bring it up? It is important to think through performance more and more in today&#39;s computing environment for two reasons. The first is cost. As more and more organization move to utility based computing with hosted services, such as Amazon Web Services (AWS) and Azure, organization are paying for their compute cost. If you can realize performance gains that reduce CPU cycles that has a direct impact on the bottom line. The second reason is that mobile is taking over the world, and mobile users want more battery life, not less. Fewer CPU cycles on a smartphone or tablet will result in better battery life. </p>
+<p>It will be very rare that most organizations would use C++ or other &quot;closer to the metal&quot; languages for their Line of Business (LOB) applications. The moral of the story though is for intensive processes in cloud hosted or mobile environments, you want to be razor focused on optimizing your code for performance, no matter what language you choose.</p>
+<p>Both code examples are included, so for National Pi day, make a circle, calculate some π, eat some pie and enjoy!</p>
+<p>C++</p>
+
+// LifeOfPi.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+void pi( double *pi_value, int *iterations);  
+
+int main ( void )  
+{  
+
+      int iterations = 0;     // number of actual loop iterations in pi 
+      double pi_value = 0;    // computed value of pi 
+
+      clock_t cBegin = (double)clock () ; 
+      pi(&pi_value, &iterations);  
+      printf("   %0.15f with %d iterations\n",  pi_value, iterations);  
+      clock_t cEnd = (double) clock() ; 
+
+      std::cout << float(="" cend="" -="" cbegin="" )="" return="" 0;="" }="" void="" pi(="" double="" *pi_value,="" int="" *iterations)="" {="" i;="" k="1;" realpi="3.141592653589793;" epsilon="0.00000001;" delta="10;" *pi_value="0;" while="" (delta="">epsilon) {
+            *pi_value += pow(-1,(k+1))/(2*k-1);
+            delta = fabs((4* *pi_value)-realPi);
+            k++;
+      }
+      *iterations = k;
+      *pi_value = 4 * *pi_value;
+
+      return; // indicate program ended sucessfully 
+
+} // end fucntion main 
+
+
+<p></p>
+<p>C#</p>
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LifeOfPiCSharp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int iterations = 0;
+            double pi_value = 0;
+
+            DateTime startTime = DateTime.Now;
+            pi(out pi_value,out iterations);
+            DateTime endTime = DateTime.Now;
+            Console.WriteLine(pi_value.ToString() + " in " + iterations);
+            TimeSpan diff = endTime.Subtract(startTime);
+            Console.WriteLine(diff.Seconds + "."+diff.Milliseconds);
+        }
+
+        public static void pi(out double pi_value, out int totalIterations)
+        {
+            double realPi = 3.141592653589793;
+            double epsilon = 0.00000001;
+            double delta = 10;
+            int k = 1;
+
+            pi_value = 0;
+            while (delta > epsilon)
+            {
+                pi_value += Math.Pow(-1, (k + 1)) / (2 * k - 1);
+                delta = Math.Abs((4 * pi_value) - realPi);
+                k++;
+            }
+            totalIterations = k;
+            pi_value = 4 * pi_value;
+
+        }
+    }
+} 
+
+
+<p>&nbsp;</p>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=186">Skyline Technologies</a></p>
+</<></iomanip></iostream>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/pi/'>Pi</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2013/03/automatic-builds-and-deploys-to-azure-websites/'>Automatic Builds and Deploys to Azure Websites</a></h1>
     
         <div class="post-date">Mar 5th, 2013</div>
@@ -136,136 +411,6 @@
     
     <div class="post-tags">
         Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/azure-websites/'>Azure Websites</a>, <a href='/tags/git/'>Git</a>, <a href='/tags/tfs/'>TFS</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/'>Being John Ptacek – Configuring Wordpress for Authorship Markup</a></h1>
-    
-        <div class="post-date">Feb 27th, 2013</div>
-
-    <div class="post-content">
-        <p>A while back, Scott Hanselman had a blog <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a> about embracing authorship. Essentially, it was a discussion about using Google&#39;s authorship <a href="http://googlewebmastercentral.blogspot.com/2011/06/authorship-markup-and-web-search.html">markup</a> on your website to help identify content you wrote. Like a lot of my recent posts, I decided to give this a run on my blog, which is an Azure hosted site running Wordpress.</p>
-<p>At a high level, implementing this is a two-step process. First, Google needs to have a trusted &quot;identity card&quot;. A place where the author identity is managed. As you can imagine, for Google this is <a href="http://plus.google.com/">Google+.</a> You need to use your identity card (Google+) and say that you write content for a given site (in this example, <a href="http://www.jptacek.com/">jptacek.com</a>). The next step is when you write content, you need to link back to your Google+ profile.</p>
-<p>First why, would someone do this? There are quite a few reasons</p>
-<p>1 - Manage &quot;brand&quot;. Whether it is your personal brand or your corporate brand, it helps build online presence</p>
-<p>2 - Search Engine Optimization. Google keeps the magic sauce of its page ranking very close to the vest. However, former Google CEO Eric Schmidt has explicitly stated in the future, content linked to online profiles will be ranked higher. </p>
-<p>3 - Search Results will be more eye catching. Google will put your author photo into links for pages you have created.</p>
-<p>For more on this, Forbes recently published an <a href="http://www.forbes.com/sites/johnhall/2013/02/26/6-reasons-why-googles-author-tags-are-important-to-leaders/?ss=strategies-solutions">article</a> about why business should be using Google author tags.</p>
-<p>So what are the steps to do this for your site? There are several sites that explain this. Google has a nice <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=2539557">introduction</a> as well as the Scott Hanselman <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a>. </p>
-<p>The first step is to identify to Google that you contribute to a site. This is done by going to your Google+ profile at <a href="http://profiles.google.com/me">http://profiles.google.com/me</a> and clicking Edit Profile.</p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt1.png" alt=""></p>
-<p>Click Add a custom link and link to your blog. I blog a lot for at <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>, where I work, so I included a contributor link there. I also blog on my personal site. You will notice that each link has multiple links. This is a result of adding the link manually for each site as well as doing a corresponding email verification. So we have finished part one, letting Google know where we are creating content.</p>
-<p>The next step is to update Wordpress to have posts link back my author profile with the author tag. For my profile, the url is <a href="https://plus.google.com/117170075977212738060?rel=author">https://plus.google.com/117170075977212738060?rel=author</a>. You will want to change the really long number to be your profile ID. </p>
-<p></p><p>I did this in several ways. First, on the main site I have a list of links for things like Twitter and LinkedIn. I included a link to Google+ here also</p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt2.png" alt=""></p>
-<p>Next, I update footer.php template for Wordpress to have a link back to the Google Profile. This will ensure each page on the site is identified. Last, the header.php section was updated with a Meta tag </p>
-<p><span style="font-family:Arial; font-size:10pt"><span style="color:#a31515"><link<></link<>
-            <span style="color:red">rel<span style="color:blue">=&quot;author&quot;</span> href<span style="color:blue">=&quot;<a href="https://plus.google.com/117170075977212738060?rel=me">https://plus.google.com/117170075977212738060?rel=me</a>&quot;</span>
-                <span style="color:blue">/&gt;</span>
-            </span></span></span></p>
-<p>Last, is to add a link to the content.php identifying the author of the article that links back to your Google Profile</p>
-<p>By <a href="https://plus.google.com/117170075977212738060?rel=author">John Ptacek</a></p>
-<p>Okay, we have setup a bunch of links. How do we know if it works? Google has a Structured Data Testing tool that will tell you. If you go to <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a> you can check your blog and see if Google recognizes the markup.</p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt3.png" alt=""></p>
-<p>You also notice that there is an email verification. This is another way to ensure your links are set. This is the reason two links appear for each site I was a contributor to in my Google Plus profile. I added each URL manually, and then as another level of verification, I verified an email address for each site.</p>
-<p>What is the end result? When I search Google for content, my picture is now appearing in the search results</p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt4.png" alt=""></p>
-<p>Posts I have a written now appear with a picture next to my name. You can also see that there are several hyperlinks in the search results. </p>
-<p>The first, the byline (by John Ptacek) links to my Google+ profile.</p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt5.png" alt=""></p>
-<p>The second, More by John Ptacek, </p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt6.png" alt=""></p>
-<p>displays articles I have written as well as author information as you can see <a href="http://www.google.com/#hl=en&amp;tbs=ppl_ids:--117170075977212738060-%2Cppl_nps%3AJohn+Ptacek%2Cppl_aut%3A1&amp;sclient=psy-ab&amp;dq=&amp;q=John+Ptacek&amp;oq=John+Ptacek&amp;gs_l=serp.3...31815.31815.0.32252.0.0.0.0.0.0.0.0..0.0.les%3B..0.0...1c.1.5.psy-ab.xk3_MinTqHs&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;fp=95c9c19312d4e19&amp;biw=1478&amp;bih=757">here</a></p>
-<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt7.png" alt=""></p>
-<p>As you can see, it is relatively easy to start identifying content you have created and having increased visibility in page results.</p>
-<p>As organizations embrace thought leadership, this is a great tool to ensure your employees and their content continues to be discoverable!</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/wordpress/'>WordPress</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/02/2371/'>Skyline Annual Retreat</a></h1>
-    
-        <div class="post-date">Feb 22nd, 2013</div>
-
-    <div class="post-content">
-        <p>The company I work at, <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a>, hosts an annual retreat for its associates every year. I thought it would be worth talking about what I think the great things Skyline does at these events and how they help foster and grow great teams.</p>
-<p>Our founders, Pat Deprey and Keith Kaufman, felt it was important that our associates and their families get to know one another. When you are a consulting company, with associates at various customer locations, it takes organizational focus to make sure people know one another and feel like part of the organization. We have now had the annual retreat for over twenty years, with CEO changes and ups and downs in the economy; preserving the Annual Retreat has always been a top priority. As a matter of fact, as we have added offices in Appleton and Milwaukee, and have associates working all over Wisconsin and the Midwest, it has become even more important.</p>
-<p>Previous years have been in Sister Bay, WI, where we took up two different resorts. As our company grows, especially our Milwaukee office, we moved the event further south in Door County to Egg Harbor so we could have all associates at a single location.</p>
-<p>So what makes our Annual Retreat such a great event? Let&#39;s talk about a few of the ways company get-togethers can help any group grow the strength of their organization:</p>
-<h2 id="family-fun">Family Fun</h2>
-<p>Here is a picture of my kids and their friends as we headed on the road. <img src="/2013/02/2371/022213_1452_1.jpg" alt=""></p>
-<p>As you can see, they are an excited group. The Skyline team that puts together the Annual Retreat makes sure that there are events going on throughout the weekend for families. Some of those events are kid friendly, some of those events are spouse friendly, and some of them are even teenager friendly. </p>
-<p>Friday night starts off with a dinner where associates and their families have the opportunity to get together and socialize. The team I am part of, has associates working out of Madison, Milwaukee, Appleton and Green Bay, and we are pretty evenly distributed. The dinner and social aspects of the weekend are one of the few times each year we are all in the same place and get to have fun together.</p>
-<p>On Saturday, we have an overview of the business and how things are going for the company and where we are going. Associates are encouraged to invite their spouses/significant others to join the meeting and learn about the company. With so many new associates joining each year, it is a great way to introduce the organization to our associates&#39; families. For new associates, it really drives home what makes Skyline different from other consulting and tech companies in the Midwest. </p>
-<p><img src="/2013/02/2371/022213_1452_2.jpg" alt=""></p>
-<h2 id="fun-events">Fun Events</h2>
-<p>Organizationally, Skyline is also committed to making a fun work environment. We even have a Director of Fun, who organizes events throughout the year. Door County is littered with events for associates and/or their families to attend. A small example of them:</p>
-<ul>
-<li><p>Poker Game</p>
-</li>
-<li><p>Cribbage Game</p>
-</li>
-<li><p>Board Games like Settles of Catan, Carcassone and many more</p>
-</li>
-<li><p>Scavenger Hunt</p>
-</li>
-<li><p>Magic Show</p>
-</li>
-<li><p>Fish Boil</p>
-</li>
-<li><p>Bonfire and Smores</p>
-</li>
-<li><p>Karaoke</p>
-</li>
-</ul>
-<p>As you can see from some of these pictures, a good time is had by all!</p>
-<p><img src="/2013/02/2371/022213_1452_3.jpg" alt=""><img src="/2013/02/2371/022213_1452_4.jpg" alt=""><img src="/2013/02/2371/022213_1452_5.jpg" alt=""><img src="/2013/02/2371/022213_1452_6.jpg" alt=""></p>
-<p><img src="/2013/02/2371/022213_1452_7.jpg" alt=""></p>
-<h2 id="associate-recognition">Associate Recognition</h2>
-<p>Another big highlight during our Annual Retreat are the associate recognition awards. In the state of Wisconsin, Skyline has more certifications than any other Microsoft partner. Below is a picture of all the associates who received certifications in the last year. </p>
-<p><img src="/2013/02/2371/022213_1452_8.jpg" alt=""></p>
-<p>This is one example of an award during the weekend. Skyline has always made it a point of recognizing associates who contribute to our organization. These awards have become one of the highlights of the annual retreat. One of the best parts is recognizing the people who do good work in front of their spouse/significant as well as their peers. </p>
-<p><img src="/2013/02/2371/022213_1452_9.jpg" alt=""></p>
-<h2 id="highlights-for-making-a-great-company-event">Highlights for making a great company event</h2>
-<ul>
-<li><p>Make it family friendly</p>
-</li>
-<li><p>Provide opportunities for spouses and significant other to learn about the company and its leaders</p>
-</li>
-<li><p>Provide recognition for employees </p>
-</li>
-<li><p>Have events for employees and their families</p>
-</li>
-<li><p>Provide downtime</p>
-</li>
-<li><p>Provide opportunities for community</p>
-</li>
-</ul>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
     </div>
     
     <br/>

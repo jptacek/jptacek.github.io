@@ -87,6 +87,136 @@
             
     <article class="post">
     
+    <h1><a href='/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/'>Being John Ptacek – Configuring Wordpress for Authorship Markup</a></h1>
+    
+        <div class="post-date">Feb 27th, 2013</div>
+
+    <div class="post-content">
+        <p>A while back, Scott Hanselman had a blog <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a> about embracing authorship. Essentially, it was a discussion about using Google&#39;s authorship <a href="http://googlewebmastercentral.blogspot.com/2011/06/authorship-markup-and-web-search.html">markup</a> on your website to help identify content you wrote. Like a lot of my recent posts, I decided to give this a run on my blog, which is an Azure hosted site running Wordpress.</p>
+<p>At a high level, implementing this is a two-step process. First, Google needs to have a trusted &quot;identity card&quot;. A place where the author identity is managed. As you can imagine, for Google this is <a href="http://plus.google.com/">Google+.</a> You need to use your identity card (Google+) and say that you write content for a given site (in this example, <a href="http://www.jptacek.com/">jptacek.com</a>). The next step is when you write content, you need to link back to your Google+ profile.</p>
+<p>First why, would someone do this? There are quite a few reasons</p>
+<p>1 - Manage &quot;brand&quot;. Whether it is your personal brand or your corporate brand, it helps build online presence</p>
+<p>2 - Search Engine Optimization. Google keeps the magic sauce of its page ranking very close to the vest. However, former Google CEO Eric Schmidt has explicitly stated in the future, content linked to online profiles will be ranked higher. </p>
+<p>3 - Search Results will be more eye catching. Google will put your author photo into links for pages you have created.</p>
+<p>For more on this, Forbes recently published an <a href="http://www.forbes.com/sites/johnhall/2013/02/26/6-reasons-why-googles-author-tags-are-important-to-leaders/?ss=strategies-solutions">article</a> about why business should be using Google author tags.</p>
+<p>So what are the steps to do this for your site? There are several sites that explain this. Google has a nice <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=2539557">introduction</a> as well as the Scott Hanselman <a href="http://www.hanselman.com/blog/EmbraceAuthorshipTheImportanceOfRelmeAndRelauthorOnYourContentsSEOAndGoogle.aspx">post</a>. </p>
+<p>The first step is to identify to Google that you contribute to a site. This is done by going to your Google+ profile at <a href="http://profiles.google.com/me">http://profiles.google.com/me</a> and clicking Edit Profile.</p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt1.png" alt=""></p>
+<p>Click Add a custom link and link to your blog. I blog a lot for at <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>, where I work, so I included a contributor link there. I also blog on my personal site. You will notice that each link has multiple links. This is a result of adding the link manually for each site as well as doing a corresponding email verification. So we have finished part one, letting Google know where we are creating content.</p>
+<p>The next step is to update Wordpress to have posts link back my author profile with the author tag. For my profile, the url is <a href="https://plus.google.com/117170075977212738060?rel=author">https://plus.google.com/117170075977212738060?rel=author</a>. You will want to change the really long number to be your profile ID. </p>
+<p></p><p>I did this in several ways. First, on the main site I have a list of links for things like Twitter and LinkedIn. I included a link to Google+ here also</p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt2.png" alt=""></p>
+<p>Next, I update footer.php template for Wordpress to have a link back to the Google Profile. This will ensure each page on the site is identified. Last, the header.php section was updated with a Meta tag </p>
+<p><span style="font-family:Arial; font-size:10pt"><span style="color:#a31515"><link<></link<>
+            <span style="color:red">rel<span style="color:blue">=&quot;author&quot;</span> href<span style="color:blue">=&quot;<a href="https://plus.google.com/117170075977212738060?rel=me">https://plus.google.com/117170075977212738060?rel=me</a>&quot;</span>
+                <span style="color:blue">/&gt;</span>
+            </span></span></span></p>
+<p>Last, is to add a link to the content.php identifying the author of the article that links back to your Google Profile</p>
+<p>By <a href="https://plus.google.com/117170075977212738060?rel=author">John Ptacek</a></p>
+<p>Okay, we have setup a bunch of links. How do we know if it works? Google has a Structured Data Testing tool that will tell you. If you go to <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippets</a> you can check your blog and see if Google recognizes the markup.</p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt3.png" alt=""></p>
+<p>You also notice that there is an email verification. This is another way to ensure your links are set. This is the reason two links appear for each site I was a contributor to in my Google Plus profile. I added each URL manually, and then as another level of verification, I verified an email address for each site.</p>
+<p>What is the end result? When I search Google for content, my picture is now appearing in the search results</p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt4.png" alt=""></p>
+<p>Posts I have a written now appear with a picture next to my name. You can also see that there are several hyperlinks in the search results. </p>
+<p>The first, the byline (by John Ptacek) links to my Google+ profile.</p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt5.png" alt=""></p>
+<p>The second, More by John Ptacek, </p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt6.png" alt=""></p>
+<p>displays articles I have written as well as author information as you can see <a href="http://www.google.com/#hl=en&amp;tbs=ppl_ids:--117170075977212738060-%2Cppl_nps%3AJohn+Ptacek%2Cppl_aut%3A1&amp;sclient=psy-ab&amp;dq=&amp;q=John+Ptacek&amp;oq=John+Ptacek&amp;gs_l=serp.3...31815.31815.0.32252.0.0.0.0.0.0.0.0..0.0.les%3B..0.0...1c.1.5.psy-ab.xk3_MinTqHs&amp;pbx=1&amp;bav=on.2,or.r_gc.r_pw.r_qf.&amp;fp=95c9c19312d4e19&amp;biw=1478&amp;bih=757">here</a></p>
+<p><img src="/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/022713_1235_BeingJohnPt7.png" alt=""></p>
+<p>As you can see, it is relatively easy to start identifying content you have created and having increased visibility in page results.</p>
+<p>As organizations embrace thought leadership, this is a great tool to ensure your employees and their content continues to be discoverable!</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/wordpress/'>WordPress</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2013/02/2371/'>Skyline Annual Retreat</a></h1>
+    
+        <div class="post-date">Feb 22nd, 2013</div>
+
+    <div class="post-content">
+        <p>The company I work at, <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a>, hosts an annual retreat for its associates every year. I thought it would be worth talking about what I think the great things Skyline does at these events and how they help foster and grow great teams.</p>
+<p>Our founders, Pat Deprey and Keith Kaufman, felt it was important that our associates and their families get to know one another. When you are a consulting company, with associates at various customer locations, it takes organizational focus to make sure people know one another and feel like part of the organization. We have now had the annual retreat for over twenty years, with CEO changes and ups and downs in the economy; preserving the Annual Retreat has always been a top priority. As a matter of fact, as we have added offices in Appleton and Milwaukee, and have associates working all over Wisconsin and the Midwest, it has become even more important.</p>
+<p>Previous years have been in Sister Bay, WI, where we took up two different resorts. As our company grows, especially our Milwaukee office, we moved the event further south in Door County to Egg Harbor so we could have all associates at a single location.</p>
+<p>So what makes our Annual Retreat such a great event? Let&#39;s talk about a few of the ways company get-togethers can help any group grow the strength of their organization:</p>
+<h2 id="family-fun">Family Fun</h2>
+<p>Here is a picture of my kids and their friends as we headed on the road. <img src="/2013/02/2371/022213_1452_1.jpg" alt=""></p>
+<p>As you can see, they are an excited group. The Skyline team that puts together the Annual Retreat makes sure that there are events going on throughout the weekend for families. Some of those events are kid friendly, some of those events are spouse friendly, and some of them are even teenager friendly. </p>
+<p>Friday night starts off with a dinner where associates and their families have the opportunity to get together and socialize. The team I am part of, has associates working out of Madison, Milwaukee, Appleton and Green Bay, and we are pretty evenly distributed. The dinner and social aspects of the weekend are one of the few times each year we are all in the same place and get to have fun together.</p>
+<p>On Saturday, we have an overview of the business and how things are going for the company and where we are going. Associates are encouraged to invite their spouses/significant others to join the meeting and learn about the company. With so many new associates joining each year, it is a great way to introduce the organization to our associates&#39; families. For new associates, it really drives home what makes Skyline different from other consulting and tech companies in the Midwest. </p>
+<p><img src="/2013/02/2371/022213_1452_2.jpg" alt=""></p>
+<h2 id="fun-events">Fun Events</h2>
+<p>Organizationally, Skyline is also committed to making a fun work environment. We even have a Director of Fun, who organizes events throughout the year. Door County is littered with events for associates and/or their families to attend. A small example of them:</p>
+<ul>
+<li><p>Poker Game</p>
+</li>
+<li><p>Cribbage Game</p>
+</li>
+<li><p>Board Games like Settles of Catan, Carcassone and many more</p>
+</li>
+<li><p>Scavenger Hunt</p>
+</li>
+<li><p>Magic Show</p>
+</li>
+<li><p>Fish Boil</p>
+</li>
+<li><p>Bonfire and Smores</p>
+</li>
+<li><p>Karaoke</p>
+</li>
+</ul>
+<p>As you can see from some of these pictures, a good time is had by all!</p>
+<p><img src="/2013/02/2371/022213_1452_3.jpg" alt=""><img src="/2013/02/2371/022213_1452_4.jpg" alt=""><img src="/2013/02/2371/022213_1452_5.jpg" alt=""><img src="/2013/02/2371/022213_1452_6.jpg" alt=""></p>
+<p><img src="/2013/02/2371/022213_1452_7.jpg" alt=""></p>
+<h2 id="associate-recognition">Associate Recognition</h2>
+<p>Another big highlight during our Annual Retreat are the associate recognition awards. In the state of Wisconsin, Skyline has more certifications than any other Microsoft partner. Below is a picture of all the associates who received certifications in the last year. </p>
+<p><img src="/2013/02/2371/022213_1452_8.jpg" alt=""></p>
+<p>This is one example of an award during the weekend. Skyline has always made it a point of recognizing associates who contribute to our organization. These awards have become one of the highlights of the annual retreat. One of the best parts is recognizing the people who do good work in front of their spouse/significant as well as their peers. </p>
+<p><img src="/2013/02/2371/022213_1452_9.jpg" alt=""></p>
+<h2 id="highlights-for-making-a-great-company-event">Highlights for making a great company event</h2>
+<ul>
+<li><p>Make it family friendly</p>
+</li>
+<li><p>Provide opportunities for spouses and significant other to learn about the company and its leaders</p>
+</li>
+<li><p>Provide recognition for employees </p>
+</li>
+<li><p>Have events for employees and their families</p>
+</li>
+<li><p>Provide downtime</p>
+</li>
+<li><p>Provide opportunities for community</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/'>Setting up email for a Custom Domain on a Windows Azure hosted website</a></h1>
     
         <div class="post-date">Feb 15th, 2013</div>
@@ -147,122 +277,6 @@ are encouraging customers to use Office 365 moving forward. You can find out mor
     
     <div class="post-tags">
         Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dns/'>DNS</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/email/'>email</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/'>Creating Sitemaps.xml file for Wordpress blogs on Azure Websites</a></h1>
-    
-        <div class="post-date">Feb 13th, 2013</div>
-
-    <div class="post-content">
-        <p>When running Wordpress on Azure websites, you have the ability to create sitemaps. This enables search engines such as Google and Bing to make you content more discoverable. You can find out more about Sitemaps from <a href="http://support.google.com/webmasters/bin/answer.py?hl=en&amp;answer=156184">Google</a>.</p>
-<p>The first step in the process is to upload placeholder files for the sitemap files. These are two files, Sitemap.xml and Sitemap.xml.gz (a compressed format). These files are both available on the Wordpress site, so download both <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml">Sitemap.xml</a> and <a href="http://www.wp-starter.com/wp-content/uploads/sitemap/sitemap.xml.gz">sitemap.xml.gz</a> locally to your computer. For this example, our local directory will be c:\scratch.</p>
-<p>Next, you are going to need to upload the files to your hosted Azure website. This requires using FTP. The Azure management site has the link to this.</p>
-<p><img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit1.png" alt=""></p>
-<p>&nbsp;</p>
-<p>Clicking the URL will pop up the FTP client in your favorite browser. I hate that FTP client (this hate is browser agnostic). Instead, I use the FTP client on the local OS, in this case Windows 8. Go to the command prompt and:</p>
-<ol>
-<li>Type ftp server.ftp.azurewebsites.windows.net</li>
-<li>Type in your FTP user name, being sure to include the domain name</li>
-<li><p>This will put you at the top level of your hosted Azure website. You can see the files there by typing <span style="font-family: Courier New;">LS </span>(the UNIX version of the Dir command)<span style="font-family: Courier New;">
-</span>
-<img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit2.png" alt=""></p>
-</li>
-<li><p>You will need to change directories to the location on your server that is the root for Wordpress site, in our case that is wwwroot; <span style="font-family: Courier New;">cd site\wwwroot</span></p>
-</li>
-<li>Now change your local directory to the location of the sitemap files you downloaded earlier using the FTP command LCD. This will change your local directory for you. In our example the location directory is c:\scratch, so <span style="font-family: Courier New;">LCD c:\scratch</span></li>
-<li>You can verify the files are present locally by typing <span style="font-family: Courier New;">!dir</span>, which shells out to the command prompt</li>
-<li><div>For each file, type PUT filename;</div>
-
-<ol>
-<li><span style="font-family: Courier New;">PUT sitemap.xml</span></li>
-<li><span style="font-family: Courier New;">PUT sitemamp.xml.gz
-</span>
-It goes without saying you can use your favorite FTP client to upload the files, I just made sure to document at least one.</li>
-</ol>
-</li>
-</ol>
-<p>Now that the sitemap files are present, you need to create the content for them. This can be done by installing a Wordpress plugin. The one I use is the Google XML Sitemaps application that can be downloaded here.</p>
-<p>To install this on your Wordpress site hosted on Azure is easy enough. Log in as administrator to your account.</p>
-<ol>
-<li><div>Go to you Plugins and choose Add New and type Google XML Sitemaps and click search</div>
-<img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit3.png" alt=""></li>
-<li>Click Install Now and move onto setup
-You will want to verify the location of your Sitemaps file, which the plugin automatically detect</li>
-</ol>
-<p><img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit4.png" alt=""></p>
-<p>&nbsp;</p>
-<p>The basic options are fine for most implementations. The Plugin will automatically create zipped up files of your sitemap, rebuild on content change as well as notify Google and Bing of changes</p>
-<p><img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit5.png" alt=""></p>
-<p>&nbsp;</p>
-<p>The plugin allows you to build the sitemap for the first time. After it is done, you will see</p>
-<p><img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit6.png" alt=""></p>
-<p>You can verify the sitemap by looking at the xml for the file. In the case of this blog, <a href="http://www.jptacek.com/sitemap.xml">http://www.jptacek.com/sitemap.xml</a></p>
-<p><img src="/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/021313_1142_CreatingSit7.png" alt=""></p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/seo/'>SEO</a>, <a href='/tags/wordpress/'>WordPress</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/02/configuring-dnsimple-for-azure-hosted-domains/'>Configuring DNSimple for Azure Hosted Domains</a></h1>
-    
-        <div class="post-date">Feb 11th, 2013</div>
-
-    <div class="post-content">
-        <p><a href="https://dnsimple.com/">DNSimple</a> is a great service for hosting and configuring DNS for domains you control. It also benefits by not being Go Daddy. I hate Go Daddy. They supported both SOPA and PIPA, run sexist television commercials and I have no love for their elephant killing CEO. Then there is their utterly confusing website, upselling tricks and poor customer service. Don&#39;t use Go Daddy.</p>
-<p>DNSimple allows you to host up to 10 domains for $36 (USD) for the year. You can find pricing information at <a href="https://dnsimple.com/pricing">https://dnsimple.com/pricing</a>. For multiple domains, this is significantly cheaper than Go Daddy.</p>
-<p>Another nice feature of DNSimple is they have templates for many popular sites to configure all of the necessary DNS settings required for hosting. They have templates for Google App pages, Tumblr, Wordpress, etc. While I am a developer and tend to be technical, I get lost pretty quick in the world of DNS configuration. A records, CNAME, MX, etc, etc. The templates help users get up and moving quickly.</p>
-<p>However, they do not have support for Azure hosted websites. It took me a little messing around to get this to work, and finally I have it set correctly.</p>
-<p>First, for this to work. You need to be hosting your website in Shared or Reserved mode. Free mode will not allow for users to have a custom domain name. To do this, log onto the Azure management portal and go to Web sites and choose your domain. Click scale and configure either Shared or Reserved. Shared is going to be MUCH cheaper.</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring1.png" alt=""></p>
-<p>&nbsp;</p>
-<p>You will then want to configure your domain names. This is done by clicking Configure and Manage Domains</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring2.png" alt=""></p>
-<p>&nbsp;</p>
-<p>This will provide a screen for managing custom domains.</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring3.png" alt=""></p>
-<p>The instructions do a good job of telling you what do. You want to have any domain that you want DNS to resolve for added here. In IIS speak, these are the Host headers. You will want one for WWW and another for your TLD, jptacek.com in our case. The issues I ran into was jptacek.com not registering properly and did not redirect to the main site.</p>
-<p>Next, you will need to configure your DNS settings in DNSimple. Go to <a href="http://www.Dnsimple.com">www.Dnsimple.com</a> and login. To configure your DNS, go to Domains, and select the Domain you want to manage</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring4.png" alt=""></p>
-<p>Once in manage, you will want to go the Advanced Editor, which is what to use when a template is not present.</p>
-<p>In here you will add for records, three CNAME records and an A name record. First, add a wildcard CNAME and have it point to your azure hosted website.</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring5.png" alt=""></p>
-<p>Next, as mentioned on the Azure site, you will need a record that will verify you own the DNS. To do that, configure the AWVerify to point to Azure&#39;s service</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring6.png" alt=""></p>
-<p>Next, a third CNAME record for WWW that goes to the Azure site</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring7.png" alt=""></p>
-<p>Last, and this is the area I ran into issues, you need to create an A record for the domain that points to the IP Address provided by Azure. This can be found on the Manage Domain settings. This will ensure that a request to the top level site, jptacek.com, will redirect to your site. Be sure to leave your subdomain blank.</p>
-<p><img src="/2013/02/configuring-dnsimple-for-azure-hosted-domains/021113_1414_Configuring8.png" alt=""></p>
-<p>&nbsp;</p>
-<p>You may have to wait up to an hour for the changes to take effect. It is also good to flush your DNS to ensure no issues.</p>
-<p>If you are looking for a DNS provider or want to switch from Go Daddy (which is horrible, have we mentioned that), check out DNSimple.com If you want, you can even click on the referral link <a href="https://dnsimple.com/r/b8a105607bde67">https://dnsimple.com/r/b8a105607bde67</a>, and get one month of free hosted DNS. Even better, I would get a free month of free hosted DNS <span style="font-family: Wingdings;">J</span></p>
-<p>&nbsp;</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
