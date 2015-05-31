@@ -87,6 +87,180 @@
             
     <article class="post">
     
+    <h1><a href='/2015/03/angularJS-CSS-Animation/'>AngularJS - CSS Animations</a></h1>
+    
+        <div class="post-date">Mar 12th, 2015</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2015/03/angularJS-CSS-Animation/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the twelfth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+<li><a href="http://jptacek.com/2015/02/angularJS-Best-Practices/">AngularJS - Best Practices</a></li>
+<li>AngularJS - CSS Animations</li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>AngularJS enables animations via the NgAnimate directive. This is an external JavaScript file that you will need for
+your application, so you will need to obtain the JavaScript. This can be done via the usual suspects, CDN,
+<a href="https://code.angularjs.org/">download</a> or Bower. The Bower install command is <code>bower install angular-animate</code></p>
+<p>There are three ways to do animations in AngularJS:</p>
+<ul>
+<li>CSS Animations</li>
+<li>CSS Transitions (or Keyframe Animations)</li>
+<li>Javascript</li>
+</ul>
+<p>We will look at each of these in separate posts, but will get started with CSS Animations.</p>
+<p>It is important to realize that the animations we are talking about in AngularJS here are not going to allow you to
+create a Pixar movie. The animations can be thought of as a bit of visual flair to your application to let users know
+their input has been recognized.</p>
+<p>In this post, we are going to focus on three AngularJS events that we can use with CSS animations. It is important to
+realize that Angular does not do any of the animations, but provides hooks for us to use our own animations, be they
+via CSS or JavaScript.</p>
+<p>There are five AngularJS events</p>
+<ul>
+<li>enter - DOM element is add to the DOM tree</li>
+<li>leave - DOM element is removed from the DOM tree</li>
+<li>move - DOM element is moved within the DOM tree</li>
+<li>addClass - A class is added to an element</li>
+<li>removeClass - A class is removed from an element</li>
+</ul>
+<p>So we have events get fired, the next thing that happens is the the animate library will add and remove CSS classes
+  based on the fired events. This is based on conventions for the naming of our CSS classes, which are
+ <code>[class]-[event]-[state]</code>. So, for the enter event, we have a <code>.ng-enter</code>
+ class and a <code>.ng-enter-active</code> class.</p>
+<p>The above is a little confusing, so let&#39;s try to state it another way. The AngularJS animate library supports animations
+for enter, leave and move. If we create a list in Angular and then have a filter applied, ngAnimate then toggles the
+CSS classes for us based on the state. Within these classes we then define our CSS for animation. In this scenario,
+ngAnimate works on ngRepeat, ngInclude, ngIf, ngSwitch, ngShow, ngHide, ngView, and ngClass.</p>
+<p>What does this look like? Well first, we need to inject the animation framework into our application. After installation
+and including the js library in your application
+(<code>&lt;script type=&quot;text/javascript&quot; src=&quot;angular-animate.min.js&quot;&gt;&lt;/script&gt;</code>) you need to inject into your app module.</p>
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> {</span>
+<span class="hljs-pi">    'use strict'</span>;
+
+    angular
+        .module(<span class="hljs-string">'chemistryApp'</span>, [
+            <span class="hljs-string">'ngAnimate'</span>
+        ]);
+})();
+</code></pre>
+<p>What we will do for our example is apply some animations to a periodic element when the user clicks on it. We will do
+this by applying a transition between the two states by changing the opacity.</p>
+<p>Here is a quick look at the CSS.</p>
+<pre class="highlight"><code class="hljs css"><span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-enter</span>, <span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-leave</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s linear all</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-moz-transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s linear all</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">-o-transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s linear all</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s linear all</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-enter</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+
+<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-enter-active</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+
+<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-leave</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+
+<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-leave</span><span class="hljs-class">.ng-leave-active</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<span class="hljs-rule">}</span></span>
+</code></pre>
+<p>Next, we update our HTML template to include a new angular keyword, <code>ng-if</code>, which, based on an expression will add
+or remove a DOM element. This then will trigger a ngAnimate events for enter and leave which will apply our CSS
+items we created earlier.</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicCell {{element.cssForDisplay}} periodicCell-animation'</span> <span class="hljs-attribute">data-ng-if</span>=<span class="hljs-value">"!fullElement"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicNumber"</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicWeight"</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicSymbol"</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"centerElementDisplay"</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>Let&#39;s see it in action now.</p>
+<div id="app" ng-app="chemistryApp">
+    <div class="container" ng-controller="chemistryController">
+
+      <div class="row">
+          <select ng-model="periodicElement" ng-options="e.name for e in elements"></select><br>
+      </div>
+      <div class="row">
+          &nbsp;
+      </div>
+      <div class="row">
+          &nbsp;
+      </div>
+      <div class="row">
+          <div class="col-md-2">
+              <periodic-chart-element element="periodicElement"></periodic-chart-element>
+          </div>
+          <div class="col-md-2">
+              &nbsp;
+          </div>
+          <div class="col-md-2">
+              <periodic-chart-element element="elements[periodicElement.atomicNumber]"></periodic-chart-element>
+          </div>
+          <div class="col-md-2">
+              &nbsp;
+          </div>
+          <div class="col-md-2">
+              <periodic-chart-element element="elements[periodicElement.atomicNumber+1]"></periodic-chart-element>
+          </div>
+      </div>
+    </div>
+</div>
+
+<p><br>
+As you can see, the ngAnimate library can quickly be incorporated in your existing Angular application. It enables
+CSS items to be applied to changes in the DOM and apply CSS based on naming rules. In our next Angular blog post,
+we will
+look at CSS transitions.</p>
+<p>I have created an Azure Website to host all of this code at <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></p>
+<p>The code is also available on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
+<link href="/2015/03/angularJS-CSS-Animation/css/animate.css" rel="stylesheet">
+
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryApp.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryController.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryService.js"></script>
+<script type="text/javascript" src="/2015/03/angularJS-CSS-Animation/js/chemistryDirective.js"></script>
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2015/02/Windows10-Preview/'>Introduction to Windows 10</a></h1>
     
         <div class="post-date">Feb 25th, 2015</div>
@@ -446,133 +620,6 @@ your projects and teams.</p>
     
     <div class="post-tags">
         Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2015/01/moving-docpad-to-github-pages/'>Hosting a DocPad Site on GitHub Pages</a></h1>
-    
-        <div class="post-date">Jan 16th, 2015</div>
-
-    <div class="post-content">
-        <p>I am a fan, a HUGE fan, of Microsoft&#39;s <a href="http://azure.microsoft.com/">Azure</a> platform, especially their Azure Websites.
-This blog, <a href="/2015/01/moving-docpad-to-github-pages/jptacek.com">jptacek.com</a> has been hosted
-on Azure for several iterations. First as a blog on WordPress, and later, as a blog being generated using
-<a href="https://docpad.org/">DocPad</a>. Feel
-free to follow my <a href="http://jptacek.com/tags/wordpress/">Wordpress</a> and <a href="http://jptacek.com/tags/docpad/">DocPad</a>
-adventures. Further, when I speak at events, I often say the subtitle of my talk should be
-&quot;Azure, a love story&quot;. It is awesome and it
-is a great tool for developers.</p>
-<p>The only thing that causes me a slight measure of discomfort is that it costs actual money to host my blog on Azure.
-I am fine paying money, especially
-for things I think are awesome, like Azure. However, my site, after migrating to DocPad is pretty stupid, it is just
-static HTML. Having a server for that can be a bit of overkill.</p>
-<p>Enter <a href="http://www.github.com">GitHub</a>.</p>
-<p><img src="/2015/01/moving-docpad-to-github-pages/githubpages.jpg" alt="GitHub pages"></p>
-<p>They have a platform for serving up static HTML. I think the thing that first
-time I had a seed planted was a <a href="http://haacked.com/archive/2013/12/02/dr-jekyll-and-mr-haack/">blog post</a>
-that <a href="https://twitter.com/Haacked">Phil Haack</a> did about moving his personal blog
-to GitHub Pages. In it, he steals a
-tweet from <a href="https://twitter.com/holman">Zach Holman</a>, one of his GitHub colleagues.</p>
-<blockquote>
-<p>@haacked the ops team gets paged when <a href="http://zachholman.com">http://zachholman.com</a> is down. You still have a lot to learn, buddy</p>
-</blockquote>
-<p>I thought that was a pretty good line. I also realize it is the same thing Microsoft does on their cloud platform, but
-it DID inspire me to dig a bit more into GitHub pages. At the time I looked, it was pretty focused on Jekyll, which
-I shied away from it based on its Ruby background (more info about my decision
-<a href="http://jptacek.com/2013/12/saying-hello-to-docpad/">here</a> ). A year later though, I have gotten a bit more
-comfortable with DocPad, and have a workflow to get my pages published to GitHub Pages.</p>
-<p>What are GitHub Pages? They are public webpages that are hosted on GitHub&#39;s infrastructure. They do NOT support
-HTTPS, so you won&#39;t want to host eCommerce sites on it. However, for blogs and other public content they work great.
-You can use Jekyll, which is a Ruby based static site generator. It is similar to DocPad. One benefit of using Jekyll
-with GitHub pages though is that you can check in your posts into your GitHub repository and it will automatically
-generate the site for you.</p>
-<p>There are two types of GitHub pages, User/Organization and Project sites. This blog, <a href="http://jptacek.com">JPtacek.com</a>
-is a User site. For User/Organization pages, GitHub will take content committed to the repository <em>username</em>.github.io,
-where <em>username</em> is a user&#39;s GitHub account. For me, this essentially means I check in my content to a the GitHub repository
-<a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a>. HTML content checked into this repository is then
-automatically deployed to a static site at the URL <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://jptacek.github.io</a>. You can find out
-more about this at GitHubs site <a href="https://pages.github.com/">https://pages.github.com/</a>.</p>
-<p>It is worth noting that GitHub Pages User/Organization pages get checked into the master branch of the repository.
-GitHub project sites, which are for, wait for it....., projects, are a bit different. One of those differences is that
-they have content checked into the GHPages branch of the project.</p>
-<p>So far, so good. However, the site has been living at a specific domain for a while, which I would really like to
-continue to use. Of course, GitHub pages also supports custom domain names for a site. Instructions are
-<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">available</a> online. Essentially though,
-it is pretty slick and quick to do. You check in a single file called CNAME (all caps) into your <em>username</em>.github.io
-repository. This file should be in the root of your repository and have the URL of the site, in my case, www.jptacek.com,
-without any http:// in front. After committing your changes you can click settings in your repository</p>
-<p><img src="/2015/01/moving-docpad-to-github-pages/settings1.png" alt="Click settings"></p>
-<p>and you can then verify the URL is set</p>
-<p><img src="/2015/01/moving-docpad-to-github-pages/settings2.png" alt="Verify"></p>
-<p>We have GitHub all set to serve up our requests, but now we need to actually do some work with DNS to do that. I use
-<a href="https://dnsimple.com/">DNSimmple</a> to manage my DNS. Part of the neat things about DNSimple is they keep it simple :).
-There is a template setup for you to enable GitHub pages already present. It will add an Alias record for you and
-you are on your way</p>
-<p><img src="/2015/01/moving-docpad-to-github-pages/dnSimple.png" alt="DNSimple"></p>
-<p>So we have a site ready to go and it is live on the Internet, but we need content! Previously, through the magic of
-Azure, I would check in my blog content as a markdown file, Azure would read the check ins from my GitHub repository,
-download appropriate NPM pacakges, compile my markdown to static HTML and publish a site. All pretty cool. That is gone
-now. So instead of having the cloud compile my markdown, I am now doing it all local. This is the main negative for me
-about moving to GitHub pages, but sometimes freedom has a cost :).</p>
-<p>Since I will be dealing with two GitHub repositories, I reworked my workflow a bit. My site, and all of it&#39;s content
-and DocPad assets lives in GitHub at <a href="https://github.com/jptacek/JPtacek.com">https://github.com/jptacek/JPtacek.com</a>
-and my static blog content, needs to be in
-<a href="https://github.com/jptacek/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> to get published to
-GitHub Pages. What I have done is reworked a couple of things with DocPad to support this. Previously, I had
-my repository checked out locally to a directory called JPtacek.com. What I have done is keep this as the root
-directory and created two subdirectories within there. The first directory, BlogSource, is the DocPad repository which
-will be responsible for generating my static content from markdown files. I cloned my GitHub
-<a href="/2015/01/moving-docpad-to-github-pages/JPtacek.com">https://github.com/jptacek/JPtacek.com</a> repository here. The second directory, ghpages, is where
-I cloned the <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository.</p>
-<p><img src="/2015/01/moving-docpad-to-github-pages/directory.png" alt="Direcotry"></p>
-<p>The next step is to be able to generate the content locally so I can push my static content from my local drive
-to the <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository. This was done by updating my
-DocPad environment a bit. In the DocPad configuration file, <code>docpad.coffee</code>, I created two environments, one
-for local development, the default way I had been using DocPad previously before, and a second for static. The
-static environment is what I use when I want to publish a new blog post. The main thing to note is the configuration setting for
-<code>outPath</code>, which points up a directory level from where my DocPad environment is (the <code>BlogSource</code>) directory and
-publishes files to the github.io directory(<code>ghpages</code>).</p>
-<p>I can run this command by typing <code>docpad -e static generate</code>. After running DocPad and generating the static
-content I am a commit and a push away from an updated website!</p>
-<pre class="highlight"><code class="hljs javascript">#docpad -e static generate
-  environments:
-    static:
-      outPath: <span class="hljs-string">'../ghpages'</span>
-      collections:   posts: -&gt;
-        @getCollection(<span class="hljs-string">"html"</span>).findAllLive({layout: <span class="hljs-string">'post'</span>},[{date:-<span class="hljs-number">1</span>}])
-    development:
-      outPath: <span class="hljs-string">'.out'</span>
-      collections:
-        posts: -&gt;
-          @getCollection(<span class="hljs-string">'documents'</span>).findAllLive({layout: {<span class="hljs-string">'$in'</span> : [<span class="hljs-string">'post'</span>, <span class="hljs-string">'drafts'</span>]}}, [layout: <span class="hljs-number">1</span>,  date: -<span class="hljs-number">1</span>])
-</code></pre>
-<p>So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn&#39;t too painful. I am now saving $10-15
-a month. This will translate to more coffee.</p>
-<p>A high level overview about the pros and cons.</p>
-<p>Pros about GitHub Pages</p>
-<ul>
-<li>Free! Azure was costing from $10-$15/month</li>
-<li>Bypass some CPU usage limits on Azure</li>
-</ul>
-<p>Cons about GitHub Pages</p>
-<ul>
-<li>Cannot automatically build sites from Git commits</li>
-<li>No IPV6 support (issue with Azure Websites currently)</li>
-<li>No SSL support</li>
-</ul>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/docpad/'>DocPad</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/github/'>GitHub</a>
     </div>
     
     <br/>
