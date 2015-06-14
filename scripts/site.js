@@ -40,12 +40,12 @@
       }
     });
     return $('pre code').each(function(index, element) {
-      var $code, classes, e, fixedClass, origClass, _i, _len, _ref;
+      var $code, classes, e, fixedClass, i, len, origClass, ref;
       $code = $(this);
-      classes = (_ref = $code.attr('class')) != null ? _ref.split(' ') : void 0;
+      classes = (ref = $code.attr('class')) != null ? ref.split(' ') : void 0;
       if (classes != null) {
-        for (_i = 0, _len = classes.length; _i < _len; _i++) {
-          origClass = classes[_i];
+        for (i = 0, len = classes.length; i < len; i++) {
+          origClass = classes[i];
           fixedClass = origClass.replace(/^lang-/, 'language-');
           if (fixedClass !== origClass) {
             $code.removeClass(origClass).addClass(fixedClass);
