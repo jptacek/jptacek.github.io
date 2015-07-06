@@ -14,18 +14,15 @@
 
     <meta name="author" content="John Ptacek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/site.css" rel="stylesheet" media="screen">
-    <link href="/styles/chemistry.css" rel="stylesheet" />
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -73,10 +70,7 @@
         <div class="post-date">Dec 12th, 2013</div>
 
     <div class="post-content">
-        <script src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js"></script>
-<script src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js"></script>
-
-<p>Every year in December, families gather around the table to celebrate Christmas. If your house is anything like my house, the good times, food and conversation can quickly escalate into a battle over what is the true cost of the classic Christmas Song, the 12 Days of Christmas! This year, I took matters into my own hand and wrote a calculator, that will calculate the cost of the 12 days of Christmas using Google&#39;s Javascript Framework, AngularJS. No more bickering at the family table over the holidays!</p>
+        <p>Every year in December, families gather around the table to celebrate Christmas. If your house is anything like my house, the good times, food and conversation can quickly escalate into a battle over what is the true cost of the classic Christmas Song, the 12 Days of Christmas! This year, I took matters into my own hand and wrote a calculator, that will calculate the cost of the 12 days of Christmas using Google&#39;s Javascript Framework, AngularJS. No more bickering at the family table over the holidays!</p>
 <p>AngularJS is a Javascript framework from Google that focuses on building complex data applications. It has a very strong data first philosophy, which is a little different than jQuery which focuses more on DOM manipulation. You can find out more about AngularJS at the <a href="http://angularjs.org/">official site</a>, or read some recent blog posts I have written up at <a href="http://www.jptacek.com/tags/angularjs/">http://www.jptacek.com/tags/angularjs/</a>.</p>
 <p>AngularJS is a Model View Controller (MVC) framework. The model represents our data, or an object. In our case, the model will be the cost of the items in the twelve days of Christmas; e.g., a partridge, a pear tree, a turtle dove, etc. The view is our HTML page which is responsible for displaying data. The controller is responsible for marshalling the data to the view, and helping control its state. To enable our 12 Days calculator, we will take advantage of these AngularJS features.</p>
 <p>First, we essentially wire up our page to indicate we are going to have an Angular app by putting a <span style="font-family:Courier New">ng-app</span> attribute in the HTML body tag. Next, we set an area of our HTML markup that our controller is responsible for with a <span style="font-family:Courier New">ng-controller</span> attribute in a DIV tag.</p>
@@ -378,8 +372,8 @@ christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
         I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
-    <p>Currently, I am reading <a href="http://www.amazon.com/Einstein-Life-Universe-Walter-Isaacson/dp/0743264738">Einstein: His Life and Universe</a>
-        by Walter Isaacson</p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/The-Boys-Boat-Americans-Olympics/dp/0143125478">The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics</a>
+        by Daniel Brown</p>
     <p>
         <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
         <a href="https://github.com/jptacek">GitHub</a> &#8226;
@@ -411,11 +405,16 @@ christmasApp.controller(<span class="hljs-string">'christmasController'</span>,
     </div>
 </div>
 
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ <script defer="defer"  src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/12DaysApp.js"></script><script defer="defer"  src="/2013/12/calculating-the-cost-of-the-12-days-of-christmas/scripts/christmasController.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="/scripts/site.js"></script>
-    
+
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-34910017-1']);

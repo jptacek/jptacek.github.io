@@ -14,18 +14,15 @@
 
     <meta name="author" content="John Ptacek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="/styles/site.css" rel="stylesheet" media="screen">
-    <link href="/styles/chemistry.css" rel="stylesheet" />
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 
 <a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
 
+    <link href="/styles/site.css" rel="stylesheet" media="screen">
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
-    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
 
 <div class="navbar navbar-default navbar-static-top">
     <div class="container">
@@ -99,7 +96,7 @@ to help us understand the framework. The others posts are</p>
 the home page of my blog, only one application will work. I need to refactor the entire site to account for
 this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
 </blockquote>
-<p>In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page. </p>
+<p>In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page.</p>
 <p>Angular is really a Model View Controller (MVC) JavaScript library. The model is our data, the view is the presentation of this data and the controller is responsible for the marshalling between the two. In angular, this is done via the scope, which is a glorified object property bag available within your page. The first responsibility of the Controller is to create this scope object. The scope is then how you communicate with the view. The view is able to bind to properties and functions on the scope. It is also able to call functions on the scope. It is important to realize that the scope exposes the model to the view, however the scope is NOT the model. The model is updated, either via two way data binding on the scope, or functions on the scope that the view calls to update the data. So, if you are going to be doing a lot with Angular, say hello to your little friend, <span style="font-family:Courier New">$scope</span>.</p>
 <p>Let&#39;s take a look at the pieces needed to bring this together. First off, harking back to a time long, long ago, I am going to be working with information from the Periodic Table from Chemistry during these demos, so you will be seeing chemistry naming as we going along, so let us alleviate the confusion up front.</p>
 <p>First, we want to take a look at our HTML.</p>
@@ -110,15 +107,15 @@ this. All of that to say this, you are best clicking on a single article so you 
 
 <span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 </code></pre>
-<p>Now that our <code>chemistryApp.js</code> file is identified, we add a <code>ng-app</code> directive to our body tag. That tells Angular that 
+<p>Now that our <code>chemistryApp.js</code> file is identified, we add a <code>ng-app</code> directive to our body tag. That tells Angular that
 chemistryApp will be responsible for our page.</p>
-<p>Next, we want to create the controller. The controller will be responsible for managing data for the HTML view. 
-Usually, controllers are associated with DIVs. First, we will create our controller called 
+<p>Next, we want to create the controller. The controller will be responsible for managing data for the HTML view.
+Usually, controllers are associated with DIVs. First, we will create our controller called
 <code>chemistryController.js&lt;</code></p>
-<p>We reference our module, <code>chemistryApp</code>, from our<code>App.js</code> file. We then identify the name of the controller, 
+<p>We reference our module, <code>chemistryApp</code>, from our<code>App.js</code> file. We then identify the name of the controller,
 chemistryController and then have a second parameter, which is a function, that is our actual controller.
-We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the 
-<code>$scope</code> variable, since the controller interacts with the view via this, so almost all of our controllers will at a 
+We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the
+<code>$scope</code> variable, since the controller interacts with the view via this, so almost all of our controllers will at a
 minimum have this.</p>
 <p>As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment</p>
 <p><strong>chemistryController.js</strong></p>
@@ -154,15 +151,15 @@ chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
 <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
 </code></pre>
-<p>This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though, 
-these three steps are the basis of an Angular application. </p>
+<p>This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though,
+these three steps are the basis of an Angular application.</p>
 <ol>
 <li>We identify ng-app, via chemistryApp.js, that is responsible for the page.</li>
 <li>We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.</li>
 <li>The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.</li>
 </ol>
-<p>As previously mentioned, the <code>$scope</code> variable is the glorified property bag we use to populate data. So within our 
-controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a 
+<p>As previously mentioned, the <code>$scope</code> variable is the glorified property bag we use to populate data. So within our
+controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a
 chemical element and it&#39;s atomic number, Hydgroen and 1. Our controller function now looks like</p>
 <p><strong>chemistryController.js</strong></p>
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">
@@ -176,7 +173,7 @@ chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
     }
 );
 </code></pre>
-<p>Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical 
+<p>Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical
 curly braces. It is as simple as</p>
 <pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Name:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{elementName}} <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Atomic Number:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{atomicNumber}}
 </code></pre>
@@ -193,8 +190,7 @@ curly braces. It is as simple as</p>
 You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
 <p><a href="http://angularperiodic.azurewebsites.net/Demo02-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
 <p>You can download or view the code on Github, <a href="https://github.com/jptacek/AngularPeriodic/">https://github.com/jptacek/AngularPeriodic/</a></p>
-<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script>
-<script type="text/javascript" src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>
+
     </div>
 
     
@@ -213,8 +209,8 @@ You can see these code samples in action at the companion site for this blog ser
         I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
-    <p>Currently, I am reading <a href="http://www.amazon.com/Einstein-Life-Universe-Walter-Isaacson/dp/0743264738">Einstein: His Life and Universe</a>
-        by Walter Isaacson</p>
+    <p>Currently, I am reading <a href="http://www.amazon.com/The-Boys-Boat-Americans-Olympics/dp/0143125478">The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics</a>
+        by Daniel Brown</p>
     <p>
         <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
         <a href="https://github.com/jptacek">GitHub</a> &#8226;
@@ -246,11 +242,16 @@ You can see these code samples in action at the companion site for this blog ser
     </div>
 </div>
 
-    
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ <script defer="defer"  src="/2013/10/introducing-angularjs-controllers/js/chemistryApp.js"></script><script defer="defer"  src="/2013/10/introducing-angularjs-controllers/js/chemistryController.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="/scripts/site.js"></script>
-    
+
     <script type="text/javascript">
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-34910017-1']);
