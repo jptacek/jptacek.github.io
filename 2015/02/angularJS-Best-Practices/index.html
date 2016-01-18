@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>AngularJS - Best Practices - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.1" />
+    <meta name="generator" content="DocPad v6.78.4" />
     
 
     <meta name="author" content="John Ptacek">
@@ -113,8 +113,8 @@ started and introduce consistency within your organization.</p>
 <p>I have decided to gnerally follow the style guide setup by John Papa. I find his
 <a href="http://www.pluralsight.com/author/john-papa">Pluralsight courses</a> to be
 great resources for developers and you have to start some place.</p>
-<h3 id="iife">IIFE</h3>
-<p>The first thing we are going to do to our code is to rework how our code to implement IIFEs. IIFEs stand for Immediately-Invoked
+<p>###IIFE###
+The first thing we are going to do to our code is to rework how our code to implement IIFEs. IIFEs stand for Immediately-Invoked
 Function Expressions, pronounced &#39;iify&#39;. This is a standard JavaScript best practice to isolate scope of functions.
 JavaScript has a single execution scope, as you  load more and more libraries and variables, you run into the &quot;opportunity&quot;
 for name collisions. This makes for a very painful day of code debugging.</p>
@@ -143,8 +143,8 @@ ends with us reworking our JavaScript code. Here is a before/after example for o
 </code></pre>
 <p>Ben Alman is credited with nameing IIFEs in this <a href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/">blog post</a>
 if you want more information</p>
-<h3 id="getter-setter">Getter/Setter</h3>
-<p>The next step we want to take to improve our code is how we are creating and referencing our module. Initially we were
+<p>###Getter/Setter###
+The next step we want to take to improve our code is how we are creating and referencing our module. Initially we were
 using code based on AngularJS.com samples, where we declare a module as a variable, for example:</p>
 <pre class="highlight"><code class="hljs javascript"> <span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 </code></pre>
@@ -159,8 +159,8 @@ both IIFE and setter syntax to become</p>
     .module(<span class="hljs-string">'chemistryApp'</span>,[]);
 })();
 </code></pre>
-<h3 id="named-functions">Named Functions</h3>
-<p>Next, we are going to rework our code to utilize named functions, mostly for code readability as it reduces the amount
+<p>###Named Functions###
+Next, we are going to rework our code to utilize named functions, mostly for code readability as it reduces the amount
 of callback functions in our code.</p>
 <p>For our Controller definition we could define our function with a callback as</p>
 <pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
@@ -194,8 +194,8 @@ of callback functions in our code.</p>
 
 })();
 </code></pre>
-<h3 id="dependency-injection">Dependency Injection</h3>
-<p>AngularJS has a great Dependency Injection (DI) framework. The way we have the code working above can cause some issues
+<p>###Dependency Injection###
+AngularJS has a great Dependency Injection (DI) framework. The way we have the code working above can cause some issues
 with things like bundling and minification. When minification tools rename our DI functions, they may not be found
 by Angular. As a result, you should explicitly identify DI functions to avoid this.</p>
 <p>One way to do is to rework function calls such as</p>
@@ -256,8 +256,8 @@ injected.</p>
 </code></pre>
 <p>The reasons for this approach are the same as above, bypassing minfication issues. This approach though is more
 explicit and makes the code more readable.</p>
-<h3 id="explicit-function-declarations">Explicit function declarations</h3>
-<p>Another good practice is to explicitly identify function definitions. If we look at our original service function
+<p>###Explicit function declarations###
+Another good practice is to explicitly identify function definitions. If we look at our original service function
 the structure was</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
@@ -310,8 +310,8 @@ Ultimately, make a choice and be consistent.</p>
     }
 })();
 </code></pre>
-<h3 id="directory-structure">Directory Structure</h3>
-<p>Next up is best practices for directory structure. Ultimately, we are not going to refactor this code to reflect this best
+<p>###Directory Structure###
+Next up is best practices for directory structure. Ultimately, we are not going to refactor this code to reflect this best
 practice. However, in the real world, where I do this for a living, I definitely follow the practice outlined below.
 What we have here is too small.</p>
 <p>Initially, when you start creating an Angular app, most people start by organizing my folders by the type of code they are writing.
@@ -322,8 +322,8 @@ searching for the corresponding service functions in another directory is NOT ef
 would have a baseball folder with controller, service and directive files in that directory applicable to baseball.
 All the functionality is
 concisely gathered in a single folder location. Much easier.</p>
-<h3 id="wrapping-up">Wrapping Up</h3>
-<p>I have reworked the code for the app we have been talking about to reflect the best practices outlined above. The
+<p>###Wrapping Up###
+I have reworked the code for the app we have been talking about to reflect the best practices outlined above. The
 functionality is the same as last time, but ultimately, a bit more maintainable long term and less likely to run
 into issues with minification and bundling. The app doesn&#39;t look a whole lot different though, which is a good thing.</p>
 <p>Ultimately, the goals of what we are doing is to make the code more explicit, more readable and ultimately more
