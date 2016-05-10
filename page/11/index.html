@@ -64,6 +64,66 @@
             
     <article class="post">
     
+    <h1><a href='/2014/01/deleting-win81-wireless-profiles/'>Deleting Windows 8.1 Wireless Profiles</a></h1>
+    
+        <div class="post-date">Jan 8th, 2014</div>
+
+    <div class="post-content">
+        <p>I have had some pretty strange behavior after upgrading to Windows 8.1. With Windows 8, Microsoft syncs up your wireless
+profiles to the cloud so when you have a new device, the wireless is already setup. So that is pretty cool. However, I
+have been having issues with it.</p>
+<p>For our home network, our SSID is not broadcast, like it should be on yours :). We manually add a hidden network and connect that way. With
+Windows 8.1, I would not be able to connect sometimes. I would then type in the name of our (hidden) SSID and the associated Password.
+It would then connect to the WiFi router, but the problem was it would create a new network profile each time. The way
+Windows 8 appears to build the name is by adding the number for the new wirless profile by checking the cloud or synched
+wireless profile that it could not connecting and adding one up to it. For example, if my wireless network is called
+Network Name, the second time I connected it would be, Network Name 2. The third time I connected it would be Network Name 2 3,
+and then Network Name 2 3 4, etc. . I ended up
+with VERY long strings for my network names. It also appears to add these to the cloud based profile no matter how often
+I clean up.</p>
+<p>Ultimately, I want to figure out how to clean up my wireless profiles that have been synched to the cloud. I don&#39;t really
+need or want the wireless profile for the restaraunt where I had a work meeting and accidently remembered the network. In the interim
+I have used PowerShell to enumerate all of the profiles and delete them, except the first one (aka Network Name).</p>
+<p>One of the things I want to do is spend more time in the command line this year. Mostly, I want to not have to lookup
+how to do things to interact with GitHub. So in that vain, I wrote a PowerShell script to delete all but the first
+wireless profile I created.</p>
+<p>So here is the PowerShell script</p>
+<pre class="highlight"><code class="hljs powershell"><span class="hljs-variable">$profile</span> = <span class="hljs-string">"Network Name"</span>
+<span class="hljs-variable">$total</span> = <span class="hljs-number">32</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-number">2</span>
+<span class="hljs-built_in">Start-Transcript</span>
+netsh wlan show profiles
+<span class="hljs-keyword">do</span> {
+ <span class="hljs-variable">$profile</span> = <span class="hljs-variable">$profile</span> + <span class="hljs-string">" "</span> +<span class="hljs-variable">$count</span>
+ <span class="hljs-variable">$execCommand</span> = <span class="hljs-string">"netsh wlan delete profile name="</span><span class="hljs-string">"<span class="hljs-variable">$profile</span>"</span><span class="hljs-string">""</span>
+ <span class="hljs-built_in">Write-Host</span>(<span class="hljs-variable">$execCommand</span>)
+ <span class="hljs-built_in">Invoke-Expression</span> <span class="hljs-variable">$execCommand</span>
+ <span class="hljs-variable">$count</span>++
+}
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> <span class="hljs-operator">-le</span> <span class="hljs-variable">$total</span>)
+</code></pre>
+<p>Also, as part of more command line, I have created a small GitHub repository to save scripts I create. Mostly so
+I can grab them when I am other machines. Feel free to have at em</p>
+<ul>
+<li>GitHub PowerShell Repository - <a href="https://github.com/jptacek/PowerShell">https://github.com/jptacek/PowerShell</a></li>
+<li>RemoveWirelessProfile.ps1 script on Github - <a href="https://github.com/jptacek/PowerShell/tree/master/Network/Wireless">https://github.com/jptacek/PowerShell/tree/master/Network/Wireless</a></li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/powershell/'>PowerShell</a>, <a href='/tags/windows-8/'>Windows 8</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2014/01/chocolately-and-boxstarter/'>Chocolately and BoxStarter</a></h1>
     
         <div class="post-date">Jan 1st, 2014</div>
@@ -176,46 +236,6 @@ I have been looking at several different options during this time and have final
     
     <div class="post-tags">
         Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>, <a href='/tags/docpad/'>DocPad</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/12/saying-goodbye-to-wordpress/'>Saying Goodbye to WordPress</a></h1>
-    
-        <div class="post-date">Dec 28th, 2013</div>
-
-    <div class="post-content">
-        <p>I have been using WordPress for a while with my personal blog, <a href="http://www.jptacek.com">JPtacek.com</a>. I have been a big fan and have written up many posts about setting up <a href="http://www.jptacek.com/tag/wordpress/">WordPress</a> using the awesomeness of Azure websites. However, the time to move on has come upon to a new blogging platform.
-<img src="/2013/12/saying-goodbye-to-wordpress/sylvester.jpg" alt="Sylvester ByeBye"> <img src="/2013/12/saying-goodbye-to-wordpress/wordpressLogo.jpg" alt="WordPress logo">
-So the question is why... Well here is my reasoning</p>
-<ul>
-<li>A CMS does a great many things, but ultimately they are for people to be able to host websites and publish content. And most CMSes are for people who do not want to learn about things like HTML. However, with a developer background I kept running into things I could easily do in HTML, but were near impossible within WordPress</li>
-<li>Azure is great, however I still pay for Azure. I am responsible for CPU and bandwidth. Since WordPress is a platform, every page requests is essentially run through a CPU, where the WordPress blackbox does its magic, queries a database and spits out HTML. This is a cost. (To be honest, it is not a BIG cost)</li>
-<li>It always felt a bit goofy to have simple web pages hosted in a back end database. Everything starts as a document or HTML, then gets thrown into a database. I need to be responsible for backing up the database and being a good admin type person. I would rather just have my one true source be HTML that I can save in Dropbox or SkyDrive</li>
-<li>PHP is not my thing. I am always up for learning something new, but PHP is NOT something I that is on the learn something new list.</li>
-<li>Update, update, update. Since WordPress is a platform, hackers tend to get bored and are always looking to hack into it. You constantly need to be aware of keeping your software and plugins up to date if you are hosting your own WordPress environment. This is not an issue if you are hosting at <a href="http://www.WordPress.com">WordPress.com</a>, but I am not, on account of the awesomeness of Azure Websites</li>
-<li>Truthfully, probably the biggest reason is JavaScript. Doing web front end things with WordPress is really not a pleasant experience. I have found myself resorting to embedding <a href="http://www.jsfiddle.net">JSFiddles</a> into my pages to show functionality that is plain easy to do on other platforms.</li>
-</ul>
-<p>So what am I looking for?</p>
-<ul>
-<li>More web, please. I want to be able to have a blog engine that supports HTML and JavaScript, rather than make me miserable</li>
-<li>Speedy please</li>
-<li>Reduce hosting costs, please</li>
-<li>Help me learn something new, please</li>
-</ul>
-<p>I have been spending time thinking about this. I believe I have an answer. Any suggestions from you oh mighty Internet?</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/wordpress/'>WordPress</a>, <a href='/tags/blog/'>Blog</a>
     </div>
     
     <br/>
