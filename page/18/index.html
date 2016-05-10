@@ -14,6 +14,7 @@
 
     <meta name="author" content="John Ptacek">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
@@ -118,8 +119,8 @@
     <div class="post-content">
         <p>In honor of <a href="http://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a>, we thought it would be fun to calculate Pi and talk about performance differences between C# and C++. There is some math coming your way (yeah Math!), but feel free to skip to the end for a discussion on performance.</p>
 <p>So back in the day, when things where WAY different, Pi was calculated using a mathematical series. One of the more famous ones uses the arctan math function to calculate the value of π. This is called the Leibniz formula for π and is represented by</p>
-<pre class="highlight"><code class="hljs markdown">![<span class="hljs-link_label">p1</span>](<span class="hljs-link_url">pi1.jpg</span>)
-</code></pre><p>Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! </p>
+<p><img src="/2013/03/have_your_pi/pi1.jpg" alt="Pictue 1"></p>
+<p>Now, this is one of the more inefficient ways to calculate π, it takes about 10 million terms to get an accuracy of 7 decimal places. For those of us asking performance differences between languages though, that is great! </p>
 <p>We have written two programs to calculate π, one in C# and one in C++. They are both syntactically similar and use the same algorithm. We tried to get as close to an apples comparison as we could, but in comparing two different languages, we did our best, you are still comparing an apple to an orange.</p>
 <p>So, what did we see? We calculated π to 15 decimal points, 3.141592653589793 for those of you keeping track at home. Both programs took almost 100 million iterations to converge, 99,995,330 to be exact. We ran each of the programs 10 times to get an average as shown in the following table</p>
 <div style="text-align: center"><table style="border-collapse:collapse" border="0"><colgroup><col style="width:102px"><col style="width:102px"><col style="width:66px"></colgroup><tbody valign="top"><tr style="height: 20px"><td style="padding-left: 7px; padding-right: 7px; border-top:  solid 0.5pt; border-left:  solid 0.5pt; border-bottom:  solid 0.5pt; border-right:  solid 0.5pt">
@@ -238,92 +239,101 @@
 <p>It will be very rare that most organizations would use C++ or other &quot;closer to the metal&quot; languages for their Line of Business (LOB) applications. The moral of the story though is for intensive processes in cloud hosted or mobile environments, you want to be razor focused on optimizing your code for performance, no matter what language you choose.</p>
 <p>Both code examples are included, so for National Pi day, make a circle, calculate some π, eat some pie and enjoy!</p>
 <p>C++</p>
+<pre class="highlight"><code class="hljs cpp"><span class="hljs-comment">// LifeOfPi.cpp : Defines the entry point for the console application.</span>
+<span class="hljs-comment">//</span>
 
-// LifeOfPi.cpp : Defines the entry point for the console application.
-//
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> "stdafx.h"</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;iostream&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;iomanip&gt;</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
 
-#include "stdafx.h"
-#include <iostream>
-#include <iomanip>
-using namespace std;
+<span class="hljs-keyword">void</span> pi( <span class="hljs-keyword">double</span> *pi_value, <span class="hljs-keyword">int</span> *iterations);  
 
-void pi( double *pi_value, int *iterations);  
-
-int main ( void )  
+<span class="hljs-keyword">int</span> main ( <span class="hljs-keyword">void</span> )  
 {  
 
-      int iterations = 0;     // number of actual loop iterations in pi 
-      double pi_value = 0;    // computed value of pi 
+      <span class="hljs-keyword">int</span> iterations = <span class="hljs-number">0</span>;     <span class="hljs-comment">// number of actual loop iterations in pi </span>
+      <span class="hljs-keyword">double</span> pi_value = <span class="hljs-number">0</span>;    <span class="hljs-comment">// computed value of pi </span>
 
-      clock_t cBegin = (double)clock () ; 
-      pi(&pi_value, &iterations);  
-      printf("   %0.15f with %d iterations\n",  pi_value, iterations);  
-      clock_t cEnd = (double) clock() ; 
+      clock_t cBegin = (<span class="hljs-keyword">double</span>)clock () ; 
+      pi(&amp;pi_value, &amp;iterations);  
+      <span class="hljs-built_in">printf</span>(<span class="hljs-string">"   %0.15f with %d iterations\n"</span>,  pi_value, iterations);  
+      clock_t cEnd = (<span class="hljs-keyword">double</span>) clock() ; 
 
-      std::cout << float(="" cend="" -="" cbegin="" )="" return="" 0;="" }="" void="" pi(="" double="" *pi_value,="" int="" *iterations)="" {="" i;="" k="1;" realpi="3.141592653589793;" epsilon="0.00000001;" delta="10;" *pi_value="0;" while="" (delta="">epsilon) {
-            *pi_value += pow(-1,(k+1))/(2*k-1);
-            delta = fabs((4* *pi_value)-realPi);
+      std::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">float</span>( cEnd - cBegin ) 
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;  
+
+}    
+
+<span class="hljs-keyword">void</span> pi( <span class="hljs-keyword">double</span> *pi_value, <span class="hljs-keyword">int</span> *iterations)  
+{  
+      <span class="hljs-keyword">int</span> i;  
+      <span class="hljs-keyword">int</span> k=<span class="hljs-number">1</span>;
+      <span class="hljs-keyword">double</span> realPi = <span class="hljs-number">3.141592653589793</span>; 
+      <span class="hljs-keyword">double</span> epsilon = <span class="hljs-number">0.00000001</span>;
+      <span class="hljs-keyword">double</span> delta=<span class="hljs-number">10</span>;
+      *pi_value= <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">while</span> (delta&gt;epsilon) {
+            *pi_value += <span class="hljs-built_in">pow</span>(-<span class="hljs-number">1</span>,(k+<span class="hljs-number">1</span>))/(<span class="hljs-number">2</span>*k-<span class="hljs-number">1</span>);
+            delta = <span class="hljs-built_in">fabs</span>((<span class="hljs-number">4</span>* *pi_value)-realPi);
             k++;
       }
       *iterations = k;
-      *pi_value = 4 * *pi_value;
+      *pi_value = <span class="hljs-number">4</span> * *pi_value;
 
-      return; // indicate program ended sucessfully 
+      <span class="hljs-keyword">return</span>; <span class="hljs-comment">// indicate program ended sucessfully </span>
 
-} // end fucntion main 
-
-
-<p></p>
+} <span class="hljs-comment">// end fucntion main</span>
+</code></pre>
 <p>C#</p>
+<pre class="highlight"><code class="hljs csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+<span class="hljs-keyword">using</span> System.Text;
+<span class="hljs-keyword">using</span> System.Threading.Tasks;
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LifeOfPiCSharp
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">LifeOfPiCSharp</span>
 {
-    class Program
+    <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
     {
-        static void Main(string[] args)
-        {
-            int iterations = 0;
-            double pi_value = 0;
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">(<span class="hljs-keyword">string</span>[] args)</span>
+        </span>{
+            <span class="hljs-keyword">int</span> iterations = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">double</span> pi_value = <span class="hljs-number">0</span>;
 
             DateTime startTime = DateTime.Now;
-            pi(out pi_value,out iterations);
+            pi(<span class="hljs-keyword">out</span> pi_value,<span class="hljs-keyword">out</span> iterations);
             DateTime endTime = DateTime.Now;
-            Console.WriteLine(pi_value.ToString() + " in " + iterations);
+            Console.WriteLine(pi_value.ToString() + <span class="hljs-string">" in "</span> + iterations);
             TimeSpan diff = endTime.Subtract(startTime);
-            Console.WriteLine(diff.Seconds + "."+diff.Milliseconds);
+            Console.WriteLine(diff.Seconds + <span class="hljs-string">"."</span>+diff.Milliseconds);
         }
 
-        public static void pi(out double pi_value, out int totalIterations)
-        {
-            double realPi = 3.141592653589793;
-            double epsilon = 0.00000001;
-            double delta = 10;
-            int k = 1;
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pi</span><span class="hljs-params">(<span class="hljs-keyword">out</span> <span class="hljs-keyword">double</span> pi_value, <span class="hljs-keyword">out</span> <span class="hljs-keyword">int</span> totalIterations)</span>
+        </span>{
+            <span class="hljs-keyword">double</span> realPi = <span class="hljs-number">3.141592653589793</span>;
+            <span class="hljs-keyword">double</span> epsilon = <span class="hljs-number">0.00000001</span>;
+            <span class="hljs-keyword">double</span> delta = <span class="hljs-number">10</span>;
+            <span class="hljs-keyword">int</span> k = <span class="hljs-number">1</span>;
 
-            pi_value = 0;
-            while (delta > epsilon)
+            pi_value = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">while</span> (delta &gt; epsilon)
             {
-                pi_value += Math.Pow(-1, (k + 1)) / (2 * k - 1);
-                delta = Math.Abs((4 * pi_value) - realPi);
+                pi_value += Math.Pow(-<span class="hljs-number">1</span>, (k + <span class="hljs-number">1</span>)) / (<span class="hljs-number">2</span> * k - <span class="hljs-number">1</span>);
+                delta = Math.Abs((<span class="hljs-number">4</span> * pi_value) - realPi);
                 k++;
             }
             totalIterations = k;
-            pi_value = 4 * pi_value;
+            pi_value = <span class="hljs-number">4</span> * pi_value;
 
         }
     }
-} 
-
-
+}
+</code></pre>
 <p>&nbsp;</p>
 <p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Lists/Posts/Post.aspx?ID=186">Skyline Technologies</a></p>
-</<></iomanip></iostream>
+
     </div>
 
     
@@ -434,8 +444,10 @@ namespace LifeOfPiCSharp
     </div>
 </div>
 
+
     <link href="/styles/chemistry.css" rel="stylesheet" />
     <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>

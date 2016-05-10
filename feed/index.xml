@@ -3,7 +3,7 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2016-05-09T23:51:01.335Z</updated>
+    <updated>2016-05-10T02:16:06.609Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
@@ -423,26 +423,26 @@ look at CSS transitions.</p>
         <content type="html"><![CDATA[<p>Microsoft is currently working on the next major release of Windows, called Windows 10. Currently, Windows 10 is in technical preview mode, with millions of people testing it across the world
 via their <a href="https://insider.windows.com/">Windows Insider Program</a>. I have been part of the Insider Program for a while now and have been through several releases and thought I would share some initial
 impressions of Windows 10.</p>
-<p>##Start Menu##
-For most users, one of the biggest changes is the Start Menu is back. In Windows 8, the Start Menu was replaced by the Start Screen. Many users found this disconcerting as you moved back and forth between full screen “Windows Modern” and the traditional desktop mode. Microsoft is addressing this heads on by bringing back the start menu. It is also making the start menu more “modern”, by including Microsoft’s innovative Live Tiles in the start menu.</p>
+<h2 id="start-menu">Start Menu</h2>
+<p>For most users, one of the biggest changes is the Start Menu is back. In Windows 8, the Start Menu was replaced by the Start Screen. Many users found this disconcerting as you moved back and forth between full screen “Windows Modern” and the traditional desktop mode. Microsoft is addressing this heads on by bringing back the start menu. It is also making the start menu more “modern”, by including Microsoft’s innovative Live Tiles in the start menu.</p>
 <p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/startScreen.png" alt="Windows 10 Start Screen"></p>
-<p>##Cortana##
-Microsoft’s Cortana has been a big hit on Windows Phone. It is a voice driven assistant, similar to Google Now or Apple’s Siri. You can click the search icon and “talk” to Cortana and have it perform searches for you. You can even change some settings and say “Hey Cortana” and have it do searches for you.</p>
+<h2 id="cortana">Cortana</h2>
+<p>Microsoft’s Cortana has been a big hit on Windows Phone. It is a voice driven assistant, similar to Google Now or Apple’s Siri. You can click the search icon and “talk” to Cortana and have it perform searches for you. You can even change some settings and say “Hey Cortana” and have it do searches for you.</p>
 <p>Cortana also bills itself as a personal digital assistant. It is able to parse through emails and documents and “learn” about you. So if you have a flight on Delta and you say Hey Cortana, Delta, it will show information about you flight.</p>
 <p>It also knows I like the Chicago Bulls, so it keeps information front and center. It is also nice enough not to mention that Derick Rose is out for the rest of the season, again.</p>
 <p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/cortana1.png" alt="Cortana"></p>
 <p>Again, all of this code is pre-release and may change, but so far Cortana looks like a great feature for Windows 10.</p>
-<p>##Continuum##
-One of the biggest issues many people had with Windows 8 was how the tablet/modern mode was so prevalent and jarring in desktop mode. Microsoft is again addressing, heads on, one of the major Win 8 complaints, by including a new feature called Continuum. Continuum is there to make dual use machines like a Microsoft Surface function even better.</p>
+<h2 id="continuum">Continuum</h2>
+<p>One of the biggest issues many people had with Windows 8 was how the tablet/modern mode was so prevalent and jarring in desktop mode. Microsoft is again addressing, heads on, one of the major Win 8 complaints, by including a new feature called Continuum. Continuum is there to make dual use machines like a Microsoft Surface function even better.</p>
 <p>Users can decide to go to Tablet Mode, either via the Notification Bar and selecting Tablet Mode or by disconnecting/connecting a keyboard and responding to the prompt. This will then put have your apps run full screen making them more touch friendly and applicable to running on a tablet.</p>
 <p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/continuum.png" alt="Continuum"></p>
 <p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/continuum2.png" alt="Continuum"></p>
 <p>When you are running in desktop mode, applications are then windowed, including “Modern” apps. Previously, “Modern” apps would run in full screen mode for all users. This is a pretty significant change from Microsoft and highlights how they are enabling users to be productive if they are in tablet mode or desktop mode.
 <img src="https://www.jptacek.com/2015/02/Windows10-Preview/continuum3.png" alt="Continuum"></p>
-<p>##Universal Apps##
-One of the biggest changes under the hood of Windows promises to be Universal Apps. This is a single platform that enables to developers to develop an application for Windows, Windows Phone and the Xbox One. Microsoft is hoping this will reignite developer interest as the multi platform development opens up many new opportunities.</p>
-<p>##All Roads Lead to Build##
-Microsoft’s Build Conference at the end of April 2015 promises to have A LOT more information on the new version of Windows, especially for developers. We will all know more soon after that. Windows 10 is supposed to be available in the second half of 2015.</p>
+<h2 id="universal-apps">Universal Apps</h2>
+<p>One of the biggest changes under the hood of Windows promises to be Universal Apps. This is a single platform that enables to developers to develop an application for Windows, Windows Phone and the Xbox One. Microsoft is hoping this will reignite developer interest as the multi platform development opens up many new opportunities.</p>
+<h2 id="all-roads-lead-to-build">All Roads Lead to Build</h2>
+<p>Microsoft’s Build Conference at the end of April 2015 promises to have A LOT more information on the new version of Windows, especially for developers. We will all know more soon after that. Windows 10 is supposed to be available in the second half of 2015.</p>
 <p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Article/2737/Introduction-to-Windows-10.aspx">Skyline Technologies</a>,</p>
 ]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2015/02/Windows10-Preview/]]></foo1>
