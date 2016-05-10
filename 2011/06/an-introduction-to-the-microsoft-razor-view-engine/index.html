@@ -68,88 +68,111 @@
         <div class="post-date">Jun 24th, 2011</div>
 
     <div class="post-content">
-        <p>In past blog posts on <a href="http://www.skylinetechnologies.com/blog/Pages/mvcaspnet.aspx">MVC</a> and <a href="http://www.skylinetechnologies.com/blog/Pages/WebMatrix_for_Creating_Small_Sites.aspx">WebMatrix</a>I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
-<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was used and was called the Web Forms view engine.
-ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, people have not liked using the Web Forms View engine. During that time, several other view engines became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, <a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and <a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
-<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for Razor when they introduced it. The most important ones are that Razor be compact, expressive and fluid as well as easy to learn.</p>
-<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. Razor explicitly address this by using the @ keyword to enable script escaping.</p>
-<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
-<p></p><p>Message for the user @message</p>
-In ASP.NET Web Forms, this same line would have been<p></p>
-<p></p><p> Message for the user &lt;%= message %&gt;</p>
-Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:<p></p>
-<p><h3>Teams&lt;/h3&amp;gt</h3></p>
-<p><ul>
+        <p>In past blog posts on <a href="http://www.jptacek.com/2011/06/comparing-asp-net-mvc-and-web-forms/">MVC</a> 
+and <a href="http://www.jptacek.com/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/">WebMatrix</a>. 
+I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
+<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert 
+data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let 
+the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was 
+used and was called the Web Forms view engine.</p>
+<p>ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, 
+people have not liked using the Web Forms View engine. During that time, several other view engines 
+became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, 
+<a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and 
+<a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
+<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the 
+previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for 
+Razor when they introduced it. The most important ones are that Razor be compact, expressive and 
+fluid as well as easy to learn.</p>
+<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. 
+Razor explicitly address this by using the @ keyword to enable script escaping.</p>
+<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or 
+vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined 
+message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Message for the user @message<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<p>In ASP.NET Web Forms, this same line would have been</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span> Message for the user <span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">message</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;
+</span></code></pre>
+<p>Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
 @foreach (var t in teams) {
-<li>@t.Place - @t.Name </li>
+<span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>@t.Place - @t.Name <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 }
-</ul>
-On the screen this would print as follows:</p>
-<p><h3>Teams</h3></p>
-<p><ul></ul></p>
-<p><li>1 - Green Bay Packers</li></p>
-<p><li>2 - Chicago Bears</li></p>
-<p><li>3 - Detroit Lions</li></p>
-<p><li>4 - Minnesota Vikings</li>
-
-Similar syntax with Web Forms:</p>
-<p><h3>Teams</h3></p>
-<p><ul>
-&lt;% foreach (var t in teams) { %&gt;</ul></p>
-<p><li>&lt;%= t.Place%&gt; - &lt;%=t.Name%&gt; </li><li>
-&lt;%}%&gt;
-
-Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</li></p>
-<p>@helper TeamStandings(FootballTeam team) {
-<li>@team.Place - @team.Name </li>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>On the screen this would print as follows:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>1 - Green Bay Packers<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>2 - Chicago Bears<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>3 - Detroit Lions<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>4 - Minnesota Vikings<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>Similar syntax with Web Forms:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%</span> <span class="hljs-attribute">foreach</span> (<span class="hljs-attribute">var</span> <span class="hljs-attribute">t</span> <span class="hljs-attribute">in</span> <span class="hljs-attribute">teams</span>) { %&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">%=</span> <span class="hljs-attribute">t.Place</span>%&gt;</span> - <span class="hljs-tag">&lt;<span class="hljs-title">%=t.Name%</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">%}%</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</p>
+<pre class="highlight"><code class="hljs xml">@helper TeamStandings(FootballTeam team) {
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>@team.Place - @team.Name <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
 }
-We could then update the page to call the helper:</p>
-<p><h3>Teams</h3></p>
-<p><ul>
-@foreach (var t in teams) {
-@TeamStandings(t)
-}
-</ul>
-You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
-<p>&lt;!DOCTYPE html&gt;</p>
-<p><html></html></p>
-<p><head></head></p>
-<p><title>Groovy Page</title>
-</p>
-<p><body></body></p>
-<p><div id="groovyMenu"><a href="/2011/06/an-introduction-to-the-microsoft-razor-view-engine//">Home</a></div></p>
-<p><div id="groovyPageBody">
-@RenderBody()
-</div>
-
-Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
+</code></pre>
+<p>We could then update the page to call the helper:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    @foreach (var t in teams) {
+        @TeamStandings(t)
+    }
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+</code></pre>
+<p>You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Groovy Page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyMenu"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyPageBody"</span>&gt;</span>
+        @RenderBody()
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
 So for a simple view:</p>
-<p>
-{
-@LayoutPage = &quot;_groovySiteLayout.cshtml&quot;;
-}</p>
-<p><h1>Welcome to Groovy</h1></p>
-<p></p><p>Hello world</p>
-Would render the following HTML:<p></p>
-<p>&lt;!DOCTYPE html&gt;</p>
-<p><html></html></p>
-<p><head></head></p>
-<p><title>Groovy Page</title>
-</p>
-<p><body></body></p>
-<p><div id="groovyMenu"><a href="/2011/06/an-introduction-to-the-microsoft-razor-view-engine//">Home</a></div></p>
-<p><div id="groovyPageBody"></div></p>
-<p><h1>Welcome to Groovy</h1></p>
-<p></p><p>Hello world</p>
-
-
-There is a lot more to the Razor view engine, this is just a quick introduction, I will be talking about it a lot more in the future.<p></p>
+<pre class="highlight"><code class="hljs xml">{
+    @LayoutPage = "_groovySiteLayout.cshtml";
+}
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Welcome to Groovy<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+</code></pre>
+<p>Would render the following HTML:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Groovy Page<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyMenu"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"groovyPageBody"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Welcome to Groovy<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>There is a lot more to the Razor view engine, this is just a quick introduction, 
+I will be talking about it a lot more in the future.</p>
 <p><strong>Why Use it?
-</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
+</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. 
+It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
 <p><strong>I want to learn more!
 </strong>• <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx">Microsoft Introduction</a> - This post on Scott Guthrie&#39;s blog is an excellent introduction!
 • <a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a> - Check out the pluralsight videos on the page</p>
-<p>This blog post was originally published at <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/An-Introduction-to-the-Microsoft-Razor-View-Engine">Skyline Technologies</a></p>
 
     </div>
 

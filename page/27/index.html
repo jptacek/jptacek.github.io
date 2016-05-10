@@ -65,93 +65,6 @@
             
     <article class="post">
     
-    <h1><a href='/2011/04/create-interactive-user-experiences-quickly-and-easily-with-silverlight-pivot-viewer/'>Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer</a></h1>
-    
-        <div class="post-date">Apr 25th, 2011</div>
-
-    <div class="post-content">
-        <p>The Appleton Compassion Project, a recent charity project Skyline has completed, takes advantage of a great tool in the Microsoft toolset that few people know is out there, the Silverlight Pivot Viewer. Unfortunately, Microsoft has quite a few things named Pivot so you may find this confusing. Pivot Viewer is NOT:</p>
-<ul>
-<li>PowerPivot- This is an Excel tool that allows you to manipulate A LOT of data</li>
-<li>Excel Pivot - This is your day to day Excel pivot
-The Silverlight Pivot Viewer IS a tool that allow developers to quickly create an engaging and interactive data driven experience. To get an idea of what I&#39;m talking about, check out the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>.</li>
-</ul>
-<p>This online exhibit contains over 10,000 pieces of art done by students at dozens of different schools. You can see how site visitors can quickly click a school or a grade and narrow down the art that is displayed. Clicking an image will show the student&#39;s compassion statement and other demographic information without having to write any special code.</p>
-<p>So it looks nice, but how do we create something this interactive? The great part is it&#39;s really not too difficult!</p>
-<p>The first thing that needs to be done is create a Deep Zoom file, <a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">which I cover in another blog post</a>, that will provide the images for the viewing experience. An XML file, with the extension of CXML is created and that is the file the Silverlight Pivot Viewer consumes. The important thing to realize is there is NO User Interface code to write. To reiterate... ZERO user interface development is needed. You create the Deep Zoom file, create the CXML file, add the Pivot Viewer control to your Silverlight XAML and you have a HIGHLY interactive user experience.</p>
-<p>The CXML file has four parts to it. The first is a node called Collection, it is the top level node for the XML file.</p>
-<p>Second is a node called Facets. The facets are the categories that are displayed on the left of the screen. In the example above, School, Grade, Art Teacher and Teacher are all facets. The facets are then searchable within the Pivot Viewer. Visitors can type in a school name or use the check box to filter down the data.</p>
-<p>Third is a node for all of the Items. For the Appleton Compassion Project, the items are all the artists who created art work and accompanying compassion statements.</p>
-<p>The last node is the item node, which is the data that is used to populate the Pivot Viewer. The item node has data for each of the defined facets to populate the search experience on the left of the screen. For our example, a given artist would have a School Name, which are then automatically queried to create the list on the example.</p>
-<p>Here&#39;s an example of how the XML would look:</p>
-<p>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;</p>
-<collection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Appleton School Compassion Project" schemaversion="1.0" xmlns:p="http://schemas.microsoft.com/livelabs/pivot/collection/2009" xmlns="http://schemas.microsoft.com/collection/metadata/2009">
-
-<facetcategories>
-
-<facetcategory name="School" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Grade" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Art Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Teacher" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="true" p:isfiltervisible="true"></facetcategory>
-
-<facetcategory name="Picture Number" type="String" p:iswordwheelvisible="true" p:ismetadatavisible="false" p:isfiltervisible="false"></facetcategory>
-
-<facetcategory name="Tile Location" type="String" p:iswordwheelvisible="false" p:ismetadatavisible="true" p:isfiltervisible="false"></facetcategory>
-
-</facetcategories>
-
-<items imgbase="collection-2521020991055083062.dzc">
-
-<item img="#301" id="3803" href="http://www.appletoncompassion.org/Artist/3803" name="Henry Ptacek">
-
-<description>Artist statement not yet available</description>
-
-<facets>
-
-<facet name="Picture Number"><string value="3803"></string></facet>
-
-<facet name="School"><string value="Franklin Elementary School"></string></facet>
-
-<facet name="Grade"><string value="4"></string></facet>
-
-<facet name="Art Teacher"><string value="Sara Wilda"></string></facet>
-
-<facet name="Teacher"><string value="Louann Graf"></string></facet>
-
-</facets>
-
-</item>
-
-</items>
-
-<p></p></collection>
-As you can see, it&#39;s relatively straight forward XML. There are many things I have not talked about, like the ability to have different types of data, sliders for your data, etc. Check out the links for more information.<p></p>
-<p><strong>Why Use it?
-</strong>The Silverlight Pivot viewer is a great data driven UI experience for end users. The creation process involves creating a Deep Zoom file and some Xml.</p>
-<p><strong>I want to learn more!
-</strong><a href="http://www.silverlight.net/learn/pivotviewer/">Microsoft&#39;s Silverlight Pivot viewer site </a></p>
-<p><a href="http://www.silverlight.net/learn/pivotviewer/collection-xml-schema/">Silverlight Pivot XML Schema information </a></p>
-<p>To Develop with the Silverlight Pivot viewer, you will need the Silverlight 4 SDK as well as the Pivot Viewer Control, which you can <a href="http://www.silverlight.net/learn/pivotviewer/">download here</a>.</p>
-<p>This post originally appeared at Skyline Technologies <a href="http://www.skylinetechnologies.com/">Skyline Technologies</a></p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/pivot-viewer/'>Pivot Viewer</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
     <h1><a href='/2011/04/microsofts-deep-zoom-technology-allows-for-powerful-user-experience/'>Microsoft's Deep Zoom Technology Allows for Powerful User Experience</a></h1>
     
         <div class="post-date">Apr 25th, 2011</div>
@@ -169,13 +82,84 @@ As you can see, it&#39;s relatively straight forward XML. There are many things 
 <p>Blog post on programmatically creating Deep Zoom</p>
 <p>&nbsp;</p>
 <p><a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">Jaime Rodrigues goes deep on Deep Zoom</a></p>
-<p>This post orgianlly appeared at Skyline Technologies (<a href="http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx">http://www.skylinetechnologies.com/blog/Pages/deepzoom.aspx</a>)</p>
 
     </div>
 
     
     <div class="post-tags">
         Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/deep-zoom/'>Deep Zoom</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2011/04/create-interactive-user-experiences-quickly-and-easily-with-silverlight-pivot-viewer/'>Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer</a></h1>
+    
+        <div class="post-date">Apr 25th, 2011</div>
+
+    <div class="post-content">
+        <p>The Appleton Compassion Project, a recent charity project Skyline has completed, takes advantage of a great tool in the Microsoft toolset that few people know is out there, the Silverlight Pivot Viewer. Unfortunately, Microsoft has quite a few things named Pivot so you may find this confusing. Pivot Viewer is NOT:</p>
+<ul>
+<li>PowerPivot- This is an Excel tool that allows you to manipulate A LOT of data</li>
+<li>Excel Pivot - This is your day to day Excel pivot
+The Silverlight Pivot Viewer IS a tool that allow developers to quickly create an engaging and interactive data driven experience. To get an idea of what I&#39;m talking about, check out the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>.</li>
+</ul>
+<p>This online exhibit contains over 10,000 pieces of art done by students at dozens of different schools. You can see how site visitors can quickly click a school or a grade and narrow down the art that is displayed. Clicking an image will show the student&#39;s compassion statement and other demographic information without having to write any special code.</p>
+<p>So it looks nice, but how do we create something this interactive? The great part is it&#39;s really not too difficult!</p>
+<p>The first thing that needs to be done is create a Deep Zoom file, 
+<a href="http://www.jptacek.com/2011/04/microsofts-deep-zoom-technology-allows-for-powerful-user-experience/index.html">which I cover in another blog post</a>, that will provide the images for the viewing experience. An XML file, with the extension of CXML is created and that is the file the Silverlight Pivot Viewer consumes. The important thing to realize is there is NO User Interface code to write. To reiterate... ZERO user interface development is needed. You create the Deep Zoom file, create the CXML file, add the Pivot Viewer control to your Silverlight XAML and you have a HIGHLY interactive user experience.</p>
+<p>The CXML file has four parts to it. The first is a node called Collection, it is the top level node for the XML file.</p>
+<p>Second is a node called Facets. The facets are the categories that are displayed on the left of the screen. In the example above, School, Grade, Art Teacher and Teacher are all facets. The facets are then searchable within the Pivot Viewer. Visitors can type in a school name or use the check box to filter down the data.</p>
+<p>Third is a node for all of the Items. For the Appleton Compassion Project, the items are all the artists who created art work and accompanying compassion statements.</p>
+<p>The last node is the item node, which is the data that is used to populate the Pivot Viewer. The item node has data for each of the defined facets to populate the search experience on the left of the screen. For our example, a given artist would have a School Name, which are then automatically queried to create the list on the example.</p>
+<p>Here&#39;s an example of how the XML would look:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">xml</span> <span class="hljs-attribute">version</span>=<span class="hljs-value">"1.0"</span> <span class="hljs-attribute">encoding</span>=<span class="hljs-value">"utf-16"</span><span class="hljs-value">?</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">Collection</span> <span class="hljs-attribute">xmlns:xsi</span>=<span class="hljs-value">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="hljs-attribute">xmlns:xsd</span>=<span class="hljs-value">"http://www.w3.org/2001/XMLSchema"</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Appleton School Compassion Project"</span> <span class="hljs-attribute">SchemaVersion</span>=<span class="hljs-value">"1.0"</span> <span class="hljs-attribute">xmlns:p</span>=<span class="hljs-value">"http://schemas.microsoft.com/livelabs/pivot/collection/2009"</span> <span class="hljs-attribute">xmlns</span>=<span class="hljs-value">"http://schemas.microsoft.com/collection/metadata/2009"</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategories</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategory</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"School"</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">"String"</span> <span class="hljs-attribute">p:IsWordWheelVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsMetaDataVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsFilterVisible</span>=<span class="hljs-value">"true"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategory</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Grade"</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">"String"</span> <span class="hljs-attribute">p:IsWordWheelVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsMetaDataVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsFilterVisible</span>=<span class="hljs-value">"true"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategory</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Art Teacher"</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">"String"</span> <span class="hljs-attribute">p:IsWordWheelVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsMetaDataVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsFilterVisible</span>=<span class="hljs-value">"true"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategory</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Teacher"</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">"String"</span> <span class="hljs-attribute">p:IsWordWheelVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsMetaDataVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsFilterVisible</span>=<span class="hljs-value">"true"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategory</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Picture Number"</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">"String"</span> <span class="hljs-attribute">p:IsWordWheelVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsMetaDataVisible</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">p:IsFilterVisible</span>=<span class="hljs-value">"false"</span> /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">FacetCategory</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Tile Location"</span> <span class="hljs-attribute">Type</span>=<span class="hljs-value">"String"</span> <span class="hljs-attribute">p:IsWordWheelVisible</span>=<span class="hljs-value">"false"</span> <span class="hljs-attribute">p:IsMetaDataVisible</span>=<span class="hljs-value">"true"</span> <span class="hljs-attribute">p:IsFilterVisible</span>=<span class="hljs-value">"false"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">FacetCategories</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">Items</span> <span class="hljs-attribute">ImgBase</span>=<span class="hljs-value">"collection-2521020991055083062.dzc"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Item</span> <span class="hljs-attribute">Img</span>=<span class="hljs-value">"#301"</span> <span class="hljs-attribute">Id</span>=<span class="hljs-value">"3803"</span> <span class="hljs-attribute">Href</span>=<span class="hljs-value">"http://www.appletoncompassion.org/Artist/3803"</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Henry Ptacek"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Description</span>&gt;</span>Artist statement not yet available<span class="hljs-tag">&lt;/<span class="hljs-title">Description</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">Facets</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Facet</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Picture Number"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">String</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">"3803"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Facet</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Facet</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"School"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">String</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">"Franklin Elementary School"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Facet</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Facet</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Grade"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">String</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">"4"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Facet</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Facet</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Art Teacher"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">String</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">"Sara Wilda"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Facet</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">Facet</span> <span class="hljs-attribute">Name</span>=<span class="hljs-value">"Teacher"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">String</span> <span class="hljs-attribute">Value</span>=<span class="hljs-value">"Louann Graf"</span> /&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">Facet</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Facets</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">Item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Items</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">Collection</span>&gt;</span>
+</code></pre>
+<p>As you can see, it&#39;s relatively straight forward XML. There are many things I have not talked about, 
+like the ability to have different types of data, sliders for your data, etc. Check out the links for 
+more information.</p>
+<p><strong>Why Use it?
+</strong>The Silverlight Pivot viewer is a great data driven UI experience for end users. The creation process 
+involves creating a Deep Zoom file and some Xml.</p>
+<p><strong>I want to learn more!</strong> <a href="http://www.silverlight.net/learn/pivotviewer/">Microsoft&#39;s Silverlight Pivot viewer site</a></p>
+<p><a href="http://www.silverlight.net/learn/pivotviewer/collection-xml-schema/">Silverlight Pivot XML Schema information </a></p>
+<p>To Develop with the Silverlight Pivot viewer, you will need the Silverlight 4 SDK as well as the Pivot Viewer Control, which you can <a href="http://www.silverlight.net/learn/pivotviewer/">download here</a>.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/giveology/'>Giveology</a>, <a href='/tags/pivot-viewer/'>Pivot Viewer</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
