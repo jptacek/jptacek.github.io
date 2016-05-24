@@ -65,6 +65,147 @@
             
     <article class="post">
     
+    <h1><a href='/2013/10/introducing-angularjs-controllers/'>AngularJS - Introducing AngularJS Controllers</a></h1>
+    
+        <div class="post-date">Oct 3rd, 2013</div>
+
+    <div class="post-content">
+        <p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
+ HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
+ Contrast this to a framework like JQuery where the DOM will update your data.</p>
+<p><img src="/2013/10/introducing-angularjs-controllers/angularLogo.png" alt="AngularJS Logo"></p>
+<p>This is the second in a series of posts on AngularJS where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
+<li>AngularJS - Introducing AngularJS Controllers</li>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
+<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
+<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
+<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
+<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
+<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
+<li><a href="http://jptacek.com/2015/02/angularJS-Best-Practices/">AngularJS - Best Practices</a></li>
+<li><a href="http://jptacek.com/2015/03/angularJS-CSS-Animation/">AngularJS - CSS Animations</a></li>
+</ol>
+<blockquote>
+<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
+the home page of my blog, only one application will work. I need to refactor the entire site to account for
+this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
+</blockquote>
+<p>In general, just binding text boxes on a page may be able to create a simple calculator, but it is not what the web of 2013 and beyond is about. We want our pages to interact with backend data stores, we want to display this information on the page and send it back to the server so it is there the next time we view the page.</p>
+<p>Angular is really a Model View Controller (MVC) JavaScript library. The model is our data, the view is the presentation of this data and the controller is responsible for the marshalling between the two. In angular, this is done via the scope, which is a glorified object property bag available within your page. The first responsibility of the Controller is to create this scope object. The scope is then how you communicate with the view. The view is able to bind to properties and functions on the scope. It is also able to call functions on the scope. It is important to realize that the scope exposes the model to the view, however the scope is NOT the model. The model is updated, either via two way data binding on the scope, or functions on the scope that the view calls to update the data. So, if you are going to be doing a lot with Angular, say hello to your little friend, <span style="font-family:Courier New">$scope</span>.</p>
+<p>Let&#39;s take a look at the pieces needed to bring this together. First off, harking back to a time long, long ago, I am going to be working with information from the Periodic Table from Chemistry during these demos, so you will be seeing chemistry naming as we going along, so let us alleviate the confusion up front.</p>
+<p>First, we want to take a look at our HTML.</p>
+<p>We are going to use Twitter bootstrap for some down the road reasons so we are going to add that CSS reference.</p>
+<p>Second, we are adding a reference to <code>chemistryApp.js</code>. This is the starting script that identifies our Angular module. We are going to call our Application chemistryApp.</p>
+<p><strong>chemistryApp.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+
+<span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+</code></pre>
+<p>Now that our <code>chemistryApp.js</code> file is identified, we add a <code>ng-app</code> directive to our body tag. That tells Angular that
+chemistryApp will be responsible for our page.</p>
+<p>Next, we want to create the controller. The controller will be responsible for managing data for the HTML view.
+Usually, controllers are associated with DIVs. First, we will create our controller called
+<code>chemistryController.js&lt;</code></p>
+<p>We reference our module, <code>chemistryApp</code>, from our<code>App.js</code> file. We then identify the name of the controller,
+chemistryController and then have a second parameter, which is a function, that is our actual controller.
+We want to be sure to pass in any parameters our controller will need. Almost all controllers will require the
+<code>$scope</code> variable, since the controller interacts with the view via this, so almost all of our controllers will at a
+minimum have this.</p>
+<p>As of now, our controller skeleton is built and ready to go, it just not doing anything at the moment</p>
+<p><strong>chemistryController.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
+
+chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> </span>{
+
+    }
+);
+</code></pre>
+<p>We go and add our controller JavaScript file to our HTML with a script tag, but we have to update our HTML to identify where the controller will function. This is done via the <span style="font-family:Courier New">ng-controller</span> directive. The syntax is as so</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+</code></pre>
+<p>And for now, our HTML looks like</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span> <span class="hljs-attribute">lang</span>=<span class="hljs-value">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Controller Demo 1<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"/css/bootstrap.min.css"</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span> <span class="hljs-attribute">ng-app</span>=<span class="hljs-value">"chemistryApp"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Chemistry Controller<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"container"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"ngChem1"</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"chemistryController"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"angular.min.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryApp.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"chemistryController.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span>
+</code></pre>
+<p>This page renders, but does not do anything. Mostly as a result of us telling it to do nothing! In general though,
+these three steps are the basis of an Angular application.</p>
+<ol>
+<li>We identify ng-app, via chemistryApp.js, that is responsible for the page.</li>
+<li>We create a controller, chemistryController.js, that takes the $scope variable from our page and then populates it with data and/or functions so our HTML can later render it. We have not seen this in action yet, but soon.</li>
+<li>The last part then is identifying, via the ng-controller directive, the area of responsibility for our controller.</li>
+</ol>
+<p>As previously mentioned, the <code>$scope</code> variable is the glorified property bag we use to populate data. So within our
+controller, we can go and set some values for display in our view/web page. In our example, that will be the name of a
+chemical element and it&#39;s atomic number, Hydgroen and 1. Our controller function now looks like</p>
+<p><strong>chemistryController.js</strong></p>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">
+'use strict'</span>;
+
+chemistryApp.controller(<span class="hljs-string">'chemistryController'</span>,
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope)</span> </span>{
+        $scope.elementName = <span class="hljs-string">'Hydrogen'</span>;
+        $scope.atomicNumber = <span class="hljs-number">1</span>;
+
+    }
+);
+</code></pre>
+<p>Now, we can have the values from our scope value inject into our HTML markup. This is done via our friend, the magical
+curly braces. It is as simple as</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Name:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{elementName}} <span class="hljs-tag">&lt;<span class="hljs-title">b</span>&gt;</span>Atomic Number:<span class="hljs-tag">&lt;/<span class="hljs-title">b</span>&gt;</span> {{atomicNumber}}
+</code></pre>
+<p>The value we set in our controller are automatically displayed.</p>
+<p><img src="/2013/10/introducing-angularjs-controllers/100313_2137_Introducing2.png" alt=""></p>
+<div ng-app="chemistryApp">
+<div class="container" id="ngChem1" ng-controller="chemistryController">
+    <h1>Chemistry Controller</h1>
+    <b>Name:</b> {{elementName}} <b>Atomic Number:</b> {{atomicNumber}}
+</div>
+</div>
+
+<p><br>
+You can see these code samples in action at the companion site for this blog series, <a href="http://angularPeriodic.azurewebsites.net">http://angularPeriodic.azurewebsites.net</a></p>
+<p><a href="http://angularperiodic.azurewebsites.net/Demo02-Controllers/controller1.html">Introducing AngularJS Controllers</a></p>
+<p>You can download or view the code on Github, <a href="https://github.com/jptacek/AngularPeriodic/">https://github.com/jptacek/AngularPeriodic/</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2013/10/angularjs-introduction/'>AngularJS - Introduction</a></h1>
     
         <div class="post-date">Oct 1st, 2013</div>
@@ -264,38 +405,6 @@ It is pretty cool that we are able to write these quick little applications with
 
 </article>
 
-    <article class="post">
-    
-    <h1><a href='/2013/08/2013-that-conference-presentation/'>2013 That Conference Presentation</a></h1>
-    
-        <div class="post-date">Aug 12th, 2013</div>
-
-    <div class="post-content">
-        <p>Thanks to everyone who came to my 2013 That Conference talk</p>
-<p>My slides can be downloaded at <a href="/2013/08/2013-that-conference-presentation//2013/08/2013-that-conference-presentation/That-Conference-2013.pptx">http://www.jptacek.com/2013/08/2013-that-conference-presentation/That-Conference-2013.pptx</a></p>
-<p>Links that may be of interest</p>
-<ul>
-<li>Creating a Wordpress blog on Azure Websites - <a href="http://www.jptacek.com/2013/04/being-you-setting-up-wordpress-on-azure-websites/">http://www.jptacek.com/2013/04/being-you-setting-up-wordpress-on-azure-websites/</a></li>
-<li>Configuring DNSimple with Azure Websites - <a href="http://www.jptacek.com/2013/02/configuring-dnsimple-for-azure-hosted-domains/">http://www.jptacek.com/2013/02/configuring-dnsimple-for-azure-hosted-domains/</a></li>
-<li>Convert your Wordpress blog into a Windows 8 app - <a href="http://ideapress.me/">http://ideapress.me/</a></li>
-<li>A tour of Wordpress - <a href="http://www.jptacek.com/2013/04/being-you-looking-around-wordpress/">http://www.jptacek.com/2013/04/being-you-looking-around-wordpress/</a></li>
-<li>Configuring Google Authorship Markup - <a href="http://www.jptacek.com/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/">http://www.jptacek.com/2013/02/being-john-ptacek-configuring-wordpress-for-authorship-markup/</a></li>
-<li>Automatic Builds and Deploys to Azure Websites - <a href="http://www.jptacek.com/2013/03/automatic-builds-and-deploys-to-azure-websites/">http://www.jptacek.com/2013/03/automatic-builds-and-deploys-to-azure-websites/</a></li>
-</ul>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/speaking/'>Speaking</a>, <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/wordpress/'>WordPress</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
-
-</article>
-
 
 <div class="page-nav">
     
@@ -314,8 +423,8 @@ It is pretty cool that we are able to write these quick little applications with
         This blog is my contains my content and opinions, which are not those of my employer.
     </p>
     <p>Currently, I am reading 
-        <a href="https://www.amazon.com/Bazaar-Bad-Dreams-Stories/dp/1501111671">The Bazaar of Bad Dreams: Stories</a>
-        by <a href="https://www.stephenKing.com/">Stephen King</a></p>
+        <a href="https://www.amazon.com/City-Mirrors-Novel-Passage-Trilogy-ebook/dp/B015BCWZWW">City of Mirrors</a>
+        by <a href="http://enterthepassage.com//">Justin Cronin</a></p>
     <p>
         <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
         <a href="https://github.com/jptacek">GitHub</a> &#8226;
