@@ -3,13 +3,38 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2016-06-27T10:55:00.513Z</updated>
+    <updated>2016-07-07T21:32:44.733Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>Apple WWDC 2016 Recap</title>
+        <link href="https://www.jptacek.com/2016/07/WWDC2016Recap/"/>
+        <updated>2016-07-05T05:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2016-07-05,/2016/07/WWDC2016Recap/</id>
+        <content type="html"><![CDATA[<p>In the Developer world, there are usually three big conferences each year; Microsoft’s Build, Google I/O and Apple’s World Wide Developer Conference (WWDC). Google’s <a href="https://events.google.com/io2016/">I/O</a> conference, its 10th, just wrapped up last week. Let us take a spin around some of the more interesting announcements from the conference. We have previously looked at 
+<a href="https://jptacek.com/2016/04/Build2016Recap/">Build</a> and <a href="https://jptacek.com/2016/05/GoogleIO2016Recap/">Google I/O</a>, lets
+dive into <a href="https://developer.apple.com/wwdc/">WWDC</a> which was held in June in San Francisco.</p>
+<p><img src="https://www.jptacek.com/2016/07/WWDC2016Recap/wwdc2016.jpg" alt="Apple WWDC 2016"> </p>
+<p>Apple’s WWDC keynote this year, tended to be the more consumer facing, rather than developer facing of the other keynotes from 2016. A majority of the time was spent on items such as iOS 10 features, Apple music redesign, Apple photos, etc. </p>
+<p><strong>Siri</strong> – One of the big rumors heading into WWDC was that iMessage, Apple’s very popular messaging platform would be being made available to Android devices. That wasn’t announced. However, a slew of changes are coming to iMessage. The changes mostly are “fun”; items such as stickers, new emojis, videos, bubble effects etc. Given the popularity of iMessage though, we know these features will be popular. Unlike other messaging application, for example Facebook messenger, WhatsApp, etc, the usage may be limited, since as of now, you cannot take advantage of these new features for users on other platforms like Android. Given that for most iOS users iMessage means SMS, it could lead to frustration.</p>
+<p><strong>iMessage</strong> – here have been two OS releases of Apple Watch in its first year. However, it can still be frustratingly slow to use in day to day activities. Apple announced watchOS 3 which seems to greatly alleviate some of the performance issues. Applications were shown on the current version and the new version and were markedly faster. Apple Watch users will be excited for the new upgrade if those performance gains are realized as promised.</p>
+<p><strong>Apple Watch</strong> – Google announced their me too competitor to Amazon’s Alexa, a voice activated search appliance for the home. You will be able to ask Google Home things like what is the weather for the day, did the Chicago Fire win last night, etc. Pricing and availability dates were not announced. Google’s introduction video.</p>
+<p><strong>iOS</strong> – iOS has a new round of updates as it hits version 10. The notification screen has been greatly redesigned. Apple music has been streamlined and the maps application has been improved. 3D touch, which was introduced with last year’s new iPhones (6s, 6s Plus) is also more fully integrated into the system, especially on the notification screen.</p>
+<p><strong>Contextual Awareness</strong> – The interesting thing that is permeating a lot of the developer conversations as of late is contextual awareness. A platform, like Google Now, can read email, look at your calendar and contacts as well as location to provide a wealth of information. This can provide very useful and pertinent information to a user. However, the downside to this is you are giving up a some of your privacy, as the service collects your information and mines it. This has definitely been Google’s approach. Apple has a stated focus on privacy, so it is exceedingly more difficult for them to provide these kind of services, which often rely on cloud computing because the information would need to leave the phone. So contextual awareness happens within an application, like Siri, where it will be much more limited.</p>
+<p>At WWDC, to make iOS more successful at providing contextual awareness, Apple introduced differential privacy. It is all a bit murky, and involves some crazy abstract mathematics, but it essentially takes information from your phone, randomizes it a bit to mask individual information, stores it and then can aggregate the information together. </p>
+<p>How this actually works in the real world, remains to be seen. However, at first glance, I cannot imagine it being very successful, because the data that would be helpful to you, for example, discerning information about an upcoming flight, wouldn’t have enough other randomized data elements in the cloud for iOS to be able to find information about the flight. </p>
+<p>Resultantly, Apple is using this new feature in four areas for iOS; emoji replacement in iMessage, predictive text in iMessage, search in Notes and search in Spotlight.</p>
+<p>It is an interesting take at trying to be contextual and protect user privacy, I am just not sure how successful Apple will be trying to provide contextual awareness with it in their platform as they compete against happily data mining competitors such as Facebook and Google.</p>
+<p>So that is a quick tour of 2016 WWDC. Not a lot of big announcements, but more of a refining. As phone platforms reach platform maturity, there will be less and less groundbreaking enhancements on the phone. A lot of the interesting things will be happening in the cloud services that drive these devices. Apple has a lot of catching up to do here.</p>
+<p>This blog post originally appeared at <a href="https://www.skylinetechnologies.com/Insights/Skyline-Blog/July_2016/Apple_WWDC_2016_Recap">Skyline Technologies</a>.</p>
+]]></content>
+        <foo1><![CDATA[https://www.jptacek.com/2016/07/WWDC2016Recap/]]></foo1>
+            </entry>
     
     <entry>
         <title>What is Quantum Computing?</title>
@@ -460,39 +485,6 @@ look at CSS transitions.</p>
 <p>The code is also available on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
 <link href="/2015/03/angularJS-CSS-Animation/css/animate.css" rel="stylesheet">]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2015/03/angularJS-CSS-Animation/]]></foo1>
-            </entry>
-    
-    <entry>
-        <title>Introduction to Windows 10</title>
-        <link href="https://www.jptacek.com/2015/02/Windows10-Preview/"/>
-        <updated>2015-02-25T06:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2015-02-25,/2015/02/Windows10-Preview/</id>
-        <content type="html"><![CDATA[<p>Microsoft is currently working on the next major release of Windows, called Windows 10. Currently, Windows 10 is in technical preview mode, with millions of people testing it across the world
-via their <a href="https://insider.windows.com/">Windows Insider Program</a>. I have been part of the Insider Program for a while now and have been through several releases and thought I would share some initial
-impressions of Windows 10.</p>
-<h2 id="start-menu">Start Menu</h2>
-<p>For most users, one of the biggest changes is the Start Menu is back. In Windows 8, the Start Menu was replaced by the Start Screen. Many users found this disconcerting as you moved back and forth between full screen “Windows Modern” and the traditional desktop mode. Microsoft is addressing this heads on by bringing back the start menu. It is also making the start menu more “modern”, by including Microsoft’s innovative Live Tiles in the start menu.</p>
-<p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/startScreen.png" alt="Windows 10 Start Screen"></p>
-<h2 id="cortana">Cortana</h2>
-<p>Microsoft’s Cortana has been a big hit on Windows Phone. It is a voice driven assistant, similar to Google Now or Apple’s Siri. You can click the search icon and “talk” to Cortana and have it perform searches for you. You can even change some settings and say “Hey Cortana” and have it do searches for you.</p>
-<p>Cortana also bills itself as a personal digital assistant. It is able to parse through emails and documents and “learn” about you. So if you have a flight on Delta and you say Hey Cortana, Delta, it will show information about you flight.</p>
-<p>It also knows I like the Chicago Bulls, so it keeps information front and center. It is also nice enough not to mention that Derick Rose is out for the rest of the season, again.</p>
-<p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/cortana1.png" alt="Cortana"></p>
-<p>Again, all of this code is pre-release and may change, but so far Cortana looks like a great feature for Windows 10.</p>
-<h2 id="continuum">Continuum</h2>
-<p>One of the biggest issues many people had with Windows 8 was how the tablet/modern mode was so prevalent and jarring in desktop mode. Microsoft is again addressing, heads on, one of the major Win 8 complaints, by including a new feature called Continuum. Continuum is there to make dual use machines like a Microsoft Surface function even better.</p>
-<p>Users can decide to go to Tablet Mode, either via the Notification Bar and selecting Tablet Mode or by disconnecting/connecting a keyboard and responding to the prompt. This will then put have your apps run full screen making them more touch friendly and applicable to running on a tablet.</p>
-<p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/continuum.png" alt="Continuum"></p>
-<p><img src="https://www.jptacek.com/2015/02/Windows10-Preview/continuum2.png" alt="Continuum"></p>
-<p>When you are running in desktop mode, applications are then windowed, including “Modern” apps. Previously, “Modern” apps would run in full screen mode for all users. This is a pretty significant change from Microsoft and highlights how they are enabling users to be productive if they are in tablet mode or desktop mode.
-<img src="https://www.jptacek.com/2015/02/Windows10-Preview/continuum3.png" alt="Continuum"></p>
-<h2 id="universal-apps">Universal Apps</h2>
-<p>One of the biggest changes under the hood of Windows promises to be Universal Apps. This is a single platform that enables to developers to develop an application for Windows, Windows Phone and the Xbox One. Microsoft is hoping this will reignite developer interest as the multi platform development opens up many new opportunities.</p>
-<h2 id="all-roads-lead-to-build">All Roads Lead to Build</h2>
-<p>Microsoft’s Build Conference at the end of April 2015 promises to have A LOT more information on the new version of Windows, especially for developers. We will all know more soon after that. Windows 10 is supposed to be available in the second half of 2015.</p>
-<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Article/2737/Introduction-to-Windows-10.aspx">Skyline Technologies</a>,</p>
-]]></content>
-        <foo1><![CDATA[https://www.jptacek.com/2015/02/Windows10-Preview/]]></foo1>
             </entry>
     
 </feed>
