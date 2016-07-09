@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2015/01/moving-docpad-to-github-pages/'>Hosting a DocPad Site on GitHub Pages</a></h1>
+    
+        <div class="post-date">Jan 16th, 2015</div>
+
+    <div class="post-content">
+        <p>I am a fan, a HUGE fan, of Microsoft&#39;s <a href="http://azure.microsoft.com/">Azure</a> platform, especially their Azure Websites.
+This blog, <a href="/2015/01/moving-docpad-to-github-pages/jptacek.com">jptacek.com</a> has been hosted
+on Azure for several iterations. First as a blog on WordPress, and later, as a blog being generated using
+<a href="https://docpad.org/">DocPad</a>. Feel
+free to follow my <a href="http://jptacek.com/tags/wordpress/">Wordpress</a> and <a href="http://jptacek.com/tags/docpad/">DocPad</a>
+adventures. Further, when I speak at events, I often say the subtitle of my talk should be
+&quot;Azure, a love story&quot;. It is awesome and it
+is a great tool for developers.</p>
+<p>The only thing that causes me a slight measure of discomfort is that it costs actual money to host my blog on Azure.
+I am fine paying money, especially
+for things I think are awesome, like Azure. However, my site, after migrating to DocPad is pretty stupid, it is just
+static HTML. Having a server for that can be a bit of overkill.</p>
+<p>Enter <a href="http://www.github.com">GitHub</a>.</p>
+<p><img src="/2015/01/moving-docpad-to-github-pages/githubpages.jpg" alt="GitHub pages"></p>
+<p>They have a platform for serving up static HTML. I think the thing that first
+time I had a seed planted was a <a href="http://haacked.com/archive/2013/12/02/dr-jekyll-and-mr-haack/">blog post</a>
+that <a href="https://twitter.com/Haacked">Phil Haack</a> did about moving his personal blog
+to GitHub Pages. In it, he steals a
+tweet from <a href="https://twitter.com/holman">Zach Holman</a>, one of his GitHub colleagues.</p>
+<blockquote>
+<p>@haacked the ops team gets paged when <a href="http://zachholman.com">http://zachholman.com</a> is down. You still have a lot to learn, buddy</p>
+</blockquote>
+<p>I thought that was a pretty good line. I also realize it is the same thing Microsoft does on their cloud platform, but
+it DID inspire me to dig a bit more into GitHub pages. At the time I looked, it was pretty focused on Jekyll, which
+I shied away from it based on its Ruby background (more info about my decision
+<a href="http://jptacek.com/2013/12/saying-hello-to-docpad/">here</a> ). A year later though, I have gotten a bit more
+comfortable with DocPad, and have a workflow to get my pages published to GitHub Pages.</p>
+<p>What are GitHub Pages? They are public webpages that are hosted on GitHub&#39;s infrastructure. They do NOT support
+HTTPS, so you won&#39;t want to host eCommerce sites on it. However, for blogs and other public content they work great.
+You can use Jekyll, which is a Ruby based static site generator. It is similar to DocPad. One benefit of using Jekyll
+with GitHub pages though is that you can check in your posts into your GitHub repository and it will automatically
+generate the site for you.</p>
+<p>There are two types of GitHub pages, User/Organization and Project sites. This blog, <a href="http://jptacek.com">JPtacek.com</a>
+is a User site. For User/Organization pages, GitHub will take content committed to the repository <em>username</em>.github.io,
+where <em>username</em> is a user&#39;s GitHub account. For me, this essentially means I check in my content to a the GitHub repository
+<a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a>. HTML content checked into this repository is then
+automatically deployed to a static site at the URL <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://jptacek.github.io</a>. You can find out
+more about this at GitHubs site <a href="https://pages.github.com/">https://pages.github.com/</a>.</p>
+<p>It is worth noting that GitHub Pages User/Organization pages get checked into the master branch of the repository.
+GitHub project sites, which are for, wait for it....., projects, are a bit different. One of those differences is that
+they have content checked into the GHPages branch of the project.</p>
+<p>So far, so good. However, the site has been living at a specific domain for a while, which I would really like to
+continue to use. Of course, GitHub pages also supports custom domain names for a site. Instructions are
+<a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">available</a> online. Essentially though,
+it is pretty slick and quick to do. You check in a single file called CNAME (all caps) into your <em>username</em>.github.io
+repository. This file should be in the root of your repository and have the URL of the site, in my case, www.jptacek.com,
+without any http:// in front. After committing your changes you can click settings in your repository</p>
+<p><img src="/2015/01/moving-docpad-to-github-pages/settings1.png" alt="Click settings"></p>
+<p>and you can then verify the URL is set</p>
+<p><img src="/2015/01/moving-docpad-to-github-pages/settings2.png" alt="Verify"></p>
+<p>We have GitHub all set to serve up our requests, but now we need to actually do some work with DNS to do that. I use
+<a href="https://dnsimple.com/">DNSimmple</a> to manage my DNS. Part of the neat things about DNSimple is they keep it simple :).
+There is a template setup for you to enable GitHub pages already present. It will add an Alias record for you and
+you are on your way</p>
+<p><img src="/2015/01/moving-docpad-to-github-pages/dnSimple.png" alt="DNSimple"></p>
+<p>So we have a site ready to go and it is live on the Internet, but we need content! Previously, through the magic of
+Azure, I would check in my blog content as a markdown file, Azure would read the check ins from my GitHub repository,
+download appropriate NPM pacakges, compile my markdown to static HTML and publish a site. All pretty cool. That is gone
+now. So instead of having the cloud compile my markdown, I am now doing it all local. This is the main negative for me
+about moving to GitHub pages, but sometimes freedom has a cost :).</p>
+<p>Since I will be dealing with two GitHub repositories, I reworked my workflow a bit. My site, and all of it&#39;s content
+and DocPad assets lives in GitHub at <a href="https://github.com/jptacek/JPtacek.com">https://github.com/jptacek/JPtacek.com</a>
+and my static blog content, needs to be in
+<a href="https://github.com/jptacek/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> to get published to
+GitHub Pages. What I have done is reworked a couple of things with DocPad to support this. Previously, I had
+my repository checked out locally to a directory called JPtacek.com. What I have done is keep this as the root
+directory and created two subdirectories within there. The first directory, BlogSource, is the DocPad repository which
+will be responsible for generating my static content from markdown files. I cloned my GitHub
+<a href="/2015/01/moving-docpad-to-github-pages/JPtacek.com">https://github.com/jptacek/JPtacek.com</a> repository here. The second directory, ghpages, is where
+I cloned the <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository.</p>
+<p><img src="/2015/01/moving-docpad-to-github-pages/directory.png" alt="Direcotry"></p>
+<p>The next step is to be able to generate the content locally so I can push my static content from my local drive
+to the <a href="/2015/01/moving-docpad-to-github-pages/jptacek.github.io">https://github.com/jptacek/jptacek.github.io</a> repository. This was done by updating my
+DocPad environment a bit. In the DocPad configuration file, <code>docpad.coffee</code>, I created two environments, one
+for local development, the default way I had been using DocPad previously before, and a second for static. The
+static environment is what I use when I want to publish a new blog post. The main thing to note is the configuration setting for
+<code>outPath</code>, which points up a directory level from where my DocPad environment is (the <code>BlogSource</code>) directory and
+publishes files to the github.io directory(<code>ghpages</code>).</p>
+<p>I can run this command by typing <code>docpad -e static generate</code>. After running DocPad and generating the static
+content I am a commit and a push away from an updated website!</p>
+<pre class="highlight"><code class="hljs javascript">#docpad -e static generate
+  environments:
+    static:
+      outPath: <span class="hljs-string">'../ghpages'</span>
+      collections:   posts: -&gt;
+        @getCollection(<span class="hljs-string">"html"</span>).findAllLive({layout: <span class="hljs-string">'post'</span>},[{date:-<span class="hljs-number">1</span>}])
+    development:
+      outPath: <span class="hljs-string">'.out'</span>
+      collections:
+        posts: -&gt;
+          @getCollection(<span class="hljs-string">'documents'</span>).findAllLive({layout: {<span class="hljs-string">'$in'</span> : [<span class="hljs-string">'post'</span>, <span class="hljs-string">'drafts'</span>]}}, [layout: <span class="hljs-number">1</span>,  date: -<span class="hljs-number">1</span>])
+</code></pre>
+<p>So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn&#39;t too painful. I am now saving $10-15
+a month. This will translate to more coffee.</p>
+<p>A high level overview about the pros and cons.</p>
+<p>Pros about GitHub Pages</p>
+<ul>
+<li>Free! Azure was costing from $10-$15/month</li>
+<li>Bypass some CPU usage limits on Azure</li>
+</ul>
+<p>Cons about GitHub Pages</p>
+<ul>
+<li>Cannot automatically build sites from Git commits</li>
+<li>No IPV6 support (issue with Azure Websites currently)</li>
+<li>No SSL support</li>
+</ul>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/docpad/'>DocPad</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/github/'>GitHub</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/12/msDevShowDec2014/'>MS Dev Podcast Show - December 19, 2014</a></h1>
+    
+        <div class="post-date">Dec 23rd, 2014</div>
+
+    <div class="post-content">
+        <p>I had the very cool experience of being invited to be part of the <a href="http://msdevshow.com/">MS Dev Show</a>, a Podcast focused on Microsoft Developer
+Technologies hosted by <a href="https://twitter.com/carlschweitzer">Carl Schweitzer</a> and
+<a href="https://twitter.com/ytechie">Jason Young</a>. I enjoy the show when I get to a chance listen and, truth be told, Jason
+was one of the inspirations for me switching my blogging engine to Docpad. That means I was pretty excited to be
+invited on!</p>
+<p>The Podcast mostly focused on AngularJS, but we talked a bit about some of the upcoming Visual Studio changes and
+ASP.NET vNext, which is going to be really cool for Microsoft Developers. You can get a hint of what is coming on one of my
+recent blog posts
+<a href="https://www.jptacek.com/2014/12/creating-ASP.NET-vNext-application-on-OSX/">Running ASP.NET vNext on OS X</a>.</p>
+<p>You can listen to the show at
+<a href="http://msdevshow.com/2014/12/angularjs-with-john-ptacek/">http://msdevshow.com/2014/12/angularjs-with-john-ptacek/</a>.
+Wished I would have sounded a bit more eloquent for everyone, but kind of sleep deprived.</p>
+<p>Thanks Carl and Jason!</p>
+<p> <img src="/2014/12/msDevShowDec2014/msDevShowlogo@2x.png" alt="MS Dev Show Log Logo"></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/microsoft-dev-show/'>Microsoft Dev Show</a>, <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/docpad/'>DocPad</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2014/12/creating-ASP.NET-vNext-application-on-OSX/'>Creating ASP.NET vNext application on OS X</a></h1>
+    
+        <div class="post-date">Dec 12th, 2014</div>
+
+    <div class="post-content">
+        <p>Santa Claus is Coming to Town!! All the geeks get pretty excited for Santa’s arrival to see what will be awaiting us under the tree
+each year. However, sometimes the things geeks are most excited about aren’t ready for Christmas. We can read about them, maybe see
+some snippets or even get a preview.</p>
+<p>For example, there is a new Star Wars movie coming, but that will not be out until December of 2015, right before Santa’s
+next visit. There are also a good percentage of geeks getting excited for the release of Apple Watch, which will be out
+sometime in early 2015, so it won’t be waiting under the Christmas tree this year either.</p>
+<p>However, one of the things I am most interested in, workwise, while it is arriving in 2015, is available
+to kick the tires on now. The early preview present under the tree is running .NET on non-Microsoft platforms like
+the OS X or Linux. So while Santa will not be putting the final version under my tree this year, we can at least start
+getting ready.</p>
+<p>November and December are always exceedingly busy times, but it is worth taking a moment to realize that something huge
+happened. Microsoft has opened sourced their .NET framework. I am a big fan of Microsoft’s C# language. I think, for
+most developers, it is a great and productive way to get work done. Having this option available on Linux and Mac
+machines is going to be great. Throw in ASP.NET MVC and Web API coming along too, and 2015 will be awesome one for
+developers.</p>
+<p>Scott Hanselman has a <a href="http://www.hanselman.com/blog/AnnouncingNET2015NETAsOpenSourceNETOnMacAndLinuxAndVisualStudioCommunity.aspx">blog post</a>
+ where he gets into the details about the open sourcing of .NET and there is a lot to
+get into. However, but for now, let us just build an ASP.Net vNext app and jump into it like a kid opening presents on
+Christmas morning!</p>
+<p>We are going to create an ASP.NET vNext app to countdown several things… the days until Christmas, the days
+until the release of the next ASP (assuming Build 2015) and finally, the days until new Star Wars movie.</p>
+<p>How do we jump in? These steps are mostly identified on the ASP.NET GitHub page (I know, crazy, right. Microsoft
+documenting stuff on GitHub!?!?) at <a href="https://github.com/aspnet/home">https://github.com/aspnet/home</a>. We can still step through.</p>
+<p>First, because vocabulary is important…. Since the codename for the next version of ASP.NET vNext is Katana,
+Microsoft is going all in with the letter K. So many of the tools utilize the letter K. A quick run through of the
+most important.</p>
+<ul>
+<li><p>KRE is the K Runtime Environment. This is the code that bootstraps your ASP.NET vNext application; compilers,
+Common Language Runtime (CLR), etc.</p>
+</li>
+<li><p>KVM is the K Version Manager. It will install appropriate version of the KRE. You will be able to have multiple ASP.NET vNext runtimes and applications running on your machine.</p>
+</li>
+<li><p>KPM is the K Package Manager. This will download packages needed for your application to run.</p>
+</li>
+</ul>
+<p>First thing to do is ensure you have Homebrew setup on your OS X machine. If you are doing development work, you most likely have this already, so we will assume you are ready to go.</p>
+<p>Next, we need to install the ASP.NET vNext runtime environment (KRE). This is done by downloading appropriate git repositories via a bash script.</p>
+<pre class="highlight"><code class="hljs bash">brew tap aspnet/k
+</code></pre>
+<p>Similar commands are used for other platforms such as Linux and Windows, which uses PowerShell.</p>
+<p>The next step is to install KVM (The K Version Manager), which is the runtime manager. It is responsible for getting the runtime and enables multiple different runtimes on the same machine. I have seen some mention of issues using KVM on OS X with different shells, like zsh. I use the Bash shell and have not run into issues. To install KVM type</p>
+<pre class="highlight"><code class="hljs bash">brew install kvm
+</code></pre>
+<p>Next we run a script to setup our environment variables, etc</p>
+<pre class="highlight"><code class="hljs bash"><span class="hljs-built_in">source</span> kvm.sh
+</code></pre>
+<p>We have pretty quickly setup and downloaded the environment to run ASP.NET vNext apps on an OS X machine, but, we have
+no code! Thankfully, someone wrote an ASP.NET MVC Project Generator for Yeoman. Yeoman, for those of you not familiar,
+is a tool to generate scaffolding for your projects. It utilizes Node.js.</p>
+<p>So to get all of this working, you are going to need to have Node.JS and the Node Package Manager (NPM) installed.
+Again, since we are talking developers, you probably already have all of this. The next step then is to install
+Yeoman, using NPM. From your Bash shell we will install Yeoman first</p>
+<pre class="highlight"><code class="hljs bash">npm install –g yo
+</code></pre>
+<p>Next, we install the generator for ASP.Net</p>
+<pre class="highlight"><code class="hljs bash">npm install -g generator-aspnet
+</code></pre>
+<p>Next step, since we have all of the tools we need installed and downloaded, we can generate our application. This is done by running Yeoman from the bash shell type by typing</p>
+<pre class="highlight"><code class="hljs bash">yo aspnet
+</code></pre>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx1.png" alt="Running Yeoman, step1, choose MVC"></p>
+<p>We have the option of choosing a console application, a Web App, MVC app or Nancy ASP.NET app. We choose MVC
+application and provide a name</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx2.png" alt="Running Yeoman, step2, choose Project Name"></p>
+<p>And our application gets generated</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx3.png" alt="Running Yeoman, step3, application is generated"></p>
+<p>And we can take a look and see our directory structure, with many of the controllers and views most of us know from
+our MVC projects.</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx4.png" alt="After Running Yeoman, step last, tree view"></p>
+<p>For those of you well versed in ASP.NET, a couple of pretty interesting things to note. First, no solution file!
+Second, no Project file! Most of the Visual Studio generate file constructs are gone. Similar to a Node.JS
+application, there is a json file outlining the dependencies needed for an application, as opposed to the Solution
+and Project files of Visual Studio. Very cool.</p>
+<p>To build and run the application, we use the commands shown in the previous screen shot of the bash shell</p>
+<p><code>kpm restore</code>, which gets the packages for your application</p>
+<p><code>kpm build</code>, builds the application</p>
+<p><code>k kestrel</code>, fires up the web server to serve the pages</p>
+<p>By using the kestrel web server we are actually firing up Mono, the open source version of the .NET framework.
+We access the location locally on port 5004 (<a href="http://localhost:5004/">http://localhost:5004/</a>)</p>
+<p><img src="/2014/12/creating-ASP.NET-vNext-application-on-OSX/osx5.png" alt="MVC app on OS X"></p>
+<p>So that is all kind of Christmas goodies Santa has for us, what is the most impressive programming language
+for business development being able to run on non-Microsoft platforms. When you start thinking about integrating in
+with some popular Linux tools like Docker, it doesn’t take a lot to realize things will be a lot different on the .NET
+stack when Santa is coming back to town in 2015. Plus, new Star Wars!</p>
+<p>You can download this code from a GitHub repository I have setup at
+<a href="https://github.com/jptacek/ChristmasCountdown">https://github.com/jptacek/ChristmasCountdown</a></p>
+<p>Note: When running the web site, it will use the same port for the web server. I usually exit the process (k kestrel) by typing Ctrl-Z.
+However, I need to list the processes using PS and then kill, by typing kill -9 <pid>, the process that is mono.
+That way I can restart.</pid></p>
+<p><strong>UPDATE (December 17, 2014)</strong> - Links updated to include link to Microsoft <a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">post</a> on Yeoman</p>
+<p><strong>UPDATE 2 (December 18, 2014)</strong> - Thanks to <a href="https://twitter.com/sayedihashimi">Sayed Hashimi</a> for helping clean up some typos
+with case issues.
+<a href="https://twitter.com/sayedihashimi/status/545720905171603456">https://twitter.com/sayedihashimi/status/545720905171603456</a></p>
+<p>Links</p>
+<ul>
+<li>ASP.NET MVC Project Generator for Yeoman - <a href="http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/">http://hassakarn.com/2014/02/07/asp-net-mvc-project-generator-for-yeoman/</a></li>
+<li>Yeoman - <a href="http://yeoman.io/">http://yeoman.io/</a></li>
+<li>ASP.NET GitHub repo - <a href="https://github.com/aspnet/home">https://github.com/aspnet/home</a></li>
+<li>OmniSharp.NET - <a href="http://www.omnisharp.net/">http://www.omnisharp.net/</a></li>
+<li>GitHub for this Code - <a href="https://github.com/jptacek/ChristmasCountdown">https://github.com/jptacek/ChristmasCountdown</a></li>
+<li>Microsoft on Yeoman for ASP.NET - <a href="http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx">http://blogs.msdn.com/b/webdev/archive/2014/12/17/yeoman-generators-for-asp-net-vnext.aspx</a></li>
+</ul>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Blog/Article/2586/12-Days-of-Christmas-Mac.aspx">Skyline Technologies</a>
+as part of their <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/December-2014/Dec-8th-Kicks-Off-the-12-Blogs-of-Christmas">12 Blogs of Christmas series</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/asp-net-vnext/'>ASP.NET vNext</a>, <a href='/tags/asp-net-core/'>ASP.NET Core</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/6/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/page/4/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://stephenking.com">End of Watch</a>
+        by <a href="https://stephenking.com">Stephen King</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

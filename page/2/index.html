@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="description" content="Mobile, Web and JavaScript" />
+
+<title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
+    <meta name="generator" content="DocPad v6.78.4" />
+    
+
+    <meta name="author" content="John Ptacek">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="/styles/chemistry.css" rel="stylesheet" />
+    <link href="/styles/site.css" rel="stylesheet" />
+    <link href="/css/highlight.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+<a href="https://plus.google.com/+JohnPtacek?rel=author" class="google googleplus-hidden" title="Google+">Google+</a>
+
+
+
+<div class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">John Ptacek</a> <div class="navbar-brand"> - Musings on Code</div>
+        </div>
+        <div class="collapse navbar-collapse navbar-right">
+            <ul class="nav navbar-nav">
+                <!--<li><a href="/">Blog</a></li>-->
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <li class="hidden-xs">
+                    <a href="/feed/index.xml" class="rss"><i class="fa fa-rss fa-lg"></i></a>
+                    <a href="https://twitter.com/jptacek" class="twitter"><i class="fa fa-twitter fa-lg"></i></a>
+                    <a href="https://plus.google.com/+johnptacek" class="googleplus"><i class="fa fa-google-plus fa-lg"></i></a>
+                    <a href="https://linkedin.com/in/johnptacek" class="linkedin"><i class="fa fa-linkedin fa-lg"></i></a>
+                    <a href="https://stackoverflow.com/users/39797/john-ptacek" class="stackoverflow"><i class="fa fa-stack-overflow fa-lg"></i></a>
+                    <a href="https://github.com/jptacek" class="github"><i class="fa fa-github fa-lg"></i></a>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right hidden-xs" role="search" action="https://google.com/search"
+                  method="get">
+                <div class="form-group">
+                    <input type="search" name="q" class="form-control" placeholder="Search">
+                    <input type="hidden" name="q" value="site:jptacek.com">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+        <div class="col-sm-12 col-md-10">
+            
+    <article class="post">
+    
+    <h1><a href='/2016/05/DeathOfMooresLawAndTheGameOfGo/'>The Death of Moore's Law and the Game of Go</a></h1>
+    
+        <div class="post-date">May 3rd, 2016</div>
+
+    <div class="post-content">
+        <p>For the last 50 years or so, the land of computers has been ruled by Moore’s Law, but that time is coming to an end. </p>
+<p>TLDR; Moore’s Law is dying, but instead of going smaller with transistors for computing power, we will go large with scale, AI and quantum computer for computing power</p>
+<p>For those of you unfamiliar with Moore’s Law, it was an observation made in the 1960s by Gordon Moore, that the number of transistors in an integrated circuit would double approximately every two years. Moore, who went on to form Intel, was quite prescient in this declaration. </p>
+<p>Intel released its first chip in 1971 and it contained approximately 2300 transistors. Fast forward to today, where a quad core Skylake chip from Intel has approximately 1.75 billion transistors. Obviously, the last 45 years has seen amazing gains in the engineering and the manufacturing processes involved in making chips for computing devices, so much so, the supercomputers of 30 years ago are the $500 smartphones we carry in our pockets.</p>
+<p><img src="/2016/05/DeathOfMooresLawAndTheGameOfGo/mooresLaw.svg?raw=true" alt="Moore&apos;s Law"> source: <a href="https://en.wikipedia.org/wiki/Moore%27s_law#/media/File:Transistor_Count_and_Moore%27s_Law_-_2011.svg">Wikipedia</a></p>
+<p>This growth in chip size has transformed our world. Between the rise of computers, then smartphones and high speed data networks, the world is a different place. Communication costs have plummeted. We are more connected globally than ever before. Opportunities have expanded globally for millions and millions of people.  The economic and social benefits of this have been tremendous. It has been breathtaking in the scope of impact it has had on society; from the inane tweets of Kardashians to the Arab spring.</p>
+<p>So Moore’s Law has been a huge success, however, it is more of an observation than a physical law. For example, Newton’s Law of Gravity is (almost always) the law of the Universe with F = ma. Moore’s Law though is not that, and its time is coming to an end. The amazing advances in the reduction of chip size will soon be a thing of the past. Without Moore’s Law, which helped create the economic engine of the Information age, does that mean GDP growth will be disappearing? Of course not, at least in terms of computing power. Instead of Moore’s law being about doubling of transistors on a chip, we now think of computation growth coming from other places. First off, to the ancient game of Go!</p>
+<p>The game of <a href="https://en.wikipedia.org/wiki/Go_%28game%29">Go</a> is a 2500-year-old game from China that is played with black and white stones on a 19x19 grid. The game has relatively simple rules, but the size of the board makes it an exceedingly complex game. While games like Chess are complex, the pieces have limited moves and varying strength, so it is somewhat easier to determine the relative value of certain moves and use brute force computation to analyze all the possible outcomes on the, relatively smaller, 8x8 chess board. In Go, the moves are much more nuanced, and players take years and years of playing, to recognize patterns to be a successful player. In computer terms, chess is a solvable problem by applying computation as demonstrated by <a href="https://en.wikipedia.org/wiki/Deep_Blue_%28chess_computer%29">Deep Blue</a> back in the 90s when world Chess champion Gary Kasparov was (nerd) famously beat. </p>
+<p><img src="/2016/05/DeathOfMooresLawAndTheGameOfGo/GoGame.jpg" alt="Go Game"></p>
+<p>The approach used by Deep Blue though, wouldn’t work with Go, so it has always been considered an artificial intelligence problem, more than a CPU intensive problem. The ability to beat the Go equivalent of a grandmaster was thought to be at least a decade away. So this March (2016), much of the computer world, was amazed then to see Google’s <a href="https://deepmind.com/alpha-go">AlphaGo</a> (developed by Google <a href="https://deepmind.com/">DeepMind</a>) beat a Korean champion Lee Se-Dol in a 5 game battle. You can read about the matches at <a href="http://www.theverge.com/google-deepmind">The Verge</a>. </p>
+<p>We learn two things from this… First, we can replace the previous decades of massive growth of transistors on a chip with the massive growth of computing resources at scale. Google’s DeepMind program utilized a cluster of computers to derive massive computational resources to solving a very difficult problem. As connectivity becomes more pervasive and network speed grow, these computing resources can be used to solve complex problems, without needing more CPU resources on our devices.</p>
+<p>The second thing we learn from Google’s DeepMind victory against a Go champion is that there are other solutions to problems. While computing power could win a game of chess, it would never win at something like Go. Instead of the brute force approach that was so effective for Deep Blue, different solutions were needed. Many years of research came to fruition, including pattern recognition, deep learning and neural networks that were bundled into DeepMind. The AlphaGo program was taught to learn by “watching” old Go games from champions, and then constantly playing itself. The more it learned, the better it became. So much so, that during the actual tournament, commentators were shocked by some of the moves the AI made, and there was one move the human player was so taken aback by, he took a very long break. This kind of growth in alternative approaches to problem solving can again, provide greater computational power while not increasing transistor size.</p>
+<p>Last, another future path to computation growth is quantum computing. Quantum computing requires a bit of a deeper dive (future blog post!), but suffice to say, the world of qbits and superposition principle provides orders and orders of magnitude increases in speed for some computational cases.</p>
+<p>So…. Moore’s law is going away. We are reaching the literal physical limitations of how much closer we can put transistors on a chip. We are also moving to a world where lower power usage, which equates to less chip performance is much more preferred than previous decades. This all means different computing platforms will help a variations of Moore’s law continue, where computing power continues to increase, but it will be distributed into massive scale cloud infrastructure with novel approaches like neural networks and quantum computing coupled with speedy networks to make sure today’s super computers are in our pockets in 30 years.</p>
+<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/May_2016/Death_of_Moore_s_Law">Skyline Technologies</a>.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/computing/'>Computing</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2016/04/Build2016Recap/'>Build 2016 Recap</a></h1>
+    
+        <div class="post-date">Apr 6th, 2016</div>
+
+    <div class="post-content">
+        <p>Microsoft’s recent developer conference, Build, finished up last week in San Francisco. Every year, Skyline sends a team of people to Build to understand Microsoft’s direction for our customers in the coming year  </p>
+<p><img src="/2016/04/Build2016Recap/build1.jpg" alt="Build Banner"></p>
+<p>Here are some of the key takeaways</p>
+<p><strong>Xamarin</strong> – Microsoft recently closed their purchase of Xamarin, a toolset for developing cross platform mobile applications across Windows, iOS and Android. The big news out of Build was that Microsoft was making the Xamarin tooling free for everyone. While free is great news, Microsoft also announced they were open sourcing Xamarin. This should encourage organizations who were hesitant about Xamarin because of cost constraints to re-evaluate!</p>
+<p><strong>BASH</strong> – Microsoft is bringing the Bash Shell to Windows! This may not mean anything to a lot of folks, but to developers, it is a huge deal. The Bash Shell is the most popular Unix shell, which is the command line interface (CLI) developers use. With a lot of Open Source tooling, it was always a source of friction between how development would work on Windows vs OS X or Linux. With Microsoft teaming up with Canonical, the maker of the popular Ubuntu Linux distribution, to bring Bash to Windows this should make developing applications for multiple platforms on Windows much easier!</p>
+<p><strong>Bots</strong> – One of the more interesting reveals at Build this year was the release of the Microsoft Bot platform 
+(<a href="https://dev.botframework.com/">https://dev.botframework.com/</a>). Bots are really mini pieces of functionality done in an interactive environment. For example, you could create a bot to show movie times. Another bot may be able to show you bus times. The impetus for this is really two fold. First, Microsoft feels people are at peak app, which is the idea that users have so many apps, they aren’t downloading more. Does someone really need to download an app to get a bus schedule they need once or twice a year? Microsoft thinks Bots answer that question.</p>
+<p><strong>Cognitive Services</strong> – The second piece of the Bot strategy is Microsoft’s introduction of Cognitive Services (<a href="https://www.microsoft.com/cognitive-services">https://www.microsoft.com/cognitive-services</a>). This is a way of bringing intelligence into applications and is the evolvement of Project Oxford via an API. Microsoft has several of these “intelligence” APIs for things such as natural language query, image recognition, etc. One example of this is an application and website that Microsoft created where you can upload a picture to the Azure cloud of a person, and have it use the AI backend Microsoft has created to tell you how old the person is (<a href="https://how-old.net/">https://how-old.net/</a>).</p>
+<p><strong>Conversational UX</strong> – By combing Microsoft’s Bot strategy and cognitive services together, they are ultimately trying to create a new User Experience, via conversations. This is where you can interact with a service via your voice or typing and have it perform actions. An example shown during the keynote was ordering a pizza from Dominos via a bot you were interacting with on Skype. </p>
+<p><strong>HoloLens</strong> – Microsoft officially celebrated their release of HoloLens, their impressive augmented reality headset during the first day keynote, in an oddly stilted demonstration of HoloLens. It will be a bit before we are all playing Minecraft in our living rooms via HoloLens, but the technology is shipping to devs now and it is impressive. Most of the initial applications appear to be focused on education and the enterprise, especially engineering and manufacturing scenarios. </p>
+<p>One of the impressive demos of HoloLens to attendees was a NASA/Microsoft created demo of going to the surface of Mars. Using photos from Nasa rovers, a 3D environment was created that enabled attendees to look and walk around the surface of Mars. Very cool demonstration of the potential!</p>
+<p><strong>New Windows</strong> – Microsoft discussed bits and pieces of the upcoming release of Windows this summer, Windows Anniversary edition, which was previously codenamed Redstone. While there wasn’t a ton of information about Redstone, the Start Menu is being evolved, Live Tiles are getting richer and better notifications are coming to the platform. Further, the Edge browser is getting new features including the ability to have extensions (yeah!).</p>
+<p><img src="/2016/04/Build2016Recap/build2.jpg" alt="Satya Nadella Keynote"></p>
+<p>Build this year was an interesting one. Microsoft, after many years of trying to get folks behind their mobile plans essentially decided to jump past mobile and envision what is after mobile. Some of their ideas include augmented reality with HoloLens as well as new ways for user to interact and do their job, via conversation with intelligent agents. When you look at the inclusion of the Bash shell and giving all developers the ability to create mobile apps for free for all platforms using C#, and you know you are dealing with a different Microsoft, a more open and diverse computing company. This is exciting to see for developers and organizations and opens both to many new and interesting opportunities.</p>
+<p>This post originally appeared at <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/April_2016/Build_2016_Recap">Skyline Technologies</a>.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/microsoft/'>Microsoft</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/conference/'>Conference</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2016/03/newdug-codecamp-2016/'>NEWDUG 2016 CodeCamp - Gulp All The Things</a></h1>
+    
+        <div class="post-date">Mar 13th, 2016</div>
+
+    <div class="post-content">
+        <p>Thanks to everyone who came to my presentation at <a href="http://newcodecamp.com/">NEWDUG 2016</a> this year!
+I am always appreciative of the great tech talent we have in NorthEast Wisconsin, and it was certainly evident
+with the number of attendees and the quality of the presentations.</p>
+<p>If you are interested, the code from the presentation is available on <a href="https://github.com/jptacek/NewDug2016">GitHub</a>.
+The PowerPoint presention is also available on <a href="https://github.com/jptacek/NewDug2016/blob/master/PPT/GulpAllTheThings.pptx?raw=true">GitHub</a>.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/gulp/'>Gulp</a>, <a href='/tags/newdug/'>NEWDUG</a>, <a href='/tags/speaking/'>Speaking</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    <p>&nbsp;</p>
+
+</article>
+
+
+<div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/3/"><span class="icon icon-arrow-left-2"></span> Older</a>
+    
+    
+    <a class="page-nav-newer" href="/">Newer <span class="icon icon-arrow-right-2"></span></a>
+    
+    <div class="page-nav-archives"><a href="/archives/">- Blog Archives -</a></div>
+</div>
+
+<div id="me">
+    <p>
+        <img src="/images/Headshot-Square.png" alt="John Ptacek" />
+        I'm <b>John Ptacek</b>, a software developer for <a href="http://www.SkylineTechnologies.com">Skyline Technologies</a>.
+        This blog is my contains my content and opinions, which are not those of my employer.
+    </p>
+    <p>Currently, I am reading 
+        <a href="https://stephenking.com">End of Watch</a>
+        by <a href="https://stephenking.com">Stephen King</a></p>
+    <p>
+        <a href="https://twitter.com/jptacek">@jptacek</a> &#8226;
+        <a href="https://github.com/jptacek">GitHub</a> &#8226;
+        <a href="https://www.linkedin.com/in/JohnPtacek/">LinkedIn</a> &#8226;
+        <a href="https://stackoverflow.com/users/39797/john-ptacek">Stack Overflow</a> &#8226;
+        <a href="https://plus.google.com/+JohnPtacek">Google+</a>
+    </p>
+</div>
+
+        </div>
+</div>
+
+<div class="container">
+    <div class="navbar navbar-footer">
+        <p class="navbar-center navbar-text">Content copyright &copy; 2016 John Ptacek</p>
+    </div>
+</div>
+
+
+
+    <script type="text/javascript" src="/vendor/angular/angular.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="/vendor/angular-animate/angular-animate.min.js"></script>
+
+ 
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="/scripts/site.js"></script>
+
+
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-34910017-1']);
+    _gaq.push(['_setDomainName', 'jptacek.com']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>
