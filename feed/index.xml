@@ -3,13 +3,31 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2016-07-09T23:34:32.289Z</updated>
+    <updated>2016-08-12T03:19:35.899Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>That Conference 2016 - Angular vs React</title>
+        <link href="https://www.jptacek.com/2016/08/ThatConference2016/"/>
+        <updated>2016-08-11T05:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2016-08-11,/2016/08/ThatConference2016/</id>
+        <content type="html"><![CDATA[<p>One of my favorite things each year is <a href="https://www.thatconference.com">That Conference</a>. I have been lucky enough to 
+be chosen as a speaker each year (though I missed last year due to work commitments).</p>
+<p>This year I talked on Angular vs React, and compared two of the most popular things going on in the world of 
+JavaScript these days. Thanks to all of those who attended and provided engaging converstation.</p>
+<p>For those interested, here is the <a href="https://www.jptacek.com/2016/08/ThatConference2016/./Angular vs React-Talk.pptx">presentation</a>. I will also be uploading the code to my 
+<a href="https://wwww.github.com/jptacek">GitHub</a> in a while after I button it up some more.</p>
+<p>Thanks to all the organizer, sponsors and speakers for a great community event! I highly encourage folks to go 
+next year, Aug 7-9.</p>
+<p><img src="https://www.jptacek.com/2016/08/ThatConference2016/ThatConference2016.jpg" alt="ThatConference 2016"></p>
+]]></content>
+        <foo1><![CDATA[https://www.jptacek.com/2016/08/ThatConference2016/]]></foo1>
+            </entry>
     
     <entry>
         <title>Apple WWDC 2016 Recap</title>
@@ -328,163 +346,6 @@ ANY program I could write.</p>
 at <a href="http://www.skylinetechnologies.com/Blog/Article/2744/Pi-Day-Looking-at-Wolfram-Alpha.aspx">Skyline Technologies</a></p>
 ]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2015/03/National-Pi-Day/]]></foo1>
-            </entry>
-    
-    <entry>
-        <title>AngularJS - CSS Animations</title>
-        <link href="https://www.jptacek.com/2015/03/angularJS-CSS-Animation/"/>
-        <updated>2015-03-12T05:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2015-03-12,/2015/03/angularJS-CSS-Animation/</id>
-        <content type="html"><![CDATA[<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="https://www.jptacek.com/2015/03/angularJS-CSS-Animation/angularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the twelfth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-templates/">AngularJS - Introducing Templates</a></li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-<li><a href="http://jptacek.com/2015/02/angularJS-Best-Practices/">AngularJS - Best Practices</a></li>
-<li>AngularJS - CSS Animations</li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>AngularJS enables animations via the NgAnimate directive. This is an external JavaScript file that you will need for
-your application, so you will need to obtain the JavaScript. This can be done via the usual suspects, CDN,
-<a href="https://code.angularjs.org/">download</a> or Bower. The Bower install command is <code>bower install angular-animate</code></p>
-<p>There are three ways to do animations in AngularJS:</p>
-<ul>
-<li>CSS Animations</li>
-<li>CSS Transitions (or Keyframe Animations)</li>
-<li>Javascript</li>
-</ul>
-<p>We will look at each of these in separate posts, but will get started with CSS Animations.</p>
-<p>It is important to realize that the animations we are talking about in AngularJS here are not going to allow you to
-create a Pixar movie. The animations can be thought of as a bit of visual flair to your application to let users know
-their input has been recognized.</p>
-<p>In this post, we are going to focus on three AngularJS events that we can use with CSS animations. It is important to
-realize that Angular does not do any of the animations, but provides hooks for us to use our own animations, be they
-via CSS or JavaScript.</p>
-<p>There are five AngularJS events</p>
-<ul>
-<li>enter - DOM element is add to the DOM tree</li>
-<li>leave - DOM element is removed from the DOM tree</li>
-<li>move - DOM element is moved within the DOM tree</li>
-<li>addClass - A class is added to an element</li>
-<li>removeClass - A class is removed from an element</li>
-</ul>
-<p>So we have events get fired, the next thing that happens is the the animate library will add and remove CSS classes
-  based on the fired events. This is based on conventions for the naming of our CSS classes, which are
- <code>[class]-[event]-[state]</code>. So, for the enter event, we have a <code>.ng-enter</code>
- class and a <code>.ng-enter-active</code> class.</p>
-<p>The above is a little confusing, so let&#39;s try to state it another way. The AngularJS animate library supports animations
-for enter, leave and move. If we create a list in Angular and then have a filter applied, ngAnimate then toggles the
-CSS classes for us based on the state. Within these classes we then define our CSS for animation. In this scenario,
-ngAnimate works on ngRepeat, ngInclude, ngIf, ngSwitch, ngShow, ngHide, ngView, and ngClass.</p>
-<p>What does this look like? Well first, we need to inject the animation framework into our application. After installation
-and including the js library in your application
-(<code>&lt;script type=&quot;text/javascript&quot; src=&quot;angular-animate.min.js&quot;&gt;&lt;/script&gt;</code>) you need to inject into your app module.</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-<span class="hljs-pi">    'use strict'</span>;
-
-    angular
-        .module(<span class="hljs-string">'chemistryApp'</span>, [
-            <span class="hljs-string">'ngAnimate'</span>
-        ]);
-})();
-</code></pre>
-<p>What we will do for our example is apply some animations to a periodic element when the user clicks on it. We will do
-this by applying a transition between the two states by changing the opacity.</p>
-<p>Here is a quick look at the CSS.</p>
-<pre class="highlight"><code class="hljs css"><span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-enter</span>, <span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-leave</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">-webkit-transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5s</span> linear all</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">-moz-transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5s</span> linear all</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">-o-transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5s</span> linear all</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5s</span> linear all</span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-enter</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-<span class="hljs-rule">}</span></span>
-
-
-<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-enter-active</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-<span class="hljs-rule">}</span></span>
-
-
-<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-leave</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">1</span></span></span>;
-<span class="hljs-rule">}</span></span>
-
-
-<span class="hljs-class">.periodicCell-animation</span><span class="hljs-class">.ng-leave</span><span class="hljs-class">.ng-leave-active</span> <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">opacity</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-<span class="hljs-rule">}</span></span>
-</code></pre>
-<p>Next, we update our HTML template to include a new angular keyword, <code>ng-if</code>, which, based on an expression will add
-or remove a DOM element. This then will trigger a ngAnimate events for enter and leave which will apply our CSS
-items we created earlier.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicCell {{element.cssForDisplay}} periodicCell-animation'</span> <span class="hljs-attribute">data-ng-if</span>=<span class="hljs-value">"!fullElement"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicNumber"</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicWeight"</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"atomicSymbol"</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"centerElementDisplay"</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<p>Let&#39;s see it in action now.</p>
-<div id="app" ng-app="chemistryApp">
-    <div class="container" ng-controller="chemistryController">
-
-      <div class="row">
-          <select ng-model="periodicElement" ng-options="e.name for e in elements"></select><br>
-      </div>
-      <div class="row">
-          &nbsp;
-      </div>
-      <div class="row">
-          &nbsp;
-      </div>
-      <div class="row">
-          <div class="col-md-2">
-              <periodic-chart-element element="periodicElement"></periodic-chart-element>
-          </div>
-          <div class="col-md-2">
-              &nbsp;
-          </div>
-          <div class="col-md-2">
-              <periodic-chart-element element="elements[periodicElement.atomicNumber]"></periodic-chart-element>
-          </div>
-          <div class="col-md-2">
-              &nbsp;
-          </div>
-          <div class="col-md-2">
-              <periodic-chart-element element="elements[periodicElement.atomicNumber+1]"></periodic-chart-element>
-          </div>
-      </div>
-    </div>
-</div>
-
-<p><br>
-As you can see, the ngAnimate library can quickly be incorporated in your existing Angular application. It enables
-CSS items to be applied to changes in the DOM and apply CSS based on naming rules. In our next Angular blog post,
-we will
-look at CSS transitions.</p>
-<p>I have created an Azure Website to host all of this code at <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a></p>
-<p>The code is also available on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
-<link href="/2015/03/angularJS-CSS-Animation/css/animate.css" rel="stylesheet">]]></content>
-        <foo1><![CDATA[https://www.jptacek.com/2015/03/angularJS-CSS-Animation/]]></foo1>
             </entry>
     
 </feed>
