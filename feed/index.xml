@@ -3,13 +3,47 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2016-08-12T03:19:35.899Z</updated>
+    <updated>2016-08-16T15:08:05.723Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>Angular/Angular2 Introduction</title>
+        <link href="https://www.jptacek.com/2016/08/Anuglar2Introduction/"/>
+        <updated>2016-08-12T05:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2016-08-12,/2016/08/Anuglar2Introduction/</id>
+        <content type="html"><![CDATA[<p>I spent a lot of time blogging about <a href="https://jptacek.com/tags/angularjs/">AngularJS</a> in the past. Time moves on, especially on the Internet and 
+<a href="https://www.google.com">Google</a> is feverishly working on finishing up <a href="https://angular.io">Angular2</a>, which is currently in release candidate as of 
+this writing (August of 2016).
+<img src="https://www.jptacek.com/2016/08/Anuglar2Introduction/angularLogo.svg?raw=true" width="25%"></p>
+<p>We will take a similar approach to last time, where we developed a periodic table application that investigates different features about 
+Angular.</p>
+<p>One thing to note, Google has renamed Angular 2. The previous version of AngularJS, the 1.x stack was called AngularJS. The new
+version is now called just Angular. Part of the reason for this is to show its ability to create native mobile applications, so 
+the JavaScript name can be a bit limiting. We will, in general, keep the same names. Angular and/or Angular 2 will refere to the current 
+verison of Anuglar. The older versions will be called AngularJS or Angular 1.x.</p>
+<p>First though, why even upgrade at all, since the upgrade path from Angular 1.x to Angular 2? Lets highlight some reasons.</p>
+<h3 id="component-based">Component Based</h3>
+<p>Web development is moving towards component based development, especially with some of the emerging
+<a href="https://www.w3.org/TR/NOTE-HTMLComponents">web standards</a>. While those standards are not fully completed yet, Google is definitley
+preparing for that world. If you need further proof, checkout Google&#39;s <a href="https://www.polymer-project.org/1.0/">Polymer</a> project.</p>
+<h3 id="typescript">TypeScript</h3>
+<p>TypeScript is an extension of JavaScript created by Microsoft, open sourced and adopted by Google (I know!! Right?!?!)
+TypeScript essentially is ECMAScript 6, combined with the ability to create type and annotations. It is used to create 
+Angular. The code samples developed by Google are all in TypeScript, with JavaScipt following later. You don&#39;t HAVE to use 
+TypeScript, but it will make life easier.</p>
+<h3 id="virtual-dom">Virtual DOM</h3>
+<p>One of the things <a href="https://facebook.github.io/react/">ReactJS</a> taught the world, is the value of a Virtual DOM. This is a virtual representation
+of the Document Object Model (DOM) for a HTML page. You can then work on this in memory which offers GREAT performance improvements. 
+Google has adopted a Virtual DOM and has realized the expected performance boosts.</p>
+<p>Those are a few of the highlights of why Angular2 over AngularJS 1.x. We will hit more as we contineu our series.</p>
+]]></content>
+        <foo1><![CDATA[https://www.jptacek.com/2016/08/Anuglar2Introduction/]]></foo1>
+            </entry>
     
     <entry>
         <title>That Conference 2016 - Angular vs React</title>
@@ -275,77 +309,6 @@ is now a thing.</p>
 <p><img src="https://www.jptacek.com/2015/03/newdug-codecamp-2015/yeoman-logo.png" alt="Yeoman logo"></p>
 ]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2015/03/newdug-codecamp-2015/]]></foo1>
-            </entry>
-    
-    <entry>
-        <title>National Pi Day 2015</title>
-        <link href="https://www.jptacek.com/2015/03/National-Pi-Day/"/>
-        <updated>2015-03-14T05:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2015-03-14,/2015/03/National-Pi-Day/</id>
-        <content type="html"><![CDATA[<p>On March 14th, geeks across North America celebrate <a href="http://en.wikipedia.org/wiki/Pi_Day">Pi Day</a>.
-That is when the US version of the date (3/14) is the same
-as the world’s most famous number π (pi), 3.14. This year is a very significant Pi Day, since the day of
-March 14, 2015 gets us to 4 significant digits of Pi 3.1415!</p>
-<p>The last several years we celebrated by calculating π , once with <a href="http://jptacek.com/2014/03/National-Pi-Day-2014/">a
-Monte Carlo Simulator</a> and AngularJS and another time comparing
-<a href="http://jptacek.com/2013/03/have_your_pi/">C# and C++ performance</a>. We aren not going to break with
-tradition this year, so onward to more about π!</p>
-<p>Instead of calculating π again, which is fun because math (yeah, MATH!), we thought we would take a different spin and
-look at a valuable tool that a lot of people know use without even knowing it,
-and that is <a href="http://www.wolframalpha.com/">Wolfram Alpha</a>. The Bing and
-DuckDuckGo search engines utilize Alpha for some searches as well as Apple’s Siri.</p>
-<p><img src="https://www.jptacek.com/2015/03/National-Pi-Day/alpha1.png" alt="Alpha Home Screen"></p>
-<p>Wolfram Alpha has its genesis in a symbolic math program called <a href="http://www.wolfram.com/mathematica/">Mathematica</a>. A
-symbolic math program can be thought of
-as a math calculator, but calling it a calculator is like calling that $500 supercomputer in your pocket a phone.
-Mathematica enables mathematicians, scientists, financial folks and all kinds of people to solve math problems, from
-the easy to the difficult. So instead of getting a numerical value for the integral of Sin from 0 to π, it solves the
-solutions in closed form and gives you the indefinite integral. A less fancy way of saying this, it does your calculus
-homework for you. So</p>
-<p><img src="https://www.jptacek.com/2015/03/National-Pi-Day/integral1.png" alt="Integral Input"></p>
-<p>becomes</p>
-<p><img src="https://www.jptacek.com/2015/03/National-Pi-Day/integral2.png" alt="Integral Output"></p>
-<p>This computation engine, became the basis for Wolfram Alpha, so Wolfram Alpha can do great things with math,
-for example, here is <a href="http://www.wolframalpha.com/input/?i=%3DIntegrate+%5BSin%5Bx%5D%5D">the integral of Sin</a>.
-<img src="https://www.jptacek.com/2015/03/National-Pi-Day/integralAnswer.png" alt="Integral Answer"></p>
-<p>So Alpha is great at math, but what differentiates it from its Mathematica toots is the incorporation of curated
-knowledge base and the alpha parsing engine. What does this mean? Alpha takes historical data, like stock price
-information, Gross Domestic product, historical weather data and many other data sets. It then creates knowledge sets
-which are made queryable via human type questions.</p>
-<p>You can then do natural language queries across a wide set of data. For example, you can find that
-Albert Einstein was 65 in the beginning of 1945 by typing
-<a href="http://www.wolframalpha.com/input/?i=how+old+was+albert+einstein+in+1945">“how old was albert Einstein in 1945”</a>.
-You can find the
-<a href="http://www.wolframalpha.com/input/?i=what+was+the+US+GDP+in+1997">US GDP was 8.788 trillion in 1997</a> or that the
-<a href="http://www.wolframalpha.com/input/?i=who+won+the+2005+world+series">Chicago White Sox won the 2005 World Series</a>.</p>
-<p>At this point, most of you realize you can get this by a well type Google query. Two things to realize, first the
-Wolfram Alpha application shows lots of data about your query, not just the result. It exposes data from its data set.
-For example, the World Series query shows the dates the World Series occurred,
-locations (Houston and Chicago), participants (Astros and White Sox), etc.
-Point 2 though, and this is the most valuable one, these queries can be aggregated. The
-US GDP data can be take and plotted by asking Alpha to <a href="http://www.wolframalpha.com/input/?i=plot+the+US+GDP">“plot the US GDP”</a>.</p>
-<p><img src="https://www.jptacek.com/2015/03/National-Pi-Day/gdp1.png" alt="US GDP"></p>
-<p>It will show folks the <a href="http://www.wolframalpha.com/input/?i=median+home+value+Madison%2C+WI&amp;lk=3">median home value in Madison Wi</a>
-or <a href="http://www.wolframalpha.com/input/?i=F4+tornadoes+in+Indiana&amp;lk=3">F4 tornadoes in Indiana</a> or
-<a href="http://www.wolframalpha.com/input/?i=MSFT%2C+AAPL%2C+GOOG&amp;lk=3">compare Microsoft, Apple and Google stocks</a> or even
-<a href="http://www.wolframalpha.com/input/?i=tell+me+a+joke&amp;lk=3">tell you a joke</a> (FYI, I didn&#39;t say a FUNNY joke).</p>
-<p>Wolfram Alpha is a powerful tool for organizations. It can find historical data and make the data available to teams
-doing research. It can help make sense of that data too. If you haven’t looked at it, I can encourage people to take
-some times at the <a href="http://www.wolframalpha.com/examples/">Alpha examples</a>, they are a great demonstration of what
-can be done.</p>
-<p>We started out today talking about Pi Day, so let us close the loop. Of course Alpha has a lot to say about Pi!
-You can find out more <a href="http://www.wolframalpha.com/input/?i=pi">here</a>.
-I was able to calculate Pi to 2000 significant digits by typing
-<a href="http://www.wolframalpha.com/input/?i=N%5BPi%2C2000%5D">N[Pi,2000]</a> and get an answer faster than
-ANY program I could write.</p>
-<tt>
-3.1415926535897932384626433832795028841971693993751058209749445923078164062862089986280348253421170679821480865132823066470938446095505822317253594081284811174502841027019385211055596446229489549303819644288109756659334461284756482337867831652712019091456485669234603486104543266482133936072602491412737245870066063155881748815209209628292540917153643678925903600113305305488204665213841469519415116094330572703657595919530921861173819326117931051185480744623799627495673518857527248912279381830119491298336733624406566430860213949463952247371907021798609437027705392171762931767523846748184676694051320005681271452635608277857713427577896091736371787214684409012249534301465495853710507922796892589235420199561121290219608640344181598136297747713099605187072113499999983729780499510597317328160963185950244594553469083026425223082533446850352619311881710100031378387528865875332083814206171776691473035982534904287554687311595628638823537875937519577818577805321712268066130019278766111959092164201989380952572010654858632788659361533818279682303019520353018529689957736225994138912497217752834791315155748572424541506959508295331168617278558890750983817546374649393192550604009277016711390098488240128583616035637076601047101819429555961989467678374494482553797747268471040475346462080466842590694912933136770289891521047521620569660240580381501935112533824300355876402474964732639141992726042699227967823547816360093417216412199245863150302861829745557067498385054945885869269956909272107975093029553211653449872027559602364806654991198818347977535663698074265425278625518184175746728909777727938000816470600161452491921732172147723501414419735685481613611573525521334757418494684385233239073941433345477624168625189835694855620992192221842725502542568876717904946016534668049886272327917860857843838279679766814541009538837863609506800642251252051173929848960841284886269456042419652850222106611863067442786220391949450471237137869609563643719172874677646575739624138908658326459958133904780275901
-</tt>
-
-<p>This blog post originally appeared
-at <a href="http://www.skylinetechnologies.com/Blog/Article/2744/Pi-Day-Looking-at-Wolfram-Alpha.aspx">Skyline Technologies</a></p>
-]]></content>
-        <foo1><![CDATA[https://www.jptacek.com/2015/03/National-Pi-Day/]]></foo1>
             </entry>
     
 </feed>

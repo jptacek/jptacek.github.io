@@ -70,6 +70,62 @@
             
     <article class="post">
     
+    <h1><a href='/2012/03/html-5-markup/'>HTML 5 Markup</a></h1>
+    
+        <div class="post-date">Mar 22nd, 2012</div>
+
+    <div class="post-content">
+        <p>Here&#39;s another post in my series about the technology for the 
+<a href="http://www.skylinetechnologies.com/news/Pages/RiverviewGardensGiveCamp.aspx">Riverview Gardens Give Camp</a> 
+Skyline held recently. One of the great things about the Give Camp was the learning opportunities for our associates.</p>
+<p>The emerging HTML 5 standard has many new and interesting pieces that make it a great tool for 
+developing web based applications. Let&#39;s take a look at some of the new tags. </p>
+<p>New Input types 
+HTML 5 introduces many new input types, that make it easier for end users to enter data. 
+Here is a quick list:</p>
+<p>In general, the new input types will validate that an input is in the expected format (i.e. email or url) 
+and display a message to the user. </p>
+<p>All of these attributes are implemented in various shapes and forms across the browser vendors. For example, IE 9 does not, at this point support any of the input types, though many are supported in IE 10. They also are implemented differently across the various browser vendors. The good news is your pages will still render as generic input boxes if it does not recognize the new types.</p>
+<p>Some of the inputs are not things that can be validated, like tel, which indicates a telephone number, because of the many different phone number formats across the globe. So why use it at all? Because by explicitly identifying the input type, we are better able to describe the purpose of the input. It becomes useful on things like mobile websites where a mobile browser can immediately display a number pad rather than an alpha keyboard. </p>
+<p>Another slick feature is the introduction of the placeholder attribute. When creating an HTML form, the placeholder will display information about the text. Once the user places focus on the input, it disappears. In Chrome, the following markup:</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"email"</span>/&gt;</span>
+</code></pre>
+<p>Renders: </p>
+<p><img src="/2012/03/html-5-markup/HTMLMarkup2.jpg" alt="HTMLMarkup2"></p>
+<p>Semantic 
+Another focus of HTML 5 is the introduction of new sematic elements. The semantic elements exist to more explicitly identify what your document items are. This is helpful for web pages which need to be used by screen readers, or to search engines in trying to parse the content of your document. 
+The first part of semantic is the introduction of several new tags that define your HTML document structure. They are: </p>
+<p>There are several more semantic elements, but you get the gist of it. It is important to remember these elements don&#39;t really DO anything for presentation on the page. You are still responsible for styling your header or footer, or providing navigation elements each time you render the page into the nav element. What it does do is describe your document. </p>
+<p>A second part of semantics is the use of microdata to even further describe your document. More can be learned about microdata in a previous blog post. </p>
+<p>More elements 
+There are new video and audio tags to explicitly play, wait for it... big surprise coming, video and audio files in your browser without requiring plugins. The reality however gets pretty complicated pretty quick. All of the vendors have a &quot;preferred&quot; video format, the reality of which results in you having to encode your video to support these various vendor specific implementations. </p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"StuckBetweenStations.mp3"</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">autoplay</span> /&gt;</span> 
+
+<span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"WhiteSoxVsBrewersWorldSeriesGame1.mp4"</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"200px"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"400px"</span> /&gt;</span>
+</code></pre>
+<p>The canvas tag purpose in life is really a drawing surface. You can draw and 
+animate using JavaScript and style elements across the canvas tag. This is another way of saying, 
+let&#39;s make some games. The canvas obviously serves other purposes, but it is a deep topic we will just 
+introduce here. </p>
+<p>There you go ... a high level introduction into some of the new HTML tags that are part of HTML 5. 
+Next we will discuss some programming items, such as persisting data.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/26/index.html.md">pull request.</a><br />
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2012/03/html-5-for-applications/'>HTML 5 for Applications</a></h1>
     
         <div class="post-date">Mar 21st, 2012</div>
@@ -127,7 +183,8 @@ The real excitement about HTML 5 is for HTML 5 applications. HTML 5 applications
     </div>
     
     <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/26/index.html.md">pull request.</a><br />
+
     <p>&nbsp;</p>
 
 </article>
@@ -165,51 +222,8 @@ The real excitement about HTML 5 is for HTML 5 applications. HTML 5 applications
     </div>
     
     <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
-    <p>&nbsp;</p>
+    Help improve this blog by submitting a <a href="https://github.com/jptacek/JPtacek.com/edit/master/src/documents/page/26/index.html.md">pull request.</a><br />
 
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2011/09/observations-from-microsofts-build-conference/'>Observations From Microsoft's Build Conference</a></h1>
-    
-        <div class="post-date">Sep 29th, 2011</div>
-
-    <div class="post-content">
-        <h2 id="overview">Overview</h2>
-<p>Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
-<p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
-<p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
-<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen1-300x169.jpg" alt="Win8screen1"></p>
-<p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
-<p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
-<p>The diagram below outlines the various options for creating applications on Windows 8.</p>
-<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen2-300x169.jpg" alt="Win8screen2"></p>
-<p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
-<p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
-<h2 id="quick-hits">Quick Hits</h2>
-<p>Here are some quick bullet points for takeaway...</p>
-<p><strong>Microsoft got its C++ love back -</strong>There was quite a lot of time and energy from Microsoft put into the development tools for C++. One of the sessions even stated &quot;C++ is back because performance matters&quot;. If you are looking to create uber-optimized WinRT apps on Windows 8, C++ may be the best option. If you are looking to get a date or see your family grow up, the .NET stack is still going to be the best way to create Line of Business applications (LOB). Also, WinRT applications run great with C#/VB/JS languages!</p>
-<p><strong>All Services All the Time -</strong>The data story for WinRT is going to be REST/JSON services. As of now, there is no way to run something like an Entity Framework model on the Metro UI. There are some rumors of SQL Lite support, but the hard push is for connected apps that require backend data sources that are NOT LOCAL to the machine (or even network) in question.</p>
-<p><strong>Metro UI on other processors -</strong>Microsoft is looking to have folks create many different devices and form factors using Windows 8. A lot of these will run on ARM processors, which are the low energy, middling performance chips that power things like iPads and mobile phones. For classic non-.NET desktop applications to run on these processors they will need to be recompiled. It is worth noting that there are LOTS of confusing statements about this, but as of now, that is the current understanding. Currently there is, at least, a subset of the .NET framework (the Windows Phone runtime) that runs on ARM, so it seems like good .NET framework support should be possible, even on ARM.</p>
-<p><strong>Visual Studio 2011 -</strong>Microsoft has a new version of Visual Studio 2011 that supports templates for many of the WinRT application types</p>
-<p><strong>Asynchronous data access -</strong>Microsoft has a new async/await keywords that are being introduced with the .NET Framework 4.5. These keywords allow a call to be made on a different thread. This becomes VITALLY important for performant applications because the thread that runs the UI has to wait for data to come back. Microsoft states that any call that takes longer than 50 (or 15, both have been mentioned) milliseconds should be asynchronous. Get used to coding a lot of async calls in the future! The good news is that the new keywords and compiler support mean that writing Metro (and .NET 4.5) applications will look a lot like standard synchronous code that &#39;just works&#39;.</p>
-<p><strong>Promises -</strong>JavaScript programming on the WinRT stack is going to be implementing the idea of promises. This is the JavaScript version of async/await. Essentially, have JavaScript go get some data, promise data comes back and there is a then() function (or continuation) which will run after your data returns.</p>
-<p><strong>Windows Store -</strong>Microsoft is introducing a Windows Store for users to go and download applications and easily install them on their computer. This will be for WinRT applications only! Other .NET/Win32 applications may exist in the store, but they will link to external sites for purchase and install.</p>
-<p><strong>Conclusion</strong>
-So, what does it all mean? At the end of day, at least for now, not a whole lot! In all seriousness, Microsoft is probably a year away from releasing Windows 8 and clients will be at least 6 months to a year out from installing and asking for it. But, be sure to be ready when they start asking!</p>
-<p>Having said that, Windows 8 represents a HUGE opportunity! According to Microsoft there are soon to be over 500 million copies of Windows in use. That is more than all the other mobile platforms combined. If there is one thing you want to do today to get ready for Windows 8, I would recommend this... Get your HTML 5/XAML skills up to speed and learn to love creating data services that can be consumed on mobile platforms.</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/windows-8/'>Windows 8</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conferences/'>Conferences</a>
-    </div>
-    
-    <br/>
-    By <a href="https://plus.google.com/+JohnPtacek?rel=author">John Ptacek</a><br/>
     <p>&nbsp;</p>
 
 </article>
