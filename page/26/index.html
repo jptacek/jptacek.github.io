@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.4" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -68,6 +68,29 @@
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
+    <article class="post">
+    
+    <h1><a href='/2012/07/blog-redo/'>Blog Redo</a></h1>
+    
+        <div class="post-date">Jul 20th, 2012</div>
+
+    <div class="post-content">
+        <p>My old blog hosting site was hacked a while back and I lost a lot of content I had out there, especially focused on PhoneGap, which is a bit of a bummer.</p>
+<p>I am slowly bringing it back to life......</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/ephemera/'>Ephemera</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
     <article class="post">
     
     <h1><a href='/2012/04/going-green-for-earth-day/'>Going Green for Earth Day</a></h1>
@@ -154,70 +177,6 @@ Next we will discuss some programming items, such as persisting data.</p>
     
     <div class="post-tags">
         Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2012/03/html-5-for-applications/'>HTML 5 for Applications</a></h1>
-    
-        <div class="post-date">Mar 21st, 2012</div>
-
-    <div class="post-content">
-        <p>Long ago, in a land far, far, away, I started an <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/HTML-5-A-Little-History">introduction to HTML 5</a> by giving a short history of HTML and the standards process. It was to quickly be followed up with an overview of what is meant by HTML 5 applications. Months later, here we are....</p>
-<p>With the <a href="http://www.skylinetechnologies.com/news/Pages/RiverviewGardensGiveCamp.aspx">Skyline Give Camp</a> just behind us, I thought I would kick off a wave of blog posts about some of the technology we will be used during the Give Camp. First up, let&#39;s discuss HTML.</p>
-<p>There has been a lot (and I mean a lot) of enthusiasm for HTML 5 for creating applications, but what does that really mean? In general, I believe there are two things people mean when they discuss HTML 5. The first is the HTML standard itself. The second is creating applications using HTML 5. We will touch on each of those.</p>
-<p><strong>HTML 5 Standard</strong>
-The HTML 5 standard is really the evolving standard being created by the WC3 and WHAT working group. It is the new parts of the angle bracket goodness that keeps food on a lot of our tables. A lot of what Skyline does is creating applications for our clients where we render HTML server side and send it down to browsers to be rendered. HTML 5 has a lot of new markup tags and attributes to make these types of applications more interactive, discoverable and intuitive for users.
-I&#39;ll discuss these new attributes in more depth in future blog posts.</p>
-<p><strong>HTML 5 Applications</strong>
-The real excitement about HTML 5 is for HTML 5 applications. HTML 5 applications can, obviously, be a lot of different things to different people. At its root, is to have HTML 5 be a light container, and then to use JavaScript/jQuery to inject data into the markup.</p>
-<p>A way to think about this ... We have done a lot of work with Silverlight. The model we have for that is MVVM (Model-View-ViewModel). At a very high level, this concept involves a View, which has nothing in it other than screen layout and design, a model (our entities or data model) and the ViewModel, which is responsible for getting data and binding itself to the view. In this scenario, the view is very light weight and has no logic, the ViewModel is where all the heavy lifting occurs.</p>
-<p>There is a very shaky analogy to this in HTML 5 based applications. Often, you will have an HTML page that consists of markup. Essentially it is the bare bones implementation of the User Interface. This will be sent down to the browser for display. Part of the markup though includes JavaScript references. The JavaScript functions will then call back end data services and inject that data into our view. For example, the following markup could be sent down to a browser</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-role</span>=<span class="hljs-value">"content"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"twitList"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-comment">&lt;!-- /content --&gt;</span>
-</code></pre>
-<p>A Javascript or jQuery function could then be sent to &quot;inject&quot; markup into the HTML, such as</p>
-<pre class="highlight"><code class="hljs javascript">    $(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"binding attempat"</span>);
-    $.ajax({
-        url: <span class="hljs-string">"http://search.twitter.com/search.json?q=SkylineTweets"</span>,
-        dataType: <span class="hljs-string">'jsonp'</span>,
-        success: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(json_results)</span> </span>{
-            <span class="hljs-built_in">console</span>.log(json_results);
-            $(<span class="hljs-string">'#twitList'</span>).append(<span class="hljs-string">'&lt;ul data-role="listview"&gt;&lt;/ul&gt;'</span>);
-            listItems = $(<span class="hljs-string">'#twitList'</span>).find(<span class="hljs-string">'ul'</span>);
-            $.each(json_results.results, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(key)</span> </span>{
-            html = <span class="hljs-string">'&lt;a class="avatar" href="#"&gt;&lt;img src="'</span> + json_results.results[key].profile_image_url + <span class="hljs-string">'" alt="'</span> + json_results.results[key].from_user + <span class="hljs-string">'"/&gt;&lt;/a&gt;'</span>;
-
-            html += <span class="hljs-string">'&lt;a href="http://twitter.com/'</span> + json_results.results[key].from_user + <span class="hljs-string">'"&gt;&lt;h3&gt;'</span> + json_results.results[key].from_user + <span class="hljs-string">'&lt;/h3&gt;&lt;/a&gt;'</span>;
-
-            html += <span class="hljs-string">'&lt;span class="details"&gt;'</span> + json_results.results[key].text + <span class="hljs-string">' &lt;/span&gt;'</span>;
-            listItems.append(<span class="hljs-string">'&lt;li&gt;'</span> + html + <span class="hljs-string">'&lt;/li&gt;'</span>);
-            <span class="hljs-built_in">console</span>.log(html);
-        });
-    <span class="hljs-comment">// Need to refresh list after AJAX call</span>
-        $(<span class="hljs-string">'#twitList ul'</span>).listview();
-    }   
-    });
-})
-</code></pre>
-<p>This will result in the retrieved results for <a href="https://twitter.com/#!/skylinetweets">@SkylineTweets</a> Twitter feed being injected into the HTML markup as an Unordered List (UL).</p>
-<p>Obviously, there are a lot more pieces involved in creating HTML 5 applications. The important thing to take away is that HTML is now considered a programming language. Through a combination of HTML 5 and JavaScript/jQuery, developers are creating great applications. Microsoft&#39;s next version of Windows, Windows 8, even supports HTML and JavaScript as a native programming language.</p>
-<p>The concept of HTML being a view, and JavaScript being the tool to inject data into the view is an important one to understand!</p>
-<p>This blog post originally appeared at [Skyline Technologies] (<a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/March-2012/HTML-5-for-Applications">http://www.skylinetechnologies.com/Insights/Skyline-Blog/March-2012/HTML-5-for-Applications</a>)</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>

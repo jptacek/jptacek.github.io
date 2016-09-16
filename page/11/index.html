@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.4" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -68,6 +68,141 @@
 <div class="container">
         <div class="col-sm-12 col-md-10">
             
+    <article class="post">
+    
+    <h1><a href='/2014/03/Speculations-Build-2014/'>Speculations for Build 2014</a></h1>
+    
+        <div class="post-date">Mar 2nd, 2014</div>
+
+    <div class="post-content">
+        <p>Build is a Microsoft developer conference that has taken the place of their Professional Developer Conference (PDC). The first
+Build was held in 2011 and introduced the world to Windows 8, along with an early preview of Windows 8 and a Samsung tablet.
+You can read my thoughts on Build 2011 <a href="http://www.jptacek.com/2011/09/observations-from-microsofts-build-conference/">here</a>.
+In 2012, Build was held in Seattle and saw the release of Windows 8 and
+Microsoft’s Surface RT tablet.  In 2013, Build was held in San Francisco and Microsoft announced Windows 8.1 as well as
+made available a preview
+release for developers. Before Build 2013 last year, I took a <a href="http://www.jptacek.com/2013/06/Speculation-Microsoft-Build/">stab</a> at
+ speculating about what would be coming and did pretty spectacularly bad. With Build 2014 a
+month away, I thought it would be fun to try again!</p>
+<p><img src="/2014/03/Speculations-Build-2014/build2013.png" alt="Build 2013"></p>
+<p>First, it is interesting to look at how short the time is becoming between Microsoft Build conferences</p>
+<ul>
+<li>Build 2011, Anaheim, CA September 13 - 16, 2011</li>
+<li>Build 2012, Seattle, WA October 30 - November 2, 2012 (~13 months later)</li>
+<li>Build 2013, San Francisco, CA June 26-28, 2013 (~8 months later)</li>
+<li>Build 2014, San Francisco, CA April 2-4, 2014 (~9 months later)</li>
+</ul>
+<p>You can see that Microsoft is quickly iterating and getting information out to developers. However, having said that, certain parts
+of Microsoft are executing VERY fast (I am looking at you Azure) and other parts are executing VERY slow (I am looking at you Windows
+Phone). With the breadth of developer platforms Microsoft has, they have many opportunities to get in front of developers, but it
+not always what the developers are expecting. So all of that to say this.... A lot of my speculation for Build this year looks a lot like last year! There are still some
+important pieces for the Microsoft developer story that I believe have yet to be communicated.</p>
+<p><img src="/2014/03/Speculations-Build-2014/guitar.jpg" alt="3D Printer Guitar"></p>
+<p>###One API To Rule Them All###
+The reality is, developing on the Microsoft stack
+today can be downright confusing. You have options between....</p>
+<ul>
+<li>Web using MVC with HTML/JS/CSS</li>
+<li>Web using Silverlight (version of XAML), though this is deprecated</li>
+<li>Desktop using WPF (version of XAML)</li>
+<li>Windows Modern/Metro/Store Apps using WinJS with HTML/JS/CSS</li>
+<li>Windows Modern/Metro/Store Apps using XAML</li>
+<li>Windows Phone (version of XAML)</li>
+</ul>
+<p>For shops that are all in on the Microsoft stack, it can be confusing to determine what to go all in on. If you are a web developer
+and love HTML and JavaScript, your options are limited for Windows Phone. If you love all things XAML, you have to choose amongst
+WPF, Windows Phone or Windows 8 flavor of XAML. And while the XAML platforms are similar, they are not similar enough to not
+have a lot of rework. Things have gotten better though over the years with the introduction of the <a href="http://www.hanselman.com/blog/CrossPlatformPortableClassLibrariesWithNETAreHappening.aspx">Cross-Platform portable class
+library</a>, though it is still cumbersome hitting
+multiple endpoints.</p>
+<p>Last summer I wrote</p>
+<div class="well">
+<p><strong>One API To Rule Them All</strong> – With the core of Windows driving Xbox One, Windows Phone and Windows 8, will Microsoft release a single API that enables development across all of their platform? That would be great to see and could drive a lot of great applications across Windows, Windows Phone and Xbox!</p>
+</div>
+
+<p>This year, I can write the same thing. There have been <a href="http://www.wpcentral.com/rumor-windows-phone-81-ditch-back-button">rumors</a>
+ coming from a leaked release of the Windows Phone 8.1 SDK of Universal Binaries that will allow Windows Phone 8.1 and Windows
+ RT/Metro/Modern/Store Apps have a common base. According to the earlier link, over 75% of Windows Phone and Windows RT have
+ the same shared API. That would be a great starting point for Windows 8 developers, especially if WinJS development is now an option
+ for Windows Phone 8.1. Giving developers the opportunity to have one platform they can choose to develop on and hit multiple devices
+ in the Microsoft devices strategy would be a great leap forward.</p>
+<p>###Windows RT###</p>
+<p>Last summer I wrote</p>
+<div class="well">
+<p><strong>Windows RT</strong> – Microsoft Windows RT, the ARM based version of their Operating System, is in a weird place. It runs Metro/Modern Design apps in a full touch mode. It also ships with a subset of Microsoft Office such as Word and Excel. However it does not run other Windows applications. What it does do is run all day on a single charge. It is a great productivity tool for knowledge workers. However, with the release of Intel’s Haswell chipset it seems that all-day battery life will be available on much more powerful chipsets. What, then, becomes the future of Windows RT? Will it move to being Microsoft Windows Phone OS? Will Microsoft reduce the cost of Windows RT to get more hardware vendors building machines? Maybe we will find out more at Build!</p>
+</div>
+
+<p>Again, same thing this Build. Windows RT has not had a lot of explanation about its continued existence in the Windows ecosystem.
+I am not 100% sure, but I believe the only devices released for WinRT in 2013 were from Lumia (<a href="http://www.nokia.com/global/products/tablet/lumia2520/">Lumia 2520</a>) and Microsoft
+(<a href="http://www.microsoft.com/surface/en-us/products/surface-2">Surface2</a>). The good news is, both of these devices were well received.
+The battery life and productivity for ARM based tablets running RT make for great use cases. However, as Intel releases improved Haswell and Atom chips with great battery
+life and the ability to run desktop applications, it doesn&#39;t make long term sense for Microsoft to support both platforms the way they are now.
+Unless, Microsoft is focused on making Win RT the phone platform
+as well as a tablet only platform, without the legacy desktop. I am pretty sure this is the case, but we haven&#39;t heard it from
+Microsoft yet. Maybe this Build we will?!?!</p>
+<p>###Devices and Services Company###
+Microsoft has repeatedly said they are now a devices and services company. Since this announcement in 2012, they have released both Windows
+Surface Pro and Windows Surface RT, along with follow up versions in 2013. The Pro update was minimal in terms of hardware (adding the Haswell chip),
+but the Surface RT 2,
+now called Surface 2, saw a pretty significant upgrade in performance and hardware. In 2013, the release of Xbox One happened. Other
+than that, not a whole lot in terms of devices.</p>
+<p>Obviously, the purchase of Nokia&#39;s Lumia line will see a lot more Microsoft devices being released in 2014.
+However these will be phone devices, there
+has not been a 7-8 inch Surface release to compete with the iPad Mini or Kindle fire, the fastest growing tablet market. There also has not been a
+Microsoft Laptop/Ultrabooks released. Further, we still are not sure what happens
+to the Lumia Brand and the Surface Brand. Will they merge? Will one replace the other? Will one be the Tablet platform and the other the
+Phone platform? Will one be for consumers and the other for enterprises? An explanation of these brands moving forward would be great!</p>
+<p>I expect that Build 2014 will shed a lot more light on this, especially the company&#39;s strategy for integrating Nokia and the possible
+announcement of a Surface Mini. In general, except for the first Build, it is not a place where Microsoft announces hardware though.</p>
+<p>###Xbox One###
+With the news that Xbox One is built on Windows 8, and a tease at Build 2013 about a JavaScript based API for Xbox One, everyone
+I talk with thinks Xbox One will be part of Build 2014. Bring it on! This will be exciting for indie developers.</p>
+<p>###Windows Phone###
+My guess, and that of many others, is above all things, Build 2014 will be about Windows Phone 8.1. I, and most of the world, expect them to show Windows Phone
+8.1 while hitting on the developer story. It may be even that some new Lumia devices are announced to drive developer enthusiasm.</p>
+<p>###Kinect for Windows RT###</p>
+<p>Last year I wrote</p>
+<div class="well">
+<p>Microsoft’s Kinect is impressive technology. Microsoft released a Kinect for Windows last year, but the hardware did not work on the RT side of the house. Will there be APIs in Windows RT for Kinect? Will there be new Kinect hardware?</p>
+</div>
+
+<p>This year, I again hope that the Kinect API will be part of the Win Metro API so developers can take advantage of the Kinect in
+Windows 8.1 apps. The technology is too impressive for Microsoft to just let it be used on the Xbox platform!</p>
+<p>###Azure###
+Microsoft&#39;s Azure platform is amazing. The degree to which the Azure team can execute and release new features is dizzying. As someone
+who is a big proponent of the cloud for organizations to embrace, I spend time following the various platforms. It is hard to keep up
+with all the great things the Azure team is doing.</p>
+<p>The one
+thing that I am most interested in seeing from Microsoft over the next year, is if the speed of execution that Satya Nadella bought to the Azure team
+when he led the group, can be bought to the whole Microsoft organization. If there is one person from within Microsoft that can
+execute on the Microsoft One strategy, it is Satya. It will be something to watch in 2014.</p>
+<p>###Pick a Name###
+I am still very confused by what Microsoft calls its non-desktop platform, aka the Windows formerly called Metro. Is it Windows Store apps?
+Is it Modern apps? Is it Win RT? What is the Microsoft design language formerly known as Metro called? It would be nice to clearly and
+concisely pick the terms and have everyone use the same vocabulary. Even the Microsoft developers presenting at previous Builds still call
+everything Metro!</p>
+<p>###Conclusion###
+I have the sense that Build 2014 is really Build 2013, part 2. A lot of the pieces that weren&#39;t fully basked for Build last June, like Xbox One and Windows Phone 8.1,
+ should
+be announced this April. I am quite hopeful that the Microsoft One vision will be introduced for developers at Build 2014.
+ I believe this will really help Microsoft accelerate application across multiple platforms and give developers a sense
+ of ease about a single execution strategy. More to come!</p>
+<p> I will be out at Build 2014. Feel free to hit me up on twitter, <a href="http://twitter.com/jptacek">@jptacek</a> if you are out there in
+ April.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/conferences/'>Conferences</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conference/'>Conference</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
     <article class="post">
     
     <h1><a href='/2014/02/PhoneGap-Cordova-Setup-Windows/'>Setting Up Cordova (PhoneGap) for Development on Windows Machines</a></h1>
@@ -285,249 +420,6 @@ nice!</p>
 
 <p></p>
 
-<p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
-as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/angularjs/'>AngularJS</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2014/02/angularJS-templates/'>AngularJS - Introducing Templates</a></h1>
-    
-        <div class="post-date">Feb 10th, 2014</div>
-
-    <div class="post-content">
-        <style>
-        .tableOdd {
-            background-color: green;
-        }
-        .tableEven {
-            background-color: gold;
-        }
-    </style>
-
-
-<p><a href="http://www.angularjs.org">AngularJS</a> is a Javascript MVC framework from the fine folks over at
-<a href="http://www.google.com">Google</a>. The focus of Angular is building complex
- HTML based client applications. Its design philosophy is data first, where your data will be updating the DOM.
- Contrast this to a framework like JQuery where the DOM will update your data.</p>
-<p><img src="/2014/02/angularJS-templates/angularLogo.png" alt="AngularJS Logo"></p>
-<p>This is the sixth in a series of posts on AngularJS where we are using Chemistry data from the periodic table
-to help us understand the framework. The others posts are</p>
-<ol>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">AngularJS - Introduction</a></li>
-<li><a href="http://www.jptacek.com/2013/10/introducing-angularjs-controllers/">AngularJS - Introducing AngularJS Controllers</a></li>
-<li><a href="http://www.jptacek.com/2013/10/angularjs-introducing-ng-repeat/">AngularJS - Introducing NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-further-with-ng-repeat/">AngularJS - More with NG-Repeat</a></li>
-<li><a href="http://www.jptacek.com/2014/01/angularjs-lou-reed/">AngularJS - Image Binding</a></li>
-<li>AngularJS - Introducing Templates</li>
-<li><a href="http://www.jptacek.com/2014/02/angularJS-IntroToRouting/">AngularJS - Introducing Routing</a></li>
-<li><a href="http://www.jptacek.com//2014/05/angularJS-Intro-To-Services/">AngularJS - Introduction to Services</a></li>
-<li><a href="http://www.jptacek.com/2014/06/angularJS-intro-to-directives/">AngularJS - Introduction to Directives</a></li>
-<li><a href="http://www.jptacek.com/2014/12/angularJS-further-with-directives/">AngularJS - Further with Directives</a></li>
-<li><a href="http://jptacek.com/2015/02/angularJS-Best-Practices/">AngularJS - Best Practices</a></li>
-<li><a href="http://jptacek.com/2015/03/angularJS-CSS-Animation/">AngularJS - CSS Animations</a></li>
-</ol>
-<blockquote>
-<p>Note: AngularJS does not allow for more than one ng-app directive. When I have multiple angular posts on
-the home page of my blog, only one application will work. I need to refactor the entire site to account for
-this. All of that to say this, you are best clicking on a single article so you can see the pages in action.</p>
-</blockquote>
-<p>AngularJS has a lot of great features for working with HTML that allows you to split up development when you are
-doing team projects. The binding approach and directives allows for a nice separation between developers and
-designers. Another great piece of the platform is the ability to separate out HTML that you are using over and
-over again into a template file that can then be called by multiple different pages.</p>
-<p>In our previous example, we were consistently displaying the same repeatable line in our <code>ng-repeat</code> directive.
-This is a great example of repeatable markup that we can extract from our page and consolidate into a single
-location using a template.</p>
-<p>To do this, we take our HTML line we were using for the data binding.</p>
-<pre class="highlight"><code class="hljs xml">    <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-</code></pre>
-<p>and we move it into a separate HTML file, in our case we will call it element1.html. Since we are only dealing with a
-fragment of HTML, we only want to include the markup we will use for binding, and no other semantically correct
-markup like the HTML header, etc.</p>
-<p>In our controller file, we setup an object that identifies the path to our template as in the following code snippet</p>
-<pre class="highlight"><code class="hljs javascript">$scope.template =  {name: <span class="hljs-string">'template1.html'</span>, url: <span class="hljs-string">'js/templates/element1.html'</span>};
-</code></pre>
-<p>Within the HTML page, we then reference the template file using the ng-include directive like so</p>
-<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15"</span> <span class="hljs-attribute">data-ng-include</span>=<span class="hljs-value">"template.url"</span>&gt;</span>
-</code></pre>
-<p>Our page then renders the same as before, but we can now use the template in multiple places. For large teams, a most
-excellent added benefit is you have removed contention issues on the file. <em>Note:</em> We are only displaying 15 results
-to limit the page size.</p>
-<div id="app" ng-app="chemistryApp">
-<div id="periodicTable" ng-controller="chemTemplateCtrl1">
-    <form id="frmChem">
-    <input type="text" ng-model="elementNameOnlyTable">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-        </tr>
-        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="template.url">
-        {{$$index}}
-        </tr>
-    </table>
-    </form>
-</div>
-
-<p>Since we our look and feel is controlled by templates, we can also have programmatic control over the look and feel
-by dynamically setting the template. In our last post, we had committed crimes against web design by using Packer colors.</p>
-<p>We can do something similar here by having a second template get loaded by our page. To do this, we update our
-controller to have an array of templates, and choose which one we want, in this case, an ugly  Gold.</p>
-<pre class="highlight"><code class="hljs javascript">controller(<span class="hljs-string">'chemTemplateCtrl2'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
-        $scope.periodic = perioicData;
-
-        $scope.templates =
-            [ { name: <span class="hljs-string">'template1.html'</span>, url: <span class="hljs-string">'js/templates/element1.html'</span>}
-                , { name: <span class="hljs-string">'template2.html'</span>, url: <span class="hljs-string">'js/templates/element2.html'</span>}];
-        $scope.template = $scope.templates[<span class="hljs-number">1</span>];
-
-    }
-</code></pre>
-<p>Our table now looks even more unattractive</p>
-<div id="periodicTable2" ng-controller="chemTemplateCtrl2">
-    <form id="frmChem">
-    <input type="text" ng-model="elementNameOnlyTable">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <tr>
-            <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-        </tr>
-        <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable}| limitTo:15" ng-include="template.url">
-        {{$$index}}
-        </tr>
-    </table>
-    </form>
-</div>
-
-<p>Next, given that we have an array of template objects, we can dynamically change the look and feel on the fly using a
-drop down list to select the template for display. In
-the example below, we are taking our array of templates and binding to it in a select list. The value of the selected
-item is then used as the template for page display, dynamically changing the UI.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable3"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemTemplateCtrl2"</span> &gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"frmChem3"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"templateSelect"</span> <span class="hljs-attribute">ng-options</span>=<span class="hljs-value">"template.name for template in templates"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
-
-
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementNameOnlyTable"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15"</span> <span class="hljs-attribute">data-ng-include</span>=<span class="hljs-value">"templateSelect.url"</span>&gt;</span>
-
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-</code></pre>
-<div id="periodicTable3" ng-controller="chemTemplateCtrl2">
-    <form id="frmChem3">
-        <select ng-model="templateSelect" ng-options="template.name for template in templates"></select>
-
-
-        <input type="text" ng-model="elementNameOnlyTable">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th>Phase</th><th>Ionization Energy</th><th>Melting Point</th><th>Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-
-            </tr>
-        </table>
-    </form>
-</div>
-
-<p>We can also hide and show various columns based on templates. We will add a third template to our list of elements,
-but this template will just show the element name, the atomic weight and the atomic number. Since our table header
-rows exist outside of our template, what we want to be able to do is dynamically hide table header rows when
-our subset template, element3.html, is selected. We can do this by
-using a <code>ng-show</code> attribute on the table header elements that binds to our template name like so</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"templateSelect.name!='template3.html'"</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-</code></pre>
-<div id="periodicTable4" ng-controller="chemTemplateCtrl3">
-    <form id="frmChem4">
-        <select ng-model="templateSelect" ng-options="template.name for template in templates"></select>
-
-
-        <input type="text" ng-model="elementNameOnlyTable">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Phase</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Ionization Energy</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Melting Point</th><th ng-show="templateSelect.name!=&apos;template3.html&apos;">Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-
-            </tr>
-        </table>
-    </form>
-</div>
-
-<p>Having &quot;logic&quot; like this, where we are setting columns based on the selected template is not the most correct way
-to do this though. You rarely (and I mean rarely) want any of the logic that controls the display of the page
-in the page. We can easily create a function in our controller to set if we are displaying all of the data or just
-a subset based on the selected template. You can see this in the <code>displayAll</code> function in the final version
-of our controller</p>
-<pre class="highlight"><code class="hljs javascript">controller(<span class="hljs-string">'chemTemplateCtrl3'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
-        $scope.periodic = perioicData;
-
-        $scope.templates =
-            [ { name: <span class="hljs-string">'template1.html'</span>, url: <span class="hljs-string">'js/templates/element1.html'</span>}
-                , { name: <span class="hljs-string">'template2.html'</span>, url: <span class="hljs-string">'js/templates/element2.html'</span>}
-                , { name: <span class="hljs-string">'template3.html'</span>, url: <span class="hljs-string">'js/templates/element3.html'</span>}];
-        $scope.templateSelect = $scope.templates[<span class="hljs-number">0</span>];
-
-        $scope.displayAll =  <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
-            <span class="hljs-keyword">if</span> ($scope.templateSelect.name == $scope.templates[<span class="hljs-number">2</span>].name) {
-                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
-            }
-            <span class="hljs-keyword">else</span> {
-                <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
-            }
-        }
-    }
-</code></pre>
-<p>and our HTML gets updated to</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span> <span class="hljs-attribute">data-ng-show</span>=<span class="hljs-value">"displayAll()"</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-</code></pre>
-<div id="periodicTable5" ng-controller="chemTemplateCtrl3">
-    <form id="frmChem5">
-        <select ng-model="templateSelect" ng-options="template.name for template in templates"></select>
-
-
-        <input type="text" ng-model="elementNameOnlyTable">
-        <table class="table table-striped table-bordered table-hover table-condensed">
-            <tr>
-                <th>Name</th><th>Atomic Number</th><th>Weight</th><th ng-show="displayAll()">Phase</th><th ng-show="displayAll()">Ionization Energy</th><th ng-show="displayAll()">Melting Point</th><th ng-show="displayAll()">Boiling</th>
-            </tr>
-            <tr ng-repeat="element in periodic.elements | filter:{name:elementNameOnlyTable} | limitTo:15" ng-include="templateSelect.url">
-            </tr>
-        </table>
-    </form>
-</div>
-
-<p></p></div><!-- ng-app --><p></p>
-<p>As you can see, templates in AngularJS offer a lot of functionality. They allow for splitting up of
-work across large development teams. You can also dynamically update the look and feel based on the
-template the user selects. This is all happening client side too, reducing round trips to the server. Good
-stuff!</p>
 <p>You can either visit <a href="http://angularperiodic.azurewebsites.net/">http://angularperiodic.azurewebsites.net/</a> to see the code in action and
 as always find the code out on <a href="https://github.com/jptacek/AngularPeriodic">GitHub</a></p>
 

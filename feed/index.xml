@@ -3,13 +3,35 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2016-08-18T13:55:20.555Z</updated>
+    <updated>2016-09-16T00:00:58.624Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>September NEWDUG Meeting - Angular vs React</title>
+        <link href="https://www.jptacek.com/2016/09/NewDugAngularReact/"/>
+        <updated>2016-09-15T05:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2016-09-15,/2016/09/NewDugAngularReact/</id>
+        <content type="html"><![CDATA[<p>Thanks to everyone who came out to my presentation at the Sept 2016
+<a href="http://newdug.org">NEWDUG</a> meeting. We had a great turnout! You can get an
+idea from this pre-talk and dark picture.</p>
+<p><img src="https://www.jptacek.com/2016/09/NewDugAngularReact/0916NewDug.jpg" alt="Install Angular"></p>
+<p>Also, I had a bit of a hair issue going on....</p>
+<p><blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/jptacek">@jptacek</a> shows off an another stellar hair day tonight at <a href="https://twitter.com/newdug">@newdug</a> as he talks Angular vs React <a href="https://twitter.com/hashtag/Angular?src=hash">#Angular</a> <a href="https://twitter.com/hashtag/React?src=hash">#React</a> <a href="https://t.co/4KibrGXZeZ">pic.twitter.com/4KibrGXZeZ</a></p>&mdash; Skyline Technologies (@skylinetweets) <a href="https://twitter.com/skylinetweets/status/776193790738436096">September 14, 2016</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>My slide deck is online at <a href="http://newdug0916.jptacek.com">http://newdug0916.jptacek.com</a>
+and the Git repo for the slide deck is at
+<a href="https://github.com/jptacek/NewDug0916">https://github.com/jptacek/NewDug0916</a>.
+I have also created a very vanilla PDF for <a href="https://www.jptacek.com/2016/09/NewDugAngularReact/./NewDug0916-AngularVsReact.pdf">download</a>.</p>
+<p>Thanks again to everyone who came out and engaged in great conversation!</p>
+]]></content>
+        <foo1><![CDATA[https://www.jptacek.com/2016/09/NewDugAngularReact/]]></foo1>
+            </entry>
     
     <entry>
         <title>Creating an Angular 2 Application with the CLI</title>
@@ -25,23 +47,23 @@ to help us understand the framework. The others posts are</p>
 <li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">Angular - Introduction</a></li>
 <li>Angular - Getting Started</li>
 </ol>
-<p>Getting started in the world of Web Development/JavaScript has become a lot more work over the last several years. We are pretty far 
-removed where someone could create a web page and a JavaScript application with notepad. Libraries and frameworks such as <a href="https://facebook.github.io/react/">React</a>,<br><a href="https://angular.io">Angular</a> and <a href="https://aurelia.io">Aurelia</a> all require things like JavaScript task managers such as <a href="http://gulpjs.com">Gulp</a> or 
-<a href="http://gruntjs.com">Grunt</a> to transpile code, bundle files, minify them, etc. 
-If that doesn&#39;t work, you can consider <a href="https://babeljs.io">Babel</a> and/or <a href="https://webpack.github.io">WebPack</a> to get you moving. </p>
-<p>The decisions for getting started have become so overwhelming, people have created a term, called <a href="https://webpack.github.io">JavaScript fatigue</a> 
+<p>Getting started in the world of Web Development/JavaScript has become a lot more work over the last several years. We are pretty far
+removed where someone could create a web page and a JavaScript application with notepad. Libraries and frameworks such as <a href="https://facebook.github.io/react/">React</a>,<br><a href="https://angular.io">Angular</a> and <a href="https://aurelia.io">Aurelia</a> all require things like JavaScript task managers such as <a href="http://gulpjs.com">Gulp</a> or
+<a href="http://gruntjs.com">Grunt</a> to transpile code, bundle files, minify them, etc.
+If that doesn&#39;t work, you can consider <a href="https://babeljs.io">Babel</a> and/or <a href="https://webpack.github.io">WebPack</a> to get you moving.</p>
+<p>The decisions for getting started have become so overwhelming, people have created a term, called <a href="https://webpack.github.io">JavaScript fatigue</a>
 that sums up frustration from a subset of developers. The reality is, especially for a library like React, there are just too many tools
 for people. Initial project setup, whether React or Angular takes time.</p>
-<p>For example, the Angular five minute quickstart <a href="https://angular.io/docs/ts/latest/quickstart.html">guide</a> was not very quick for me. 
-There are over 20 NPM packages to install and users mostly just copy and paste an existing <code>package.json</code> file. The good news is that 
-Angular, as well as React, both recently came out with command line tools to get developers up and running quick. That is 
+<p>For example, the Angular five minute quickstart <a href="https://angular.io/docs/ts/latest/quickstart.html">guide</a> was not very quick for me.
+There are over 20 NPM packages to install and users mostly just copy and paste an existing <code>package.json</code> file. The good news is that
+Angular, as well as React, both recently came out with command line tools to get developers up and running quick. That is
 what we will explore in this blog post.</p>
-<p>In May of this year at <a href="https://www.ng-conf.org/">NG-Conf</a> the Angular team introduced the 
-<a href="https://cli.angular.io">Angular Command Line Interfact (CLI)</a> that helped really quickstart Angular application development and 
+<p>In May of this year at <a href="https://www.ng-conf.org/">NG-Conf</a> the Angular team introduced the
+<a href="https://cli.angular.io">Angular Command Line Interfact (CLI)</a> that helped really quickstart Angular application development and
 follows best practices.</p>
-<p>To install the Angular CLI, type 
+<p>To install the Angular CLI, type
 <code>npm install -g angular-cli</code>
-and wait a few minutes. Angular CLI as of this writing (August of 2016) is currently in beta under active development. One of the 
+and wait a few minutes. Angular CLI as of this writing (August of 2016) is currently in beta under active development. One of the
 current focuses is moving from Brocolli to WebPack.</p>
 <p><img src="https://www.jptacek.com/2016/08/Angular2GettingStarted/angularCli1.png" alt="Install Angular"></p>
 <p>Once this is done, we can now use the command line to create our application. This is seriously good stuff.</p>
@@ -53,8 +75,8 @@ current focuses is moving from Brocolli to WebPack.</p>
 <p><img src="https://www.jptacek.com/2016/08/Angular2GettingStarted/angularCli2.png" alt="Angular CLI to create application"></p>
 <p>A quick look at our directory structure sees that we hae a lot there..</p>
 <p><img src="https://www.jptacek.com/2016/08/Angular2GettingStarted/angularCli3.png" alt="Atom view of application"></p>
-<p>A quick look at our <code>package.json</code> file indicates the NPM packages that Google prefers out of the box, along with a testing 
-framework based on </p>
+<p>A quick look at our <code>package.json</code> file indicates the NPM packages that Google prefers out of the box, along with a testing
+framework based on</p>
 <pre class="highlight"><code class="hljs xml">{
   "name": "angular-periodic",
   "version": "0.0.0",
@@ -101,25 +123,25 @@ framework based on </p>
   }
 }
 </code></pre>
-<p>Not only are we able to get our structure created, we can actually run our application. This is done via the 
+<p>Not only are we able to get our structure created, we can actually run our application. This is done via the
 <code>ng serve</code>
 command. This takes our files, such as typescript and compiles them as well as bundling via Broccoli. Our initial application start displays
 a screen that lets us, literally, know that our application is working.</p>
 <p><img src="https://www.jptacek.com/2016/08/Angular2GettingStarted/angularCli4.png" alt="Initial Web Page"></p>
-<p>Our next step, and something the Angular CLI can handle for us, is to create a component. We will dig into this more in future posts, 
-but one of the big benefits of Angular 2 is more modular approach for application development. We are going to create a Periodic 
-Table application, so it makes sense to create a Periodic Table component. This is done by using the <code>generate</code> command for 
+<p>Our next step, and something the Angular CLI can handle for us, is to create a component. We will dig into this more in future posts,
+but one of the big benefits of Angular 2 is more modular approach for application development. We are going to create a Periodic
+Table application, so it makes sense to create a Periodic Table component. This is done by using the <code>generate</code> command for
 the Angular CLI command. We type</p>
 <p><code>ng generate component periodicTable</code></p>
-<p>and the files and structure for our component our created. This includes a TypeScript file for our component, a specification, 
+<p>and the files and structure for our component our created. This includes a TypeScript file for our component, a specification,
 HTML placeholder and CSS markup.</p>
 <p><img src="https://www.jptacek.com/2016/08/Angular2GettingStarted/angularCli5.png" alt="Component Generate"></p>
 <p>A quick change to our initial app structure to wire up the component (again, more on this later) and we can see our component get rendered.</p>
-<p>In general, the structure of our application follows current Angular best practices. All the JavaScript files are placed in 
-an app directory. </p>
+<p>In general, the structure of our application follows current Angular best practices. All the JavaScript files are placed in
+an app directory.</p>
 <p><img src="https://www.jptacek.com/2016/08/Angular2GettingStarted/angularCli6.png" alt="Directory Structure"></p>
-<p>The component TypeScript gets generated and creates our selector, reference our HTML template as well as our 
-CSS file for styling. </p>
+<p>The component TypeScript gets generated and creates our selector, reference our HTML template as well as our
+CSS file for styling.</p>
 <pre class="highlight"><code class="hljs javascript">import { Component, OnInit } from <span class="hljs-string">'@angular/core'</span>;
 
 @Component({
@@ -182,13 +204,13 @@ Google has adopted a Virtual DOM and has realized the expected performance boost
         <link href="https://www.jptacek.com/2016/08/ThatConference2016/"/>
         <updated>2016-08-11T05:00:00.000Z</updated>
         <id>tag:www.jptacek.com,2016-08-11,/2016/08/ThatConference2016/</id>
-        <content type="html"><![CDATA[<p>One of my favorite things each year is <a href="https://www.thatconference.com">That Conference</a>. I have been lucky enough to 
+        <content type="html"><![CDATA[<p>One of my favorite things each year is <a href="https://www.thatconference.com">That Conference</a>. I have been lucky enough to
 be chosen as a speaker each year (though I missed last year due to work commitments).</p>
-<p>This year I talked on Angular vs React, and compared two of the most popular things going on in the world of 
+<p>This year I talked on Angular vs React, and compared two of the most popular things going on in the world of
 JavaScript these days. Thanks to all of those who attended and provided engaging converstation.</p>
-<p>For those interested, here is the <a href="https://www.jptacek.com/2016/08/ThatConference2016/./Angular vs React-Talk.pptx">presentation</a>. I will also be uploading the code to my 
+<p>For those interested, here is the <a href="https://www.jptacek.com/2016/08/ThatConference2016/./Angular vs React-Talk.pptx">presentation</a>. I will also be uploading the code to my
 <a href="https://wwww.github.com/jptacek">GitHub</a> in a while after I button it up some more.</p>
-<p>Thanks to all the organizer, sponsors and speakers for a great community event! I highly encourage folks to go 
+<p>Thanks to all the organizer, sponsors and speakers for a great community event! I highly encourage folks to go
 next year, Aug 7-9.</p>
 <p><img src="https://www.jptacek.com/2016/08/ThatConference2016/ThatConference2016.jpg" alt="ThatConference 2016"></p>
 ]]></content>
@@ -327,97 +349,6 @@ with the number of attendees and the quality of the presentations.</p>
 The PowerPoint presention is also available on <a href="https://github.com/jptacek/NewDug2016/blob/master/PPT/GulpAllTheThings.pptx?raw=true">GitHub</a>.</p>
 ]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2016/03/newdug-codecamp-2016/]]></foo1>
-            </entry>
-    
-    <entry>
-        <title>Google I/O and the Death of the Web</title>
-        <link href="https://www.jptacek.com/2015/06/GoogleIOAndDeathOfWeb/"/>
-        <updated>2015-06-01T05:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2015-06-01,/2015/06/GoogleIOAndDeathOfWeb/</id>
-        <content type="html"><![CDATA[<p>Google recently wrapped up their annual developer conference, 
-<a href="https://events.google.com/io2015/#">Google I/O</a>, and I was struck by how very 
-little was said about the Web during the keynote. While the death of the web may be 
-a bit of click bait title, the 2015 Google I/O conference highlights it is an app world now 
-and a connected world is on the way. 
-We can
-start to envision a future where we use a Web Browser as much as we use a VHS player. </p>
-<p><img src="https://www.jptacek.com/2015/06/GoogleIOAndDeathOfWeb/io15-color.png" alt="Google I/O Logo"></p>
-<p>To provide some background, Google I/O is a developer conference where Google reaches out to get 
-developers excited
-about their platform. Microsoft has their <a href="http://www.buildwindows.com/">Build</a> 
-conference  and Apple has <a href="http://www.buildwindows.com/">WWDC</a> and they all do the same
-thing; encourage developers to create great things on their respective platforms and show their vision of
-the future and why developers should invest their time in adopting this vision. </p>
-<p>The Google we know today, with its $350 Billion (USD) market capitalization and $48 
-billion (USD) in cash reserves, is a result of building great tools for the Web 
-such as <a href="https://www.google.com">search</a> and <a href="https://www.gmail.com">Gmail</a>. 
-Google also has many great web technologies that developers use every day.<br><a href="https://angularjs.org/">AngularJS</a> is an exceedingly popular JavaScript framework.
-<a href="https://cloud.google.com/appengine/docs">Google App Engine</a> is a popular cloud 
-Platform As A Service (PAAS) service offering. <a href="https://www.google.com/analytics">Google Analytics</a> 
-is embedded on nearly every 
-web page on the Internet. <a href="http://maps.google.com/">Google Maps</a> are displayed 
-on millions of web pages across the 
-Internet. Google Ad Sense is responsible for the vast majority of Google&#39;s 
-$48 billion cash hoard. Even tools like Google Chart are used every day by millions.</p>
-<p>So how many of these apps or services were mentioned during Google&#39;s I/O keynote. Nary 
-a one, despite the wide adoption and support these tools/apps have. 
-The biggest web technology Google focused on during their keynote was 
-<a href="https://www.polymer-project.org/1.0/">Polymer</a>, a web toolkit based on their
-Material design standard that was released at the conference. Their was also the release of 
-<a href="https://photos.google.com">Google Photos</a>, but that is
-more about capturing the images you take on your phone than the next great Web thing.
-Google used its developer conference to discuss very little of its web technologies.</p>
-<p>What does this all mean? Google&#39;s mantra as of late has been the next billion users, 
-and those users aren&#39;t 
-coming from the web. They are coming for mobile devices, TV watchers and even cars. 
-Google
-is racing towards a world where all devices are connected, and they want to be there
-first. Self driving cars are impressive technology, but they are also rolling data 
-collectors that tell Google more about you and the world around you than your phone 
-currently does. Android users in emerging economies will never own a PC and will
-experience the Internet through devices and apps instead of the web. Chromecast devices
-tell Google what media you like to consume. All of this data feeds to Google and 
-provides data and context, which tells Google more about us and the world, all in order to 
-serve up ads to 
-sell you tickets to go see Ant Man.</p>
-<p>Google and Apple are very well entrenched in the mobile world. However, they come from 
-very different places. Google wants context and information about you, and they store
-it in their massively scalable cloud. For you to give this to them, they provide much of 
-these services for free. 
-Apple wants to create amazing devices and 
-experiences for users, charge you a premium for it and have you keep coming back. Nothing illustrates the 
-difference in thought between these two companies than their photo strategy. Google
-wants everything you can give it, and you can have it for free. Apple gives you a paltry
-5 GB for photo storage and then wants you to pay.</p>
-<p>However, the next massive area for tech growth is a world 
-where everything is connected and Google is winning.
-Apple is not ready to play in that world, and I haven&#39;t seen anything to indicate
-they are planning to. They do not have their own scalable cloud infrastructure in place, 
-though they are working on it, but it is for their services, not for developers to utilize in creating 
-applications. Their
-development tools are focused on selling hardware devices, not cloud. They are capturing  context
-with iBeacons and iPhones, but not to the scale of Google, where it permeates Android.</p>
-<p>Google is exceptionally well prepared to be ready for the connected world, it is in their
-DNA to do massive scale and be a little bit creepy in what they capture about users. 
-They are also creating and or buying companies that feed
-data to this connected world. Nest thermostats, self driving cars, Android all feed
-data and context to Google.</p>
-<p>Who is going to compete with Goolge? One option is  Microsoft. 
-They have lost mobile, but they are positioned to execute in a connected
-world, with their Azure service for scale, and their Internet of Things strategy. However,
-unlike Google, they aren&#39;t building the connected devices like Android, Android Wear,
-automobiles that consumers want and will feed data and context. Microsoft is also more of an Enterprise
-company these days than a consumer company, though they are working to move the bar.</p>
-<p>Or maybe it is Amazon that will be there to fight Google for market share. They have the leading cloud 
-service so they can do scale. Their shopping service provides context. However, their disastrous 
-Fire launch indicates mobile will not be an option for providing data and context. Their focus on growth
-in shopping does not provide the cash that Apple, Google and Microsoft have to buy share.</p>
-<p>The web browser is now hitting the Grandparent stage of life, having begat a mobile 
-world and we are seeing the start of a connected world. It has been a great ride for the web. Google and Apple
-own the mobile world. The
-question is who else is going to be battling with Google for the connected world?</p>
-]]></content>
-        <foo1><![CDATA[https://www.jptacek.com/2015/06/GoogleIOAndDeathOfWeb/]]></foo1>
             </entry>
     
 </feed>
