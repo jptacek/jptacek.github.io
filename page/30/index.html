@@ -70,6 +70,39 @@
             
     <article class="post">
     
+    <h1><a href='/2011/04/microsofts-deep-zoom-technology-allows-for-powerful-user-experience/'>Microsoft's Deep Zoom Technology Allows for Powerful User Experience</a></h1>
+    
+        <div class="post-date">Apr 26th, 2011</div>
+
+    <div class="post-content">
+        <p>Closely tied to the Silverlight Pivot Viewer I discussed in my <a href="http://www.skylinetechnologies.com/blog/Pages/silverlightpivotviewer.aspx">previous blog post</a>, is Microsoft&#39;s Deep Zoom technology. Deep Zoom enables users to pan and zoom around a high resolution image, or in the case of how we use it for the <a href="http://www.appletoncompassion.org/VirtualExhibitViewer">Appleton Compassion Project Virtual Exhibit</a>, navigate a large collection of images.</p>
+<p>Deep Zoom accomplishes this by using a process similar to Google/Bing maps. There are layers to the image, so one layer can show the entire collection with very small sizes for the images. The images are also broken up into tiles, so as you go to higher resolution images, it may be broken up into several tiles so you do not have to load the entire image. As you zoom closer into the document, you are navigating to layers that are deeper and deeper in the collection, with increasing image resolution and will be loading a tile that is a subset of the image. Microsoft has a nice picture of this and an accompanying description at their <a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">MSDN site</a>.</p>
+<p>Deep Zoom consists of several XML based files. The first is the Deep Zoom image (DZI). This file is essentially an XML file that contains the layers and tile information for a given image. The Deep Zoom image creation process creates a directory for each image, this directory will then have the layers, and images that are broken into tiles. For example, in testing that we did, a single image taken with a home digital camera that is 4 MB in size, was broken up into 12 sub folders, each containing tiled images. One image created 12 directories and 238 files. For the Appleton Compassion Project, the collection of 10,000+ art pieces has created nearly one million files!</p>
+<p>The second deep zoom file type is the Deep Zoom Collection (DZC). This file essentially is the high level collection that points to the DZI files. The Silverlight Pivot viewer then references this DZC file for the zooming process.</p>
+<p>There are two ways to create Deep Zoom files. The first is to use the Deep Zoom composer that is part of Expression Blend. This process, outlined in the link above, is manual which obviously won&#39;t work for 10,000 images. The interesting thing is Microsoft really doesn&#39;t have an SDK or install for creating the Deep Zoom files. You need to physical copy a DLL from the Deep Zoom Composer directory and make it part of your application, <a href="http://blogs.msdn.com/b/expression/archive/2008/11/26/hello-deepzoomtools-dll-deep-zoom-image-tile-generation-made-easy.aspx">outlined here</a>.</p>
+<p><strong>Why Use it?
+</strong>Deep Zoom allows for a interactive zoom and pan user experience.</p>
+<p><strong>I want to learn more!
+</strong><a href="http://msdn.microsoft.com/en-us/library/cc645050(VS.95">MSDN Deep Zoom site </a>.aspx)</p>
+<p>Blog post on programmatically creating Deep Zoom</p>
+<p>&nbsp;</p>
+<p><a href="http://blogs.msdn.com/b/jaimer/archive/2008/03/31/a-deepzoom-primer-explained-and-coded.aspx">Jaime Rodrigues goes deep on Deep Zoom</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/silverlight/'>Silverlight</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2011/04/create-interactive-user-experiences-quickly-and-easily-with-silverlight-pivot-viewer/'>Create Interactive User Experiences Quickly and Easily with Silverlight Pivot Viewer</a></h1>
     
         <div class="post-date">Apr 25th, 2011</div>
@@ -181,36 +214,10 @@ As you can see, leveraging SharePoint search beyond its out-of-the-box functiona
 
 </article>
 
-    <article class="post">
-    
-    <h1><a href='/2011/03/developing-with-microsofts-azure-platform/'>Developing with Microsoft's Azure Platform</a></h1>
-    
-        <div class="post-date">Mar 25th, 2011</div>
-
-    <div class="post-content">
-        <p>For the past several months, Skyline has been working on an awesome charity project called the <a href="http://www.appletoncompassion.org/">Appleton Compassion Project</a>. This project will provide visitors to the <a href="http://www.troutmuseum.org/">Trout Museum of Art </a>a way to view the 10,500 pieces in the exhibit and their accompanying artist statements. It has also provided us with an excellent opportunity to develop in Azure and learn a thing or two which I&#39;m going to share with you.</p>
-<p>The Appleton Compassion Project is hosted on Microsoft Azure. Azure is Microsoft&#39;s platform for developing cloud applications based on its Microsoft .NET technology. The good news is that if you&#39;re a programmer doing .NET development you are already well positioned to do Azure programming!</p>
-<p>The cloud means a lot of different things to a lot of different people, but in discussing Azure, we can think of it as providing several features.</p>
-<p>First, it provides infrastructure. For the Appleton Compassion Project, this was important. The goals of the project were such that they were (and still are) hoping to have some big-name celebrities involved, which could result in a large number of visitors to the site. While we could plan for that kind of demand, the Appleton Area School District - who is sponsoring the project - could not afford the hardware to meet it. Since one of the features of Azure is the ease of scalability, it can quickly meet the demands by adding more compute instances (the virtual machines that Azure uses). This is an example of where we pay for what we use, and don&#39;t have to pay for demand that we plan for, that may or may not be used.</p>
-<p>Second, it provides scale. This is a necessity as the Virtual Exhibit on the site will contain over 10,000 individual images that need to be displayed. The process we have to create the Pivot collection for our current batch of 8,000 images creates over 750,000 Deep Zoom files, is computationally intense, and literally takes days to run. We can greatly reduce this time by paying more and using larger computer sizes and creating multiple tasks in parallel. Once the files are created, we can then reduce the computer size to serve up HTML pages until we need the increase in computing power. Doing this kind of implementation using computing hardware as needed on the school district&#39;s hardware would not be cost effective.</p>
-<p>Another variation of scale is disk space ... we only pay for what we use. We don&#39;t need to be concerned with checking for disk space before we run our collection creation process, estimating the amount of files we will create and ensuring we have enough. Azure will automatically grow and make redundant copies of our data, so that if the server goes down, the data is stored elsewhere.</p>
-<p>As I mentioned earlier, Azure is based on .NET technologies, making it relatively straightforward to move to cloud development. There are, of course, several differences. When you deploy an application to Azure, it starts a dedicated Virtual Machine to host your application in a Microsoft data center. The bigger the size of the machine you request, the more you pay. One result of the virtual machine being created for each deploy is that you don&#39;t want to persist data to these VMs. You will use blob storage for persisted data. This is one of the biggest differences between Azure and normal .NET development.</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/appleton-compassion/'>Appleton Compassion</a>, <a href='/tags/azure/'>Azure</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
 
 <div class="page-nav">
+    
+    <a class="page-nav-older" href="/page/31/"><span class="icon icon-arrow-left-2"></span> Older</a>
     
     
     <a class="page-nav-newer" href="/page/29/">Newer <span class="icon icon-arrow-right-2"></span></a>

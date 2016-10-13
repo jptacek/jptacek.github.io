@@ -3,13 +3,34 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2016-09-16T00:00:58.624Z</updated>
+    <updated>2016-10-13T10:50:56.840Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>October New AITP Meeting - Mile of Music</title>
+        <link href="https://www.jptacek.com/2016/10/NewAitp/"/>
+        <updated>2016-10-13T05:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2016-10-13,/2016/10/NewAitp/</id>
+        <content type="html"><![CDATA[<p>Thanks to everyone who came out to my presentation at the October 2016
+<a href="http://www.newaitp.org/">New AITP</a> meeting. It was a funnight. I always love
+talking about <a href="https://mileofmusic.com/">Mile of Music</a> and how the team
+at Skyline created the Festival app.</p>
+<p><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/jptacek">@jptacek</a> is wearing a sport coat tonight at the AITP meeting tonight while showing off the Mile of Music app!!! <a href="https://t.co/eUedirhuKt">pic.twitter.com/eUedirhuKt</a></p>&mdash; Mark Lezotte (@marklezotte) <a href="https://twitter.com/marklezotte/status/786348349603667969">October 12, 2016</a></blockquote></p>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p><img src="https://www.jptacek.com/2016/10/NewAitp/newAitpTalk.jpg" alt="Turnout pic"></p>
+<p>My slide deck is online at <a href="https://newaitp1016.jptacek.com/">newaitp1016.jptacek.com/</a>
+and the Git repo for the slide deck is at
+<a href="https://github.com/jptacek/NewAITP1016">https://github.com/jptacek/NewAITP1016</a>.</p>
+<p>Thanks again to everyone who came out and engaged in starting a conversation!</p>
+]]></content>
+        <foo1><![CDATA[https://www.jptacek.com/2016/10/NewAitp/]]></foo1>
+            </entry>
     
     <entry>
         <title>September NEWDUG Meeting - Angular vs React</title>
@@ -335,20 +356,6 @@ Google has made the I/O conference available for all to <a href="https://www.you
 <p>This post originally appeared at <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/April_2016/Build_2016_Recap">Skyline Technologies</a>.</p>
 ]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2016/04/Build2016Recap/]]></foo1>
-            </entry>
-    
-    <entry>
-        <title>NEWDUG 2016 CodeCamp - Gulp All The Things</title>
-        <link href="https://www.jptacek.com/2016/03/newdug-codecamp-2016/"/>
-        <updated>2016-03-13T06:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2016-03-13,/2016/03/newdug-codecamp-2016/</id>
-        <content type="html"><![CDATA[<p>Thanks to everyone who came to my presentation at <a href="http://newcodecamp.com/">NEWDUG 2016</a> this year!
-I am always appreciative of the great tech talent we have in NorthEast Wisconsin, and it was certainly evident
-with the number of attendees and the quality of the presentations.</p>
-<p>If you are interested, the code from the presentation is available on <a href="https://github.com/jptacek/NewDug2016">GitHub</a>.
-The PowerPoint presention is also available on <a href="https://github.com/jptacek/NewDug2016/blob/master/PPT/GulpAllTheThings.pptx?raw=true">GitHub</a>.</p>
-]]></content>
-        <foo1><![CDATA[https://www.jptacek.com/2016/03/newdug-codecamp-2016/]]></foo1>
             </entry>
     
 </feed>
