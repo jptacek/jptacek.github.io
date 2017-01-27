@@ -148,10 +148,11 @@
 <url> <loc>https://www.jptacek.com/tags/mvc/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/web-forms/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/html-5/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.jptacek.com/tags/business/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/windows-8/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/build/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/conferences/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jptacek.com/tags/business/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jptacek.com/tags/earth-day/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/ephemera/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/that-conference/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/apple/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -170,7 +171,6 @@
 <url> <loc>https://www.jptacek.com/tags/two-factor-authentication/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/fox-valley-day-of-net/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/speaking/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.jptacek.com/tags/earth-day/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/outlook-com/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/microsoft/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/nokia/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
@@ -197,8 +197,8 @@
 <url> <loc>https://www.jptacek.com/tags/microsoft-dev-show/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/windows-10/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/newdug/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
-<url> <loc>https://www.jptacek.com/tags/gulp/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/google-i-o/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
+<url> <loc>https://www.jptacek.com/tags/gulp/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/computing/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/ai/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
 <url> <loc>https://www.jptacek.com/tags/angular/</loc> <changefreq>weekly</changefreq> <priority>0.5</priority> </url>
