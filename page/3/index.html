@@ -70,6 +70,150 @@
             
     <article class="post">
     
+    <h1><a href='/2016/08/Angular2GettingStarted/'>Creating an Angular 2 Application with the CLI</a></h1>
+    
+        <div class="post-date">Aug 13th, 2016</div>
+
+    <div class="post-content">
+        <p><a href="https://www.angular.io">Angular</a> is a JavasScript framework from the fine folks over at
+<a href="http://www.google.com">Google</a>. The focus of Angular is building applications across all platforms.</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularLogo.svg?raw=true" width="20%" alt="Angular Logo"></p>
+<p>This is the first in a series of posts on Angular where we are using Chemistry data from the periodic table
+to help us understand the framework. The others posts are</p>
+<ol>
+<li><a href="http://www.jptacek.com/2013/10/angularjs-introduction/">Angular - Introduction</a></li>
+<li>Angular - Getting Started</li>
+</ol>
+<p>Getting started in the world of Web Development/JavaScript has become a lot more work over the last several years. We are pretty far
+removed where someone could create a web page and a JavaScript application with notepad. Libraries and frameworks such as <a href="https://facebook.github.io/react/">React</a>,<br><a href="https://angular.io">Angular</a> and <a href="https://aurelia.io">Aurelia</a> all require things like JavaScript task managers such as <a href="http://gulpjs.com">Gulp</a> or
+<a href="http://gruntjs.com">Grunt</a> to transpile code, bundle files, minify them, etc.
+If that doesn&#39;t work, you can consider <a href="https://babeljs.io">Babel</a> and/or <a href="https://webpack.github.io">WebPack</a> to get you moving.</p>
+<p>The decisions for getting started have become so overwhelming, people have created a term, called <a href="https://webpack.github.io">JavaScript fatigue</a>
+that sums up frustration from a subset of developers. The reality is, especially for a library like React, there are just too many tools
+for people. Initial project setup, whether React or Angular takes time.</p>
+<p>For example, the Angular five minute quickstart <a href="https://angular.io/docs/ts/latest/quickstart.html">guide</a> was not very quick for me.
+There are over 20 NPM packages to install and users mostly just copy and paste an existing <code>package.json</code> file. The good news is that
+Angular, as well as React, both recently came out with command line tools to get developers up and running quick. That is
+what we will explore in this blog post.</p>
+<p>In May of this year at <a href="https://www.ng-conf.org/">NG-Conf</a> the Angular team introduced the
+<a href="https://cli.angular.io">Angular Command Line Interfact (CLI)</a> that helped really quickstart Angular application development and
+follows best practices.</p>
+<p>To install the Angular CLI, type
+<code>npm install -g angular-cli</code>
+and wait a few minutes. Angular CLI as of this writing (August of 2016) is currently in beta under active development. One of the
+current focuses is moving from Brocolli to WebPack.</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularCli1.png" alt="Install Angular"></p>
+<p>Once this is done, we can now use the command line to create our application. This is seriously good stuff.</p>
+<p>To get started creating an application, we simply type</p>
+<p><code>ng new APPLICATION_NAME</code></p>
+<p>in our case, we will call our application AngularPeriodic and type</p>
+<p><code>ng new AnuglarPeriodic</code></p>
+<p>This will create our application structure as well as tests, setup up TypeScript and install all the requisite NPM packages.</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularCli2.png" alt="Angular CLI to create application"></p>
+<p>A quick look at our directory structure sees that we hae a lot there..</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularCli3.png" alt="Atom view of application"></p>
+<p>A quick look at our <code>package.json</code> file indicates the NPM packages that Google prefers out of the box, along with a testing
+framework based on</p>
+<pre class="highlight"><code class="hljs xml">{
+  "name": "angular-periodic",
+  "version": "0.0.0",
+  "license": "MIT",
+  "angular-cli": {},
+  "scripts": {
+    "start": "ng serve",
+    "postinstall": "typings install",
+    "lint": "tslint \"src/**/*.ts\"",
+    "test": "ng test",
+    "pree2e": "webdriver-manager update",
+    "e2e": "protractor"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "2.0.0-rc.4",
+    "@angular/compiler": "2.0.0-rc.4",
+    "@angular/core": "2.0.0-rc.4",
+    "@angular/forms": "0.2.0",
+    "@angular/http": "2.0.0-rc.4",
+    "@angular/platform-browser": "2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.4",
+    "@angular/router": "3.0.0-beta.2",
+    "es6-shim": "0.35.1",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "5.0.0-beta.6",
+    "systemjs": "0.19.26",
+    "zone.js": "0.6.12"
+  },
+  "devDependencies": {
+    "angular-cli": "1.0.0-beta.10",
+    "codelyzer": "0.0.20",
+    "ember-cli-inject-live-reload": "1.4.0",
+    "jasmine-core": "2.4.1",
+    "jasmine-spec-reporter": "2.5.0",
+    "karma": "0.13.22",
+    "karma-chrome-launcher": "0.2.3",
+    "karma-jasmine": "0.3.8",
+    "protractor": "3.3.0",
+    "ts-node": "0.5.5",
+    "tslint": "3.11.0",
+    "typescript": "1.8.10",
+    "typings": "1.3.1"
+  }
+}
+</code></pre>
+<p>Not only are we able to get our structure created, we can actually run our application. This is done via the
+<code>ng serve</code>
+command. This takes our files, such as typescript and compiles them as well as bundling via Broccoli. Our initial application start displays
+a screen that lets us, literally, know that our application is working.</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularCli4.png" alt="Initial Web Page"></p>
+<p>Our next step, and something the Angular CLI can handle for us, is to create a component. We will dig into this more in future posts,
+but one of the big benefits of Angular 2 is more modular approach for application development. We are going to create a Periodic
+Table application, so it makes sense to create a Periodic Table component. This is done by using the <code>generate</code> command for
+the Angular CLI command. We type</p>
+<p><code>ng generate component periodicTable</code></p>
+<p>and the files and structure for our component our created. This includes a TypeScript file for our component, a specification,
+HTML placeholder and CSS markup.</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularCli5.png" alt="Component Generate"></p>
+<p>A quick change to our initial app structure to wire up the component (again, more on this later) and we can see our component get rendered.</p>
+<p>In general, the structure of our application follows current Angular best practices. All the JavaScript files are placed in
+an app directory.</p>
+<p><img src="/2016/08/Angular2GettingStarted/angularCli6.png" alt="Directory Structure"></p>
+<p>The component TypeScript gets generated and creates our selector, reference our HTML template as well as our
+CSS file for styling.</p>
+<pre class="highlight"><code class="hljs javascript">import { Component, OnInit } from <span class="hljs-string">'@angular/core'</span>;
+
+@Component({
+  moduleId: <span class="hljs-built_in">module</span>.id,
+  selector: <span class="hljs-string">'app-periodic-table'</span>,
+  templateUrl: <span class="hljs-string">'periodic-table.component.html'</span>,
+  styleUrls: [<span class="hljs-string">'periodic-table.component.css'</span>]
+})
+export <span class="hljs-keyword">class</span> PeriodicTableComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+</code></pre>
+<p>So, this is a quick look at the Angular CLI process for Angular 2. It is a great improvement over the previous setup process and helps
+development teams get up and moving quicker.</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/angular/'>Angular</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/angular-2/'>Angular 2</a>, <a href='/tags/javascript/'>JavaScript</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2016/08/Anuglar2Introduction/'>Angular/Angular2 Introduction</a></h1>
     
         <div class="post-date">Aug 12th, 2016</div>
@@ -136,36 +280,6 @@ next year, Aug 7-9.</p>
     
     <div class="post-tags">
         Posted In: <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/angular/'>Angular</a>, <a href='/tags/react/'>React</a>, <a href='/tags/speaking/'>Speaking</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2017/08/ThatConference2017/'>That Conference 2017 - Intro to Docker</a></h1>
-    
-        <div class="post-date">Aug 11th, 2016</div>
-
-    <div class="post-content">
-        <p>I rave a lot about <a href="https://www.thatconference.com">That Conference</a>, so you can
-tell I am pretty enthusiastic for the event. If that doesn&#39;t convince you, this
-picture should!</p>
-<p><img src="/2017/08/ThatConference2017/thatConf.png" alt="ThatConference 2017"></p>
-<p>This year I presented an introduction to <a href="https://www.dokcer.com">Docker</a>, a
-very popular virtulization technology that I find .NET developers are
-somewhat unaware of.</p>
-<p>It was a fun talk and really great questions and crowd participation.</p>
-<p>For those interested, here is the <a href="https://docs.google.com/presentation/d/1Ss3MitzdYtEPDD14NHhIJtWAV_TYCJhK_NKFHkhklLQ/edit#slide=id.p">presentation</a>.</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/docker/'>Docker</a>, <a href='/tags/speaking/'>Speaking</a>
     </div>
     
     <br/>
