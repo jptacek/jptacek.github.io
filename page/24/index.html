@@ -70,6 +70,78 @@
             
     <article class="post">
     
+    <h1><a href='/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/'>Setting up email for a Custom Domain on a Windows Azure hosted website</a></h1>
+    
+        <div class="post-date">Feb 15th, 2013</div>
+
+    <div class="post-content">
+        <p><strong>Update - May 27, 2014</strong> Microsoft has announced that it will no longer support custom domains using Outlook.Com. As a
+ result, this content of this post is no longer valid. They
+are encouraging customers to use Office 365 moving forward. You can find out more at <a href="http://domains.live.com/">domains.live.com</a></p>
+<p>The blog site you are currently on, jptacek.com, is using <a href="http://www.windowsazure.com/en-us/home/scenarios/web-sites/">Windows Azure websites</a>, which is a great way to quickly get a web presence up and running. The site also provides very low barrier to entry for setting up blogging engines or CMS applications. The one thing it does not do though is offer email services out of the box.</p>
+<p>One way to remedy this is to use Google Apps to create a domain for hosting of email. I use Google Apps for my personal email for me and my family and it works great. In the hope of learning something new, I thought I would see what Microsoft has to offer in the space and see what setup was like.</p>
+<p>In the Microsoft world, their Google Apps competitor is really Office 365. This is overkill for what I want, since I am just looking for email. It also costs money. Microsoft offers Custom Domains which allows us to use the Outlook.Com email service for our domain.</p>
+<p>Steps for getting this setup</p>
+<ol>
+<li>Go to <a href="http://Domains.live.com">http://Domains.live.com</a>. Note, you are going to want to use Chrome for this. The IE 10 browser looks awful
+<img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem1.png" alt=""></li>
+</ol>
+<p>Versus Chrome</p>
+<p><img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem2.png" alt=""></p>
+<ol>
+<li>Click the sign in button and use your Microsoft account and then click the Get Started link</li>
+<li>Type in the custom domain you will want email for, in our case, jptacek.com. Make sure Set up Outlook.com is selected for your domain mail service, and then hit the continue button
+<img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem3.png" alt=""></li>
+<li>You will then need to battle Microsoft&#39;s exceedingly unforgiving CAPTCHA system, after which you will be taken to the registration screen. The first step is to configure the MX record (MX is the DNS record used for mail)
+<img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem4.png" alt=""></li>
+<li>Log onto your DNS provider, in our case DNSImple.com, and add the record. This varies by DNS provider. IN the case on DNSimple, we go to the Advanced section, and choose Add a Record and select MX from the dropdown</li>
+<li>Our next step is to create a server trust record as recommended on the admin screen. This is a TXT DNS record that helps verify our email address and helps prevent the email from the site from being marked as junk
+<img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem5.png" alt=""></li>
+<li>Next, we want a URL we can use to access our email. To do this, we create a CNAME record that points back to the Hotmail/Outlook . We will use mail, so mail.jptacek.com will be the URL we use when accessing email. You could use <a href="http://www.youtube.com/watch?v=-VILl6FOm6s">kwyjibo</a> if you wanted to, just remember it <span style="font-family: Wingdings;">J</span> The CNAME record needs to point back to go.domains.live.com
+&nbsp;</li>
+</ol>
+<p><img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem6.png" alt=""></p>
+<ol>
+<li><p>It can take up to 60 minutes for your domain to resolve, you can see if your domain records are updated by using your favorite command prompt and typing the commands</p>
+<ol>
+<li>nslookup -type=mx jptacek.com</li>
+<li>nslookup -type=txt jptacek.com</li>
+</ol>
+</li>
+</ol>
+<p>These should display values you entered earlier</p>
+<ol>
+<li>Return to Domains.live.com and log in with your Microsoft account. It will show you the domains. In this step, the DNS configuration can take a while too
+<img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem7.png" alt=""></li>
+<li>When your domain is active, you can add accounts, up to 50 of them. To do this click the domain name, and click the Add button for member accounts
+<img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem8.png" alt=""></li>
+</ol>
+<p><img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem9.png" alt="">Enter the account you want to create a long with a password</p>
+<p>&nbsp;</p>
+<p>You are done! You can now go to newly created email site for your custom domain, and login with your user name.</p>
+<p><img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem10.png" alt=""></p>
+<p><img src="/2013/02/setting-up-email-for-a-custom-domain-on-a-windows-azure-hosted-website/021513_1309_Settingupem11.png" alt=""></p>
+<p>&nbsp;</p>
+<p>You can now email me at blog [@] jptacek.com</p>
+<p><strong>Update - May 27, 2014</strong> Microsoft has announced that it will no longer support custom domains using Outlook.Com. As a
+ result, this content of this post is no longer valid. They
+are encouraging customers to use Office 365 moving forward. You can find out more at <a href="http://domains.live.com/">domains.live.com</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dns/'>DNS</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/email/'>email</a>, <a href='/tags/web/'>Web</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2013/02/creating-sitemaps-xml-file-for-wordpress-blogs-azure-websites/'>Creating Sitemaps.xml file for Wordpress blogs on Azure Websites</a></h1>
     
         <div class="post-date">Feb 13th, 2013</div>
@@ -176,103 +248,6 @@ You will want to verify the location of your Sitemaps file, which the plugin aut
     
     <div class="post-tags">
         Posted In: <a href='/tags/azure/'>Azure</a>, <a href='/tags/dnsimple/'>DNSimple</a>, <a href='/tags/web/'>Web</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2013/01/the-pace-of-innovation/'>The Pace of Innovation</a></h1>
-    
-        <div class="post-date">Jan 17th, 2013</div>
-
-    <div class="post-content">
-        <p>Recently, The Economist magazine had a
-<a href="http://www.economist.com/news/briefing/21569381-idea-innovation-and-new-technology-have-stopped-driving-growth-getting-increasing">cover story</a>
-on Innovation, with Rodin&#39;s The Thinker sitting on a toilet wondering &quot;Will we ever invent anything this useful again?&quot;</p>
-<p><img src="/2013/01/the-pace-of-innovation/Economist-Innovation-Cover-228x300.png" alt="Economist-Innovation Cover"></p>
-<p>It is interesting to contemplate the pace of innovation and if we are slowing down.</p>
-<p>At first glance, it just FEELS like we are slowing down. There is a great quote from Peter Thiel,
-who runs the Founders Fund, a venture capital fund,
-&quot;We wanted flying cars, instead we got 140 characters.&quot;
-(<a href="http://www.newyorker.com/reporting/2011/11/28/111128fa_fact_packer?currentPage=all">New Yorker profile of Peter Thiel</a>).
-That succinctly sums up the disappointment people feel about the progress of innovation.</p>
-<p>You can also look back to our history to see this. In December of 1903 the Wright Brothers flew an airplane at Kitty Hawk.
-A (relatively) mere 66 years later, Neil Armstrong stepped onto the surface of the moon. Apollo 17 saw the last manned
-moon mission in 1972. In the ensuing 40 years, we haven&#39;t been back. I doubt we will be back in the next 24 either.</p>
-<p>In 1900, the average life expectancy in America was 49 years. By 1980 that had risen to 74 years. In the ensuing 30
-years, it has risen to 79 years. We can go on and find similar examples that provide the sense that we are slowing down.</p>
-<p>There are several reasons for this I believe. The turn of the century was really the time when the benefits of the
-Industrial Revolution were realized. The advances in Steam Power and mechanization during the early years of the
-Industrial Revolution gave way to the widespread access to electrical power and lighting in the early half of 1900s
-that significantly changed the pace of society and saw significant increases in GDP per person
-(one measure of Innovation) during this time. Economists generally believe similar increases occurred during the
-period of our history when we moved towards and Agrarian society (a time in which the world obviously did not have a
-concept of GDP).</p>
-<p>In a sense, the pace of Innovation was easier. At the beginning of the Industrial Revolution, the solutions were more
-readily discovered. However, as we acquire more knowledge and expertise, the barriers to entry become much more
-difficult. When I was in college, I flirted with idea of studying Astrophysics. Ultimately, I decided not to, and part
-of the reason was
-in talking to professors it became apparent that you really needed a PHD to find a job. In talking to the PHD students
-I realized I had years of to prepare myself for a PhD. A good part of this time involved acquiring the math background
-I would need several math courses to start the graduate classes, despite having an undergraduate degree in Applied
-Mathematics. I was unwilling to invest more years of mathematical study just to get into a graduate program.</p>
-<p>The Economist article refers to this as &quot;burden of knowledge&quot;. The more knowledge we have on a subject, the longer it
-takes to get proficient. The article states that the &quot;age at first innovation&quot;, when someone contributes something new,
-rose about one year between 1985 and 1997, a period of 12 years. And during the last 15 years, things haven&#39;t moved
-any slower.</p>
-<p>So is there no hope for the future? Of course not! Two things I think it is important to take into consideration.</p>
-<p>First, we are in the midst of moving from the Industrial Age to the Information Age, and we are at the beginning. As we
-move to fully realize the benefit of the Information Age, we will see significant gains, similar to the benefits
-realized as a result of being fully engaged in the Industrial Revolution in the early 1900s.</p>
-<p>&quot;Digital Natives&quot;, today&#39;s students, have grown up immersed in the technology and I believe it will change the way we
-work and learn. Take for example, my daughter, an 8<sup>th</sup> grade student. She recently had a homework assignment
-to solve America&#39;s Debt Crisis. As part of her work and research for her presentation, she reached out to economists at
-both Lawrence University (located in Appleton, WI) as well as Harvard University. She also reached out to our
-congressman, Reid Ribble. All of the people she contacted replied to her with valuable information used in her
-presentation. For many students, it is first nature to bypass the geographical or communication boundaries that many of
-us grew up with. They are also used to using distance learning and communicating via video with things like Skype or
-Google Chat. I believe, this is going to fundamentally change how we work. So much capital is spent on classrooms to
-learn in and offices for people to work in. As &quot;digital natives&quot; move into the workforce and bring a high level of
-comfort with distance working, and then become managers, organization will spend less on infrastructure for offices and
- the like and be able to apply more resources to applied research in their environment. Second, these distance workers
- also have a MUCH shorter commute. Many people will find extra hours in their day that will also have a positive
- effect on per person GDP. We will never remove the need for face to face communication, but we can certainly realize
- benefits of a global network and communicate more efficiently.</p>
-<p>Second, it is always darkest before the dawn. I say that half jokingly, but I am always reminded where we were with
-Physics study at the start of the 20<sup>th</sup> century. With the discovery of Maxwell&#39;s Equations,
-physicists believed they had essentially come to the end of the road. The basic forces of the universe,
-like electromagnetism and gravity were well understood and described the world with precision, precisely the goal of
-physics. The only thing remained was this pesky issue with the model for the atom. That issue though led to Einstein and
-his changing the world with the discovery of the <a href="https://en.wikipedia.org/wiki/Photoelectric_effect">photoelectric electric</a>
-that began Physics on the path to quantum mechanics. The discovery of quantum mechanics in turn lead to solid state
-physics and the chips that are driving today&#39;s information age, not to mention a whole host of other technologies that
-resulted in immense economic gains.</p>
-<p>The thing about innovation, true innovation, it always comes unexpectedly and in ways we can never anticipate. We can
-all pretend we have crystal balls and can see what the future will be. At best though, we can make educated guesses.
-Rest assured, there will be technologies that come in disrupt the world and will profoundly change the way we live.</p>
-<p>What are steps we can take to facilitate innovation? First off, education. I am not necessarily saying spend more on
-education, but challenge our students earlier with the topics they need to help them be prepared in science and math.
-Earlier introduction of these topics, especially classes such as Calculus, ensure our students are able to try and
-overcome the &quot;burden of knowledge&quot; by starting out with a stronger base at a younger age. Second, continued investment
-in basic science by governments. The space program was an economic engine for decades that drove innovation.
-The government&#39;s investment in a redundant data network resulted in the Internet which is driving today&#39;s information
-revolution. The ROI on basic science research can be too long for the marketplace to invest in, but when measured in
-years and decades, the impact to the economy can be massive.</p>
-<p>Is Innovation dead? No. Is it slowing down? It may be by some measure. However, I believe we are on the cusp of
-another great wave of GDP growth as the fruits of the Information Revolution emerge. I am excited to see what is
-coming next!</p>
-<p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/January-2013/Innovation">Skyline Technologies</a></p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/business/'>Business</a>, <a href='/tags/innovation/'>Innovation</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>

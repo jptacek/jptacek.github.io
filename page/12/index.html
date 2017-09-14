@@ -70,6 +70,72 @@
             
     <article class="post">
     
+    <h1><a href='/2014/03/Twitter-Bootstrap-3-Themes/'>Twitter Bootstrap Themes</a></h1>
+    
+        <div class="post-date">Mar 17th, 2014</div>
+
+    <div class="post-content">
+        <p>With a name like Ptacek, you would of course, have to know I am half-Irish. So, to celebrate, we are going to wrap
+up a St Patrick&#39;s Day theme for the blog today (3/17/14). You may be saying to yourself, how could I spend so much time and effort totally
+retheming the blog to support a relatively minor holiday on the calendar? Easy! Twitter Bootstrap themes!</p>
+<p>Twitter Bootstrap, is obviously, a very popular web CSS framework. It enables web developers, without a lot of CSS expereince to
+quickly create responsive sites that look decent out of the box. One of the interesting things you can do with version 3 of
+Twitter Bootstrap is quickly  update your site easily using themes.</p>
+<p>With Twitter Bootstrap, there are two ways you can do things. Option 1 is to download the minified files. This will result in three
+separate files, <code>bootstrap.min.css</code> , <code>bootstrap-theme.min.css</code> and <code>bootstrap.min.js</code>, which
+is used in conjunction with jQuery. The theme elements are then contained in the <code>bootstrap-theme.min.css</code> file.</p>
+<p>The second approach you can use is to download the source files and compile the CSS yourself. This is done by downloading
+<a href="http://lesscss.org/">LESS</a> files and using your favorite LESS compiler to generate CSS. There are also SASS files for the
+ Ruby fans of the world. With the LESS approach,
+there are separate files for theming, a <code>variable.less</code> file and a bootstrap theme file. This is the approach I use for this site
+and most projects I start. Within the main <code>site.css</code> LESS file I import the theme files</p>
+<pre class="highlight"><code class="hljs xml">@import "bootstrapTheme/bootswatch.less";
+@import "bootstrapTheme/variables-bootswatch.less";
+</code></pre>
+<p>The reason I like using the LESS approach rather than just downloading the minified CSS files is the theme part is a bit more
+isolated. I can keep all the theme content, which I really think of as the &quot;skin&quot; for a Bootstrap site, in two separate files.
+This enables new versions of Bootstrap to be downloaded without loosing other CSS changes and to quickly swap them out, like we
+are doing here for St. Patrick&#39;s Day.</p>
+<p>It should be noted, that out of the box, Twitter Bootstrap ships with a default theme, a theme that makes the site look like
+Twitter Bootstrap 2.x. There is quite a growing community for creating themes for bootstrap (it&#39;s not WordPress type size,
+that would just be crazy talk). Example sites include <a href="https://wrapbootstrap.com/">WrapBootstrap.com</a>, <a href="http://bootstraptor.com/">Bootstraptor</a>
+and the one I tend to gravitate to, <a href="http://bootswatch.com/">Bootswatch</a>.</p>
+<p>To update your site UI you just simply download either minified CSS files and swap them out, or two LESS files and then reference
+them in your site. Since I use LESS, I download the LESS files, rename them to a theme name, which allows me to keep my original,
+and then update my <code>site.css.less</code>. I called the St Patrick&#39;s Day theme shamrock and my references are now</p>
+<pre class="highlight"><code class="hljs xml">@import "bootstrapTheme/shamrock-bootswatch.less";
+@import "bootstrapTheme/shamrock-variables.less";
+</code></pre>
+<p>Viola, a save and a publish later we have a total site look! It is like <a href="http://www.csszengarden.com/">CSSZenGarden</a> for
+mortals.</p>
+<p> <img src="http://www.jptacek.com/2014/03/Twitter-Bootstrap-3-Themes/BuildStPatty.png" class="img-thumbnail" alt="Rules"></p>
+<p>You can find the St Patrick&#39;s Day theme I downloaded from Bootswatch <a href="http://bootswatch.com/shamrock/">here</a>. Obviously,
+ since this is just for a short time, there are some UI things that would need to be redone on the site, but we will
+ be back to our regularly scheduled programming soon!</p>
+<p>Totally useless Ptacek news.... Obviously, the half Irish comes from my Mother&#39;s side. My Uncle <a href="http://en.wikipedia.org/wiki/Tom_Durkin">Tom Durkin</a>, a somewhat famous horse
+race announcer who <a href="http://www.nytimes.com/2011/04/28/sports/28durkin.html?version=&amp;action=click&amp;adxnnl=1&amp;region=searchResults#0&amp;module=Search&amp;url=http://query.nytimes.com/search/sitesearch/#/tom+durkin/&amp;pagewanted=all&amp;adxnnlx=1395057931-WaqX7ynUlBWydjqQznsZ1w">used to call</a> the Kentucky Derby and other Triple Crown races on television, would often get flown over
+to call the Irish Derby. Here is one of my favorite race calls he has ever done, but probably more appropriate for Talk
+Like a Pirate Day</p>
+<iframe width="420" height="315" src="//www.youtube.com/embed/nf0wQzq9Yzg" frameborder="0" allowfullscreen=""></iframe>
+
+
+<p>Happy St. Patrick&#39;s Day!</p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/twitter-bootstrap/'>Twitter BootStrap</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/css/'>CSS</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
     <h1><a href='/2014/03/National-Pi-Day-2014/'>National Pi Day - Calculating PI With AngularJS and a Monte Carlo Simulation</a></h1>
     
         <div class="post-date">Mar 14th, 2014</div>
@@ -277,85 +343,6 @@ be announced this April. I am quite hopeful that the Microsoft One vision will b
     
     <div class="post-tags">
         Posted In: <a href='/tags/conferences/'>Conferences</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conference/'>Conference</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2014/02/PhoneGap-Cordova-Setup-Windows/'>Setting Up Cordova (PhoneGap) for Development on Windows Machines</a></h1>
-    
-        <div class="post-date">Feb 28th, 2014</div>
-
-    <div class="post-content">
-        <p>Cordova, also known as PhoneGap, is an interesting technology to bundle up mobile web apps created with HTML, CSS and JavaScript for deployment across multiple phone platforms, such as iOS and Android. Cordova also has a JavaScript library that provides access to phone features such as the camera, accelerometer, compass, etc. For organizations that don’t want to invest in coding up an application for multiple platforms, it can be a quick option.
-Recent versions of Cordova have utilized a Command Line Interface (CLI) for installation and configuration leveraging Node.JS for their implementation.</p>
-<p>The terms PhoneGap and Cordova can be a bit confusing for folks, especially for those just getting started. PhoneGap was a
-platform for creating mobile applications using native web technologies produced by Nitobi. Adobe then purchased PhoneGap. Around
-version 1.9 of the product, they Open Sourced PhoneGap and called it <a href="http://cordova.apache.org/">Cordova</a>. They kept the PhoneGap
- name and have extended things a bit by creating an great back end system to build for multiple platforms as well as starter solution
- for different platforms. More information about PhoneGap can be found at <a href="http://phonegap.com/">phonegap.com</a>. The reality is I,
- and most people, refer to the names interchangeably, but there are differences.</p>
-<p>So with that out of the way, let&#39;s look at how wo install Cordova on Windows 8.</p>
-<p>First, you will need to download and install Node.js from <a href="http://nodejs.org/download">http://nodejs.org/download</a>. After this, you should be able to start up PowerShell and run Node from the command line. You can ensure you have node setup by running node –version within a PowerShell prompt</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/nodeCheck.png" alt="Cordova Version check"></p>
-<p>We will be installing global packages via the Node Package Manager (NPM). If you have never used or installed Node previously, you will need to update your path variables to the global packages location is in your path.</p>
-<p>This is done by going to the computer properties and selecting Advanced System Settings</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/systemSettings.png" alt="System Settings"></p>
-<p>Since we need to update the path, we choose Environment Variables</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/envVariables.png" alt="Environment Variables"></p>
-<p>Within the Environment Variables, there are two paths you can choose between, the path for the logged in use and the path for all users. I usually update the current logged in user (the first Path listed under user variables for jptacek)</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/pathVariables.png" alt="Path variables"></p>
-<p>You then just update the Path by clicking edit and adding the location of the NPM packages by appending the following</p>
-<pre class="highlight"><code class="hljs bash">%userprofile%\AppData\Roaming\npm
-</code></pre>
-<p>Note, if you did not have the NPM packages in your path and have taken these steps, you will need to restart PowerShell for your environment variables to be set.
-At this point, we have Node setup and are set to install Cordova. This is accomplished via the Node Package Manager (NPM), which downloads and sets up Node applications.</p>
-<pre class="highlight"><code class="hljs bash">Npm install –g cordova
-</code></pre>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/cordovaInstall.png" alt="Cordova Install"></p>
-<p>The <code>–g</code> flag indicates to the NPM package manager that that package should be installed globally. On Windows, this directory
-is often your user directory, <code>AppData\Roaming\NPM</code>, which we talked about setting up above.</p>
-<p>Now that we have Node and Cordova setup and configured on our machine, we are moving on to the fun stuff, app development!</p>
-<p>The way Cordova applications work is by having a base web application with our HTML, JavaScript, CSS and other assets. For each platform we want to deploy and build locally, we have to add the platform. This will also enable us to use emulators for devices on our development machine. We will then invoke the build process, which takes assets from our main WWW application and packages and deploys them to the various platforms we have on our machine. So if, as we are about to do, have platforms for Windows Phone 8 and Windows 8, the build process takes our web assets from our base WWW app, copies them to those specific platform installs.</p>
-<p>Let us take a look at this…</p>
-<p>To create an application in Cordova, we use the CLI to have it generate the shell of our application by running the Cordova create command</p>
-<pre class="highlight"><code class="hljs bash">cordova create MyApp com.jptacek.MyApp MyApplication
-</code></pre>
-<p>The <code>MyApp</code> parameter identifies the directory for the application, which will be created. The second argument,
-is the identifier, which you want to be unique. Most people use the reverse domain style identifier.
-The last parameter is optional, but is the title of the application for display.</p>
-<p>This process will actually go and download the latest template and create the project structure</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/appCreation.png" alt="Cordova App Creation"></p>
-<p>If we take a look in our directory, you will see it created the default structure for the application with the creation of a www directory with a shell application, a plugins directory, etc.</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/directoryStructure.png" alt="Cordova App Creation"></p>
-<p>So far, so good, but we cannot actually BUILD anything yet because we haven’t created any platforms on the development machine. The WWW directory shown above has our HTML, JavaScript, CSS and other assets. The platforms are the various devices we want to be able to build locally on our machine. The implication here is that you need to setup the local machine for those platforms. This is done by adding the platforms via the CLI.</p>
-<p>Since we are doing this on a Windows machine, we will add two platforms, one for Windows Phone 8 and one for Windows “Metro” 8</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/addPlatform.png" alt="Add application platform"></p>
-<p>Note, if you try and add platforms that are not available for development, Cordova will not allow this. For example, you cannot do iOS development on a Windows 8 machine, so Cordova will not be able to find the XCode libraries and will raise an error trying to setup. If you want to be able to build locally for an Android device, you will need eclipse and the Android SDK, etc.</p>
-<p>By adding the platform, you are actually creating Visual Studio solution files for creating both a native Windows Phone 8 and</p>
-<p>Windows 8 application that can be loaded in Visual Studio and run with the appropriate emulator.</p>
-<p><img src="/2014/02/PhoneGap-Cordova-Setup-Windows/slnDirectory.png" alt="Solution Directory"></p>
-<p>You can load up these solutions and run them natively. However, you first need to build the solution. At this point, you just have a skeleton setup for the project, no assets have been deployed to the skeleton of the project. To do this, you will run the build command in Cordova.</p>
-<pre class="highlight"><code class="hljs bash">Cordova build
-</code></pre>
-<p>This then enables you to run either Windows 8 or Windows Phone 8 to see your solution. Two things… Since each build recreates your solution files from the default WWW directory, your changes will be overwritten. As a result, I usually don’t like doing my code editing with the WP8 and Windows 8 emulator.</p>
-<p>Second, since you essentially have a web application, you like having access to tools you have come to know and love like Chrome Developer tools or FireFox as you develop your code. For this reason, I usually will create a Virtual Directory to server up the WWW assets from a platform, for example, Windows8, that are deployed during a build. This allows for me to use my tools of choice for web development.</p>
-<p>The reality is, I am most likely to use <a href="/2014/02/PhoneGap-Cordova-Setup-Windows/build.phonegap.com">build.phonegap.com</a> for testing by using the
-actual native deivces. Build.PhoneGap.com will actually take your source, and build your application for the multiple platforms
-supported by PhoneGap. Its hydrate function automatically check for new versions and downloads when you launch on a mobile device like Android or Windows Phone.</p>
-<p>I have not found a great way to do development with PhoneGap. I am VERY interested in the workflow other people use for
-their Cordova/PhoneGap development, please share!</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/phonegap/'>PhoneGap</a>, <a href='/tags/cordova/'>Cordova</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/web/'>Web</a>
     </div>
     
     <br/>
