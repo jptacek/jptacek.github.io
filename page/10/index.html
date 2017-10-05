@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.6" />
+    <meta name="generator" content="DocPad v6.79.0" />
     
 
     <meta name="author" content="John Ptacek">
@@ -122,9 +122,9 @@ to explore Angular. In keeping with that theme, we are going to create a simple 
 data in its own &quot;HTML&quot; tag called <code>periodicchartelement</code>. Cool things are starting to happen here people!</p>
 <p>So how do we do this? First, similar to controllers, directives are defined on the module for our application via the
 <code>module.directive</code> API. Within here, we can setup a small template. Our JavaScript would look something like</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> {
-      template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
     };
   });
 </code></pre>
@@ -140,10 +140,10 @@ indicate the DOM element we are creating from the following options</p>
 <p>There is also the ability creative directives tied to HTML comments with <code>restrict:M</code>. The restrict keyword
 can also be combined together to in a manner such as <code>ACM</code>, indicating the directive applies to attributes, classes,
 and comments.</p>
-<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
     <span class="hljs-keyword">return</span> {
-    restrict: <span class="hljs-string">'E'</span>,
-      template: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
+    <span class="hljs-attr">restrict</span>: <span class="hljs-string">'E'</span>,
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'Name: {{element.name}} Atomic Weight: {{element.weight}}'</span>
     };
   });
 </code></pre>
@@ -157,8 +157,8 @@ Based on our <a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services
   <span class="hljs-string">"atomicWeight"</span>: <span class="hljs-number">1.00794</span>,
   <span class="hljs-string">"phase"</span>: <span class="hljs-string">"Gas"</span>,
   <span class="hljs-string">"ionization"</span>: <span class="hljs-number">13.5984</span>,
-  <span class="hljs-string">"melting"</span>: -<span class="hljs-number">259.14</span>,
-  <span class="hljs-string">"boiling"</span>: -<span class="hljs-number">252.87</span>,
+  <span class="hljs-string">"melting"</span>: <span class="hljs-number">-259.14</span>,
+  <span class="hljs-string">"boiling"</span>: <span class="hljs-number">-252.87</span>,
   <span class="hljs-string">"electronegativity"</span>: <span class="hljs-number">2.2</span>,
   <span class="hljs-string">"type"</span>: <span class="hljs-string">'Non Metal'</span>,
   <span class="hljs-string">"group"</span>: <span class="hljs-number">1</span>,
@@ -170,13 +170,13 @@ Based on our <a href="http://www.jptacek.com/2014/05/angularJS-Intro-To-Services
 <p>With that in place, let&#39;s create a directive that will allow us to display an element from the periodic table.</p>
 <p>The first step is to create the directive function, we will create a new file, chemistryDirective.js and then hang
 the directive off of our module and call it <code>`periodicchartelement</code></p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(chemistryService)</span> </span>{;
+<pre class="highlight"><code class="hljs javascript">chemistryApp.directive(<span class="hljs-string">'periodicchartelement'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">chemistryService</span>) </span>{;
     <span class="hljs-keyword">return</span> {
-        restrict: <span class="hljs-string">'E'</span>,
-        templateUrl: <span class="hljs-string">'/2014/06/angularJS-intro-to-directives/template/periodic-template.html'</span>,
-        scope:{
-            element:<span class="hljs-string">'='</span>,
-            cssType:<span class="hljs-string">'=csstypeclass'</span>
+        <span class="hljs-attr">restrict</span>: <span class="hljs-string">'E'</span>,
+        <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">'/2014/06/angularJS-intro-to-directives/template/periodic-template.html'</span>,
+        <span class="hljs-attr">scope</span>:{
+            <span class="hljs-attr">element</span>:<span class="hljs-string">'='</span>,
+            <span class="hljs-attr">cssType</span>:<span class="hljs-string">'=csstypeclass'</span>
         }
 
     }
@@ -188,15 +188,15 @@ HTML element by using the value of <code>E</code>. Second, we are loading a HTML
 from our JSON object and a cssType, which is a function from our scope to display our CSS class.</p>
 <p>Our HTML markup is pretty basic. Notice though where we are setting a CSS class using <code>ng-class</code> and binding to the value
 of cssType.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">'periodicCell'</span> <span class="hljs-attribute">ng-class</span>=<span class="hljs-value">"cssType"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"text-align: left"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>&amp;nbsp;&amp;nbsp; <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"text-align: right"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">span</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">"font-size:24px;"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">br</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">small</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-title">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">'periodicCell'</span> <span class="hljs-attr">ng-class</span>=<span class="hljs-string">"cssType"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: left"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>&amp;nbsp;&amp;nbsp; <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"text-align: right"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"font-size:24px;"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">strong</span>&gt;</span>{{element.symbol}}<span class="hljs-tag">&lt;/<span class="hljs-name">strong</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">br</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">span</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">small</span>&gt;</span>{{element.name }}<span class="hljs-tag">&lt;/<span class="hljs-name">small</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <p>Our CSS type is then a function that determines the CSS class based on the type of element and is defined in our
 service, <code>chemistryService.js</code></p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> </span>{
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> elementType</span>) </span>{
         <span class="hljs-keyword">var</span> cssClass = <span class="hljs-string">''</span>;
         elementType = elementType.toLowerCase();
         cssClass = elementType;
@@ -339,14 +339,14 @@ logic many, many times. To minimize this, I have written a helper application th
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
-    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
+chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{
         <span class="hljs-keyword">return</span> element.name;
     };
 });
 
 <span class="hljs-comment">//</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span>(<span class="hljs-params">$scope, chemistryService</span>)
 </span>{
     ...
     $scope.nameFromService = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
@@ -356,16 +356,16 @@ chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span 
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
       <span class="hljs-keyword">return</span> {
-            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
+            <span class="hljs-attr">nameFromService</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{
                <span class="hljs-keyword">return</span> element.name;
             }
         }
     });
 
 <span class="hljs-comment">//</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span>(<span class="hljs-params">$scope, chemistryService</span>)
 </span>{
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
@@ -376,7 +376,7 @@ that drive the Dependency Injection model in AngularJS. We just pass the service
 it. We showed this above, but just to be sure, by passing <code>chemistryService</code> to the controller, it is service is
 available within the
 controller scope</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span>(<span class="hljs-params">$scope, chemistryService</span>)
 </span>{
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
@@ -390,15 +390,15 @@ using the Periodic Data, which he kindly let me steal.</p>
 electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
 based on the difference determine the type of bond.</p>
 <p>Our service then looks like</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
-    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> </span>{
+    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">element1, element2</span>) </span>{
 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(element1.electronegativity - element2.electronegativity);
 
     };
 
-    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> </span>{
+    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">difference</span>) </span>{
 
         <span class="hljs-keyword">if</span> (difference &gt; <span class="hljs-number">2.0</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-string">'Ionic Bond'</span>;
@@ -415,11 +415,11 @@ based on the difference determine the type of bond.</p>
 since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
 consume the service when we have two elements selected.</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemServiceCtrl'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span>(<span class="hljs-params">$scope, $log, chemistryService</span>) </span>{
 
         $scope.elements = periodicData.elements;
 
-        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
 
             <span class="hljs-keyword">if</span> ($scope.selectedElement1 &amp;&amp; $scope.selectedElement2) {
 

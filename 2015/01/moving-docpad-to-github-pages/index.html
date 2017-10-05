@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>Hosting a DocPad Site on GitHub Pages - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.6" />
+    <meta name="generator" content="DocPad v6.79.0" />
     
 
     <meta name="author" content="John Ptacek">
@@ -153,17 +153,17 @@ static environment is what I use when I want to publish a new blog post. The mai
 publishes files to the github.io directory(<code>ghpages</code>).</p>
 <p>I can run this command by typing <code>docpad -e static generate</code>. After running DocPad and generating the static
 content I am a commit and a push away from an updated website!</p>
-<pre class="highlight"><code class="hljs javascript">#docpad -e static generate
+<pre class="highlight"><code class="hljs undefined">#docpad -e static generate
   environments:
     static:
-      outPath: <span class="hljs-string">'../ghpages'</span>
+      outPath: '../ghpages'
       collections:   posts: -&gt;
-        @getCollection(<span class="hljs-string">"html"</span>).findAllLive({layout: <span class="hljs-string">'post'</span>},[{date:-<span class="hljs-number">1</span>}])
+        @getCollection("html").findAllLive({layout: 'post'},[{date:-1}])
     development:
-      outPath: <span class="hljs-string">'.out'</span>
+      outPath: '.out'
       collections:
         posts: -&gt;
-          @getCollection(<span class="hljs-string">'documents'</span>).findAllLive({layout: {<span class="hljs-string">'$in'</span> : [<span class="hljs-string">'post'</span>, <span class="hljs-string">'drafts'</span>]}}, [layout: <span class="hljs-number">1</span>,  date: -<span class="hljs-number">1</span>])
+          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
 </code></pre>
 <p>So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn&#39;t too painful. I am now saving $10-15
 a month. This will translate to more coffee.</p>

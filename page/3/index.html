@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.6" />
+    <meta name="generator" content="DocPad v6.79.0" />
     
 
     <meta name="author" content="John Ptacek">
@@ -213,17 +213,17 @@ an app directory.</p>
 <p><img src="/2016/08/Angular2GettingStarted/angularCli6.png" alt="Directory Structure"></p>
 <p>The component TypeScript gets generated and creates our selector, reference our HTML template as well as our
 CSS file for styling.</p>
-<pre class="highlight"><code class="hljs javascript">import { Component, OnInit } from <span class="hljs-string">'@angular/core'</span>;
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">import</span> { Component, OnInit } <span class="hljs-keyword">from</span> <span class="hljs-string">'@angular/core'</span>;
 
 @Component({
-  moduleId: <span class="hljs-built_in">module</span>.id,
-  selector: <span class="hljs-string">'app-periodic-table'</span>,
-  templateUrl: <span class="hljs-string">'periodic-table.component.html'</span>,
-  styleUrls: [<span class="hljs-string">'periodic-table.component.css'</span>]
+  <span class="hljs-attr">moduleId</span>: <span class="hljs-built_in">module</span>.id,
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">'app-periodic-table'</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">'periodic-table.component.html'</span>,
+  <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">'periodic-table.component.css'</span>]
 })
-export <span class="hljs-keyword">class</span> PeriodicTableComponent implements OnInit {
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PeriodicTableComponent</span> <span class="hljs-title">implements</span> <span class="hljs-title">OnInit</span> </span>{
 
-  constructor() { }
+  <span class="hljs-keyword">constructor</span>() { }
 
   ngOnInit() {
   }

@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>AngularJS - More with ng-repeat - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.78.6" />
+    <meta name="generator" content="DocPad v6.79.0" />
     
 
     <meta name="author" content="John Ptacek">
@@ -116,33 +116,33 @@ this. All of that to say this, you are best clicking on a single article so you 
 <p>and a controller that references are json file of chemistry data and sets it to a scope variable</p>
 <p><em>chemistryController.js</em></p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemCtrl'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span><span class="hljs-params">($scope)</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemCtrl</span>(<span class="hljs-params">$scope</span>) </span>{
         $scope.periodic = perioicData;
     }
 );
 </code></pre>
 <p>First up, instead of creating an unordered list, we are going to create a table. This is done by putting the
 <code>ng-repeat</code> directive on a <code>&lt;tr&gt;</code> tag. For example</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements "</span>&gt;</span>
 </code></pre>
 <p>Then we can add our data on a cell by cell basis. For this example, we are going to link to a Wikipedia article about
 each element, and then display things like the atomic number, atomic weight, etc. Tying this with our <code>ng-repeat</code>
  directive and
 our table markup becomes</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements "</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements "</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attr">Title</span>=<span class="hljs-string">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
 </code></pre>
 <p>We now have a list of the Chemical elements in a table.</p>
 <div id="appContainer" ng-app="chemistryApp">
@@ -165,23 +165,23 @@ our table markup becomes</p>
 
 <p>We can also, just like in our previous example, bind a filter to an input box and search for a chemical element
 by name and have it filter the list automatically.</p>
-<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementNameOnlyTable"</span>/&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementNameOnlyTable}"</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml">   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"periodicTable"</span>  <span class="hljs-attr">data-ng-controller</span>=<span class="hljs-string">"chemCtrl"</span> &gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">data-ng-model</span>=<span class="hljs-string">"elementNameOnlyTable"</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table table-striped table-bordered table-hover table-condensed"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements | filter:{name:elementNameOnlyTable}"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attr">Title</span>=<span class="hljs-string">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
  <div id="periodicTable" ng-controller="chemCtrl">
     <form id="frm1">
@@ -234,7 +234,7 @@ you will see it becomes the zero element, instead of Hydrogen.</p>
 You don&#39;t want to update the dom via javascript, but use Angular to control what is displayed
 on your page. As an example of this, let&#39;s say we want to hide
 every other element in the list. We could do something like</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-hide</span>=<span class="hljs-value">"$index%2"</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements"</span> <span class="hljs-attr">data-ng-hide</span>=<span class="hljs-string">"$index%2"</span>&gt;</span>
 </code></pre>
 <div id="periodicTable2" ng-controller="chemCtrl">
     <table class="table ">
@@ -255,17 +255,17 @@ every other element in the list. We could do something like</p>
 
 <p>We can also perform some Crimes Against web design. For example, nothing is uglier than wrapping your table in
 Green Bay Packer colors of Green and Gold. So I can add CSS elements like</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
-        <span class="hljs-class">.tableOdd</span> <span class="hljs-rules">{
-            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> green</span></span>;
-        <span class="hljs-rule">}</span></span>
-        <span class="hljs-class">.tableEven</span> <span class="hljs-rules">{
-            <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> gold</span></span>;
-        <span class="hljs-rule">}</span></span>
-    </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+        <span class="hljs-selector-class">.tableOdd</span> {
+            <span class="hljs-attribute">background-color</span>: green;
+        }
+        <span class="hljs-selector-class">.tableEven</span> {
+            <span class="hljs-attribute">background-color</span>: gold;
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
 </code></pre>
 <p>Then we can use the <code>ng-class</code> on the <code>&lt;tr&gt;</code> we are binding to in order to make even/odd rows change colors.</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements"</span> <span class="hljs-attribute">data-ng-class</span>=<span class="hljs-value">"{tableEven: !($index%2), tableOdd: ($index%2)}"</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements"</span> <span class="hljs-attr">data-ng-class</span>=<span class="hljs-string">"{tableEven: !($index%2), tableOdd: ($index%2)}"</span>&gt;</span>
 </code></pre>
 <p>It doesn&#39;t look pretty, and there are MUCH better ways to do this, but it gives you an example of how to
 think the &quot;Angular way&quot;</p>
@@ -288,60 +288,60 @@ think the &quot;Angular way&quot;</p>
 
 <p>Last, we can also do fun things like sort by using select lists to quickly filter data. For example, we create a
 dropdown list for both the element phase</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">data-ng-model</span>=<span class="hljs-string">"elementPhase"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 </code></pre>
 <p>and an ordering criteria</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">data-ng-model</span>=<span class="hljs-string">"elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 </code></pre>
 <p>We can then use the <code>ng-filter</code> and <code>ng-order</code> directives to filter and sort our table. Further, we can
 combine with our text box for searching by name and chain them together.</p>
-<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
+<pre class="highlight"><code class="hljs xml"> <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
 </code></pre>
 <p>Ultimately, our HTML looks like</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"periodicTable5"</span>  <span class="hljs-attribute">data-ng-controller</span>=<span class="hljs-value">"chemCtrl"</span> &gt;</span>
-        Element Name:<span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementName"</span>/&gt;</span>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"periodicTable5"</span>  <span class="hljs-attr">data-ng-controller</span>=<span class="hljs-string">"chemCtrl"</span> &gt;</span>
+        Element Name:<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">data-ng-model</span>=<span class="hljs-string">"elementName"</span>/&gt;</span>
         &amp;nbsp;State:
-        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementPhase"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">data-ng-model</span>=<span class="hljs-string">"elementPhase"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span>All<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Gas"</span>&gt;</span>Gas<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Solid"</span>&gt;</span>Solid<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Liquid"</span>&gt;</span>Liquid<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"Synthetic"</span>&gt;</span>Synthetic<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
         &amp;nbsp;Order:
-        <span class="hljs-tag">&lt;<span class="hljs-title">select</span> <span class="hljs-attribute">data-ng-model</span>=<span class="hljs-value">"elementOrder"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"name"</span> <span class="hljs-attribute">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">option</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-title">option</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">select</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">select</span> <span class="hljs-attr">data-ng-model</span>=<span class="hljs-string">"elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"name"</span> <span class="hljs-attr">selected</span>&gt;</span>Name (ascending)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"-name"</span>&gt;</span>Name (descending)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"melting"</span>&gt;</span>Melting Point (asc)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"-melting"</span>&gt;</span>Melting Point (desc)<span class="hljs-tag">&lt;/<span class="hljs-name">option</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">select</span>&gt;</span>
 
-        <span class="hljs-tag">&lt;<span class="hljs-title">table</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"table "</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-title">th</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">tr</span> <span class="hljs-attribute">data-ng-repeat</span>=<span class="hljs-value">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
-            <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attribute">Title</span>=<span class="hljs-value">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attribute">target</span>=<span class="hljs-value">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-                <span class="hljs-tag">&lt;<span class="hljs-title">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-title">td</span>&gt;</span>
-            <span class="hljs-tag">&lt;/<span class="hljs-title">tr</span>&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-title">table</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table "</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Name<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Atomic Number<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Weight<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Phase<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Ionization Energy<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Melting Point<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>Boiling<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span> <span class="hljs-attr">data-ng-repeat</span>=<span class="hljs-string">"element in periodic.elements | filter:{name:elementName} | filter:{phase:elementPhase} | orderBy:elementOrder"</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"http://en.wikipedia.org/wiki/{{element.name}}"</span> <span class="hljs-attr">Title</span>=<span class="hljs-string">"Wikipedia article on {{element.name}}"</span> <span class="hljs-attr">target</span>=<span class="hljs-string">"_top"</span>&gt;</span>{{element.name}}<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.atomicNumber}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span> &gt;</span>{{element.atomicWeight}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.phase}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.ionization}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.melting}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>{{element.boiling}}<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 </code></pre>
 <div id="periodicTable5" ng-controller="chemCtrl">
         Element Name:<input type="text" ng-model="elementName">
