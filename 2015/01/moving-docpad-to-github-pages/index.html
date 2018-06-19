@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>Hosting a DocPad Site on GitHub Pages - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.79.0" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -118,7 +118,7 @@ they have content checked into the GHPages branch of the project.</p>
 continue to use. Of course, GitHub pages also supports custom domain names for a site. Instructions are
 <a href="https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/">available</a> online. Essentially though,
 it is pretty slick and quick to do. You check in a single file called CNAME (all caps) into your <em>username</em>.github.io
-repository. This file should be in the root of your repository and have the URL of the site, in my case, www.jptacek.com,
+repository. This file should be in the root of your repository and have the URL of the site, in my case, <a href="http://www.jptacek.com">www.jptacek.com</a>,
 without any http:// in front. After committing your changes you can click settings in your repository</p>
 <p><img src="/2015/01/moving-docpad-to-github-pages/settings1.png" alt="Click settings"></p>
 <p>and you can then verify the URL is set</p>
@@ -153,17 +153,18 @@ static environment is what I use when I want to publish a new blog post. The mai
 publishes files to the github.io directory(<code>ghpages</code>).</p>
 <p>I can run this command by typing <code>docpad -e static generate</code>. After running DocPad and generating the static
 content I am a commit and a push away from an updated website!</p>
-<pre class="highlight"><code class="hljs undefined">#docpad -e static generate
+<pre class="highlight"><code class="hljs javascript">#docpad -e static generate
   environments:
     static:
-      outPath: '../ghpages'
+      outPath: <span class="hljs-string">'../ghpages'</span>
       collections:   posts: -&gt;
-        @getCollection("html").findAllLive({layout: 'post'},[{date:-1}])
+        @getCollection(<span class="hljs-string">"html"</span>).findAllLive({layout: <span class="hljs-string">'post'</span>},[{date:-<span class="hljs-number">1</span>}])
     development:
-      outPath: '.out'
+      outPath: <span class="hljs-string">'.out'</span>
       collections:
         posts: -&gt;
-          @getCollection('documents').findAllLive({layout: {'$in' : ['post', 'drafts']}}, [layout: 1,  date: -1])
+          @getCollection(<span class="hljs-string">'documents'</span>).findAllLive({layout: {<span class="hljs-string">'$in'</span> : [<span class="hljs-string">'post'</span>, <span class="hljs-string">'drafts'</span>]}}, [layout: <span class="hljs-number">1</span>,  date: -<span class="hljs-number">1</span>])
+
 </code></pre>
 <p>So in closing, my site is no longer hosted on Azure, but GitHub pages and it wasn&#39;t too painful. I am now saving $10-15
 a month. This will translate to more coffee.</p>

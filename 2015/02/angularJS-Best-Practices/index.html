@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>AngularJS - Best Practices - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.79.0" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -128,7 +128,7 @@ for name collisions. This makes for a very painful day of code debugging.</p>
 localized to the scope of the function being executed. We also end up being able to optimize minification, since our
 variables are localized.</p>
 <p>The general syntax of an IIFE is</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
    <span class="hljs-comment">/* code */</span>
 })();
 </code></pre>
@@ -136,13 +136,14 @@ variables are localized.</p>
 <p>We have been bad programmers in our code examples, so we will clean this up and be better moving forward. This
 ends with us reworking our JavaScript code. Here is a before/after example for our app.js file.</p>
 <p>Before:</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-meta">'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-pi">'use strict'</span>;
 
 <span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
+
 </code></pre>
 <p>After:</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
  <span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 })();
@@ -158,8 +159,8 @@ using code based on AngularJS.com samples, where we declare a module as a variab
 syntax at all times. The syntax above, will create the module each time, overwriting the existing one.</p>
 <p>Getter syntax for the module enables us to retrieve an existing module. We rework our <code>app.js</code> to now incorporate
 both IIFE and setter syntax to become</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
     angular
     .module(<span class="hljs-string">'chemistryApp'</span>,[]);
@@ -169,29 +170,30 @@ both IIFE and setter syntax to become</p>
 Next, we are going to rework our code to utilize named functions, mostly for code readability as it reduces the amount
 of callback functions in our code.</p>
 <p>For our Controller definition we could define our function with a callback as</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
     angular
         .module(<span class="hljs-string">'chemistryApp'</span>)
         .controller(<span class="hljs-string">'chemistryController'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>, <span class="hljs-string">'$log'</span>,
-            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span>(<span class="hljs-params">$scope, chemistryService, $log</span>) </span>{
+            <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope, chemistryService, $log)</span> </span>{
 
 
         <span class="hljs-comment">// some code</span>
       }]
     )
 })();
+
 </code></pre>
 <p>However, the nesting can make long term code maintenance and readability more cumbersome. A better approach is</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
     angular
         .module(<span class="hljs-string">'chemistryApp'</span>)
         .controller(<span class="hljs-string">'chemistryController'</span>,chemistryController);
 
-      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span>(<span class="hljs-params">$scope,  chemistryService,$log</span>) </span>{
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope,  chemistryService,$log)</span> </span>{
 
         <span class="hljs-comment">// some code</span>
 
@@ -205,14 +207,14 @@ AngularJS has a great Dependency Injection (DI) framework. The way we have the c
 with things like bundling and minification. When minification tools rename our DI functions, they may not be found
 by Angular. As a result, you should explicitly identify DI functions to avoid this.</p>
 <p>One way to do is to rework function calls such as</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
     angular
         .module(<span class="hljs-string">'chemistryApp'</span>)
         .controller(<span class="hljs-string">'chemistryController'</span>,chemistryController);
 
-      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span>(<span class="hljs-params">$scope,  chemistryService,$log</span>) </span>{
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope,  chemistryService,$log)</span> </span>{
 
         <span class="hljs-comment">// some code</span>
 
@@ -223,15 +225,15 @@ by Angular. As a result, you should explicitly identify DI functions to avoid th
 </code></pre>
 <p>to identify what is being injected. You need to be sure to map up parameters properly, or all kinds of madness will
 ensue</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">     'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">     'use strict'</span>;
 
      angular
          .module(<span class="hljs-string">'chemistryApp'</span>)
          .controller(<span class="hljs-string">'chemistryController'</span>,
          [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,<span class="hljs-string">'$log'</span>,chemistryController]);
 
-       <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span>(<span class="hljs-params">$scope,  chemistryService,$log</span>) </span>{
+       <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope,  chemistryService,$log)</span> </span>{
 
          <span class="hljs-comment">// some code</span>
 
@@ -242,8 +244,8 @@ ensue</p>
 </code></pre>
 <p>Another, better and recommended approach, is to use the <code>$inject</code> function to explicitly identify what is being
 injected.</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
     angular
         .module(<span class="hljs-string">'chemistryApp'</span>)
@@ -251,7 +253,7 @@ injected.</p>
 
     chemistryController.$inject =  [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,<span class="hljs-string">'$log'</span>];
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span>(<span class="hljs-params">$scope,  chemistryService,$log</span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemistryController</span><span class="hljs-params">($scope,  chemistryService,$log)</span> </span>{
 
          <span class="hljs-comment">// some code</span>
 
@@ -265,13 +267,13 @@ explicit and makes the code more readable.</p>
 <p>###Explicit function declarations###
 Another good practice is to explicitly identify function definitions. If we look at our original service function
 the structure was</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
-    <span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"> elementType</span>) </span>{
+    <span class="hljs-keyword">var</span> getCssClassElement = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">( elementType)</span> </span>{
         <span class="hljs-comment">// code</span>
     };
 
-    <span class="hljs-keyword">var</span> getElements = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">var</span> getElements = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
 
         <span class="hljs-comment">// code</span>
 
@@ -281,40 +283,42 @@ the structure was</p>
     };
 
     <span class="hljs-keyword">return</span> {
-        <span class="hljs-attr">getCssClassElement</span> : getCssClassElement,
-        <span class="hljs-attr">getElements</span>: getElements
+        getCssClassElement : getCssClassElement,
+        getElements: getElements
     };
 });
+
 </code></pre>
 <p>which is kind of what we want. One of the places where Papa and Motto differ on their approaches though is WHERE
 the function declarations should happen. Papa prefers that start of the service and Motto towards the bottom. I lean
 towards the Papa approach because I can explicitly see my &quot;public interfaces&quot; for the function. This is ultimately
 what we want to be testable in our code. However, the downside is some scrolling to get to the implementation details.
 Ultimately, make a choice and be consistent.</p>
-<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
-<span class="hljs-meta">    'use strict'</span>;
+<pre class="highlight"><code class="hljs javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span> </span>{
+<span class="hljs-pi">    'use strict'</span>;
 
     angular
         .module(<span class="hljs-string">'chemistryApp'</span>)
         .service(<span class="hljs-string">'chemistryService'</span>,chemistryService);
 
-    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">chemistryService</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span>  <span class="hljs-title">chemistryService</span><span class="hljs-params">()</span> </span>{
         <span class="hljs-keyword">return</span> {
-            <span class="hljs-attr">getCssClassElement</span>: getCssClassElement,
-            <span class="hljs-attr">getElements</span>: getElements
+            getCssClassElement: getCssClassElement,
+            getElements: getElements
         };
 
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCssClassElement</span>(<span class="hljs-params">elementType</span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCssClassElement</span><span class="hljs-params">(elementType)</span> </span>{
             <span class="hljs-comment">// some code</span>
         };
 
-        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getElements</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getElements</span><span class="hljs-params">()</span> </span>{
 
             <span class="hljs-comment">// some code</span>
 
         };
     }
 })();
+
 </code></pre>
 <p>###Directory Structure###
 Next up is best practices for directory structure. Ultimately, we are not going to refactor this code to reflect this best

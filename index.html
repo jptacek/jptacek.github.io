@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.79.0" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -70,85 +70,152 @@
             
     <article class="post">
     
-    <h1><a href='/2017/09/TechHub2017/'>TechHub 2017 - Innovation, AI and the Economy</a></h1>
+    <h1><a href='/2018/03/Intro-To-Artificial-Intelligence/'>An Introduction to Artificial Intelligence and Machine Learning</a></h1>
     
-        <div class="post-date">Sep 28th, 2017</div>
+        <div class="post-date">Mar 31st, 2018</div>
 
     <div class="post-content">
-        <p>I was honored to be chosen to speak at the <a href="https://www.technologyhubconference.com/">2017 Technology Hub conference</a> in
-Appleton, Wi.</p>
-<p>My <a href="https://www.technologyhubconference.com/timetable/event/innovation-ai-economy/">session</a> was on Innovation, Artificial Intelligence, and the Economy. It was a pretty
-different talk for a tech conference, which led to great discussion.</p>
-<p><img src="/2017/09/TechHub2017/JenJohnTechHub.jpg" alt="John Jen AI conf"></p>
-<p><img src="/2017/09/TechHub2017/techHub2017Talk.jpg" alt="John at Tech Hub 2017 Talk"></p>
+        <p>Artificial Intelligence (AI) is becoming more of an important part in the solutions we craft for clients in many different industries. The term AI itself is very broad, so let’s break down some applicable concepts.</p>
+<h2 id="consuming-artificial-intelligence-services">Consuming - Artificial Intelligence Services</h2>
+<p>We can already take advantage of Artificial Intelligence (AI) by utilizing AI algorithms created by Microsoft and Google within applications we develop. This enables developers to bring AI smarts into an application without having to have a deep understanding of all the nuances of AI – enabling far more widespread adoption and implementation.</p>
+<h3 id="libraries-available">Libraries Available</h3>
+<p>These are examples of the libraries available to developers today:</p>
+<h4 id="vision">Vision</h4>
+<p>We can use AI libraries to process images for applications we develop. These libraries enable us to identify objects as well as caption content from the images (for example, an image contains a dog in a park). We can also use sentiment analysis to determine the mood of an individual in a photo.</p>
+<p>One of our clients asked us to use facial recognition to determine if people look nervous or angry when in a shop. And another client asked us to develop a facial recognition solution to identify customers rather than manually looking through archived security cameras.</p>
+<p>A great example of an application using vision AI services is Google’s real-world emoji hunt app you can use via a web browser on your phone. Check out <a href="https://emojiscavengerhunt.withgoogle.com/">https://emojiscavengerhunt.withgoogle.com/</a>. This application uses the web browser and JavaScript to do real-time image recognition that has you hunting emojis from the virtual world in the real world..</p>
+<h4 id="speech">Speech</h4>
+<p>Speech-based AI platforms can take real-time speech and translate it into text, like voicemail does on most phones. You can also uniquely identify people by their voice or develop for-voice interfaces in application.</p>
+<p>We are in the process of creating a hackathon with a client to develop a chatbot. The chatbot would enable users to interact with it via typing to change a password in a help desk function. This is an example of where we can develop a speech-based AI model, but consume it using text via interaction with a chatbot or voice via interaction with a digital assistant.</p>
+<p>We have also used Google Chrome’s built in speech recognition to develop a voice-activated product search for a client, as well as helping clients to develop Alexa Skills or Google Home Actions.</p>
+<h4 id="knowledge">Knowledge</h4>
+<p>This allows us to take an existing knowledge base and enable it to be consumed by developers as endpoints.</p>
+<p>An example of this was highlighted during a recent trip to the Microsoft Technology Center. They have a function which allows an internal documentation site to be searched and indexed, and then allows you to interact with it via question and answer interactions. Once created, this could then be used to provide a Q&amp;A chatbot for an organization. For example, you could chat with a HR chatbot and ask it when benefit forms are due and get a response rather than trying to search a HR website. This provides users quick access to information. More information on QnA Maker is available at <a href="https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/">https://azure.microsoft.com/en-us/services/cognitive-services/qna-maker/</a>.</p>
+<h4 id="language">Language</h4>
+<p>Language AI platforms enable developers to better understand natural human language. Think of typing a normal question into a search engine and having it parse the sentence to derive an answer. Language AI platforms also enable us to do sentiment analysis on documents, as well as translation services between various spoken languages (ex. English text to Spanish).</p>
+<p>An example of this could be using AI to translate the content of a website for users in real-time to another language. This isn’t new, but the translation capabilities have used AI internally to become MUCH better tools.</p>
+<p>You can use language-based AI to ascertain the sentiment of content people are producing. If you are in customer service, you can have an application that’s reading tweets about your organization, identifies an unhappy post, and notifies your team to respond appropriately. Tools like this exist in the marketplace today, but we can develop custom solutions if we need to.</p>
+<h2 id="creating-machine-learning">Creating - Machine Learning</h2>
+<p>Another way to utilize AI is via Machine Learning. Machine Learning allows us to take lots of input data and make the data predictive. This is a more involved implementation than already created platform services from Microsoft and Google, but it allows us to provide solutions applicable to an organization&#39;s problem domain. There are many ways to solve these problems using machine learning by training models. We highlight four of them below with examples.</p>
+<p>The most popular machine learning tool by far is <a href="https://www.tensorflow.org/">TensorFlow</a>, an open source tool created by Google. To use tools likes TensorFlow, the first step is to train a model, which is usually done with languages like Python and R. These models then can be consumed in an application locally on a device or by wrapping the output in an API Endpoint. Microsoft also has a machine learning platform called Microsoft Cognitive Toolkit (CNTK).</p>
+<p>You will hear terms like <a href="https://jupyter.org/">Jupyter Notebooks</a> and Azure Machine Learning workbench. These tools enable teams and organization to share learning from data and model creation.</p>
+<h3 id="types-of-machine-learning">Types of Machine Learning</h3>
+<h4 id="supervised-learning">Supervised Learning</h4>
+<p>With supervised learning, you have input variables and output variables. You can think of this as an almost glorified math function. Given input data x, y and z (also called features) you get an output value of (y = f(x,y,z)) called a label. It is called supervised learning because we know the correct answer (the output value y or label), and we can “watch” the model as it is training itself until it gets to a proper error tolerance.</p>
+<p>A real-world example of this is email spam. If you are Google, you get billions of emails a day, and you know which one users have identified as spam. You can then use the feature (the email) to identify which future emails are likely to be spam.</p>
+<p>Another example would be the value of a house, based on a set of feature data called predictors. Predictors could be square feet, number of bedrooms, number of floors, etc. From these, you could develop a model to predict housing values based on historical data from a trained model.</p>
+<p>A final example would be to take operating conditions of a machine and see if it is in a failure condition and turn it off.</p>
+<h4 id="unsupervised-learning">Unsupervised Learning</h4>
+<p>With unsupervised learning, you have input variables (or features), but not corresponding output variables (or labels). In this case, we don’t know what the correct answer is. We are using this method to understand the structure of our data or the distribution of data. The unsupervised description comes from the fact that there is no correct answer and we cannot “watch” the model as it trains. Algorithms are left to find patterns in the data for us.</p>
+<p>A real-world example of unsupervised learning could be buying habits. You can identify people coming to your site that buy product A, are also likely to buy product B, and recommend it to them. Common examples of this include suggested purchases in Amazon and suggested shows in Netflix and Hulu.</p>
+<h4 id="semi-supervised-learning">Semi-Supervised Learning</h4>
+<p>This training method is a combination of supervised and unsupervised learning. Some of your data is partially labeled and the remainder is not. This often tends to be found in the real world, where you do not have the luxury of having all of your data labeled.</p>
+<p>An example of this is <a href="https://photos.google.com/">Google Photos</a>, it can identify person A is someone who appears in our photos a lot. You can then identify that person A is your significant other, and future photos are automatically tagged as person A.</p>
+<h4 id="reinforcement-learning">Reinforcement Learning</h4>
+<p>This training method is quite different than the rest. In this case, you train the model to observe the environment, and then act. If the action is successful, the system gets a reward. As time goes on, it develops a strategy (called a policy) to maximize reward.</p>
+<p>A recent example of this is <a href="https://deepmind.com/research/alphago/">Google Deepmind’s Alpha Go</a>. Google used supervised learning to <a href="https://www.theverge.com/2017/5/30/15712300/alphago-ai-humanity-google-artificial-intelligence-ke-jie">famously beat</a> the world&#39;s best Go Player, Lee Se-dol, in May of 2016. Google then went back to the drawing board, and instead of using supervised learning to train the AI, it used reinforcement learning. The system was trained on the rules of Go, and it played against itself <a href="https://www.theverge.com/2017/10/18/16495548/deepmind-ai-go-alphago-zero-self-taught">many, many times</a> to create a policy it used against opponents. The end result was a remarkably stronger program than the one that beat the world&#39;s best Go Player.</p>
+<p>Google has a nice <a href="https://www.youtube.com/watch?v=V1eYniJ0Rnk&amp;vl=en">video</a> of this happening over time with a game of Breakout.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Artificial Intelligence is an important emerging technology for enterprises. Taking advantage of existing AI platforms to infuse applications with smarts is a quick step to getting started. As organizations mature, machine learning can help organizations find value in the data they have to learn and predict.</p>
+<h2 id="ai-vocabulary">AI Vocabulary</h2>
+<ul>
+<li>Attribute - a data type in a machine learning problem. For example, square footage.</li>
+<li>Feature - an attribute (data type) AND its value. For example, square footage = 1950.</li>
+<li>Classification - a subset of supervised learning problems where the output is a category. For example, spam or not spam for an email.</li>
+<li>Regression - a subset of supervised learning problems where the output is a value. For example, the estimated price of a house.</li>
+<li>Clustering - a subset of unsupervised learning problems where you want to discover groupings of the data. An example could be website visitor history that shows people are generally professional coders during the week, but hobby coders on the weekend.
+*Association - a subset of unsupervised learning problems where you want to discover associations in the data. For example, Amazon knows that people who buy thing X (Captain America) are likely to buy thing Y (Black Panther).</li>
+<li>Policy - the strategy a machine learning system develops from a reinforcement learning program.</li>
+</ul>
+<h2 id="supervised-learning-algorithms">Supervised Learning Algorithms</h2>
+<ul>
+<li>k-Nearest Neighbor</li>
+<li>Linear Regression - Regression problems</li>
+<li>Logistic Regression</li>
+<li>Support Vector Machines (SVMs) - Classification problems</li>
+<li>Decision Trees and Random Forest - Classification problems</li>
+<li>Neural Networks</li>
+</ul>
+<p>This blog post originally appeared
+at <a href="https://www.skylinetechnologies.com/Blog/Skyline-Blog/May_2018/artificial-intelligence-machine-learning-intro">Skyline Technologies</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/ai/'>AI</a>, <a href='/tags/business/'>Business</a>, <a href='/tags/innovation/'>Innovation</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2018/03/National-Pi-Day/'>National Pi Day 2018</a></h1>
+    
+        <div class="post-date">Mar 14th, 2018</div>
+
+    <div class="post-content">
+        <p>In honor of <a href="https://en.wikipedia.org/wiki/Pi_Day">National Pi Day</a> in the US, we are going to revisit an <a href="https://jptacek.com/2013/03/have_your_pi/">old blog post</a> where we compared the performance of C# to C++.</p>
+<p>This is a really simple comparison, but we can still learn a few things!</p>
+<p>We are going to use a VERY slowly converging series to calculate π to 15 decimal points, which takes close to 100 million iterations to accomplish. The formula is the <a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_%CF%80">Leibniz Formula</a> and can be represented as a mathematical series as such:</p>
+<p><img src="/2018/03/National-Pi-Day/piLeibniz.png" alt="Leibniz series for computing Pi"></p>
+<p>Microsoft has been hard at work, rewriting their .NET platform from the version that has powered enterprises over the last 15 years, to a more platform agnostic, open source version called <a href="https://www.microsoft.com/net/">.NET Core</a>.</p>
+<p>We thought it would be interesting to compare .NET Core calculations to the previous .NET Classic calculation that was written in C#. We also decided to compare the very popular <a href="https://nodejs.org/en/">Node.js</a> runtime, which drives a lot of web development, both with <a href="https://www.npmjs.com/">NPM</a> for client development and on the server.</p>
+<p>There were 10 iterations of each code run on Windows 10. You can find the code on Skyline’s <a href="https://github.com/SkylineTechnologies/">Github</a> account at <a href="https://github.com/SkylineTechnologies/pi-day-leibniz">pi-day-leibniz</a>.</p>
+<p><img src="/2018/03/National-Pi-Day/piDayLang.png" alt="win10 dot net node classic"></p>
+<p>As we can see, the performance of .NET Core is pretty impressive on Windows! Three times as fast than .NET Classic and 7 times faster than Node.js. This passes the smell test too. We expect a more modern rewrite of .NET to perform better. Node.js is also an interpreted language, so it will not be as fast as compiled code.</p>
+<p>We then compared the performance of .NET Core and Node.js across operating systems on the same machine, in this case, <a href="https://www.ubuntu.com/">Ubuntu</a> 17.10 and Windows 10. Since both code bases are multi-platform, we can see how they compare across OSes.</p>
+<p><img src="/2018/03/National-Pi-Day/piDayCompareOS.png" alt="ubuntu dotnet node"></p>
+<p>Node.js performs slightly better on Ubuntu than it does on Windows. Given that Node.js uses Google’s Chrome JavaScript engine, we would expect similar performances across platforms.</p>
+<p>Dotnet Core in this instance though is about three times slower on Linux than it is on Windows. This makes sense since Microsoft is the creator of Windows 10 and will have tons of expertise on optimizing application for the operating system.</p>
+<h2 id="two-takeaways-from-this-pi-day-exercise">Two takeaways from this Pi Day exercise</h2>
+<ol>
+<li><p>.NET core performance is very impressive. The release of Node.js brought Async processing to the forefront to enable performant API calls. The rest of vendors have been playing catch up, and Microsoft’s catch up with .NET Core is very fast. This is also backed up by much more thorough benchmarks from TechEmpower.</p>
+</li>
+<li><p>Second, the development landscape is vastly different in the five years since we did a Pi day look at C# and C++ performance in 2013.</p>
+</li>
+</ol>
+<p>Microsoft’s C# classic is not the company’s future direction. They are 100% in on the new .NET Core platform and enabling developers to build things on Windows, Mac or Linux. This is a remarkable turnaround for a company that once called Linux a <a href="https://www.theregister.co.uk/2001/06/02/ballmer_linux_is_a_cancer/">cancer</a>.</p>
+<p>Throw in the fact that .NET Core is an Open Source technology, as is Node.js. Microsoft has even Open Source .NET classic. We can see that in the five years since we last looked at performance that Open Source technology has become the standard for developers, with implementations on the developer’s platform of choice. That is outstanding progress for developers.</p>
+<p>Happy Pi day! Go and write some code!</p>
+<p>This blog post originally appeared
+at <a href="https://www.skylinetechnologies.com/Blog/Skyline-Blog/March_2018/pi-day-compare-dotnet-core-classic-node-javascript">Skyline Technologies</a></p>
+
+    </div>
+
+    
+    <div class="post-tags">
+        Posted In: <a href='/tags/pi/'>Pi</a>, <a href='/tags/ephemera/'>Ephemera</a>, <a href='/tags/skyline-technologies/'>Skyline Technologies</a>
+    </div>
+    
+    <br/>
+
+    <p>&nbsp;</p>
+
+</article>
+
+    <article class="post">
+    
+    <h1><a href='/2017/11/ReactNativeNewDug/'>NewDug Nov 2018 - React Native is the future of mobile</a></h1>
+    
+        <div class="post-date">Nov 8th, 2017</div>
+
+    <div class="post-content">
+        <p>Great night for a presentation to the <a href="http://newdug.org/">NewDug</a> user group about 
+<a href="https://facebook.github.io/react-native/">React Native</a>. The title
+of my talk was <a href="https://www.eventbrite.com/e/react-native-is-the-future-of-mobile-and-the-future-is-now-john-ptacek-tickets-37036925441?aff=esli#">React Native is the future of mobile, and the future is now! </a>, so there was lots of good converstation!</p>
 <p>Thanks to all of those who attended.</p>
-<p>For those interested, here is a copy of the  <a href="https://docs.google.com/presentation/d/1OTdsbi7ecvIzZQ4rz__uaJkAssMtapWxDPP3Rbp9HAI/edit?usp=sharing">presentation</a>.</p>
+<p>For those interested, here is a copy of the  <a href="https://docs.google.com/presentation/d/1rGOy1_GwRRcNVT-RkdiWb7Ra82Hoeno0vType5_NdnM/edit?usp=sharing">presentation</a>.</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/techhub/'>TechHub</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/ai/'>AI</a>, <a href='/tags/speaking/'>Speaking</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2017/08/ThatConference2017/'>That Conference 2017 - Intro to Docker</a></h1>
-    
-        <div class="post-date">Aug 11th, 2017</div>
-
-    <div class="post-content">
-        <p>I rave a lot about <a href="https://www.thatconference.com">That Conference</a>, so you can
-tell I am pretty enthusiastic for the event. If that doesn&#39;t convince you, this
-picture should!</p>
-<p><img src="/2017/08/ThatConference2017/thatConf.png" alt="ThatConference 2017"></p>
-<p>This year, my <a href="https://www.thatconference.com/Sessions/Session/11585">session</a> was An introduction to <a href="https://www.docker.com">Docker</a>, a
-very popular virtualization technology that I find .NET developers are
-somewhat unaware of.</p>
-<p>It was a fun talk and really great questions and crowd participation.</p>
-<p>For those interested, here is the <a href="https://docs.google.com/presentation/d/1Ss3MitzdYtEPDD14NHhIJtWAV_TYCJhK_NKFHkhklLQ/edit#slide=id.p">presentation</a>.</p>
-<p>The source code can be found on my GitHub repo at
-<a href="https://github.com/jptacek/dockerPi">https://github.com/jptacek/dockerPi</a>.</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/that-conference/'>That Conference</a>, <a href='/tags/docker/'>Docker</a>, <a href='/tags/speaking/'>Speaking</a>
-    </div>
-    
-    <br/>
-
-    <p>&nbsp;</p>
-
-</article>
-
-    <article class="post">
-    
-    <h1><a href='/2017/03/NewDug2017/'>NEWDUG 2017 CodeCamp - Introduction to Docker</a></h1>
-    
-        <div class="post-date">Mar 25th, 2017</div>
-
-    <div class="post-content">
-        <p>Thanks to everyone who came out to my talk about Docker at the 2017
-<a href="http://newcodecamp.com">NEW Codecamp</a>.</p>
-<p>The slides for the presentation are available at <a href="https://docs.google.com/presentation/d/1Ip-ybRmXez8bldnk07ug0T2y5Dlbdql20Mf14UCJDeQ/edit?usp=sharing">slides.google.com</a>.</p>
-<p>The source code can be found on my GitHub repo at
-<a href="https://github.com/jptacek/dockerPi">https://github.com/jptacek/dockerPi</a>.</p>
-<p>It is great to see so many engaged folks in our NorthEast Wisconsin Developer
-community that came out today!</p>
-
-    </div>
-
-    
-    <div class="post-tags">
-        Posted In: <a href='/tags/newdug/'>NEWDUG</a>, <a href='/tags/docker/'>Docker</a>, <a href='/tags/speaking/'>Speaking</a>
+        Posted In: <a href='/tags/react-native/'>React Native</a>, <a href='/tags/react/'>React</a>, <a href='/tags/mobile/'>Mobile</a>, <a href='/tags/javascript/'>JavaScript</a>, <a href='/tags/speaking/'>Speaking</a>
     </div>
     
     <br/>

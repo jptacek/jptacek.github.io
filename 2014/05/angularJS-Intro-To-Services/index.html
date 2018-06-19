@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>AngularJS - Introduction to Services - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.79.0" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -122,14 +122,14 @@ logic many, many times. To minimize this, I have written a helper application th
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
-    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{
+chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">this</span>.elementName= <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
         <span class="hljs-keyword">return</span> element.name;
     };
 });
 
 <span class="hljs-comment">//</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span>(<span class="hljs-params">$scope, chemistryService</span>)
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
 </span>{
     ...
     $scope.nameFromService = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
@@ -139,16 +139,16 @@ chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span 
 <pre class="highlight"><code class="hljs javascript"><span class="hljs-keyword">var</span> chemistryApp = angular.module(<span class="hljs-string">'chemistryApp'</span>, []);
 
 <span class="hljs-comment">//</span>
-chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+chemistryApp.factory(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">()</span></span>{
       <span class="hljs-keyword">return</span> {
-            <span class="hljs-attr">nameFromService</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{
+            nameFromService: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(element)</span></span>{
                <span class="hljs-keyword">return</span> element.name;
             }
         }
     });
 
 <span class="hljs-comment">//</span>
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span>(<span class="hljs-params">$scope, chemistryService</span>)
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
 </span>{
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
@@ -159,7 +159,7 @@ that drive the Dependency Injection model in AngularJS. We just pass the service
 it. We showed this above, but just to be sure, by passing <code>chemistryService</code> to the controller, it is service is
 available within the
 controller scope</p>
-<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span>(<span class="hljs-params">$scope, chemistryService</span>)
+<pre class="highlight"><code class="hljs javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ChemCtrl</span><span class="hljs-params">($scope, chemistryService)</span>
 </span>{
     ...
     $scope.nameFromFactory = chemistryService.elementName(elements[<span class="hljs-number">0</span>]);
@@ -173,15 +173,15 @@ using the Periodic Data, which he kindly let me steal.</p>
 electronegativity. We will create a service that does two things, calculate the differences in electronegativty and then
 based on the difference determine the type of bond.</p>
 <p>Our service then looks like</p>
-<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+<pre class="highlight"><code class="hljs javascript">chemistryApp.service(<span class="hljs-string">'chemistryService'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
-    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">element1, element2</span>) </span>{
+    <span class="hljs-keyword">this</span>.calculateElectronegativityDifference = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(element1, element2)</span> </span>{
 
         <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.abs(element1.electronegativity - element2.electronegativity);
 
     };
 
-    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">difference</span>) </span>{
+    <span class="hljs-keyword">this</span>.convertElectronegativityDifferenceToName = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(difference)</span> </span>{
 
         <span class="hljs-keyword">if</span> (difference &gt; <span class="hljs-number">2.0</span>) {
             <span class="hljs-keyword">return</span> <span class="hljs-string">'Ionic Bond'</span>;
@@ -193,16 +193,17 @@ based on the difference determine the type of bond.</p>
 
     };
 });
+
 </code></pre>
 <p>Our controller creation then gets updated so that we are injecting the service into the parameter list. Next,
 since $scope is our conduit for the view to talk to the service, we create a function on the controller that will
 consume the service when we have two elements selected.</p>
 <pre class="highlight"><code class="hljs javascript">chemistryApp.controller(<span class="hljs-string">'chemServiceCtrl'</span>, [<span class="hljs-string">'$scope'</span>, <span class="hljs-string">'chemistryService'</span>,
-    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span>(<span class="hljs-params">$scope, $log, chemistryService</span>) </span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">chemServiceCtrl</span><span class="hljs-params">($scope, $log, chemistryService)</span> </span>{
 
         $scope.elements = periodicData.elements;
 
-        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        $scope.calculateBondPolarity = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
 
             <span class="hljs-keyword">if</span> ($scope.selectedElement1 &amp;&amp; $scope.selectedElement2) {
 

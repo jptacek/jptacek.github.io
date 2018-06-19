@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>JPtacek.com - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.79.0" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -70,30 +70,54 @@
             
     <article class="post">
     
-    <h1><a href='/2011/06/html-5-a-little-history/'>HTML 5: A Little History</a></h1>
+    <h1><a href='/2012/03/html-5-for-applications/'>HTML 5 for Applications</a></h1>
     
-        <div class="post-date">Jun 28th, 2011</div>
+        <div class="post-date">Mar 21st, 2012</div>
 
     <div class="post-content">
-        <p>HTML 5 is being proposed as a magic potion for all that ails the world of developers. It slices, it dices, it chops and even calls your mom on her birthday when you forget. Let&#39;s jump on the bandwagon!</p>
-<p>To understand HTML 5, first you&#39;ll need a bit of history... HTML is a standard, standards are created by standards bodies, and they can take a while. The HTML standard is created by the World Wide Web Consortium (W3C), with the last HTML standard being <a href="http://www.w3.org/TR/REC-html40-971218/">HTML 4</a>, which was published in December of 1997. At that point, the W3C essentially said HTML is dead, long live HTML, but in the form of XHTML, a break from the previous version of HTML with HTML being recreated as strongly formed XML.</p>
-<p>The introduction of XHTML had one problem though; XHTML &quot;broke&quot; the internet. It didn&#39;t literally break it in the sense that you couldn&#39;t get your White Sox scores from ESPN, but without massive rewrites, it would have. HTML has always been a &quot;forgiving&quot; standard. If I develop an HTML page and have an opening <code>xml &lt;P&gt;</code> tag but not a corresponding closing <code>xml &lt;/P&gt;</code> tag, my page will (most likely) work. XHTML would have resulted in a fatal error. People have estimated that fully implementing the XHMTL specification would have resulted in 99% of HTML pages at the time not rendering properly.</p>
-<p>So, our journey to the way back machine brings us to 2004, HTML 4 is the last W3C standard and their work has been focused on XHTML since 1997. During this time, XHTML has NOT taken off in the marketplace. People still want their White Sox scores from ESPN. As a result, browser developers, some web development companies, and some W3C members got together and proposed evolving HTML 4 with new features for modern browsers since a lot had changed in the years since the last standard (2004 -1997 = 73 Internet years). The W3C said they were not interested but the folks who proposed extending HTML WERE interested and went off and created the <a href="http://www.whatwg.org/news/start">Web Hypertext Application Technology (WHAT)</a> working group. So here is the state of the world: the people responsible for the HTML standard are not evolving the HTML standard any more, the folks who implement the HTML standard (the web browser creators, the app tool creators, etc.) want to evolve HTML.</p>
-<p>So the WHAT group went on doing its thing. Their main goal was backward compatibility. They wanted to be able to evolve HTML without breaking the 10 years of web development that came before. One of the more interesting things they did was explicitly identifying HOW to parse HTML so that it would be compatible across all browsers. In some ways, that became a new standard that indicated how all browsers should work.</p>
-<p>They also went on and introduced new features into HTML (without breaking HTML) including new form elements for things like dates. They thought, &quot;Wouldn&#39;t it be swell if browsers natively supported video and audio so we could get rid of things like Flash for streaming video?&quot;, so they added it. They also thought, &quot;Wouldn&#39;t it be awesome if you could animate things directly in the browser?&quot;, so they added a drawing canvas to HTML.</p>
-<p>The industry responded positively to these new ideas and the WHAT group started gaining momentum. During this time the W3C was working on XHTML 2, which none of the browser vendors implemented. I&#39;m not sure what you call a standard that nobody implements, but whatever you call it, it&#39;s pretty useless. It got to the point where in October of 2006, the W3C and the WHAT working group decided to join forces and evolve HTML and create HTML 5.</p>
-<p>Today we are at a point where these two groups are working together to create the HTML 5 standard. The next question is WHEN will there be an HTML 5 standard? It&#39;s going to be a while, maybe as far out as 2022 or later. So is that a problem? The answer is, hopefully not.</p>
-<p>Part of the reason for the long time is that the HTML 4 specification is very vague or even undefined on how things work. If you forget to include your closing paragraph tag, it was up to the browser vendor to figure it out. This leads to different implementations across vendors so things don&#39;t work as expected across all the browsers, something you are no doubt very familiar with. As a first step, sometime in 2012, a candidate recommendation for the HTML 5 standard will be released. At that point, the feature set, already very close to being final, will be official. A good part of the remaining 10 years will be spent on officially documenting how the standard should parse HTML.</p>
-<p>Another, even more important thing, is that the HTML 5 team is working on test suites. The idea is that browser vendors will have to run their browsers against the test suite and not until they hit 100% in a test suite will they be considered to have passed. In a lot of ways, the test suite becomes the standard. In fact, not until two major browser vendors pass the test suite with 100%, will the standard be considered completed. This is part of the reason for the very long elapsed time.</p>
-<p>The other player in this is how HTML 5 works other devices. HTML 5 is or will be supported by all major smart phone vendors as well as tablet vendors, e-readers and most likely a plethora of things not even imagined yet. In fact, some sites, such as the ubiquitous Facebook, are rumored to be developing HTML 5 applications rather than native applications for mobile or tablet vendors. Part of the reason for this is that some of the hardware vendors are requiring essentially a commission on any purchases within a native application. As a result, a lot of sites may be looking to bypass the App Store approach and create <a href="http://www.zdnet.com/blog/facebook/rumor-facebook-to-take-on-apple-with-html5-platform/1612">native HTML 5</a> so they don&#39;t need to worry about giving hardware vendors a percentage of their revenue.</p>
-<p>HTML 5 is a lot of hope and promise. In the past I have called it Java-esque, in the promise of the write once, run everywhere. What is different this time? A couple of things, one is the test suite that browser vendors will need to pass. The other is that there really seems to be a good cross section of the industry that REALLY wants this to work. It&#39;s not often that Apple, Google, Microsoft and other big companies are working towards the same thing. Do they always agree? Of course not! Will it cause problems? It already is. However, the industry is working hard to make this a reality.</p>
-<p>It will be interesting to see how it all plays out. Browsers like Google Chrome are working hard on supporting HTML 5 across many platforms. IE is working towards supporting HTML 5 on the Windows platform using hardware acceleration. You will see differences where HTML 5 rendered using IE which will run much faster and can do more, so that performance issues of other browsers may be a concern. Vice-versa you can have issues where IE is not rendering something the same way Chrome is.</p>
-<p>It&#39;s a long article just discussing the history of HTML 5 with none of the introduction of what HTML 5 is. However, it&#39;s important to understand the history of how we got here, and why the industry thinks this will be important. Next time I&#39;ll actually discuss some of what&#39;s new in HTML 5!</p>
-<p><strong>Why Use it?
-</strong>HTML 5 is going to (soon) be the industry standard for web applications</p>
-<p><strong>I want to learn more!
-</strong><a href="http://www.techrepublic.com/blog/programming-and-development/html-5-editor-ian-hickson-discusses-features-pain-points-adoption-rate-and-more/718">Interview with Ian Hickson discussing HTML 5 adoption rates</a></p>
-<p>This blog post originally appeared at [Skyline Technologies] (<a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/HTML-5-A-Little-History">http://www.skylinetechnologies.com/Insights/Skyline-Blog/June-2011/HTML-5-A-Little-History</a>)</p>
+        <p>Long ago, in a land far, far, away, I started an <a href="https://jptacek.com/2011/06/html-5-a-little-history/">introduction to HTML 5</a> by giving a short history of HTML and the standards process. It was to quickly be followed up with an overview of what is meant by HTML 5 applications. Months later, here we are....</p>
+<p>With the <a href="http://www.skylinetechnologies.com/news/Pages/RiverviewGardensGiveCamp.aspx">Skyline Give Camp</a> just behind us, I thought I would kick off a wave of blog posts about some of the technology we will be used during the Give Camp. First up, let&#39;s discuss HTML.</p>
+<p>There has been a lot (and I mean a lot) of enthusiasm for HTML 5 for creating applications, but what does that really mean? In general, I believe there are two things people mean when they discuss HTML 5. The first is the HTML standard itself. The second is creating applications using HTML 5. We will touch on each of those.</p>
+<p><strong>HTML 5 Standard</strong>
+The HTML 5 standard is really the evolving standard being created by the WC3 and WHAT working group. It is the new parts of the angle bracket goodness that keeps food on a lot of our tables. A lot of what Skyline does is creating applications for our clients where we render HTML server side and send it down to browsers to be rendered. HTML 5 has a lot of new markup tags and attributes to make these types of applications more interactive, discoverable and intuitive for users.
+I&#39;ll discuss these new attributes in more depth in future blog posts.</p>
+<p><strong>HTML 5 Applications</strong>
+The real excitement about HTML 5 is for HTML 5 applications. HTML 5 applications can, obviously, be a lot of different things to different people. At its root, is to have HTML 5 be a light container, and then to use JavaScript/jQuery to inject data into the markup.</p>
+<p>A way to think about this ... We have done a lot of work with Silverlight. The model we have for that is MVVM (Model-View-ViewModel). At a very high level, this concept involves a View, which has nothing in it other than screen layout and design, a model (our entities or data model) and the ViewModel, which is responsible for getting data and binding itself to the view. In this scenario, the view is very light weight and has no logic, the ViewModel is where all the heavy lifting occurs.</p>
+<p>There is a very shaky analogy to this in HTML 5 based applications. Often, you will have an HTML page that consists of markup. Essentially it is the bare bones implementation of the User Interface. This will be sent down to the browser for display. Part of the markup though includes JavaScript references. The JavaScript functions will then call back end data services and inject that data into our view. For example, the following markup could be sent down to a browser</p>
+<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">data-role</span>=<span class="hljs-value">"content"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"twitList"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span><span class="hljs-comment">&lt;!-- /content --&gt;</span>
+</code></pre>
+<p>A Javascript or jQuery function could then be sent to &quot;inject&quot; markup into the HTML, such as</p>
+<pre class="highlight"><code class="hljs javascript">    $(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"binding attempat"</span>);
+    $.ajax({
+        url: <span class="hljs-string">"http://search.twitter.com/search.json?q=SkylineTweets"</span>,
+        dataType: <span class="hljs-string">'jsonp'</span>,
+        success: <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(json_results)</span> </span>{
+            <span class="hljs-built_in">console</span>.log(json_results);
+            $(<span class="hljs-string">'#twitList'</span>).append(<span class="hljs-string">'&lt;ul data-role="listview"&gt;&lt;/ul&gt;'</span>);
+            listItems = $(<span class="hljs-string">'#twitList'</span>).find(<span class="hljs-string">'ul'</span>);
+            $.each(json_results.results, <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(key)</span> </span>{
+            html = <span class="hljs-string">'&lt;a class="avatar" href="#"&gt;&lt;img src="'</span> + json_results.results[key].profile_image_url + <span class="hljs-string">'" alt="'</span> + json_results.results[key].from_user + <span class="hljs-string">'"/&gt;&lt;/a&gt;'</span>;
+
+            html += <span class="hljs-string">'&lt;a href="http://twitter.com/'</span> + json_results.results[key].from_user + <span class="hljs-string">'"&gt;&lt;h3&gt;'</span> + json_results.results[key].from_user + <span class="hljs-string">'&lt;/h3&gt;&lt;/a&gt;'</span>;
+
+            html += <span class="hljs-string">'&lt;span class="details"&gt;'</span> + json_results.results[key].text + <span class="hljs-string">' &lt;/span&gt;'</span>;
+            listItems.append(<span class="hljs-string">'&lt;li&gt;'</span> + html + <span class="hljs-string">'&lt;/li&gt;'</span>);
+            <span class="hljs-built_in">console</span>.log(html);
+        });
+    <span class="hljs-comment">// Need to refresh list after AJAX call</span>
+        $(<span class="hljs-string">'#twitList ul'</span>).listview();
+    }   
+    });
+})
+</code></pre>
+<p>This will result in the retrieved results for <a href="https://twitter.com/#!/skylinetweets">@SkylineTweets</a> Twitter feed being injected into the HTML markup as an Unordered List (UL).</p>
+<p>Obviously, there are a lot more pieces involved in creating HTML 5 applications. The important thing to take away is that HTML is now considered a programming language. Through a combination of HTML 5 and JavaScript/jQuery, developers are creating great applications. Microsoft&#39;s next version of Windows, Windows 8, even supports HTML and JavaScript as a native programming language.</p>
+<p>The concept of HTML being a view, and JavaScript being the tool to inject data into the view is an important one to understand!</p>
+<p>This blog post originally appeared at [Skyline Technologies] (<a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/March-2012/HTML-5-for-Applications">http://www.skylinetechnologies.com/Insights/Skyline-Blog/March-2012/HTML-5-for-Applications</a>)</p>
 
     </div>
 
@@ -110,122 +134,34 @@
 
     <article class="post">
     
-    <h1><a href='/2011/06/an-introduction-to-the-microsoft-razor-view-engine/'>An Introduction to the Microsoft Razor View Engine</a></h1>
+    <h1><a href='/2011/12/tips-for-working-with-international-clients/'>Tips for Working With International Clients</a></h1>
     
-        <div class="post-date">Jun 24th, 2011</div>
+        <div class="post-date">Dec 21st, 2011</div>
 
     <div class="post-content">
-        <p>In past blog posts on <a href="http://www.jptacek.com/2011/06/comparing-asp-net-mvc-and-web-forms/">MVC</a> 
-and <a href="http://www.jptacek.com/2011/06/webmatrix-proves-an-excellent-tool-for-creating-small-sites-quickly/">WebMatrix</a>. 
-I&#39;ve mentioned Razor. Today, I&#39;m going to get a bit more in depth on Razor and what it can do.</p>
-<p>ASP.NET MVC supports view engines. All web programming consists of providing developers a way to insert 
-data dynamically into their HTML output. In ASP.NET Web forms, this was done using &lt;%= =%&gt; syntax to let 
-the runtime know that code was coming. In previous versions of ASP.NET MVC, this same approach was 
-used and was called the Web Forms view engine.</p>
-<p>ASP.NET MVC, however, had the ability to use other view engines. Ever since the introduction of MVC, 
-people have not liked using the Web Forms View engine. During that time, several other view engines 
-became popular for MVC development including <a href="http://sparkviewengine.com/">Spark</a>, 
-<a href="http://code.google.com/p/string-template-view-engine-mvc/">StringTemplate</a> and 
-<a href="http://code.google.com/p/nhaml/">NHAML</a>.</p>
-<p>With the release of ASP.NET MVC 3, Microsoft is now using the Razor view engine. You can still use the 
-previous Web Forms view engine if you would like. The team at Microsoft outlined several design goals for 
-Razor when they introduced it. The most important ones are that Razor be compact, expressive and 
-fluid as well as easy to learn.</p>
-<p>One of the main complaints with the Web Forms View engine is how verbose the syntax was. 
-Razor explicitly address this by using the @ keyword to enable script escaping.</p>
-<p>So what does this code look like? First, Razor files have the extension csHtml (C# Syntax) or 
-vbHtml (VB syntax). Razor files then get processed by the runtime. If we have a variable defined 
-message and have an HTML stream going, you can see the razor terseness in the following syntax:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Message for the user @message<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</code></pre>
-<p>In ASP.NET Web Forms, this same line would have been</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span> Message for the user <span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">message</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;
-</span></code></pre>
-<p>Similarly, for example, if we have a list of sports teams showing their name and what place they are in and we want to iterate through to display the standings the syntax is:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-@foreach (var t in teams) {
-<span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>@t.Place - @t.Name <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-}
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-</code></pre>
-<p>On the screen this would print as follows:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>1 - Green Bay Packers<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>2 - Chicago Bears<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>3 - Detroit Lions<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>4 - Minnesota Vikings<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-</code></pre>
-<p>Similar syntax with Web Forms:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">%</span> <span class="hljs-attr">foreach</span> (<span class="hljs-attr">var</span> <span class="hljs-attr">t</span> <span class="hljs-attr">in</span> <span class="hljs-attr">teams</span>) { %&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">t.Place</span>%&gt;</span> - <span class="hljs-tag">&lt;<span class="hljs-name">%=t.Name%</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">%}%</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-</code></pre>
-<p>Razor also supports HTML Helpers, which are a way for users to create HTML snippets across their code. So in the example above, we could create an HTML Helper to create the football standings and use it multiple times in our view or across multiple views. The syntax is as such:</p>
-<pre class="highlight"><code class="hljs xml">@helper TeamStandings(FootballTeam team) {
-    <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>@team.Place - @team.Name <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
-}
-</code></pre>
-<p>We could then update the page to call the helper:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>Teams<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">ul</span>&gt;</span>
-    @foreach (var t in teams) {
-        @TeamStandings(t)
-    }
-<span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
-</code></pre>
-<p>You can see how less verbose the syntax is to use. It is also, in a lot of ways easier to use. You never need to remember if you should escape out using &lt;% or &lt;%= either. The Razor syntax also introduces new syntax for laying out pages, superseding the ASP.NET concept of master pages. In truth, the ideas are both the same, but the concept is now called LayoutPages. Instead of having ContentPlaceholder sprinkled throughout a master page, helper methods in the template are used to fill in specific content. For example, let&#39;s call this page _groovySiteLayout.cshtml:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Groovy Page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"groovyMenu"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"groovyPageBody"</span>&gt;</span>
-        @RenderBody()
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
-<p>Then, within the view, we create our site content which includes a setting for the layout page. When the layout page hits the @RenderBoy helper method it injects the view content into the layout page and sends back to the browser.
-So for a simple view:</p>
-<pre class="highlight"><code class="hljs xml">{
-    @LayoutPage = "_groovySiteLayout.cshtml";
-}
-<span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Welcome to Groovy<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-</code></pre>
-<p>Would render the following HTML:</p>
-<pre class="highlight"><code class="hljs xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Groovy Page<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"groovyMenu"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"/"</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"groovyPageBody"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Welcome to Groovy<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Hello world<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
-</code></pre>
-<p>There is a lot more to the Razor view engine, this is just a quick introduction, 
-I will be talking about it a lot more in the future.</p>
-<p><strong>Why Use it?
-</strong>Razor is a new Microsoft view engine that is lightweight and easy to use. 
-It is currently part of WebMatrix and ASP.NET MVC. There are even indications it will be an integral part of a future version of ASP.NET WebForms.</p>
-<p><strong>I want to learn more!
-</strong>• <a href="http://weblogs.asp.net/scottgu/archive/2010/07/02/introducing-razor.aspx">Microsoft Introduction</a> - This post on Scott Guthrie&#39;s blog is an excellent introduction!
-• <a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a> - Check out the pluralsight videos on the page</p>
+        <p>One of the wonderful things about being a consultant in Northeast Wisconsin is there are so many great companies in our area. The beauty of technology and our inter-connected globe means you can have customers and clients anywhere. Not only has my company acquired customers in the Midwest and across the Unites States, but we have gained customers in other countries as well.</p>
+<p>In my time as a consultant, I&#39;ve learned quite a few things working with International customers. Here are a few tips that will enable you to deliver excellent customer satisfaction, even if those customers are, literally, on the other side of the world.</p>
+<p><strong>Time Difference </strong>- One of the biggest challenges in working internationally is the time difference between you and your clients. When you have a customer call write down what time it is for each one of the people on the phone that is in a different country. Be sure that if it is 8:00 a.m. in the United States when you start the call, you realize it is 10:00 p.m. in Hong Kong and your client would most likely rather be getting ready for bed. This will help you focus on what needs to get done in the meeting and help you keep the meeting from running long.</p>
+<p><strong>Know What Day It Is </strong>- When I work with a client in another country on a regular basis, I add that country&#39;s holiday calendar to my calendaring software. That way, whenever a meeting needs to be scheduled, I don&#39;t have to embarrass myself by not knowing that November 2nd is Day of the Dead in Brazil and nobody will be coming into the office. Outlook and Google calendar, two of the more popular calendaring options on the market, make this easy.</p>
+<p><strong>Communication Costs </strong>- Communicating overseas by phone can be expensive, especially if you are making calls several times a week for hours at a time. There are several excellent options that enable you to mitigate these costs.</p>
+<p>In many countries, a good percentage of people are now using Skype, a software application recently purchased by Microsoft. Skype does an excellent job of enabling you to talk to several people at once. In my experiences, numerous organizations use Skype and many of them prefer it to a phone call. Obviously, all of the call participants need to be sitting at or near a computer for this to work.</p>
+<p>Google also has voice calling options within their Gmail application. If you use this option you&#39;ll want to download Google Talk so you can quickly make a call without logging into Gmail.</p>
+<p>Both these application require the people you want to communicate with to have the software installed. If that&#39;s not an option, or you have customers who exclusively use landlines, both Skype and Google offer the ability to buy minutes to call people directly. These rates are generally MUCH cheaper than dialing internationally over the phone.</p>
+<p>Finally, Microsoft Lync has abilities similar to Skype and Google Talk, however there is the added benefit of being able to share computer screens and for multiple users to work on the computer desktop at the same time.</p>
+<p>There are many other options available for effective communication such as Instant Messaging, Google docs, Go To Meeting, and more. However, nothing beats a person to person call.</p>
+<p><strong>Culture </strong>- Given the size of the United States, our culture is very similar across the country. It can be very surprising to see the amount of differences in other countries, especially in Europe. For example, Switzerland has three official languages: German, French and Italian in a country the size of Vermont and New Hampshire combined.</p>
+<p>In India, when a person shakes their head up and down, instead of it meaning yes like it would in the states, it generally means a person is saying no.</p>
+<p>The United States is also a large country for both political and economic reasons in the world. You can almost guarantee that customers you have overseas know who the President of the United States is as well as some of our recent political news.</p>
+<p>The reality is, if you want to be able to engage with your customer, you owe it to yourself to pay attention to what happens in the countries where they do business. Economist Magazine is a great business resource for this. It discusses the political and policy situations in many countries and will make you a better informed person when talking to clients from other parts of the world. A less expensive option is Google News, which has the ability to set the edition of the page that is displayed. So if you will be spending a week with a customer in Britain, check out the British edition of Google News for a couple of weeks before heading over there.</p>
+<p>Remember, you are building your business ties based on your relationship ties. If you visit another country and your potential client says a dish is a local favorite, or something they are particularly fond of, they are most likely trying to introduce you to a part of their culture and share it with you. So, when visiting Scotland if a client says they love haggis and ask you to try it, be sure you do!</p>
+<p>Working with clients overseas can be a very rewarding experience. Just be sure you are respectful of the customer and their culture and make sure you sit and listen before speaking. In today&#39;s global economy the world is your customer base!</p>
+<p>This blog post originally appeared at [Skyline Technologies] (<a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/December-2011/Tips-for-Working-With-International-Clients">http://www.skylinetechnologies.com/Insights/Skyline-Blog/December-2011/Tips-for-Working-With-International-Clients</a>)</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/web/'>Web</a>, <a href='/tags/webmatrix/'>WebMatrix</a>
+        Posted In: <a href='/tags/business/'>Business</a>
     </div>
     
     <br/>
@@ -236,48 +172,40 @@ It is currently part of WebMatrix and ASP.NET MVC. There are even indications it
 
     <article class="post">
     
-    <h1><a href='/2011/06/comparing-asp-net-mvc-and-web-forms/'>Comparing ASP.NET MVC and Web Forms</a></h1>
+    <h1><a href='/2011/09/observations-from-microsofts-build-conference/'>Observations From Microsoft's Build Conference</a></h1>
     
-        <div class="post-date">Jun 10th, 2011</div>
+        <div class="post-date">Sep 29th, 2011</div>
 
     <div class="post-content">
-        <p>Before we get into MVC proper, let&#39;s discuss why you should consider MVC at all. It&#39;s my personal feeling that MVC 3 is going to be a horrifically important technology for all of us. If you&#39;re moving into more mobile development, MVC is going to be a much better choice. Secondly, in a HTML 5 world, MVC is going to be a better choice due to its ability to control HTML markup and reference client IDs via JavaScript. It&#39;s not to say ASP.NET Web Forms will not allow for this kind of development, but as the current Web Forms platform exists, it will be more difficult. An example of this..., having the ViewState be part of HTML pages on mobile browsers can have significant impact on load times. Okay, time to jump off the soapbox.</p>
-<p>MVC stands for Model-View-Controller. In my mind, I think of it this way ... model is really our data or more correctly, business object. The model contains the data we want to render. The view is the page that we use to render the data. The controller is essentially the traffic cop that tells the data, what view it needs to go to. Most of this is handled automatically by MVC&#39;s concept of <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">convention over configuration</a>.</p>
-<p>It all works something like this ... a user hits a URL and the controller gets called, based on routing rules it knows which controller to go to. The controller then loads the model from the database. Once the model is populated it then determines what view to load and passes the model to the view for rendering. One of the benefits of an approach like this is that the view is very lightweight with little code in the view proper. The code there is just for helping to render the data. This naturally leads to separation of concerns, which is always a good development practice that is hard to follow in Web Forms.</p>
-<p>One of the reasons for converting a site to MVC is to create both an HTML 5 version of the site and a mobile HTML version. In this scenario the controller would load one version of the data (aka the model), but based on the type of browser accessing the site, pass the model to a different view, for example the HTML 5 view. You can get a glimpse of the power. No matter the type of site we have, we are always accessing our data in the same way and passing the view.</p>
-<p>So, is ASP.NET Web Forms dead? Of course not! The real genesis of ASP.NET Web Forms was to provide an easier migration path for VB/Winform developers, who were familiar with event driven programming, into the stateless world of the web and web programming. Essentially, Web Forms abstract away the stateless nature of the web. As our paychecks prove, it&#39;s a great programming platform running millions of sites. Microsoft will continue to support Web Forms.</p>
-<p>There are times when Web Forms will make sense, and times where MVC will make sense. At a high level:</p>
-<p><strong>Advantages of Web Forms:</strong></p>
-<ul>
-<li>Developer Familiarity</li>
-<li>VERY rich eco system of server controls</li>
-<li>Provides a RAD development environment</li>
-<li>Event driven system</li>
-<li>Much easier development for data heavy LOB system</li>
-</ul>
-<p><strong>Advantages of MVC:</strong></p>
-<ul>
-<li>Full control over HTML</li>
-<li>Easy integration with JavaScript frameworks</li>
-<li>Embraces the stateless nature of the web</li>
-<li>Easier Search Engine Optimization</li>
-<li>Allows for better testing</li>
-</ul>
-<p>At the end of the day, both MVC and Web forms are platforms built on ASP.NET and use the same runtime. HTML and HTML 5, while always an important part of what we do, are becoming more and more important. If you ever needed verification of this, Microsoft&#39;s <a href="http://www.microsoft.com/presspass/features/2011/jun11/06-01corporatenews.aspx">recent announcement</a> that Windows 8 would allow for the distribution of HTML 5 apps to Windows reinforces that. MVC and Web Forms are both platforms we need to make our customer successful in this kind of environment. While I feel MVC is going to be a preferred platform for HTML development, the truth is both platforms are suited for the creation of HTML sites.</p>
-<p><strong>Why Use it?</strong> ASP.NET MVC is a platform for developing HTML applications that provides the user much greater control over the HTML markup that is rendered. There are added benefits such as supporting testing and better code design too!</p>
-<p><strong>I Want To Learn More!</strong></p>
-<p><a href="http://www.amazon.com/Professional-ASP-NET-MVC-2-ebook/dp/B003RCJE9Q/ref=sr_1_2?ie=UTF8&amp;qid=1307102102&amp;sr=8-2">Professional ASP.NET MVC 2</a>(book)</p>
-<p><a href="http://www.amazon.com/ASP-NET-MVC-Action-Jeffrey-Palermo/dp/193518279X/ref=sr_1_2?ie=UTF8&amp;qid=1307102138&amp;sr=8-2">ASP.NET MVC 2 in Action </a>(book)</p>
-<p><a href="http://www.amazon.com/ASP-NET-Framework-Experts-Voice-NET/dp/1430228865">Pro ASP.NET MVC V2 Framework </a>(book)</p>
-<p><a href="http://www.asp.net/mvc">Microsoft ASP.NET MVC site</a>- Check out the pluralsight videos on the page!</p>
-<p><a href="http://stackoverflow.com/questions/102558/biggest-advantage-to-using-asp-net-mvc-vs-web-forms/3629415#3629415">StackOverflow question on Web Forms vs MVC</a></p>
-<p>Along this same line there is great NuGet package that you can use with MVC3 and EF 4.1 that will generate your views, controllers and Repositories. Yes, a code-gen tool that adheres to real world architecture practices, from your true POCO model classes. <a href="http://blog.stevensanderson.com/2011/01/13/scaffold-your-aspnet-mvc-3-project-with-the-mvcscaffolding-package/">Check it out</a>.</p>
+        <h2 id="overview">Overview</h2>
+<p>Build was a bit of a different conference.... Initially, when it was announced at MIX it was called PDC (Microsoft&#39;s Professional Developers Conference). PDC generally has topics that cover the breadth of the Microsoft eco system from a developer&#39;s perspective; creating ASP.NET applications, C# , VB.NET , Entity Framework this and Entity Framework that. Build was NOT that, it was specifically dedicated to Microsoft&#39;s upcoming Windows 8 operating system, and especially to the new Metro UI introduced as part of the OS.</p>
+<p>Windows 8 is, quite obviously, the next version of Microsoft&#39;s Windows platform. Microsoft is laser-focused on optimizing Windows for alternative form factors, especially the tablet. They have reduced the footprint of Windows by eliminating several core services that start up as part of the Operating system as well as the memory footprint. A demo played on an old netbook showed overall resource usage actually decreased when moving from Windows 7 to Windows 8, the first time that a new version of their operating system has had decreased baseline hardware requirements.</p>
+<p>The biggest change though is the introduction of the Metro UI for Windows, which can be thought of as the tablet interface for Windows. It is a &#39;fast and fluid&#39; touch-based interface, similar in some ways to Windows Phone 7, especially in the use of the Live Tiles, which are uber-icons that update with information. Take a look at the screen shot below to see what the new &#39;start screen&#39; looks like, gone is the iconic start menu introduced in Windows 95, replaced with a &#39;Windows Phone on steroids&#39; style home screen.</p>
+<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen1-300x169.jpg" alt="Win8screen1"></p>
+<p>The interface has been well received by folks at large. It&#39;s a pretty bold reworking of Windows, part of which involves the fact there are NO Windows, just one or two running applications on screen at a time. For developers, the good news with Windows 8 is that you can also get to the desktop and use all of the applications you already use on Windows 7.</p>
+<p>To make all of this fluid, swipey goodness, Microsoft has introduced a new programming API called WinRT, which stands for Windows Runtime. WinRT is to Win32 what Silverlight or Windows Phone 7 are to the full .NET Framework, a smaller API surface optimized for their respective platforms. However, it is different in a couple of ways. First, it introduces new areas to the core Windows API, most of which are focused on using Windows for things like storage and search. Second, Microsoft is providing [or projecting] the WinRT APIs for direct use by C#, C++, VB.NET and JavaScript (and possibly F#), so instead of calling .NET framework libraries that in turn call Win32 APIs, the .NET code directly executes WinRT calls, similar to existing COM interop and P/Invoke technologies. The difference is that the projections include rich metadata so that the libraries appear as &#39;native&#39; class libraries in each of their respective languages, avoiding a lot of the headaches of existing COM and P/Invoke interactions.</p>
+<p>The diagram below outlines the various options for creating applications on Windows 8.</p>
+<p><img src="/2011/09/observations-from-microsofts-build-conference/Win8screen2-300x169.jpg" alt="Win8screen2"></p>
+<p>The &#39;Desktop Apps&#39; section of the diagram is the same types of applications that we currently know and love (or love to hate). These types of applications will continue to be supported and extended moving forward, but WILL NOT be able to interact directly with Metro apps, nor participate in the Windows 8 contracts that provide the rich &#39;web of applications&#39; that are one of Windows 8&#39;s signature features. These applications will also not be able to be installed through the new Windows Store (think the App Store, but for Windows). Desktop applications will be linked through the store, but are not subject to the same certification and safety guarantees as Metro apps.</p>
+<p>Similar to how C#, VB.NET, F#, and a host of other languages can create applications using the .NET Framework APIs, there are several options for creating WinRT applications. The options can be split into three different groups. The first group is C/C++ applications using either DirectX or XAML based UI technologies. DirectX is primarily used for game creation or complex imaging applications, and XAML based UIs are really Microsoft&#39;s replacement for their existing MFC framework. The second group is a Metro equivalent to WPF applications, written in either C# or VB.NET. The final group is the newly introduced/repurposed HTML/CSS/JavaScript stack, which allows the creation and packing of applications Windows 8 Metro applications using HTML/CSS as the UI layer, and JavaScript as the interface. An entire article could be written on what the HTML/JS layers represent and how they are different than &#39;web apps&#39;, but these types of applications are not executed &#39;in browser&#39;, they are fully fledged &#39;Metro&#39; apps, using IE&#39;s JavaScript engine (Chakra) as the runtime interpreter. To be clear, there is NO fundamental difference in the end result for &#39;Metro&#39; apps, regardless of what technology stack you choose to use, they really are just options that allow you to use your existing skillset to build Win8 Metro applications.</p>
+<h2 id="quick-hits">Quick Hits</h2>
+<p>Here are some quick bullet points for takeaway...</p>
+<p><strong>Microsoft got its C++ love back -</strong>There was quite a lot of time and energy from Microsoft put into the development tools for C++. One of the sessions even stated &quot;C++ is back because performance matters&quot;. If you are looking to create uber-optimized WinRT apps on Windows 8, C++ may be the best option. If you are looking to get a date or see your family grow up, the .NET stack is still going to be the best way to create Line of Business applications (LOB). Also, WinRT applications run great with C#/VB/JS languages!</p>
+<p><strong>All Services All the Time -</strong>The data story for WinRT is going to be REST/JSON services. As of now, there is no way to run something like an Entity Framework model on the Metro UI. There are some rumors of SQL Lite support, but the hard push is for connected apps that require backend data sources that are NOT LOCAL to the machine (or even network) in question.</p>
+<p><strong>Metro UI on other processors -</strong>Microsoft is looking to have folks create many different devices and form factors using Windows 8. A lot of these will run on ARM processors, which are the low energy, middling performance chips that power things like iPads and mobile phones. For classic non-.NET desktop applications to run on these processors they will need to be recompiled. It is worth noting that there are LOTS of confusing statements about this, but as of now, that is the current understanding. Currently there is, at least, a subset of the .NET framework (the Windows Phone runtime) that runs on ARM, so it seems like good .NET framework support should be possible, even on ARM.</p>
+<p><strong>Visual Studio 2011 -</strong>Microsoft has a new version of Visual Studio 2011 that supports templates for many of the WinRT application types</p>
+<p><strong>Asynchronous data access -</strong>Microsoft has a new async/await keywords that are being introduced with the .NET Framework 4.5. These keywords allow a call to be made on a different thread. This becomes VITALLY important for performant applications because the thread that runs the UI has to wait for data to come back. Microsoft states that any call that takes longer than 50 (or 15, both have been mentioned) milliseconds should be asynchronous. Get used to coding a lot of async calls in the future! The good news is that the new keywords and compiler support mean that writing Metro (and .NET 4.5) applications will look a lot like standard synchronous code that &#39;just works&#39;.</p>
+<p><strong>Promises -</strong>JavaScript programming on the WinRT stack is going to be implementing the idea of promises. This is the JavaScript version of async/await. Essentially, have JavaScript go get some data, promise data comes back and there is a then() function (or continuation) which will run after your data returns.</p>
+<p><strong>Windows Store -</strong>Microsoft is introducing a Windows Store for users to go and download applications and easily install them on their computer. This will be for WinRT applications only! Other .NET/Win32 applications may exist in the store, but they will link to external sites for purchase and install.</p>
+<p><strong>Conclusion</strong>
+So, what does it all mean? At the end of day, at least for now, not a whole lot! In all seriousness, Microsoft is probably a year away from releasing Windows 8 and clients will be at least 6 months to a year out from installing and asking for it. But, be sure to be ready when they start asking!</p>
+<p>Having said that, Windows 8 represents a HUGE opportunity! According to Microsoft there are soon to be over 500 million copies of Windows in use. That is more than all the other mobile platforms combined. If there is one thing you want to do today to get ready for Windows 8, I would recommend this... Get your HTML 5/XAML skills up to speed and learn to love creating data services that can be consumed on mobile platforms.</p>
 
     </div>
 
     
     <div class="post-tags">
-        Posted In: <a href='/tags/mvc/'>MVC</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/web-forms/'>Web Forms</a>
+        Posted In: <a href='/tags/html-5/'>HTML 5</a>, <a href='/tags/web/'>Web</a>, <a href='/tags/windows-8/'>Windows 8</a>, <a href='/tags/build/'>Build</a>, <a href='/tags/conferences/'>Conferences</a>
     </div>
     
     <br/>

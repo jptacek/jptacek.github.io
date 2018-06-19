@@ -9,7 +9,7 @@
     <meta name="description" content="Mobile, Web and JavaScript" />
 
 <title>Have Your Pi and Eat it Too: A Comparison of C# and C++ Performance - JPtacek.com | Musings on code and who knows what 3ls3</title>
-    <meta name="generator" content="DocPad v6.79.0" />
+    <meta name="generator" content="DocPad v6.78.6" />
     
 
     <meta name="author" content="John Ptacek">
@@ -198,32 +198,32 @@
 <pre class="highlight"><code class="hljs cpp"><span class="hljs-comment">// LifeOfPi.cpp : Defines the entry point for the console application.</span>
 <span class="hljs-comment">//</span>
 
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">"stdafx.h"</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
-<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iomanip&gt;</span></span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> "stdafx.h"</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;iostream&gt;</span>
+<span class="hljs-preprocessor">#<span class="hljs-keyword">include</span> &lt;iomanip&gt;</span>
 <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
 
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pi</span><span class="hljs-params">( <span class="hljs-keyword">double</span> *pi_value, <span class="hljs-keyword">int</span> *iterations)</span></span>;  
+<span class="hljs-keyword">void</span> pi( <span class="hljs-keyword">double</span> *pi_value, <span class="hljs-keyword">int</span> *iterations);  
 
-<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span> <span class="hljs-params">( <span class="hljs-keyword">void</span> )</span>  
-</span>{  
+<span class="hljs-keyword">int</span> main ( <span class="hljs-keyword">void</span> )  
+{  
 
       <span class="hljs-keyword">int</span> iterations = <span class="hljs-number">0</span>;     <span class="hljs-comment">// number of actual loop iterations in pi </span>
       <span class="hljs-keyword">double</span> pi_value = <span class="hljs-number">0</span>;    <span class="hljs-comment">// computed value of pi </span>
 
-      <span class="hljs-keyword">clock_t</span> cBegin = (<span class="hljs-keyword">double</span>)clock () ; 
+      clock_t cBegin = (<span class="hljs-keyword">double</span>)clock () ; 
       pi(&amp;pi_value, &amp;iterations);  
       <span class="hljs-built_in">printf</span>(<span class="hljs-string">"   %0.15f with %d iterations\n"</span>,  pi_value, iterations);  
-      <span class="hljs-keyword">clock_t</span> cEnd = (<span class="hljs-keyword">double</span>) clock() ; 
+      clock_t cEnd = (<span class="hljs-keyword">double</span>) clock() ; 
 
-      <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">float</span>( cEnd - cBegin ) 
+      std::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">float</span>( cEnd - cBegin ) 
 
 <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;  
 
 }    
 
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pi</span><span class="hljs-params">( <span class="hljs-keyword">double</span> *pi_value, <span class="hljs-keyword">int</span> *iterations)</span>  
-</span>{  
+<span class="hljs-keyword">void</span> pi( <span class="hljs-keyword">double</span> *pi_value, <span class="hljs-keyword">int</span> *iterations)  
+{  
       <span class="hljs-keyword">int</span> i;  
       <span class="hljs-keyword">int</span> k=<span class="hljs-number">1</span>;
       <span class="hljs-keyword">double</span> realPi = <span class="hljs-number">3.141592653589793</span>; 
@@ -231,7 +231,7 @@
       <span class="hljs-keyword">double</span> delta=<span class="hljs-number">10</span>;
       *pi_value= <span class="hljs-number">0</span>;
       <span class="hljs-keyword">while</span> (delta&gt;epsilon) {
-            *pi_value += <span class="hljs-built_in">pow</span>(<span class="hljs-number">-1</span>,(k+<span class="hljs-number">1</span>))/(<span class="hljs-number">2</span>*k<span class="hljs-number">-1</span>);
+            *pi_value += <span class="hljs-built_in">pow</span>(-<span class="hljs-number">1</span>,(k+<span class="hljs-number">1</span>))/(<span class="hljs-number">2</span>*k-<span class="hljs-number">1</span>);
             delta = <span class="hljs-built_in">fabs</span>((<span class="hljs-number">4</span>* *pi_value)-realPi);
             k++;
       }
@@ -240,7 +240,7 @@
 
       <span class="hljs-keyword">return</span>; <span class="hljs-comment">// indicate program ended sucessfully </span>
 
-} <span class="hljs-comment">// end fucntion main</span>
+} <span class="hljs-comment">// end fucntion main </span>
 </code></pre>
 <p>C#</p>
 <pre class="highlight"><code class="hljs csharp"><span class="hljs-keyword">using</span> System;
@@ -253,7 +253,7 @@
 {
     <span class="hljs-keyword">class</span> <span class="hljs-title">Program</span>
     {
-        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span>(<span class="hljs-params"><span class="hljs-keyword">string</span>[] args</span>)
+        <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Main</span><span class="hljs-params">(<span class="hljs-keyword">string</span>[] args)</span>
         </span>{
             <span class="hljs-keyword">int</span> iterations = <span class="hljs-number">0</span>;
             <span class="hljs-keyword">double</span> pi_value = <span class="hljs-number">0</span>;
@@ -266,7 +266,7 @@
             Console.WriteLine(diff.Seconds + <span class="hljs-string">"."</span>+diff.Milliseconds);
         }
 
-        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pi</span>(<span class="hljs-params"><span class="hljs-keyword">out</span> <span class="hljs-keyword">double</span> pi_value, <span class="hljs-keyword">out</span> <span class="hljs-keyword">int</span> totalIterations</span>)
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pi</span><span class="hljs-params">(<span class="hljs-keyword">out</span> <span class="hljs-keyword">double</span> pi_value, <span class="hljs-keyword">out</span> <span class="hljs-keyword">int</span> totalIterations)</span>
         </span>{
             <span class="hljs-keyword">double</span> realPi = <span class="hljs-number">3.141592653589793</span>;
             <span class="hljs-keyword">double</span> epsilon = <span class="hljs-number">0.00000001</span>;
@@ -276,7 +276,7 @@
             pi_value = <span class="hljs-number">0</span>;
             <span class="hljs-keyword">while</span> (delta &gt; epsilon)
             {
-                pi_value += Math.Pow(<span class="hljs-number">-1</span>, (k + <span class="hljs-number">1</span>)) / (<span class="hljs-number">2</span> * k - <span class="hljs-number">1</span>);
+                pi_value += Math.Pow(-<span class="hljs-number">1</span>, (k + <span class="hljs-number">1</span>)) / (<span class="hljs-number">2</span> * k - <span class="hljs-number">1</span>);
                 delta = Math.Abs((<span class="hljs-number">4</span> * pi_value) - realPi);
                 k++;
             }
@@ -285,7 +285,7 @@
 
         }
     }
-}
+} 
 </code></pre>
 <p>&nbsp;</p>
 <p>This blog post originally appeared at <a href="http://www.skylinetechnologies.com/Insights/Skyline-Blog/March-2013/Have-Your-Pi-and-Eat-it-Too-A-Comparison-of-C-an">Skyline Technologies</a></p>
