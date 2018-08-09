@@ -3,13 +3,31 @@
     <title>JPtacek.com | Musings on code and who knows what 3ls3</title>
     <link href="https://www.jptacek.com/feed/" rel="self"/>
     <link href="https://www.jptacek.com"/>
-    <updated>2018-06-19T18:47:48.004Z</updated>
+    <updated>2018-08-09T12:13:50.387Z</updated>
     <id>https://www.jptacek.com/</id>
     <author>
         <name>John Ptacek</name>
         <email>jptacek@gmail.com</email>
     </author>
 
+    
+    <entry>
+        <title>That Conference 2018 - Functional JavaScript</title>
+        <link href="https://www.jptacek.com/2018/08/ThatConference2018/"/>
+        <updated>2018-08-08T05:00:00.000Z</updated>
+        <id>tag:www.jptacek.com,2018-08-08,/2018/08/ThatConference2018/</id>
+        <content type="html"><![CDATA[<p>I am a huge fan of life long learning and community, and <a href="https://www.thatconference.com">That Conference</a> allows me to indulge in it each year.</p>
+<p>I have also been lucky enough to speak each year at the event (though I had to bail one year
+for work commitments).</p>
+<p>This year, my <a href="https://www.thatconference.com/sessions/session/12739">session</a> was Functional Programminng in JavaScript. During the talk I take a loop through the aspects of Functional 
+Programming available in the land of JavaScript.</p>
+<p><img src="https://www.jptacek.com/2018/08/ThatConference2018/thatConf2018.jpg" alt="John Ptacek speaking at ThatConference 2018"></p>
+<p>Thanks to all who attended and provided feedback.</p>
+<p>For those interested, here is the <a href="https://docs.google.com/presentation/d/1o-TNzP79PPlkpq5wiDL58dOQ4coRnOGUg7E10jIsgyI/edit#slide=id.p">presentation</a>.</p>
+<p>The source code can be found on my GitHub account at <a href="https://github.com/jptacek/functional-javascript-that-conf">https://github.com/jptacek/functional-javascript-that-conf</a>.</p>
+]]></content>
+        <foo1><![CDATA[https://www.jptacek.com/2018/08/ThatConference2018/]]></foo1>
+            </entry>
     
     <entry>
         <title>An Introduction to Artificial Intelligence and Machine Learning</title>
@@ -287,28 +305,6 @@ and the Git repo for the slide deck is at
 <p>Thanks again to everyone who came out and engaged in starting a conversation!</p>
 ]]></content>
         <foo1><![CDATA[https://www.jptacek.com/2016/10/NewAitp/]]></foo1>
-            </entry>
-    
-    <entry>
-        <title>September NEWDUG Meeting - Angular vs React</title>
-        <link href="https://www.jptacek.com/2016/09/NewDugAngularReact/"/>
-        <updated>2016-09-15T05:00:00.000Z</updated>
-        <id>tag:www.jptacek.com,2016-09-15,/2016/09/NewDugAngularReact/</id>
-        <content type="html"><![CDATA[<p>Thanks to everyone who came out to my presentation at the Sept 2016
-<a href="http://newdug.org">NEWDUG</a> meeting. We had a great turnout! You can get an
-idea from this pre-talk and dark picture.</p>
-<p><img src="https://www.jptacek.com/2016/09/NewDugAngularReact/0916NewDug.jpg" alt="Install Angular"></p>
-<p>Also, I had a bit of a hair issue going on....</p>
-<p><blockquote class="twitter-tweet tw-align-center" data-lang="en"><p lang="en" dir="ltr"><a href="https://twitter.com/jptacek">@jptacek</a> shows off an another stellar hair day tonight at <a href="https://twitter.com/newdug">@newdug</a> as he talks Angular vs React <a href="https://twitter.com/hashtag/Angular?src=hash">#Angular</a> <a href="https://twitter.com/hashtag/React?src=hash">#React</a> <a href="https://t.co/4KibrGXZeZ">pic.twitter.com/4KibrGXZeZ</a></p>&mdash; Skyline Technologies (@skylinetweets) <a href="https://twitter.com/skylinetweets/status/776193790738436096">September 14, 2016</a></blockquote></p>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<p>My slide deck is online at <a href="http://newdug0916.jptacek.com">http://newdug0916.jptacek.com</a>
-and the Git repo for the slide deck is at
-<a href="https://github.com/jptacek/NewDug0916">https://github.com/jptacek/NewDug0916</a>.
-I have also created a very vanilla PDF for <a href="https://www.jptacek.com/2016/09/NewDugAngularReact/./NewDug0916-AngularVsReact.pdf">download</a>.</p>
-<p>Thanks again to everyone who came out and engaged in great conversation!</p>
-]]></content>
-        <foo1><![CDATA[https://www.jptacek.com/2016/09/NewDugAngularReact/]]></foo1>
             </entry>
     
 </feed>
